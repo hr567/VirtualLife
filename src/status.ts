@@ -14,6 +14,7 @@ export class StatusView {
   #render: NativeRendering; #fonts: Promise<ArrayBuffer[]>;
   #palette = new Uint8Array(1024); #scene = ''; #uiKey = ''; #controlsList: Control[] = []; #backHover = false;
   #rainMask: { step: number; image: DecodedBitmap } | undefined;
+  #hpImages = new Map<string, Promise<DecodedBitmap>>();
   #raf = 0; #lastTime = 0; #step: Promise<unknown> | undefined; #acting = false; #actions: Action[] = [];
   constructor(private renderer: GameRenderer, private assets: Assets, engine: EngineClient, private ui: HTMLElement, private send: (command: Command) => Promise<EngineResult>, private inform: (message: string) => void) {
     this.#render = new NativeRendering(renderer, assets, engine, 'parameters');
@@ -53,8 +54,10 @@ export class StatusView {
     if (state.page === 'overview') {
       const overview = snapshot.statusOverview!;
       await this.#render.draw('portrait', rules.portraits[overview.portraitIndex]!, 2);
-      await this.#render.draw('hp-label', rules.hpLabel, 2); await this.#render.draw('hp-frame', rules.hpFrame, 2);
-      if (overview.hpWidth > 0) await this.#render.draw('hp-fill', rules.hpFill, 3, rules.hpFill, { x: 0, y: 0, width: overview.hpWidth, height: 9 });
+      const hpVariant = rules.hpGdi.portraitVariants[overview.portraitIndex]!;
+      this.#render.image('hp-label', await this.#hpImage('hpLabel', hpVariant), rules.hpLabel, 2, `hpLabel:${hpVariant}`);
+      this.#render.image('hp-frame', await this.#hpImage('hpFrame', hpVariant), rules.hpFrame, 2, `hpFrame:${hpVariant}`);
+      if (overview.hpWidth > 0) this.#render.image('hp-fill', await this.#hpImage('hpFill', hpVariant), rules.hpFill, 3, `hpFill:${hpVariant}`, 0, { x: 0, y: 0, width: overview.hpWidth, height: 9 });
       const values = { ...snapshot.stats, ...snapshot.life, ...overview.fields, name: snapshot.player?.name };
       for (const entry of rules.texts) label(`field-${entry.field}`, (values as Record<string, unknown>)[entry.field], entry.x, entry.y, entry.color, entry.width);
       label('hp-shadow', overview.hpText, rules.hpText.shadowX, rules.hpText.shadowY, 0);
@@ -98,6 +101,24 @@ export class StatusView {
     }
     if (!this.#active || generation !== this.#generation) return;
     this.#render.end(); this.ui.dataset.nativeReady = 'true'; this.#schedule();
+  }
+  #hpImage(kind: 'hpLabel' | 'hpFrame' | 'hpFill', variant: number): Promise<DecodedBitmap> {
+    const key = `${kind}:${variant}`, cached = this.#hpImages.get(key); if (cached) return cached;
+    const pending = (async () => {
+      // Original LoadImage/StretchBlt maps these three source DIBs into the
+      // overview's palette. Use the measured GDI maps, not their raw indices.
+      const rule = this.assets.rules.statusRendering!.hpGdi.variants[variant]!.images[kind];
+      const source = await this.#render.bitmap(rule.resource, 1), mapping = new Map(rule.indexMap);
+      if (!source.paletteIndices) throw new Error('参数图像缺少调色板索引。');
+      const pixels = new Uint8Array(source.pixels.length), paletteIndices = new Uint8Array(source.paletteIndices.length);
+      for (const [index, original] of source.paletteIndices.entries()) {
+        const mapped = mapping.get(original); if (mapped === undefined) throw new Error('参数图像颜色映射不完整。');
+        paletteIndices[index] = mapped; pixels.set(this.#palette.subarray(mapped * 4, mapped * 4 + 3), index * 4); pixels[index * 4 + 3] = original === 1 ? 0 : 255;
+      }
+      let hash = 0x811c9dc5; for (const value of pixels) hash = Math.imul(hash ^ value, 0x01000193) >>> 0;
+      if (hash !== rule.rgbaFnv32) throw new Error('参数图像调色板校验失败。');
+      return { width: source.width, height: source.height, pixels, paletteIndices };
+    })(); this.#hpImages.set(key, pending); return pending;
   }
   #mask(transition: NativeTransition): DecodedBitmap {
     if (this.#rainMask?.step === transition.steps) return this.#rainMask.image;

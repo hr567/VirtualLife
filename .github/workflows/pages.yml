@@ -19,7 +19,6 @@ jobs:
     timeout-minutes: 35
     env:
       CARGO_TERM_COLOR: always
-      PLAYWRIGHT_OUTPUT_DIR: ${{ runner.temp }}/virtual-life-web-qa
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -57,6 +56,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y mesa-vulkan-drivers fonts-noto-cjk
       - name: Test actual WebGPU, game flows, local saves and offline behavior
+        env:
+          PLAYWRIGHT_OUTPUT_DIR: ${{ runner.temp }}/virtual-life-web-qa
         run: pnpm test:web
       - name: Preserve browser test evidence
         if: always()

@@ -50,6 +50,7 @@ export interface StatusListRendering {
 export interface StatusRendering {
   background: import('./native-rendering').NativeImage; portraits: import('./native-rendering').NativeImage[];
   hpLabel: import('./native-rendering').NativeImage; hpFrame: import('./native-rendering').NativeImage; hpFill: import('./native-rendering').NativeImage;
+  hpGdi: { portraitVariants: number[]; variants: { images: Record<'hpLabel' | 'hpFrame' | 'hpFill', { resource: string; width: number; height: number; indexMap: [number, number][]; rgbaFnv32: number }> }[] };
   back: import('./native-rendering').NativeFrames[]; buttons: import('./native-rendering').NativeImage[]; disabledButtons: import('./native-rendering').NativeImage[];
   texts: { field: string; x: number; y: number; color: number; width: number }[];
   hpText: { x: number; y: number; shadowX: number; shadowY: number }; missionRank: { valueX: number; valueY: number; textX: number; textY: number }; mission: { x: number; y: number; emptyY: number };

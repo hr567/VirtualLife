@@ -16,7 +16,7 @@ scripts = [
     'export-competition-tables.py', 'export-running-tables.py',
     'export-battle-tables.py', 'export-battle-rendering.py',
     'export-final-battle-tables.py', 'export-ending-summary.py', 'export-epilogue-tables.py',
-    'export-status-rendering.py', 'export-status-submenus.py', 'export-status-property.py',
+    'export-status-rendering.py', 'export-status-submenus.py', 'export-status-property.py', 'export-status-gdi.py',
     'export-map-options.py',
 ]
 # Preserve the complete prior catalog if an individual exporter fails halfway.

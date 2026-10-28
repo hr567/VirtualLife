@@ -12,12 +12,11 @@ const tabs: InventoryTab[] = ['ordinary', 'special', 'equipment'];
 /** The original three inventory pages, including the original bitmap fonts. */
 export class InventoryView {
   #active = false; #generation = 0;
-  #render: NativeRendering; #fonts: Promise<ArrayBuffer[]>;
+  #render: NativeRendering; #fonts: ArrayBuffer[] | undefined;
   #palette = new Uint8Array(1024); #scene = ''; #uiKey = ''; #controlsList: Control[] = []; #backHover = false;
   #raf = 0; #lastTime = 0; #step: Promise<unknown> | undefined; #acting = false; #actions: Action[] = [];
   constructor(private renderer: GameRenderer, private assets: Assets, engine: EngineClient, private ui: HTMLElement, private send: (command: Command) => Promise<EngineResult>, private inform: (message: string) => void) {
     this.#render = new NativeRendering(renderer, assets, engine, 'inventory');
-    const r = assets.rules.inventory!.rendering; this.#fonts = Promise.all([assets.bytes(r.asciiFont), assets.bytes(r.chineseFont)]);
     document.addEventListener('visibilitychange', () => { this.#lastTime = 0; if (document.hidden) { cancelAnimationFrame(this.#raf); this.#raf = 0; } else this.#schedule(); });
   }
   get active(): boolean { return this.#active; }
@@ -54,7 +53,7 @@ export class InventoryView {
     }
     const back = r.back[this.#backHover ? 1 : 0]!;
     await this.#render.animation('back', { ...back, x: equipment ? 553 : 543, frame: state.backTracks?.[this.#backHover ? 1 : 0]?.frame ?? 0 }, 5);
-    const [ascii, chinese] = await this.#fonts;
+    const [ascii, chinese] = this.#fonts ??= await Promise.all([this.assets.bytes(r.asciiFont), this.assets.bytes(r.chineseFont)]);
     const label = (id: string, text: string, x: number, y: number, color = 255): void => this.#render.image(id, indexedText(ascii!, chinese!, text, color, this.#palette), { x, y }, 10, `${state.tab}:${text}:${color}`);
     for (const [index, item] of state.entries.entries()) {
       const definition = rules[state.tab][item.id]!, color = index === state.selectedIndex ? 1 : equipment && (item.equipped || equipped.includes(item.id)) ? 211 : 255;

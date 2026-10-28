@@ -32,7 +32,10 @@ self.addEventListener('fetch', event => {
   event.respondWith((async () => {
     const cache = await caches.open(isDiscObject ? OBJECTS : SHELL);
     const key = event.request.mode === 'navigate' ? new URL('index.html', base).href : event.request;
-    const cached = await cache.match(key);
+    // This scope contains only same-origin static files. Vite's CORS middleware
+    // adds Vary: Origin although their bytes do not vary; module requests must
+    // match the installation's precache requests when the browser is offline.
+    const cached = await cache.match(key, { ignoreVary: true });
     if (cached) return cached;
     const response = await fetch(event.request);
     if (response.ok && response.type === 'basic') {

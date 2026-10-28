@@ -11,14 +11,13 @@ type Control = { element: HTMLButtonElement; image?: NativeImage; frame: number;
 /** Original parameter pages preserve player values; property transitions consume the shared native RNG. */
 export class StatusView {
   #active = false; #generation = 0; #state: StatusPanel | undefined;
-  #render: NativeRendering; #fonts: Promise<ArrayBuffer[]>;
+  #render: NativeRendering; #fonts: ArrayBuffer[] | undefined;
   #palette = new Uint8Array(1024); #scene = ''; #uiKey = ''; #controlsList: Control[] = []; #backHover = false;
   #rainMask: { step: number; image: DecodedBitmap } | undefined;
   #hpImages = new Map<string, Promise<DecodedBitmap>>();
   #raf = 0; #lastTime = 0; #step: Promise<unknown> | undefined; #acting = false; #actions: Action[] = [];
   constructor(private renderer: GameRenderer, private assets: Assets, engine: EngineClient, private ui: HTMLElement, private send: (command: Command) => Promise<EngineResult>, private inform: (message: string) => void) {
     this.#render = new NativeRendering(renderer, assets, engine, 'parameters');
-    const r = assets.rules.inventory!.rendering; this.#fonts = Promise.all([assets.bytes(r.asciiFont), assets.bytes(r.chineseFont)]);
     document.addEventListener('visibilitychange', () => { this.#lastTime = 0; if (document.hidden) { cancelAnimationFrame(this.#raf); this.#raf = 0; } else this.#schedule(); });
     for (const type of ['keydown', 'keyup'] as const) document.addEventListener(type, event => {
       if (!this.#active || this.#state?.transition || !['house', 'investment'].includes(this.#state!.page) || event.repeat || document.querySelector('dialog[open]')) return;
@@ -46,7 +45,8 @@ export class StatusView {
     }
     if (!this.#active || generation !== this.#generation) return;
     this.#render.begin(); this.#controls(snapshot, state);
-    const [ascii, chinese] = await this.#fonts;
+    const fonts = this.assets.rules.inventory!.rendering;
+    const [ascii, chinese] = this.#fonts ??= await Promise.all([this.assets.bytes(fonts.asciiFont), this.assets.bytes(fonts.chineseFont)]);
     const label = (id: string, text: unknown, x: number, y: number, color = 255, width?: number): void => {
       const content = String(text ?? ''), image = indexedText(ascii!, chinese!, content, color, this.#palette);
       this.#render.image(id, image, { x: x + (width === undefined ? 0 : (width * 8 - image.width) / 2), y }, 10, `${state.page}:${content}:${color}`);

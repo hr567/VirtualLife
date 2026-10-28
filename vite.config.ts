@@ -33,13 +33,13 @@ function discAssets(): Plugin {
     },
     async closeBundle() {
       await cp(root, path.resolve('dist/assets'), { recursive: true });
-      const buildHash = createHash('sha256').update(shell.join('\n'));
+      const worker = await readFile('public/sw.js', 'utf8');
+      const buildHash = createHash('sha256').update(shell.join('\n')).update(worker);
       const catalogs = ['assets/manifest.json', 'assets/catalog/maps.json', 'assets/catalog/rules.json', 'assets/catalog/events.json', 'assets/catalog/questionnaires.json'];
       for (const file of catalogs) buildHash.update(await readFile(file));
       const buildId = buildHash.digest('hex').slice(0, 16);
       const files = [...new Set(['index.html', ...shell, ...catalogs])];
       await writeFile('dist/shell-files.json', JSON.stringify(files));
-      const worker = await readFile('public/sw.js', 'utf8');
       await writeFile('dist/sw.js', worker.replace('__BUILD_ID__', buildId));
     },
   };

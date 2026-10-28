@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 
 const hash = (text: string): string => createHash('sha256').update(text).digest('hex');
@@ -649,7 +649,9 @@ test('ending history renders the original animated career portrait and edge pale
 
 test('map panning, browser save, backup integrity, restore and offline reload', async ({ page, context }, testInfo) => {
   const errors: string[] = [];
+  const moduleRequests: { url: string; origin: string | null }[] = [];
   page.on('pageerror', error => errors.push(error.message));
+  page.on('request', request => { if (['script', 'stylesheet'].includes(request.resourceType())) moduleRequests.push({ url: request.url(), origin: request.headers().origin ?? null }); });
   await page.goto('./');
   await expect(page.locator('#original-menu')).toBeVisible();
   await page.getByLabel('地图浏览', { exact: true }).selectOption('park');
@@ -680,8 +682,22 @@ test('map panning, browser save, backup integrity, restore and offline reload', 
   await page.getByRole('button', { name: '继续游戏', exact: true }).click();
   await expect(page.locator('#status')).toContainText('已读取存档');
   await expect(page.locator('#map-choice')).toHaveValue('park');
+  const cacheState = await page.evaluate(async () => ({
+      controller: navigator.serviceWorker.controller?.scriptURL ?? null,
+      caches: await caches.keys(),
+      modules: await Promise.all([...document.querySelectorAll<HTMLScriptElement>('script[src]')].map(async script => {
+        const cached = await caches.match(script.src, { ignoreVary: true });
+        return { url: script.src, vary: cached?.headers.get('vary'), cached: !!cached };
+      })),
+    }));
+  const cacheEvidence = testInfo.outputPath('offline-cache-state.json');
+  await writeFile(cacheEvidence, JSON.stringify(cacheState, null, 2));
+  await testInfo.attach('offline-cache-state', { contentType: 'application/json', path: cacheEvidence });
   await context.setOffline(true);
   await page.reload();
+  const requestEvidence = testInfo.outputPath('offline-module-requests.json');
+  await writeFile(requestEvidence, JSON.stringify(moduleRequests, null, 2));
+  await testInfo.attach('offline-module-requests', { contentType: 'application/json', path: requestEvidence });
   await expect(page.locator('#original-menu')).toBeVisible();
   await page.getByRole('button', { name: '继续游戏', exact: true }).click();
   await expect(page.locator('#status')).toContainText('已读取存档');

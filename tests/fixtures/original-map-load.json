@@ -1,0 +1,1842 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "method": "Original 0x41781d-0x417862 random-delay instructions execute once per Spirit_n, then original 0x41e130 god placement runs with only sprite positioning stubbed. Ordering is from 0x414870/0x417d60.",
+  "cases": [
+    {
+      "map": "acient",
+      "seed": 1,
+      "delaysMs": [],
+      "positions": [
+        {
+          "row": 26,
+          "column": 25
+        },
+        {
+          "row": 18,
+          "column": 15
+        },
+        {
+          "row": 24,
+          "column": 21
+        },
+        {
+          "row": 26,
+          "column": 9
+        },
+        {
+          "row": 47,
+          "column": 18
+        }
+      ],
+      "rngDraws": 5,
+      "rngState": 3403800452
+    },
+    {
+      "map": "acient",
+      "seed": 2,
+      "delaysMs": [],
+      "positions": [
+        {
+          "row": 28,
+          "column": 27
+        },
+        {
+          "row": 34,
+          "column": 5
+        },
+        {
+          "row": 43,
+          "column": 12
+        },
+        {
+          "row": 38,
+          "column": 23
+        },
+        {
+          "row": 33,
+          "column": 6
+        }
+      ],
+      "rngDraws": 5,
+      "rngState": 4079776401
+    },
+    {
+      "map": "acient",
+      "seed": 42,
+      "delaysMs": [],
+      "positions": [
+        {
+          "row": 45,
+          "column": 16
+        },
+        {
+          "row": 26,
+          "column": 9
+        },
+        {
+          "row": 30,
+          "column": 29
+        },
+        {
+          "row": 45,
+          "column": 20
+        },
+        {
+          "row": 37,
+          "column": 24
+        }
+      ],
+      "rngDraws": 5,
+      "rngState": 1054043289
+    },
+    {
+      "map": "acient",
+      "seed": 777,
+      "delaysMs": [],
+      "positions": [
+        {
+          "row": 33,
+          "column": 28
+        },
+        {
+          "row": 36,
+          "column": 25
+        },
+        {
+          "row": 34,
+          "column": 27
+        },
+        {
+          "row": 13,
+          "column": 10
+        },
+        {
+          "row": 43,
+          "column": 10
+        }
+      ],
+      "rngDraws": 5,
+      "rngState": 3975126764
+    },
+    {
+      "map": "acient",
+      "seed": 2026,
+      "delaysMs": [],
+      "positions": [
+        {
+          "row": 44,
+          "column": 21
+        },
+        {
+          "row": 22,
+          "column": 5
+        },
+        {
+          "row": 16,
+          "column": 11
+        },
+        {
+          "row": 42,
+          "column": 13
+        },
+        {
+          "row": 19,
+          "column": 8
+        }
+      ],
+      "rngDraws": 5,
+      "rngState": 2160529753
+    },
+    {
+      "map": "acient",
+      "seed": 32767,
+      "delaysMs": [],
+      "positions": [
+        {
+          "row": 15,
+          "column": 18
+        },
+        {
+          "row": 21,
+          "column": 20
+        },
+        {
+          "row": 44,
+          "column": 11
+        },
+        {
+          "row": 13,
+          "column": 20
+        },
+        {
+          "row": 44,
+          "column": 15
+        }
+      ],
+      "rngDraws": 5,
+      "rngState": 3285399914
+    },
+    {
+      "map": "business",
+      "seed": 1,
+      "delaysMs": [
+        10000,
+        10000,
+        9000,
+        9000,
+        10000,
+        9000
+      ],
+      "positions": [
+        {
+          "row": 13,
+          "column": 26
+        },
+        {
+          "row": 12,
+          "column": 19
+        },
+        {
+          "row": 16,
+          "column": 17
+        },
+        {
+          "row": 11,
+          "column": 24
+        },
+        {
+          "row": 12,
+          "column": 17
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 373929026
+    },
+    {
+      "map": "business",
+      "seed": 2,
+      "delaysMs": [
+        8000,
+        7000,
+        5000,
+        10000,
+        5000,
+        5000
+      ],
+      "positions": [
+        {
+          "row": 34,
+          "column": 19
+        },
+        {
+          "row": 10,
+          "column": 23
+        },
+        {
+          "row": 27,
+          "column": 28
+        },
+        {
+          "row": 35,
+          "column": 20
+        },
+        {
+          "row": 11,
+          "column": 24
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 2511719495
+    },
+    {
+      "map": "business",
+      "seed": 42,
+      "delaysMs": [
+        6000,
+        9000,
+        6000,
+        7000,
+        8000,
+        8000
+      ],
+      "positions": [
+        {
+          "row": 33,
+          "column": 14
+        },
+        {
+          "row": 30,
+          "column": 15
+        },
+        {
+          "row": 24,
+          "column": 25
+        },
+        {
+          "row": 13,
+          "column": 26
+        },
+        {
+          "row": 39,
+          "column": 8
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 2123992335
+    },
+    {
+      "map": "business",
+      "seed": 777,
+      "delaysMs": [
+        6000,
+        6000,
+        8000,
+        6000,
+        10000,
+        9000
+      ],
+      "positions": [
+        {
+          "row": 12,
+          "column": 11
+        },
+        {
+          "row": 16,
+          "column": 9
+        },
+        {
+          "row": 9,
+          "column": 22
+        },
+        {
+          "row": 20,
+          "column": 5
+        },
+        {
+          "row": 18,
+          "column": 19
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 1441956714
+    },
+    {
+      "map": "business",
+      "seed": 2026,
+      "delaysMs": [
+        5000,
+        9000,
+        8000,
+        7000,
+        6000,
+        5000
+      ],
+      "positions": [
+        {
+          "row": 20,
+          "column": 5
+        },
+        {
+          "row": 10,
+          "column": 15
+        },
+        {
+          "row": 13,
+          "column": 10
+        },
+        {
+          "row": 24,
+          "column": 25
+        },
+        {
+          "row": 12,
+          "column": 19
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 72594383
+    },
+    {
+      "map": "business",
+      "seed": 32767,
+      "delaysMs": [
+        6000,
+        8000,
+        9000,
+        7000,
+        10000,
+        10000
+      ],
+      "positions": [
+        {
+          "row": 18,
+          "column": 19
+        },
+        {
+          "row": 40,
+          "column": 7
+        },
+        {
+          "row": 37,
+          "column": 10
+        },
+        {
+          "row": 14,
+          "column": 27
+        },
+        {
+          "row": 16,
+          "column": 9
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 594805816
+    },
+    {
+      "map": "desert",
+      "seed": 1,
+      "delaysMs": [
+        10000,
+        10000,
+        9000,
+        9000,
+        10000,
+        9000,
+        5000,
+        5000,
+        9000,
+        7000,
+        10000,
+        10000,
+        6000,
+        8000,
+        6000,
+        10000,
+        6000,
+        7000
+      ],
+      "positions": [
+        {
+          "row": 30,
+          "column": 11
+        },
+        {
+          "row": 21,
+          "column": 6
+        },
+        {
+          "row": 38,
+          "column": 13
+        },
+        {
+          "row": 15,
+          "column": 12
+        },
+        {
+          "row": 19,
+          "column": 8
+        }
+      ],
+      "rngDraws": 23,
+      "rngState": 255755822
+    },
+    {
+      "map": "desert",
+      "seed": 2,
+      "delaysMs": [
+        8000,
+        7000,
+        5000,
+        10000,
+        5000,
+        5000,
+        9000,
+        6000,
+        6000,
+        9000,
+        6000,
+        6000,
+        9000,
+        5000,
+        10000,
+        8000,
+        10000,
+        6000
+      ],
+      "positions": [
+        {
+          "row": 40,
+          "column": 21
+        },
+        {
+          "row": 35,
+          "column": 12
+        },
+        {
+          "row": 30,
+          "column": 31
+        },
+        {
+          "row": 15,
+          "column": 30
+        },
+        {
+          "row": 12,
+          "column": 27
+        }
+      ],
+      "rngDraws": 23,
+      "rngState": 1239767523
+    },
+    {
+      "map": "desert",
+      "seed": 42,
+      "delaysMs": [
+        6000,
+        9000,
+        6000,
+        7000,
+        8000,
+        8000,
+        5000,
+        5000,
+        10000,
+        10000,
+        8000,
+        9000,
+        6000,
+        6000,
+        7000,
+        10000,
+        7000,
+        7000
+      ],
+      "positions": [
+        {
+          "row": 23,
+          "column": 28
+        },
+        {
+          "row": 29,
+          "column": 30
+        },
+        {
+          "row": 40,
+          "column": 15
+        },
+        {
+          "row": 6,
+          "column": 17
+        },
+        {
+          "row": 36,
+          "column": 19
+        }
+      ],
+      "rngDraws": 23,
+      "rngState": 1945529899
+    },
+    {
+      "map": "desert",
+      "seed": 777,
+      "delaysMs": [
+        6000,
+        6000,
+        8000,
+        6000,
+        10000,
+        9000,
+        5000,
+        10000,
+        7000,
+        8000,
+        5000,
+        6000,
+        6000,
+        7000,
+        8000,
+        6000,
+        10000,
+        9000
+      ],
+      "positions": [
+        {
+          "row": 31,
+          "column": 30
+        },
+        {
+          "row": 35,
+          "column": 26
+        },
+        {
+          "row": 36,
+          "column": 11
+        },
+        {
+          "row": 33,
+          "column": 28
+        },
+        {
+          "row": 40,
+          "column": 21
+        }
+      ],
+      "rngDraws": 23,
+      "rngState": 3639624406
+    },
+    {
+      "map": "desert",
+      "seed": 2026,
+      "delaysMs": [
+        5000,
+        9000,
+        8000,
+        7000,
+        6000,
+        5000,
+        6000,
+        5000,
+        5000,
+        6000,
+        8000,
+        8000,
+        9000,
+        8000,
+        5000,
+        8000,
+        8000,
+        9000
+      ],
+      "positions": [
+        {
+          "row": 34,
+          "column": 27
+        },
+        {
+          "row": 17,
+          "column": 28
+        },
+        {
+          "row": 7,
+          "column": 16
+        },
+        {
+          "row": 16,
+          "column": 29
+        },
+        {
+          "row": 24,
+          "column": 27
+        }
+      ],
+      "rngDraws": 23,
+      "rngState": 14625003
+    },
+    {
+      "map": "desert",
+      "seed": 32767,
+      "delaysMs": [
+        6000,
+        8000,
+        9000,
+        7000,
+        10000,
+        10000,
+        8000,
+        8000,
+        8000,
+        8000,
+        9000,
+        10000,
+        5000,
+        6000,
+        6000,
+        10000,
+        10000,
+        5000
+      ],
+      "positions": [
+        {
+          "row": 36,
+          "column": 19
+        },
+        {
+          "row": 33,
+          "column": 28
+        },
+        {
+          "row": 10,
+          "column": 25
+        },
+        {
+          "row": 33,
+          "column": 14
+        },
+        {
+          "row": 35,
+          "column": 12
+        }
+      ],
+      "rngDraws": 23,
+      "rngState": 63659716
+    },
+    {
+      "map": "lost",
+      "seed": 1,
+      "delaysMs": [
+        10000,
+        10000,
+        9000,
+        9000,
+        10000,
+        9000
+      ],
+      "positions": [
+        {
+          "row": 28,
+          "column": 7
+        },
+        {
+          "row": 24,
+          "column": 15
+        },
+        {
+          "row": 9,
+          "column": 16
+        },
+        {
+          "row": 23,
+          "column": 6
+        },
+        {
+          "row": 20,
+          "column": 5
+        }
+      ],
+      "rngDraws": 12,
+      "rngState": 1844513277
+    },
+    {
+      "map": "lost",
+      "seed": 2,
+      "delaysMs": [
+        8000,
+        7000,
+        5000,
+        10000,
+        5000,
+        5000
+      ],
+      "positions": [
+        {
+          "row": 15,
+          "column": 8
+        },
+        {
+          "row": 23,
+          "column": 6
+        },
+        {
+          "row": 28,
+          "column": 11
+        },
+        {
+          "row": 13,
+          "column": 14
+        },
+        {
+          "row": 20,
+          "column": 19
+        }
+      ],
+      "rngDraws": 12,
+      "rngState": 3994883566
+    },
+    {
+      "map": "lost",
+      "seed": 42,
+      "delaysMs": [
+        6000,
+        9000,
+        6000,
+        7000,
+        8000,
+        8000
+      ],
+      "positions": [
+        {
+          "row": 17,
+          "column": 18
+        },
+        {
+          "row": 25,
+          "column": 8
+        },
+        {
+          "row": 22,
+          "column": 17
+        },
+        {
+          "row": 11,
+          "column": 14
+        },
+        {
+          "row": 23,
+          "column": 16
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 2123992335
+    },
+    {
+      "map": "lost",
+      "seed": 777,
+      "delaysMs": [
+        6000,
+        6000,
+        8000,
+        6000,
+        10000,
+        9000
+      ],
+      "positions": [
+        {
+          "row": 16,
+          "column": 17
+        },
+        {
+          "row": 27,
+          "column": 8
+        },
+        {
+          "row": 18,
+          "column": 5
+        },
+        {
+          "row": 19,
+          "column": 6
+        },
+        {
+          "row": 23,
+          "column": 6
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 1441956714
+    },
+    {
+      "map": "lost",
+      "seed": 2026,
+      "delaysMs": [
+        5000,
+        9000,
+        8000,
+        7000,
+        6000,
+        5000
+      ],
+      "positions": [
+        {
+          "row": 24,
+          "column": 7
+        },
+        {
+          "row": 28,
+          "column": 7
+        },
+        {
+          "row": 13,
+          "column": 14
+        },
+        {
+          "row": 19,
+          "column": 18
+        },
+        {
+          "row": 24,
+          "column": 15
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 72594383
+    },
+    {
+      "map": "lost",
+      "seed": 32767,
+      "delaysMs": [
+        6000,
+        8000,
+        9000,
+        7000,
+        10000,
+        10000
+      ],
+      "positions": [
+        {
+          "row": 26,
+          "column": 13
+        },
+        {
+          "row": 17,
+          "column": 18
+        },
+        {
+          "row": 27,
+          "column": 8
+        },
+        {
+          "row": 13,
+          "column": 14
+        },
+        {
+          "row": 10,
+          "column": 15
+        }
+      ],
+      "rngDraws": 11,
+      "rngState": 594805816
+    },
+    {
+      "map": "park",
+      "seed": 1,
+      "delaysMs": [
+        10000,
+        10000,
+        9000,
+        9000,
+        10000,
+        9000,
+        5000,
+        5000
+      ],
+      "positions": [
+        {
+          "row": 20,
+          "column": 17
+        },
+        {
+          "row": 16,
+          "column": 17
+        },
+        {
+          "row": 12,
+          "column": 15
+        },
+        {
+          "row": 11,
+          "column": 12
+        },
+        {
+          "row": 22,
+          "column": 15
+        }
+      ],
+      "rngDraws": 14,
+      "rngState": 3250303071
+    },
+    {
+      "map": "park",
+      "seed": 2,
+      "delaysMs": [
+        8000,
+        7000,
+        5000,
+        10000,
+        5000,
+        5000,
+        9000,
+        6000
+      ],
+      "positions": [
+        {
+          "row": 22,
+          "column": 11
+        },
+        {
+          "row": 17,
+          "column": 16
+        },
+        {
+          "row": 13,
+          "column": 10
+        },
+        {
+          "row": 19,
+          "column": 8
+        },
+        {
+          "row": 20,
+          "column": 17
+        }
+      ],
+      "rngDraws": 13,
+      "rngState": 829199609
+    },
+    {
+      "map": "park",
+      "seed": 42,
+      "delaysMs": [
+        6000,
+        9000,
+        6000,
+        7000,
+        8000,
+        8000,
+        5000,
+        5000
+      ],
+      "positions": [
+        {
+          "row": 23,
+          "column": 14
+        },
+        {
+          "row": 14,
+          "column": 9
+        },
+        {
+          "row": 14,
+          "column": 19
+        },
+        {
+          "row": 11,
+          "column": 12
+        },
+        {
+          "row": 19,
+          "column": 8
+        }
+      ],
+      "rngDraws": 14,
+      "rngState": 465243840
+    },
+    {
+      "map": "park",
+      "seed": 777,
+      "delaysMs": [
+        6000,
+        6000,
+        8000,
+        6000,
+        10000,
+        9000,
+        5000,
+        10000
+      ],
+      "positions": [
+        {
+          "row": 13,
+          "column": 18
+        },
+        {
+          "row": 11,
+          "column": 16
+        },
+        {
+          "row": 15,
+          "column": 18
+        },
+        {
+          "row": 13,
+          "column": 10
+        },
+        {
+          "row": 14,
+          "column": 9
+        }
+      ],
+      "rngDraws": 15,
+      "rngState": 1827132750
+    },
+    {
+      "map": "park",
+      "seed": 2026,
+      "delaysMs": [
+        5000,
+        9000,
+        8000,
+        7000,
+        6000,
+        5000,
+        6000,
+        5000
+      ],
+      "positions": [
+        {
+          "row": 21,
+          "column": 16
+        },
+        {
+          "row": 13,
+          "column": 10
+        },
+        {
+          "row": 22,
+          "column": 15
+        },
+        {
+          "row": 17,
+          "column": 8
+        },
+        {
+          "row": 14,
+          "column": 19
+        }
+      ],
+      "rngDraws": 13,
+      "rngState": 3974691009
+    },
+    {
+      "map": "park",
+      "seed": 32767,
+      "delaysMs": [
+        6000,
+        8000,
+        9000,
+        7000,
+        10000,
+        10000,
+        8000,
+        8000
+      ],
+      "positions": [
+        {
+          "row": 20,
+          "column": 9
+        },
+        {
+          "row": 11,
+          "column": 16
+        },
+        {
+          "row": 17,
+          "column": 16
+        },
+        {
+          "row": 12,
+          "column": 15
+        },
+        {
+          "row": 18,
+          "column": 17
+        }
+      ],
+      "rngDraws": 13,
+      "rngState": 2652009586
+    },
+    {
+      "map": "play",
+      "seed": 1,
+      "delaysMs": [
+        10000,
+        10000,
+        9000,
+        9000,
+        10000,
+        9000,
+        5000,
+        5000,
+        9000,
+        7000,
+        10000,
+        10000,
+        6000,
+        8000,
+        6000,
+        10000,
+        6000,
+        7000,
+        8000,
+        5000,
+        8000
+      ],
+      "positions": [
+        {
+          "row": 24,
+          "column": 13
+        },
+        {
+          "row": 19,
+          "column": 14
+        },
+        {
+          "row": 25,
+          "column": 26
+        },
+        {
+          "row": 44,
+          "column": 11
+        },
+        {
+          "row": 8,
+          "column": 7
+        }
+      ],
+      "rngDraws": 26,
+      "rngState": 811474043
+    },
+    {
+      "map": "play",
+      "seed": 2,
+      "delaysMs": [
+        8000,
+        7000,
+        5000,
+        10000,
+        5000,
+        5000,
+        9000,
+        6000,
+        6000,
+        9000,
+        6000,
+        6000,
+        9000,
+        5000,
+        10000,
+        8000,
+        10000,
+        6000,
+        9000,
+        10000,
+        10000
+      ],
+      "positions": [
+        {
+          "row": 41,
+          "column": 8
+        },
+        {
+          "row": 8,
+          "column": 11
+        },
+        {
+          "row": 18,
+          "column": 27
+        },
+        {
+          "row": 21,
+          "column": 16
+        },
+        {
+          "row": 35,
+          "column": 24
+        }
+      ],
+      "rngDraws": 26,
+      "rngState": 3683705956
+    },
+    {
+      "map": "play",
+      "seed": 42,
+      "delaysMs": [
+        6000,
+        9000,
+        6000,
+        7000,
+        8000,
+        8000,
+        5000,
+        5000,
+        10000,
+        10000,
+        8000,
+        9000,
+        6000,
+        6000,
+        7000,
+        10000,
+        7000,
+        7000,
+        10000,
+        7000,
+        8000
+      ],
+      "positions": [
+        {
+          "row": 6,
+          "column": 5
+        },
+        {
+          "row": 39,
+          "column": 20
+        },
+        {
+          "row": 31,
+          "column": 14
+        },
+        {
+          "row": 38,
+          "column": 5
+        },
+        {
+          "row": 8,
+          "column": 19
+        }
+      ],
+      "rngDraws": 26,
+      "rngState": 2608865484
+    },
+    {
+      "map": "play",
+      "seed": 777,
+      "delaysMs": [
+        6000,
+        6000,
+        8000,
+        6000,
+        10000,
+        9000,
+        5000,
+        10000,
+        7000,
+        8000,
+        5000,
+        6000,
+        6000,
+        7000,
+        8000,
+        6000,
+        10000,
+        9000,
+        6000,
+        7000,
+        8000
+      ],
+      "positions": [
+        {
+          "row": 35,
+          "column": 8
+        },
+        {
+          "row": 45,
+          "column": 12
+        },
+        {
+          "row": 17,
+          "column": 6
+        },
+        {
+          "row": 9,
+          "column": 18
+        },
+        {
+          "row": 32,
+          "column": 13
+        }
+      ],
+      "rngDraws": 26,
+      "rngState": 575411907
+    },
+    {
+      "map": "play",
+      "seed": 2026,
+      "delaysMs": [
+        5000,
+        9000,
+        8000,
+        7000,
+        6000,
+        5000,
+        6000,
+        5000,
+        5000,
+        6000,
+        8000,
+        8000,
+        9000,
+        8000,
+        5000,
+        8000,
+        8000,
+        9000,
+        9000,
+        10000,
+        6000
+      ],
+      "positions": [
+        {
+          "row": 33,
+          "column": 26
+        },
+        {
+          "row": 14,
+          "column": 5
+        },
+        {
+          "row": 16,
+          "column": 25
+        },
+        {
+          "row": 14,
+          "column": 23
+        },
+        {
+          "row": 16,
+          "column": 11
+        }
+      ],
+      "rngDraws": 26,
+      "rngState": 1695379084
+    },
+    {
+      "map": "play",
+      "seed": 32767,
+      "delaysMs": [
+        6000,
+        8000,
+        9000,
+        7000,
+        10000,
+        10000,
+        8000,
+        8000,
+        8000,
+        8000,
+        9000,
+        10000,
+        5000,
+        6000,
+        6000,
+        10000,
+        10000,
+        5000,
+        9000,
+        5000,
+        10000
+      ],
+      "positions": [
+        {
+          "row": 11,
+          "column": 8
+        },
+        {
+          "row": 37,
+          "column": 22
+        },
+        {
+          "row": 23,
+          "column": 14
+        },
+        {
+          "row": 17,
+          "column": 26
+        },
+        {
+          "row": 9,
+          "column": 8
+        }
+      ],
+      "rngDraws": 26,
+      "rngState": 1038945449
+    },
+    {
+      "map": "social",
+      "seed": 1,
+      "delaysMs": [
+        10000,
+        10000,
+        9000,
+        9000
+      ],
+      "positions": [
+        {
+          "row": 50,
+          "column": 15
+        },
+        {
+          "row": 46,
+          "column": 35
+        },
+        {
+          "row": 39,
+          "column": 6
+        },
+        {
+          "row": 17,
+          "column": 28
+        },
+        {
+          "row": 48,
+          "column": 11
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 1766988168
+    },
+    {
+      "map": "social",
+      "seed": 2,
+      "delaysMs": [
+        8000,
+        7000,
+        5000,
+        10000
+      ],
+      "positions": [
+        {
+          "row": 9,
+          "column": 16
+        },
+        {
+          "row": 55,
+          "column": 20
+        },
+        {
+          "row": 36,
+          "column": 33
+        },
+        {
+          "row": 30,
+          "column": 11
+        },
+        {
+          "row": 28,
+          "column": 31
+        }
+      ],
+      "rngDraws": 10,
+      "rngState": 1200382164
+    },
+    {
+      "map": "social",
+      "seed": 42,
+      "delaysMs": [
+        6000,
+        9000,
+        6000,
+        7000
+      ],
+      "positions": [
+        {
+          "row": 12,
+          "column": 19
+        },
+        {
+          "row": 38,
+          "column": 7
+        },
+        {
+          "row": 27,
+          "column": 28
+        },
+        {
+          "row": 9,
+          "column": 16
+        },
+        {
+          "row": 25,
+          "column": 10
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 1036078381
+    },
+    {
+      "map": "social",
+      "seed": 777,
+      "delaysMs": [
+        6000,
+        6000,
+        8000,
+        6000
+      ],
+      "positions": [
+        {
+          "row": 45,
+          "column": 22
+        },
+        {
+          "row": 56,
+          "column": 23
+        },
+        {
+          "row": 19,
+          "column": 26
+        },
+        {
+          "row": 29,
+          "column": 12
+        },
+        {
+          "row": 26,
+          "column": 11
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 3960744304
+    },
+    {
+      "map": "social",
+      "seed": 2026,
+      "delaysMs": [
+        5000,
+        9000,
+        8000,
+        7000
+      ],
+      "positions": [
+        {
+          "row": 21,
+          "column": 36
+        },
+        {
+          "row": 23,
+          "column": 26
+        },
+        {
+          "row": 44,
+          "column": 35
+        },
+        {
+          "row": 17,
+          "column": 28
+        },
+        {
+          "row": 40,
+          "column": 37
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 445935085
+    },
+    {
+      "map": "social",
+      "seed": 32767,
+      "delaysMs": [
+        6000,
+        8000,
+        9000,
+        7000
+      ],
+      "positions": [
+        {
+          "row": 23,
+          "column": 8
+        },
+        {
+          "row": 45,
+          "column": 22
+        },
+        {
+          "row": 28,
+          "column": 29
+        },
+        {
+          "row": 56,
+          "column": 21
+        },
+        {
+          "row": 14,
+          "column": 31
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 3017894734
+    },
+    {
+      "map": "study",
+      "seed": 1,
+      "delaysMs": [
+        10000,
+        10000,
+        9000,
+        9000
+      ],
+      "positions": [
+        {
+          "row": 39,
+          "column": 8
+        },
+        {
+          "row": 8,
+          "column": 15
+        },
+        {
+          "row": 20,
+          "column": 31
+        },
+        {
+          "row": 35,
+          "column": 22
+        },
+        {
+          "row": 14,
+          "column": 7
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 1766988168
+    },
+    {
+      "map": "study",
+      "seed": 2,
+      "delaysMs": [
+        8000,
+        7000,
+        5000,
+        10000
+      ],
+      "positions": [
+        {
+          "row": 6,
+          "column": 17
+        },
+        {
+          "row": 26,
+          "column": 29
+        },
+        {
+          "row": 6,
+          "column": 7
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 40,
+          "column": 9
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 701608101
+    },
+    {
+      "map": "study",
+      "seed": 42,
+      "delaysMs": [
+        6000,
+        9000,
+        6000,
+        7000
+      ],
+      "positions": [
+        {
+          "row": 28,
+          "column": 7
+        },
+        {
+          "row": 12,
+          "column": 5
+        },
+        {
+          "row": 23,
+          "column": 30
+        },
+        {
+          "row": 39,
+          "column": 14
+        },
+        {
+          "row": 42,
+          "column": 11
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 1036078381
+    },
+    {
+      "map": "study",
+      "seed": 777,
+      "delaysMs": [
+        6000,
+        6000,
+        8000,
+        6000
+      ],
+      "positions": [
+        {
+          "row": 15,
+          "column": 26
+        },
+        {
+          "row": 15,
+          "column": 20
+        },
+        {
+          "row": 29,
+          "column": 26
+        },
+        {
+          "row": 8,
+          "column": 21
+        },
+        {
+          "row": 11,
+          "column": 24
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 3960744304
+    },
+    {
+      "map": "study",
+      "seed": 2026,
+      "delaysMs": [
+        5000,
+        9000,
+        8000,
+        7000
+      ],
+      "positions": [
+        {
+          "row": 40,
+          "column": 9
+        },
+        {
+          "row": 14,
+          "column": 21
+        },
+        {
+          "row": 37,
+          "column": 20
+        },
+        {
+          "row": 39,
+          "column": 14
+        },
+        {
+          "row": 29,
+          "column": 26
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 445935085
+    },
+    {
+      "map": "study",
+      "seed": 32767,
+      "delaysMs": [
+        6000,
+        8000,
+        9000,
+        7000
+      ],
+      "positions": [
+        {
+          "row": 10,
+          "column": 23
+        },
+        {
+          "row": 26,
+          "column": 5
+        },
+        {
+          "row": 15,
+          "column": 16
+        },
+        {
+          "row": 38,
+          "column": 15
+        },
+        {
+          "row": 10,
+          "column": 3
+        }
+      ],
+      "rngDraws": 9,
+      "rngState": 3017894734
+    }
+  ]
+}

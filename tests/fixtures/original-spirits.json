@@ -1,0 +1,9612 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "method": "Original placement and respawn execute with only sprite-position drawing hooked; original sprite clock runs with controlled GetTickCount and drawing hook; original slot arithmetic block executes unchanged",
+  "placement": [
+    {
+      "map": "acient",
+      "seed": 1,
+      "initial": [
+        {
+          "row": 26,
+          "column": 25
+        },
+        {
+          "row": 18,
+          "column": 15
+        },
+        {
+          "row": 24,
+          "column": 21
+        },
+        {
+          "row": 26,
+          "column": 9
+        },
+        {
+          "row": 47,
+          "column": 18
+        }
+      ],
+      "draws": 5,
+      "rngState": 3403800452,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 18,
+              "column": 15
+            },
+            {
+              "row": 24,
+              "column": 21
+            },
+            {
+              "row": 26,
+              "column": 9
+            },
+            {
+              "row": 47,
+              "column": 18
+            }
+          ],
+          "draws": 6,
+          "rngState": 1030492215
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 24,
+              "column": 21
+            },
+            {
+              "row": 26,
+              "column": 9
+            },
+            {
+              "row": 47,
+              "column": 18
+            }
+          ],
+          "draws": 7,
+          "rngState": 752224798
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 18,
+              "column": 23
+            },
+            {
+              "row": 26,
+              "column": 9
+            },
+            {
+              "row": 47,
+              "column": 18
+            }
+          ],
+          "draws": 8,
+          "rngState": 1924036713
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 18,
+              "column": 23
+            },
+            {
+              "row": 32,
+              "column": 7
+            },
+            {
+              "row": 47,
+              "column": 18
+            }
+          ],
+          "draws": 9,
+          "rngState": 1766988168
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 18,
+              "column": 23
+            },
+            {
+              "row": 32,
+              "column": 7
+            },
+            {
+              "row": 42,
+              "column": 13
+            }
+          ],
+          "draws": 10,
+          "rngState": 3750785579
+        }
+      ]
+    },
+    {
+      "map": "acient",
+      "seed": 2,
+      "initial": [
+        {
+          "row": 28,
+          "column": 27
+        },
+        {
+          "row": 34,
+          "column": 5
+        },
+        {
+          "row": 43,
+          "column": 12
+        },
+        {
+          "row": 38,
+          "column": 23
+        },
+        {
+          "row": 33,
+          "column": 6
+        }
+      ],
+      "draws": 5,
+      "rngState": 4079776401,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 34,
+              "column": 5
+            },
+            {
+              "row": 43,
+              "column": 12
+            },
+            {
+              "row": 38,
+              "column": 23
+            },
+            {
+              "row": 33,
+              "column": 6
+            }
+          ],
+          "draws": 6,
+          "rngState": 1287834384
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 43,
+              "column": 12
+            },
+            {
+              "row": 38,
+              "column": 23
+            },
+            {
+              "row": 33,
+              "column": 6
+            }
+          ],
+          "draws": 7,
+          "rngState": 956202387
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 36,
+              "column": 25
+            },
+            {
+              "row": 38,
+              "column": 23
+            },
+            {
+              "row": 33,
+              "column": 6
+            }
+          ],
+          "draws": 8,
+          "rngState": 1732194826
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 36,
+              "column": 25
+            },
+            {
+              "row": 45,
+              "column": 16
+            },
+            {
+              "row": 33,
+              "column": 6
+            }
+          ],
+          "draws": 9,
+          "rngState": 701608101
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 36,
+              "column": 25
+            },
+            {
+              "row": 45,
+              "column": 16
+            },
+            {
+              "row": 29,
+              "column": 10
+            }
+          ],
+          "draws": 10,
+          "rngState": 1200382164
+        }
+      ]
+    },
+    {
+      "map": "acient",
+      "seed": 42,
+      "initial": [
+        {
+          "row": 45,
+          "column": 16
+        },
+        {
+          "row": 26,
+          "column": 9
+        },
+        {
+          "row": 30,
+          "column": 29
+        },
+        {
+          "row": 45,
+          "column": 20
+        },
+        {
+          "row": 37,
+          "column": 24
+        }
+      ],
+      "draws": 5,
+      "rngState": 1054043289,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 16,
+              "column": 11
+            },
+            {
+              "row": 26,
+              "column": 9
+            },
+            {
+              "row": 30,
+              "column": 29
+            },
+            {
+              "row": 45,
+              "column": 20
+            },
+            {
+              "row": 37,
+              "column": 24
+            }
+          ],
+          "draws": 6,
+          "rngState": 2991586552
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 16,
+              "column": 11
+            },
+            {
+              "row": 15,
+              "column": 12
+            },
+            {
+              "row": 30,
+              "column": 29
+            },
+            {
+              "row": 45,
+              "column": 20
+            },
+            {
+              "row": 37,
+              "column": 24
+            }
+          ],
+          "draws": 7,
+          "rngState": 525371355
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 16,
+              "column": 11
+            },
+            {
+              "row": 15,
+              "column": 12
+            },
+            {
+              "row": 44,
+              "column": 21
+            },
+            {
+              "row": 45,
+              "column": 20
+            },
+            {
+              "row": 37,
+              "column": 24
+            }
+          ],
+          "draws": 8,
+          "rngState": 2648453938
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 16,
+              "column": 11
+            },
+            {
+              "row": 15,
+              "column": 12
+            },
+            {
+              "row": 44,
+              "column": 21
+            },
+            {
+              "row": 35,
+              "column": 26
+            },
+            {
+              "row": 37,
+              "column": 24
+            }
+          ],
+          "draws": 9,
+          "rngState": 1036078381
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 16,
+              "column": 11
+            },
+            {
+              "row": 15,
+              "column": 12
+            },
+            {
+              "row": 44,
+              "column": 21
+            },
+            {
+              "row": 35,
+              "column": 26
+            },
+            {
+              "row": 41,
+              "column": 8
+            }
+          ],
+          "draws": 12,
+          "rngState": 4110349206
+        }
+      ]
+    },
+    {
+      "map": "acient",
+      "seed": 777,
+      "initial": [
+        {
+          "row": 33,
+          "column": 28
+        },
+        {
+          "row": 36,
+          "column": 25
+        },
+        {
+          "row": 34,
+          "column": 27
+        },
+        {
+          "row": 13,
+          "column": 10
+        },
+        {
+          "row": 43,
+          "column": 10
+        }
+      ],
+      "draws": 5,
+      "rngState": 3975126764,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 32,
+              "column": 7
+            },
+            {
+              "row": 36,
+              "column": 25
+            },
+            {
+              "row": 34,
+              "column": 27
+            },
+            {
+              "row": 13,
+              "column": 10
+            },
+            {
+              "row": 43,
+              "column": 10
+            }
+          ],
+          "draws": 6,
+          "rngState": 3159519743
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 32,
+              "column": 7
+            },
+            {
+              "row": 18,
+              "column": 23
+            },
+            {
+              "row": 34,
+              "column": 27
+            },
+            {
+              "row": 13,
+              "column": 10
+            },
+            {
+              "row": 43,
+              "column": 10
+            }
+          ],
+          "draws": 7,
+          "rngState": 125043910
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 32,
+              "column": 7
+            },
+            {
+              "row": 18,
+              "column": 23
+            },
+            {
+              "row": 38,
+              "column": 23
+            },
+            {
+              "row": 13,
+              "column": 10
+            },
+            {
+              "row": 43,
+              "column": 10
+            }
+          ],
+          "draws": 8,
+          "rngState": 3378587761
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 32,
+              "column": 7
+            },
+            {
+              "row": 18,
+              "column": 23
+            },
+            {
+              "row": 38,
+              "column": 23
+            },
+            {
+              "row": 25,
+              "column": 22
+            },
+            {
+              "row": 43,
+              "column": 10
+            }
+          ],
+          "draws": 9,
+          "rngState": 3960744304
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 32,
+              "column": 7
+            },
+            {
+              "row": 18,
+              "column": 23
+            },
+            {
+              "row": 38,
+              "column": 23
+            },
+            {
+              "row": 25,
+              "column": 22
+            },
+            {
+              "row": 37,
+              "column": 24
+            }
+          ],
+          "draws": 10,
+          "rngState": 322691699
+        }
+      ]
+    },
+    {
+      "map": "acient",
+      "seed": 2026,
+      "initial": [
+        {
+          "row": 44,
+          "column": 21
+        },
+        {
+          "row": 22,
+          "column": 5
+        },
+        {
+          "row": 16,
+          "column": 11
+        },
+        {
+          "row": 42,
+          "column": 13
+        },
+        {
+          "row": 19,
+          "column": 8
+        }
+      ],
+      "draws": 5,
+      "rngState": 2160529753,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 22,
+              "column": 5
+            },
+            {
+              "row": 16,
+              "column": 11
+            },
+            {
+              "row": 42,
+              "column": 13
+            },
+            {
+              "row": 19,
+              "column": 8
+            }
+          ],
+          "draws": 6,
+          "rngState": 2457341624
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 33,
+              "column": 28
+            },
+            {
+              "row": 16,
+              "column": 11
+            },
+            {
+              "row": 42,
+              "column": 13
+            },
+            {
+              "row": 19,
+              "column": 8
+            }
+          ],
+          "draws": 7,
+          "rngState": 1489982107
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 33,
+              "column": 28
+            },
+            {
+              "row": 33,
+              "column": 6
+            },
+            {
+              "row": 42,
+              "column": 13
+            },
+            {
+              "row": 19,
+              "column": 8
+            }
+          ],
+          "draws": 8,
+          "rngState": 4286239474
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 33,
+              "column": 28
+            },
+            {
+              "row": 33,
+              "column": 6
+            },
+            {
+              "row": 15,
+              "column": 18
+            },
+            {
+              "row": 19,
+              "column": 8
+            }
+          ],
+          "draws": 10,
+          "rngState": 1734559996
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 30,
+              "column": 9
+            },
+            {
+              "row": 33,
+              "column": 28
+            },
+            {
+              "row": 33,
+              "column": 6
+            },
+            {
+              "row": 15,
+              "column": 18
+            },
+            {
+              "row": 21,
+              "column": 20
+            }
+          ],
+          "draws": 11,
+          "rngState": 72594383
+        }
+      ]
+    },
+    {
+      "map": "acient",
+      "seed": 32767,
+      "initial": [
+        {
+          "row": 15,
+          "column": 18
+        },
+        {
+          "row": 21,
+          "column": 20
+        },
+        {
+          "row": 44,
+          "column": 11
+        },
+        {
+          "row": 13,
+          "column": 20
+        },
+        {
+          "row": 44,
+          "column": 15
+        }
+      ],
+      "draws": 5,
+      "rngState": 3285399914,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 18,
+              "column": 15
+            },
+            {
+              "row": 21,
+              "column": 20
+            },
+            {
+              "row": 44,
+              "column": 11
+            },
+            {
+              "row": 13,
+              "column": 20
+            },
+            {
+              "row": 44,
+              "column": 15
+            }
+          ],
+          "draws": 6,
+          "rngState": 2083199621
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 18,
+              "column": 15
+            },
+            {
+              "row": 31,
+              "column": 30
+            },
+            {
+              "row": 44,
+              "column": 11
+            },
+            {
+              "row": 13,
+              "column": 20
+            },
+            {
+              "row": 44,
+              "column": 15
+            }
+          ],
+          "draws": 7,
+          "rngState": 1312793396
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 18,
+              "column": 15
+            },
+            {
+              "row": 31,
+              "column": 30
+            },
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 13,
+              "column": 20
+            },
+            {
+              "row": 44,
+              "column": 15
+            }
+          ],
+          "draws": 8,
+          "rngState": 3864888615
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 18,
+              "column": 15
+            },
+            {
+              "row": 31,
+              "column": 30
+            },
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 37,
+              "column": 24
+            },
+            {
+              "row": 44,
+              "column": 15
+            }
+          ],
+          "draws": 10,
+          "rngState": 116200665
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 18,
+              "column": 15
+            },
+            {
+              "row": 31,
+              "column": 30
+            },
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 37,
+              "column": 24
+            },
+            {
+              "row": 42,
+              "column": 27
+            }
+          ],
+          "draws": 11,
+          "rngState": 594805816
+        }
+      ]
+    },
+    {
+      "map": "business",
+      "seed": 1,
+      "initial": [
+        {
+          "row": 24,
+          "column": 25
+        },
+        {
+          "row": 40,
+          "column": 7
+        },
+        {
+          "row": 32,
+          "column": 15
+        },
+        {
+          "row": 9,
+          "column": 22
+        },
+        {
+          "row": 25,
+          "column": 26
+        }
+      ],
+      "draws": 5,
+      "rngState": 3403800452,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 40,
+              "column": 7
+            },
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 9,
+              "column": 22
+            },
+            {
+              "row": 25,
+              "column": 26
+            }
+          ],
+          "draws": 6,
+          "rngState": 1030492215
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 13,
+              "column": 26
+            },
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 9,
+              "column": 22
+            },
+            {
+              "row": 25,
+              "column": 26
+            }
+          ],
+          "draws": 7,
+          "rngState": 752224798
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 13,
+              "column": 26
+            },
+            {
+              "row": 12,
+              "column": 19
+            },
+            {
+              "row": 9,
+              "column": 22
+            },
+            {
+              "row": 25,
+              "column": 26
+            }
+          ],
+          "draws": 8,
+          "rngState": 1924036713
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 13,
+              "column": 26
+            },
+            {
+              "row": 12,
+              "column": 19
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 25,
+              "column": 26
+            }
+          ],
+          "draws": 9,
+          "rngState": 1766988168
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 13,
+              "column": 26
+            },
+            {
+              "row": 12,
+              "column": 19
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 11,
+              "column": 24
+            }
+          ],
+          "draws": 10,
+          "rngState": 3750785579
+        }
+      ]
+    },
+    {
+      "map": "business",
+      "seed": 2,
+      "initial": [
+        {
+          "row": 26,
+          "column": 27
+        },
+        {
+          "row": 13,
+          "column": 18
+        },
+        {
+          "row": 21,
+          "column": 22
+        },
+        {
+          "row": 32,
+          "column": 15
+        },
+        {
+          "row": 35,
+          "column": 12
+        }
+      ],
+      "draws": 5,
+      "rngState": 4079776401,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 12,
+              "column": 25
+            },
+            {
+              "row": 13,
+              "column": 18
+            },
+            {
+              "row": 21,
+              "column": 22
+            },
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 35,
+              "column": 12
+            }
+          ],
+          "draws": 6,
+          "rngState": 1287834384
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 12,
+              "column": 25
+            },
+            {
+              "row": 34,
+              "column": 19
+            },
+            {
+              "row": 21,
+              "column": 22
+            },
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 35,
+              "column": 12
+            }
+          ],
+          "draws": 7,
+          "rngState": 956202387
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 12,
+              "column": 25
+            },
+            {
+              "row": 34,
+              "column": 19
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 35,
+              "column": 12
+            }
+          ],
+          "draws": 8,
+          "rngState": 1732194826
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 12,
+              "column": 25
+            },
+            {
+              "row": 34,
+              "column": 19
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 35,
+              "column": 12
+            }
+          ],
+          "draws": 9,
+          "rngState": 701608101
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 12,
+              "column": 25
+            },
+            {
+              "row": 34,
+              "column": 19
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 35,
+              "column": 20
+            }
+          ],
+          "draws": 10,
+          "rngState": 1200382164
+        }
+      ]
+    },
+    {
+      "map": "business",
+      "seed": 42,
+      "initial": [
+        {
+          "row": 18,
+          "column": 19
+        },
+        {
+          "row": 21,
+          "column": 22
+        },
+        {
+          "row": 32,
+          "column": 17
+        },
+        {
+          "row": 30,
+          "column": 25
+        },
+        {
+          "row": 15,
+          "column": 16
+        }
+      ],
+      "draws": 5,
+      "rngState": 1054043289,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 19,
+              "column": 20
+            },
+            {
+              "row": 21,
+              "column": 22
+            },
+            {
+              "row": 32,
+              "column": 17
+            },
+            {
+              "row": 30,
+              "column": 25
+            },
+            {
+              "row": 15,
+              "column": 16
+            }
+          ],
+          "draws": 6,
+          "rngState": 2991586552
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 19,
+              "column": 20
+            },
+            {
+              "row": 33,
+              "column": 14
+            },
+            {
+              "row": 32,
+              "column": 17
+            },
+            {
+              "row": 30,
+              "column": 25
+            },
+            {
+              "row": 15,
+              "column": 16
+            }
+          ],
+          "draws": 7,
+          "rngState": 525371355
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 19,
+              "column": 20
+            },
+            {
+              "row": 33,
+              "column": 14
+            },
+            {
+              "row": 30,
+              "column": 15
+            },
+            {
+              "row": 30,
+              "column": 25
+            },
+            {
+              "row": 15,
+              "column": 16
+            }
+          ],
+          "draws": 8,
+          "rngState": 2648453938
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 19,
+              "column": 20
+            },
+            {
+              "row": 33,
+              "column": 14
+            },
+            {
+              "row": 30,
+              "column": 15
+            },
+            {
+              "row": 24,
+              "column": 25
+            },
+            {
+              "row": 15,
+              "column": 16
+            }
+          ],
+          "draws": 9,
+          "rngState": 1036078381
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 19,
+              "column": 20
+            },
+            {
+              "row": 33,
+              "column": 14
+            },
+            {
+              "row": 30,
+              "column": 15
+            },
+            {
+              "row": 24,
+              "column": 25
+            },
+            {
+              "row": 13,
+              "column": 26
+            }
+          ],
+          "draws": 10,
+          "rngState": 2263460668
+        }
+      ]
+    },
+    {
+      "map": "business",
+      "seed": 777,
+      "initial": [
+        {
+          "row": 14,
+          "column": 17
+        },
+        {
+          "row": 20,
+          "column": 21
+        },
+        {
+          "row": 22,
+          "column": 23
+        },
+        {
+          "row": 26,
+          "column": 11
+        },
+        {
+          "row": 9,
+          "column": 22
+        }
+      ],
+      "draws": 5,
+      "rngState": 3975126764,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 23,
+              "column": 24
+            },
+            {
+              "row": 20,
+              "column": 21
+            },
+            {
+              "row": 22,
+              "column": 23
+            },
+            {
+              "row": 26,
+              "column": 11
+            },
+            {
+              "row": 9,
+              "column": 22
+            }
+          ],
+          "draws": 6,
+          "rngState": 3159519743
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 23,
+              "column": 24
+            },
+            {
+              "row": 12,
+              "column": 11
+            },
+            {
+              "row": 22,
+              "column": 23
+            },
+            {
+              "row": 26,
+              "column": 11
+            },
+            {
+              "row": 9,
+              "column": 22
+            }
+          ],
+          "draws": 7,
+          "rngState": 125043910
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 23,
+              "column": 24
+            },
+            {
+              "row": 12,
+              "column": 11
+            },
+            {
+              "row": 16,
+              "column": 9
+            },
+            {
+              "row": 26,
+              "column": 11
+            },
+            {
+              "row": 9,
+              "column": 22
+            }
+          ],
+          "draws": 8,
+          "rngState": 3378587761
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 23,
+              "column": 24
+            },
+            {
+              "row": 12,
+              "column": 11
+            },
+            {
+              "row": 16,
+              "column": 9
+            },
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 9,
+              "column": 22
+            }
+          ],
+          "draws": 10,
+          "rngState": 322691699
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 23,
+              "column": 24
+            },
+            {
+              "row": 12,
+              "column": 11
+            },
+            {
+              "row": 16,
+              "column": 9
+            },
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 18,
+              "column": 19
+            }
+          ],
+          "draws": 11,
+          "rngState": 1441956714
+        }
+      ]
+    },
+    {
+      "map": "business",
+      "seed": 2026,
+      "initial": [
+        {
+          "row": 12,
+          "column": 17
+        },
+        {
+          "row": 29,
+          "column": 14
+        },
+        {
+          "row": 11,
+          "column": 16
+        },
+        {
+          "row": 10,
+          "column": 23
+        },
+        {
+          "row": 30,
+          "column": 25
+        }
+      ],
+      "draws": 5,
+      "rngState": 2160529753,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 29,
+              "column": 14
+            },
+            {
+              "row": 11,
+              "column": 16
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 30,
+              "column": 25
+            }
+          ],
+          "draws": 6,
+          "rngState": 2457341624
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 11,
+              "column": 16
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 30,
+              "column": 25
+            }
+          ],
+          "draws": 7,
+          "rngState": 1489982107
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 10,
+              "column": 15
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 30,
+              "column": 25
+            }
+          ],
+          "draws": 8,
+          "rngState": 4286239474
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 10,
+              "column": 15
+            },
+            {
+              "row": 13,
+              "column": 10
+            },
+            {
+              "row": 30,
+              "column": 25
+            }
+          ],
+          "draws": 9,
+          "rngState": 445935085
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 32,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 10,
+              "column": 15
+            },
+            {
+              "row": 13,
+              "column": 10
+            },
+            {
+              "row": 24,
+              "column": 25
+            }
+          ],
+          "draws": 10,
+          "rngState": 1734559996
+        }
+      ]
+    },
+    {
+      "map": "business",
+      "seed": 32767,
+      "initial": [
+        {
+          "row": 29,
+          "column": 14
+        },
+        {
+          "row": 36,
+          "column": 11
+        },
+        {
+          "row": 12,
+          "column": 25
+        },
+        {
+          "row": 20,
+          "column": 21
+        },
+        {
+          "row": 34,
+          "column": 13
+        }
+      ],
+      "draws": 5,
+      "rngState": 3285399914,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 36,
+              "column": 11
+            },
+            {
+              "row": 12,
+              "column": 25
+            },
+            {
+              "row": 20,
+              "column": 21
+            },
+            {
+              "row": 34,
+              "column": 13
+            }
+          ],
+          "draws": 6,
+          "rngState": 2083199621
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 12,
+              "column": 25
+            },
+            {
+              "row": 20,
+              "column": 21
+            },
+            {
+              "row": 34,
+              "column": 13
+            }
+          ],
+          "draws": 7,
+          "rngState": 1312793396
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 40,
+              "column": 7
+            },
+            {
+              "row": 20,
+              "column": 21
+            },
+            {
+              "row": 34,
+              "column": 13
+            }
+          ],
+          "draws": 8,
+          "rngState": 3864888615
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 40,
+              "column": 7
+            },
+            {
+              "row": 37,
+              "column": 10
+            },
+            {
+              "row": 34,
+              "column": 13
+            }
+          ],
+          "draws": 9,
+          "rngState": 3017894734
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 40,
+              "column": 7
+            },
+            {
+              "row": 37,
+              "column": 10
+            },
+            {
+              "row": 14,
+              "column": 27
+            }
+          ],
+          "draws": 10,
+          "rngState": 116200665
+        }
+      ]
+    },
+    {
+      "map": "desert",
+      "seed": 1,
+      "initial": [
+        {
+          "row": 23,
+          "column": 28
+        },
+        {
+          "row": 12,
+          "column": 27
+        },
+        {
+          "row": 20,
+          "column": 7
+        },
+        {
+          "row": 23,
+          "column": 8
+        },
+        {
+          "row": 33,
+          "column": 14
+        }
+      ],
+      "draws": 6,
+      "rngState": 1030492215,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 12,
+              "column": 27
+            },
+            {
+              "row": 20,
+              "column": 7
+            },
+            {
+              "row": 23,
+              "column": 8
+            },
+            {
+              "row": 33,
+              "column": 14
+            }
+          ],
+          "draws": 7,
+          "rngState": 752224798
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 13,
+              "column": 8
+            },
+            {
+              "row": 20,
+              "column": 7
+            },
+            {
+              "row": 23,
+              "column": 8
+            },
+            {
+              "row": 33,
+              "column": 14
+            }
+          ],
+          "draws": 8,
+          "rngState": 1924036713
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 13,
+              "column": 8
+            },
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 23,
+              "column": 8
+            },
+            {
+              "row": 33,
+              "column": 14
+            }
+          ],
+          "draws": 9,
+          "rngState": 1766988168
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 13,
+              "column": 8
+            },
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 35,
+              "column": 26
+            },
+            {
+              "row": 33,
+              "column": 14
+            }
+          ],
+          "draws": 10,
+          "rngState": 3750785579
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 13,
+              "column": 8
+            },
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 35,
+              "column": 26
+            },
+            {
+              "row": 20,
+              "column": 31
+            }
+          ],
+          "draws": 11,
+          "rngState": 373929026
+        }
+      ]
+    },
+    {
+      "map": "desert",
+      "seed": 2,
+      "initial": [
+        {
+          "row": 25,
+          "column": 26
+        },
+        {
+          "row": 29,
+          "column": 30
+        },
+        {
+          "row": 37,
+          "column": 12
+        },
+        {
+          "row": 33,
+          "column": 22
+        },
+        {
+          "row": 29,
+          "column": 12
+        }
+      ],
+      "draws": 5,
+      "rngState": 4079776401,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 29,
+              "column": 30
+            },
+            {
+              "row": 37,
+              "column": 12
+            },
+            {
+              "row": 33,
+              "column": 22
+            },
+            {
+              "row": 29,
+              "column": 12
+            }
+          ],
+          "draws": 6,
+          "rngState": 1287834384
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 37,
+              "column": 12
+            },
+            {
+              "row": 33,
+              "column": 22
+            },
+            {
+              "row": 29,
+              "column": 12
+            }
+          ],
+          "draws": 7,
+          "rngState": 956202387
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 31,
+              "column": 30
+            },
+            {
+              "row": 33,
+              "column": 22
+            },
+            {
+              "row": 29,
+              "column": 12
+            }
+          ],
+          "draws": 8,
+          "rngState": 1732194826
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 31,
+              "column": 30
+            },
+            {
+              "row": 39,
+              "column": 16
+            },
+            {
+              "row": 29,
+              "column": 12
+            }
+          ],
+          "draws": 9,
+          "rngState": 701608101
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 31,
+              "column": 30
+            },
+            {
+              "row": 39,
+              "column": 16
+            },
+            {
+              "row": 26,
+              "column": 7
+            }
+          ],
+          "draws": 10,
+          "rngState": 1200382164
+        }
+      ]
+    },
+    {
+      "map": "desert",
+      "seed": 42,
+      "initial": [
+        {
+          "row": 39,
+          "column": 16
+        },
+        {
+          "row": 23,
+          "column": 8
+        },
+        {
+          "row": 27,
+          "column": 28
+        },
+        {
+          "row": 39,
+          "column": 22
+        },
+        {
+          "row": 32,
+          "column": 29
+        }
+      ],
+      "draws": 5,
+      "rngState": 1054043289,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 10,
+              "column": 21
+            },
+            {
+              "row": 23,
+              "column": 8
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 39,
+              "column": 22
+            },
+            {
+              "row": 32,
+              "column": 29
+            }
+          ],
+          "draws": 6,
+          "rngState": 2991586552
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 10,
+              "column": 21
+            },
+            {
+              "row": 9,
+              "column": 20
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 39,
+              "column": 22
+            },
+            {
+              "row": 32,
+              "column": 29
+            }
+          ],
+          "draws": 7,
+          "rngState": 525371355
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 10,
+              "column": 21
+            },
+            {
+              "row": 9,
+              "column": 20
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 39,
+              "column": 22
+            },
+            {
+              "row": 32,
+              "column": 29
+            }
+          ],
+          "draws": 8,
+          "rngState": 2648453938
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 10,
+              "column": 21
+            },
+            {
+              "row": 9,
+              "column": 20
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 30,
+              "column": 31
+            },
+            {
+              "row": 32,
+              "column": 29
+            }
+          ],
+          "draws": 9,
+          "rngState": 1036078381
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 10,
+              "column": 21
+            },
+            {
+              "row": 9,
+              "column": 20
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 30,
+              "column": 31
+            },
+            {
+              "row": 34,
+              "column": 27
+            }
+          ],
+          "draws": 12,
+          "rngState": 4110349206
+        }
+      ]
+    },
+    {
+      "map": "desert",
+      "seed": 777,
+      "initial": [
+        {
+          "row": 29,
+          "column": 14
+        },
+        {
+          "row": 31,
+          "column": 30
+        },
+        {
+          "row": 30,
+          "column": 11
+        },
+        {
+          "row": 7,
+          "column": 16
+        },
+        {
+          "row": 36,
+          "column": 25
+        }
+      ],
+      "draws": 5,
+      "rngState": 3975126764,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 31,
+              "column": 30
+            },
+            {
+              "row": 30,
+              "column": 11
+            },
+            {
+              "row": 7,
+              "column": 16
+            },
+            {
+              "row": 36,
+              "column": 25
+            }
+          ],
+          "draws": 6,
+          "rngState": 3159519743
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 13,
+              "column": 8
+            },
+            {
+              "row": 30,
+              "column": 11
+            },
+            {
+              "row": 7,
+              "column": 16
+            },
+            {
+              "row": 36,
+              "column": 25
+            }
+          ],
+          "draws": 7,
+          "rngState": 125043910
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 13,
+              "column": 8
+            },
+            {
+              "row": 33,
+              "column": 22
+            },
+            {
+              "row": 7,
+              "column": 16
+            },
+            {
+              "row": 36,
+              "column": 25
+            }
+          ],
+          "draws": 8,
+          "rngState": 3378587761
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 13,
+              "column": 8
+            },
+            {
+              "row": 33,
+              "column": 22
+            },
+            {
+              "row": 22,
+              "column": 7
+            },
+            {
+              "row": 36,
+              "column": 25
+            }
+          ],
+          "draws": 9,
+          "rngState": 3960744304
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 13,
+              "column": 8
+            },
+            {
+              "row": 33,
+              "column": 22
+            },
+            {
+              "row": 22,
+              "column": 7
+            },
+            {
+              "row": 32,
+              "column": 29
+            }
+          ],
+          "draws": 10,
+          "rngState": 322691699
+        }
+      ]
+    },
+    {
+      "map": "desert",
+      "seed": 2026,
+      "initial": [
+        {
+          "row": 39,
+          "column": 14
+        },
+        {
+          "row": 17,
+          "column": 10
+        },
+        {
+          "row": 10,
+          "column": 21
+        },
+        {
+          "row": 35,
+          "column": 26
+        },
+        {
+          "row": 13,
+          "column": 10
+        }
+      ],
+      "draws": 5,
+      "rngState": 2160529753,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 17,
+              "column": 10
+            },
+            {
+              "row": 10,
+              "column": 21
+            },
+            {
+              "row": 35,
+              "column": 26
+            },
+            {
+              "row": 13,
+              "column": 10
+            }
+          ],
+          "draws": 6,
+          "rngState": 2457341624
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 29,
+              "column": 14
+            },
+            {
+              "row": 10,
+              "column": 21
+            },
+            {
+              "row": 35,
+              "column": 26
+            },
+            {
+              "row": 13,
+              "column": 10
+            }
+          ],
+          "draws": 7,
+          "rngState": 1489982107
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 29,
+              "column": 14
+            },
+            {
+              "row": 29,
+              "column": 12
+            },
+            {
+              "row": 35,
+              "column": 26
+            },
+            {
+              "row": 13,
+              "column": 10
+            }
+          ],
+          "draws": 8,
+          "rngState": 4286239474
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 29,
+              "column": 14
+            },
+            {
+              "row": 29,
+              "column": 12
+            },
+            {
+              "row": 9,
+              "column": 24
+            },
+            {
+              "row": 13,
+              "column": 10
+            }
+          ],
+          "draws": 10,
+          "rngState": 1734559996
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 29,
+              "column": 14
+            },
+            {
+              "row": 29,
+              "column": 12
+            },
+            {
+              "row": 9,
+              "column": 24
+            },
+            {
+              "row": 16,
+              "column": 29
+            }
+          ],
+          "draws": 11,
+          "rngState": 72594383
+        }
+      ]
+    },
+    {
+      "map": "desert",
+      "seed": 32767,
+      "initial": [
+        {
+          "row": 9,
+          "column": 24
+        },
+        {
+          "row": 16,
+          "column": 29
+        },
+        {
+          "row": 38,
+          "column": 17
+        },
+        {
+          "row": 7,
+          "column": 18
+        },
+        {
+          "row": 38,
+          "column": 23
+        }
+      ],
+      "draws": 5,
+      "rngState": 3285399914,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 12,
+              "column": 27
+            },
+            {
+              "row": 16,
+              "column": 29
+            },
+            {
+              "row": 38,
+              "column": 17
+            },
+            {
+              "row": 7,
+              "column": 18
+            },
+            {
+              "row": 38,
+              "column": 23
+            }
+          ],
+          "draws": 6,
+          "rngState": 2083199621
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 12,
+              "column": 27
+            },
+            {
+              "row": 28,
+              "column": 13
+            },
+            {
+              "row": 38,
+              "column": 17
+            },
+            {
+              "row": 7,
+              "column": 18
+            },
+            {
+              "row": 38,
+              "column": 23
+            }
+          ],
+          "draws": 7,
+          "rngState": 1312793396
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 12,
+              "column": 27
+            },
+            {
+              "row": 28,
+              "column": 13
+            },
+            {
+              "row": 12,
+              "column": 7
+            },
+            {
+              "row": 7,
+              "column": 18
+            },
+            {
+              "row": 38,
+              "column": 23
+            }
+          ],
+          "draws": 8,
+          "rngState": 3864888615
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 12,
+              "column": 27
+            },
+            {
+              "row": 28,
+              "column": 13
+            },
+            {
+              "row": 12,
+              "column": 7
+            },
+            {
+              "row": 32,
+              "column": 29
+            },
+            {
+              "row": 38,
+              "column": 23
+            }
+          ],
+          "draws": 10,
+          "rngState": 116200665
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 12,
+              "column": 27
+            },
+            {
+              "row": 28,
+              "column": 13
+            },
+            {
+              "row": 12,
+              "column": 7
+            },
+            {
+              "row": 32,
+              "column": 29
+            },
+            {
+              "row": 36,
+              "column": 19
+            }
+          ],
+          "draws": 11,
+          "rngState": 594805816
+        }
+      ]
+    },
+    {
+      "map": "lost",
+      "seed": 1,
+      "initial": [
+        {
+          "row": 28,
+          "column": 11
+        },
+        {
+          "row": 18,
+          "column": 19
+        },
+        {
+          "row": 15,
+          "column": 8
+        },
+        {
+          "row": 14,
+          "column": 15
+        },
+        {
+          "row": 25,
+          "column": 14
+        }
+      ],
+      "draws": 5,
+      "rngState": 3403800452,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 18,
+              "column": 19
+            },
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 14,
+              "column": 15
+            },
+            {
+              "row": 25,
+              "column": 14
+            }
+          ],
+          "draws": 6,
+          "rngState": 1030492215
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 28,
+              "column": 7
+            },
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 14,
+              "column": 15
+            },
+            {
+              "row": 25,
+              "column": 14
+            }
+          ],
+          "draws": 7,
+          "rngState": 752224798
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 28,
+              "column": 7
+            },
+            {
+              "row": 24,
+              "column": 15
+            },
+            {
+              "row": 14,
+              "column": 15
+            },
+            {
+              "row": 25,
+              "column": 14
+            }
+          ],
+          "draws": 8,
+          "rngState": 1924036713
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 28,
+              "column": 7
+            },
+            {
+              "row": 24,
+              "column": 15
+            },
+            {
+              "row": 9,
+              "column": 16
+            },
+            {
+              "row": 25,
+              "column": 14
+            }
+          ],
+          "draws": 9,
+          "rngState": 1766988168
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 23,
+              "column": 6
+            },
+            {
+              "row": 28,
+              "column": 7
+            },
+            {
+              "row": 24,
+              "column": 15
+            },
+            {
+              "row": 9,
+              "column": 16
+            },
+            {
+              "row": 20,
+              "column": 5
+            }
+          ],
+          "draws": 12,
+          "rngState": 1844513277
+        }
+      ]
+    },
+    {
+      "map": "lost",
+      "seed": 2,
+      "initial": [
+        {
+          "row": 10,
+          "column": 11
+        },
+        {
+          "row": 18,
+          "column": 5
+        },
+        {
+          "row": 24,
+          "column": 15
+        },
+        {
+          "row": 26,
+          "column": 13
+        },
+        {
+          "row": 23,
+          "column": 6
+        }
+      ],
+      "draws": 5,
+      "rngState": 4079776401,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 18,
+              "column": 5
+            },
+            {
+              "row": 24,
+              "column": 15
+            },
+            {
+              "row": 26,
+              "column": 13
+            },
+            {
+              "row": 23,
+              "column": 6
+            }
+          ],
+          "draws": 7,
+          "rngState": 956202387
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 24,
+              "column": 15
+            },
+            {
+              "row": 26,
+              "column": 13
+            },
+            {
+              "row": 23,
+              "column": 6
+            }
+          ],
+          "draws": 9,
+          "rngState": 701608101
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 26,
+              "column": 13
+            },
+            {
+              "row": 23,
+              "column": 6
+            }
+          ],
+          "draws": 11,
+          "rngState": 2511719495
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 20,
+              "column": 19
+            },
+            {
+              "row": 23,
+              "column": 6
+            }
+          ],
+          "draws": 12,
+          "rngState": 3994883566
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 20,
+              "column": 19
+            },
+            {
+              "row": 11,
+              "column": 10
+            }
+          ],
+          "draws": 14,
+          "rngState": 39715800
+        }
+      ]
+    },
+    {
+      "map": "lost",
+      "seed": 42,
+      "initial": [
+        {
+          "row": 10,
+          "column": 15
+        },
+        {
+          "row": 15,
+          "column": 8
+        },
+        {
+          "row": 20,
+          "column": 19
+        },
+        {
+          "row": 9,
+          "column": 16
+        },
+        {
+          "row": 19,
+          "column": 18
+        }
+      ],
+      "draws": 6,
+      "rngState": 2991586552,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 20,
+              "column": 19
+            },
+            {
+              "row": 9,
+              "column": 16
+            },
+            {
+              "row": 19,
+              "column": 18
+            }
+          ],
+          "draws": 7,
+          "rngState": 525371355
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 25,
+              "column": 8
+            },
+            {
+              "row": 20,
+              "column": 19
+            },
+            {
+              "row": 9,
+              "column": 16
+            },
+            {
+              "row": 19,
+              "column": 18
+            }
+          ],
+          "draws": 8,
+          "rngState": 2648453938
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 25,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 17
+            },
+            {
+              "row": 9,
+              "column": 16
+            },
+            {
+              "row": 19,
+              "column": 18
+            }
+          ],
+          "draws": 9,
+          "rngState": 1036078381
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 25,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 17
+            },
+            {
+              "row": 11,
+              "column": 14
+            },
+            {
+              "row": 19,
+              "column": 18
+            }
+          ],
+          "draws": 10,
+          "rngState": 2263460668
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 25,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 17
+            },
+            {
+              "row": 11,
+              "column": 14
+            },
+            {
+              "row": 23,
+              "column": 16
+            }
+          ],
+          "draws": 11,
+          "rngState": 2123992335
+        }
+      ]
+    },
+    {
+      "map": "lost",
+      "seed": 777,
+      "initial": [
+        {
+          "row": 27,
+          "column": 10
+        },
+        {
+          "row": 27,
+          "column": 8
+        },
+        {
+          "row": 21,
+          "column": 18
+        },
+        {
+          "row": 22,
+          "column": 5
+        },
+        {
+          "row": 20,
+          "column": 5
+        }
+      ],
+      "draws": 5,
+      "rngState": 3975126764,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 21,
+              "column": 18
+            },
+            {
+              "row": 22,
+              "column": 5
+            },
+            {
+              "row": 20,
+              "column": 5
+            }
+          ],
+          "draws": 6,
+          "rngState": 3159519743
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 21,
+              "column": 18
+            },
+            {
+              "row": 22,
+              "column": 5
+            },
+            {
+              "row": 20,
+              "column": 5
+            }
+          ],
+          "draws": 7,
+          "rngState": 125043910
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 5
+            },
+            {
+              "row": 20,
+              "column": 5
+            }
+          ],
+          "draws": 8,
+          "rngState": 3378587761
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 18,
+              "column": 5
+            },
+            {
+              "row": 20,
+              "column": 5
+            }
+          ],
+          "draws": 9,
+          "rngState": 3960744304
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 18,
+              "column": 5
+            },
+            {
+              "row": 19,
+              "column": 6
+            }
+          ],
+          "draws": 10,
+          "rngState": 322691699
+        }
+      ]
+    },
+    {
+      "map": "lost",
+      "seed": 2026,
+      "initial": [
+        {
+          "row": 24,
+          "column": 15
+        },
+        {
+          "row": 20,
+          "column": 5
+        },
+        {
+          "row": 25,
+          "column": 14
+        },
+        {
+          "row": 15,
+          "column": 8
+        },
+        {
+          "row": 22,
+          "column": 5
+        }
+      ],
+      "draws": 5,
+      "rngState": 2160529753,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 20,
+              "column": 5
+            },
+            {
+              "row": 25,
+              "column": 14
+            },
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 5
+            }
+          ],
+          "draws": 6,
+          "rngState": 2457341624
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 24,
+              "column": 7
+            },
+            {
+              "row": 25,
+              "column": 14
+            },
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 5
+            }
+          ],
+          "draws": 7,
+          "rngState": 1489982107
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 24,
+              "column": 7
+            },
+            {
+              "row": 28,
+              "column": 7
+            },
+            {
+              "row": 15,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 5
+            }
+          ],
+          "draws": 8,
+          "rngState": 4286239474
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 24,
+              "column": 7
+            },
+            {
+              "row": 28,
+              "column": 7
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 22,
+              "column": 5
+            }
+          ],
+          "draws": 9,
+          "rngState": 445935085
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 28,
+              "column": 11
+            },
+            {
+              "row": 24,
+              "column": 7
+            },
+            {
+              "row": 28,
+              "column": 7
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 19,
+              "column": 18
+            }
+          ],
+          "draws": 10,
+          "rngState": 1734559996
+        }
+      ]
+    },
+    {
+      "map": "lost",
+      "seed": 32767,
+      "initial": [
+        {
+          "row": 12,
+          "column": 13
+        },
+        {
+          "row": 13,
+          "column": 14
+        },
+        {
+          "row": 11,
+          "column": 12
+        },
+        {
+          "row": 25,
+          "column": 14
+        },
+        {
+          "row": 26,
+          "column": 13
+        }
+      ],
+      "draws": 7,
+      "rngState": 1312793396,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 25,
+              "column": 14
+            },
+            {
+              "row": 26,
+              "column": 13
+            }
+          ],
+          "draws": 8,
+          "rngState": 3864888615
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 25,
+              "column": 14
+            },
+            {
+              "row": 26,
+              "column": 13
+            }
+          ],
+          "draws": 9,
+          "rngState": 3017894734
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 25,
+              "column": 14
+            },
+            {
+              "row": 26,
+              "column": 13
+            }
+          ],
+          "draws": 10,
+          "rngState": 116200665
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 10,
+              "column": 15
+            },
+            {
+              "row": 26,
+              "column": 13
+            }
+          ],
+          "draws": 11,
+          "rngState": 594805816
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 27,
+              "column": 8
+            },
+            {
+              "row": 13,
+              "column": 14
+            },
+            {
+              "row": 10,
+              "column": 15
+            },
+            {
+              "row": 9,
+              "column": 16
+            }
+          ],
+          "draws": 12,
+          "rngState": 1938911771
+        }
+      ]
+    },
+    {
+      "map": "park",
+      "seed": 1,
+      "initial": [
+        {
+          "row": 15,
+          "column": 8
+        },
+        {
+          "row": 18,
+          "column": 7
+        },
+        {
+          "row": 12,
+          "column": 11
+        },
+        {
+          "row": 14,
+          "column": 19
+        },
+        {
+          "row": 23,
+          "column": 14
+        }
+      ],
+      "draws": 5,
+      "rngState": 3403800452,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 12,
+              "column": 11
+            },
+            {
+              "row": 14,
+              "column": 19
+            },
+            {
+              "row": 23,
+              "column": 14
+            }
+          ],
+          "draws": 7,
+          "rngState": 752224798
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 20,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 11
+            },
+            {
+              "row": 14,
+              "column": 19
+            },
+            {
+              "row": 23,
+              "column": 14
+            }
+          ],
+          "draws": 9,
+          "rngState": 1766988168
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 20,
+              "column": 17
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 14,
+              "column": 19
+            },
+            {
+              "row": 23,
+              "column": 14
+            }
+          ],
+          "draws": 10,
+          "rngState": 3750785579
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 20,
+              "column": 17
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 23,
+              "column": 14
+            }
+          ],
+          "draws": 11,
+          "rngState": 373929026
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 20,
+              "column": 17
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 11,
+              "column": 12
+            }
+          ],
+          "draws": 13,
+          "rngState": 3673273548
+        }
+      ]
+    },
+    {
+      "map": "park",
+      "seed": 2,
+      "initial": [
+        {
+          "row": 17,
+          "column": 8
+        },
+        {
+          "row": 22,
+          "column": 13
+        },
+        {
+          "row": 18,
+          "column": 17
+        },
+        {
+          "row": 12,
+          "column": 15
+        },
+        {
+          "row": 21,
+          "column": 16
+        }
+      ],
+      "draws": 5,
+      "rngState": 4079776401,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 10,
+              "column": 13
+            },
+            {
+              "row": 22,
+              "column": 13
+            },
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 21,
+              "column": 16
+            }
+          ],
+          "draws": 6,
+          "rngState": 1287834384
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 10,
+              "column": 13
+            },
+            {
+              "row": 14,
+              "column": 19
+            },
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 21,
+              "column": 16
+            }
+          ],
+          "draws": 7,
+          "rngState": 956202387
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 10,
+              "column": 13
+            },
+            {
+              "row": 14,
+              "column": 19
+            },
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 21,
+              "column": 16
+            }
+          ],
+          "draws": 8,
+          "rngState": 1732194826
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 10,
+              "column": 13
+            },
+            {
+              "row": 14,
+              "column": 19
+            },
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 22,
+              "column": 11
+            },
+            {
+              "row": 21,
+              "column": 16
+            }
+          ],
+          "draws": 9,
+          "rngState": 701608101
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 10,
+              "column": 13
+            },
+            {
+              "row": 14,
+              "column": 19
+            },
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 22,
+              "column": 11
+            },
+            {
+              "row": 17,
+              "column": 16
+            }
+          ],
+          "draws": 10,
+          "rngState": 1200382164
+        }
+      ]
+    },
+    {
+      "map": "park",
+      "seed": 42,
+      "initial": [
+        {
+          "row": 22,
+          "column": 11
+        },
+        {
+          "row": 14,
+          "column": 19
+        },
+        {
+          "row": 19,
+          "column": 8
+        },
+        {
+          "row": 22,
+          "column": 13
+        },
+        {
+          "row": 11,
+          "column": 16
+        }
+      ],
+      "draws": 5,
+      "rngState": 1054043289,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 14,
+              "column": 9
+            },
+            {
+              "row": 14,
+              "column": 19
+            },
+            {
+              "row": 19,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 13
+            },
+            {
+              "row": 11,
+              "column": 16
+            }
+          ],
+          "draws": 6,
+          "rngState": 2991586552
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 14,
+              "column": 9
+            },
+            {
+              "row": 12,
+              "column": 17
+            },
+            {
+              "row": 19,
+              "column": 8
+            },
+            {
+              "row": 22,
+              "column": 13
+            },
+            {
+              "row": 11,
+              "column": 16
+            }
+          ],
+          "draws": 7,
+          "rngState": 525371355
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 14,
+              "column": 9
+            },
+            {
+              "row": 12,
+              "column": 17
+            },
+            {
+              "row": 21,
+              "column": 16
+            },
+            {
+              "row": 22,
+              "column": 13
+            },
+            {
+              "row": 11,
+              "column": 16
+            }
+          ],
+          "draws": 8,
+          "rngState": 2648453938
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 14,
+              "column": 9
+            },
+            {
+              "row": 12,
+              "column": 17
+            },
+            {
+              "row": 21,
+              "column": 16
+            },
+            {
+              "row": 23,
+              "column": 14
+            },
+            {
+              "row": 11,
+              "column": 16
+            }
+          ],
+          "draws": 9,
+          "rngState": 1036078381
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 14,
+              "column": 9
+            },
+            {
+              "row": 12,
+              "column": 17
+            },
+            {
+              "row": 21,
+              "column": 16
+            },
+            {
+              "row": 23,
+              "column": 14
+            },
+            {
+              "row": 14,
+              "column": 19
+            }
+          ],
+          "draws": 12,
+          "rngState": 4110349206
+        }
+      ]
+    },
+    {
+      "map": "park",
+      "seed": 777,
+      "initial": [
+        {
+          "row": 22,
+          "column": 11
+        },
+        {
+          "row": 11,
+          "column": 12
+        },
+        {
+          "row": 22,
+          "column": 15
+        },
+        {
+          "row": 18,
+          "column": 7
+        },
+        {
+          "row": 20,
+          "column": 17
+        }
+      ],
+      "draws": 6,
+      "rngState": 3159519743,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 11,
+              "column": 12
+            },
+            {
+              "row": 22,
+              "column": 15
+            },
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 20,
+              "column": 17
+            }
+          ],
+          "draws": 7,
+          "rngState": 125043910
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 22,
+              "column": 15
+            },
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 20,
+              "column": 17
+            }
+          ],
+          "draws": 8,
+          "rngState": 3378587761
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 13,
+              "column": 18
+            },
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 20,
+              "column": 17
+            }
+          ],
+          "draws": 9,
+          "rngState": 3960744304
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 13,
+              "column": 18
+            },
+            {
+              "row": 11,
+              "column": 16
+            },
+            {
+              "row": 20,
+              "column": 17
+            }
+          ],
+          "draws": 10,
+          "rngState": 322691699
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 12,
+              "column": 15
+            },
+            {
+              "row": 13,
+              "column": 18
+            },
+            {
+              "row": 11,
+              "column": 16
+            },
+            {
+              "row": 15,
+              "column": 18
+            }
+          ],
+          "draws": 11,
+          "rngState": 1441956714
+        }
+      ]
+    },
+    {
+      "map": "park",
+      "seed": 2026,
+      "initial": [
+        {
+          "row": 21,
+          "column": 16
+        },
+        {
+          "row": 23,
+          "column": 12
+        },
+        {
+          "row": 14,
+          "column": 9
+        },
+        {
+          "row": 16,
+          "column": 17
+        },
+        {
+          "row": 19,
+          "column": 8
+        }
+      ],
+      "draws": 5,
+      "rngState": 2160529753,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 23,
+              "column": 12
+            },
+            {
+              "row": 14,
+              "column": 9
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 19,
+              "column": 8
+            }
+          ],
+          "draws": 6,
+          "rngState": 2457341624
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 22,
+              "column": 11
+            },
+            {
+              "row": 14,
+              "column": 9
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 19,
+              "column": 8
+            }
+          ],
+          "draws": 7,
+          "rngState": 1489982107
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 22,
+              "column": 11
+            },
+            {
+              "row": 21,
+              "column": 16
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 19,
+              "column": 8
+            }
+          ],
+          "draws": 8,
+          "rngState": 4286239474
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 22,
+              "column": 11
+            },
+            {
+              "row": 21,
+              "column": 16
+            },
+            {
+              "row": 13,
+              "column": 10
+            },
+            {
+              "row": 19,
+              "column": 8
+            }
+          ],
+          "draws": 10,
+          "rngState": 1734559996
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 18,
+              "column": 17
+            },
+            {
+              "row": 22,
+              "column": 11
+            },
+            {
+              "row": 21,
+              "column": 16
+            },
+            {
+              "row": 13,
+              "column": 10
+            },
+            {
+              "row": 22,
+              "column": 15
+            }
+          ],
+          "draws": 11,
+          "rngState": 72594383
+        }
+      ]
+    },
+    {
+      "map": "park",
+      "seed": 32767,
+      "initial": [
+        {
+          "row": 13,
+          "column": 10
+        },
+        {
+          "row": 22,
+          "column": 15
+        },
+        {
+          "row": 20,
+          "column": 17
+        },
+        {
+          "row": 11,
+          "column": 14
+        },
+        {
+          "row": 21,
+          "column": 10
+        }
+      ],
+      "draws": 5,
+      "rngState": 3285399914,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 22,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 17
+            },
+            {
+              "row": 11,
+              "column": 14
+            },
+            {
+              "row": 21,
+              "column": 10
+            }
+          ],
+          "draws": 6,
+          "rngState": 2083199621
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 20,
+              "column": 9
+            },
+            {
+              "row": 20,
+              "column": 17
+            },
+            {
+              "row": 11,
+              "column": 14
+            },
+            {
+              "row": 21,
+              "column": 10
+            }
+          ],
+          "draws": 7,
+          "rngState": 1312793396
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 20,
+              "column": 9
+            },
+            {
+              "row": 17,
+              "column": 8
+            },
+            {
+              "row": 11,
+              "column": 14
+            },
+            {
+              "row": 21,
+              "column": 10
+            }
+          ],
+          "draws": 8,
+          "rngState": 3864888615
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 20,
+              "column": 9
+            },
+            {
+              "row": 17,
+              "column": 8
+            },
+            {
+              "row": 11,
+              "column": 16
+            },
+            {
+              "row": 21,
+              "column": 10
+            }
+          ],
+          "draws": 10,
+          "rngState": 116200665
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 18,
+              "column": 7
+            },
+            {
+              "row": 20,
+              "column": 9
+            },
+            {
+              "row": 17,
+              "column": 8
+            },
+            {
+              "row": 11,
+              "column": 16
+            },
+            {
+              "row": 17,
+              "column": 16
+            }
+          ],
+          "draws": 11,
+          "rngState": 594805816
+        }
+      ]
+    },
+    {
+      "map": "play",
+      "seed": 1,
+      "initial": [
+        {
+          "row": 19,
+          "column": 14
+        },
+        {
+          "row": 25,
+          "column": 14
+        },
+        {
+          "row": 45,
+          "column": 12
+        },
+        {
+          "row": 32,
+          "column": 11
+        },
+        {
+          "row": 29,
+          "column": 28
+        }
+      ],
+      "draws": 5,
+      "rngState": 3403800452,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 38,
+              "column": 5
+            },
+            {
+              "row": 25,
+              "column": 14
+            },
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 32,
+              "column": 11
+            },
+            {
+              "row": 29,
+              "column": 28
+            }
+          ],
+          "draws": 6,
+          "rngState": 1030492215
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 38,
+              "column": 5
+            },
+            {
+              "row": 43,
+              "column": 16
+            },
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 32,
+              "column": 11
+            },
+            {
+              "row": 29,
+              "column": 28
+            }
+          ],
+          "draws": 7,
+          "rngState": 752224798
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 38,
+              "column": 5
+            },
+            {
+              "row": 43,
+              "column": 16
+            },
+            {
+              "row": 25,
+              "column": 26
+            },
+            {
+              "row": 32,
+              "column": 11
+            },
+            {
+              "row": 29,
+              "column": 28
+            }
+          ],
+          "draws": 8,
+          "rngState": 1924036713
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 38,
+              "column": 5
+            },
+            {
+              "row": 43,
+              "column": 16
+            },
+            {
+              "row": 25,
+              "column": 26
+            },
+            {
+              "row": 17,
+              "column": 12
+            },
+            {
+              "row": 29,
+              "column": 28
+            }
+          ],
+          "draws": 9,
+          "rngState": 1766988168
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 38,
+              "column": 5
+            },
+            {
+              "row": 43,
+              "column": 16
+            },
+            {
+              "row": 25,
+              "column": 26
+            },
+            {
+              "row": 17,
+              "column": 12
+            },
+            {
+              "row": 8,
+              "column": 19
+            }
+          ],
+          "draws": 10,
+          "rngState": 3750785579
+        }
+      ]
+    },
+    {
+      "map": "play",
+      "seed": 2,
+      "initial": [
+        {
+          "row": 21,
+          "column": 16
+        },
+        {
+          "row": 8,
+          "column": 19
+        },
+        {
+          "row": 19,
+          "column": 28
+        },
+        {
+          "row": 34,
+          "column": 25
+        },
+        {
+          "row": 22,
+          "column": 29
+        }
+      ],
+      "draws": 6,
+      "rngState": 1287834384,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 8,
+              "column": 19
+            },
+            {
+              "row": 19,
+              "column": 28
+            },
+            {
+              "row": 34,
+              "column": 25
+            },
+            {
+              "row": 22,
+              "column": 29
+            }
+          ],
+          "draws": 7,
+          "rngState": 956202387
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 19,
+              "column": 28
+            },
+            {
+              "row": 34,
+              "column": 25
+            },
+            {
+              "row": 22,
+              "column": 29
+            }
+          ],
+          "draws": 8,
+          "rngState": 1732194826
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 9,
+              "column": 8
+            },
+            {
+              "row": 34,
+              "column": 25
+            },
+            {
+              "row": 22,
+              "column": 29
+            }
+          ],
+          "draws": 9,
+          "rngState": 701608101
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 9,
+              "column": 8
+            },
+            {
+              "row": 6,
+              "column": 15
+            },
+            {
+              "row": 22,
+              "column": 29
+            }
+          ],
+          "draws": 10,
+          "rngState": 1200382164
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 18,
+              "column": 9
+            },
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 9,
+              "column": 8
+            },
+            {
+              "row": 6,
+              "column": 15
+            },
+            {
+              "row": 34,
+              "column": 9
+            }
+          ],
+          "draws": 12,
+          "rngState": 3994883566
+        }
+      ]
+    },
+    {
+      "map": "play",
+      "seed": 42,
+      "initial": [
+        {
+          "row": 35,
+          "column": 24
+        },
+        {
+          "row": 7,
+          "column": 14
+        },
+        {
+          "row": 23,
+          "column": 14
+        },
+        {
+          "row": 28,
+          "column": 17
+        },
+        {
+          "row": 21,
+          "column": 16
+        }
+      ],
+      "draws": 5,
+      "rngState": 1054043289,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 8,
+              "column": 13
+            },
+            {
+              "row": 7,
+              "column": 14
+            },
+            {
+              "row": 23,
+              "column": 14
+            },
+            {
+              "row": 28,
+              "column": 17
+            },
+            {
+              "row": 21,
+              "column": 16
+            }
+          ],
+          "draws": 6,
+          "rngState": 2991586552
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 8,
+              "column": 13
+            },
+            {
+              "row": 44,
+              "column": 15
+            },
+            {
+              "row": 23,
+              "column": 14
+            },
+            {
+              "row": 28,
+              "column": 17
+            },
+            {
+              "row": 21,
+              "column": 16
+            }
+          ],
+          "draws": 7,
+          "rngState": 525371355
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 8,
+              "column": 13
+            },
+            {
+              "row": 44,
+              "column": 15
+            },
+            {
+              "row": 12,
+              "column": 7
+            },
+            {
+              "row": 28,
+              "column": 17
+            },
+            {
+              "row": 21,
+              "column": 16
+            }
+          ],
+          "draws": 8,
+          "rngState": 2648453938
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 8,
+              "column": 13
+            },
+            {
+              "row": 44,
+              "column": 15
+            },
+            {
+              "row": 12,
+              "column": 7
+            },
+            {
+              "row": 32,
+              "column": 13
+            },
+            {
+              "row": 21,
+              "column": 16
+            }
+          ],
+          "draws": 9,
+          "rngState": 1036078381
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 8,
+              "column": 13
+            },
+            {
+              "row": 44,
+              "column": 15
+            },
+            {
+              "row": 12,
+              "column": 7
+            },
+            {
+              "row": 32,
+              "column": 13
+            },
+            {
+              "row": 40,
+              "column": 7
+            }
+          ],
+          "draws": 10,
+          "rngState": 2263460668
+        }
+      ]
+    },
+    {
+      "map": "play",
+      "seed": 777,
+      "initial": [
+        {
+          "row": 6,
+          "column": 15
+        },
+        {
+          "row": 14,
+          "column": 5
+        },
+        {
+          "row": 22,
+          "column": 29
+        },
+        {
+          "row": 42,
+          "column": 17
+        },
+        {
+          "row": 32,
+          "column": 13
+        }
+      ],
+      "draws": 5,
+      "rngState": 3975126764,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 14,
+              "column": 5
+            },
+            {
+              "row": 22,
+              "column": 29
+            },
+            {
+              "row": 42,
+              "column": 17
+            },
+            {
+              "row": 32,
+              "column": 13
+            }
+          ],
+          "draws": 6,
+          "rngState": 3159519743
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 15,
+              "column": 4
+            },
+            {
+              "row": 22,
+              "column": 29
+            },
+            {
+              "row": 42,
+              "column": 17
+            },
+            {
+              "row": 32,
+              "column": 13
+            }
+          ],
+          "draws": 7,
+          "rngState": 125043910
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 15,
+              "column": 4
+            },
+            {
+              "row": 34,
+              "column": 25
+            },
+            {
+              "row": 42,
+              "column": 17
+            },
+            {
+              "row": 32,
+              "column": 13
+            }
+          ],
+          "draws": 8,
+          "rngState": 3378587761
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 15,
+              "column": 4
+            },
+            {
+              "row": 34,
+              "column": 25
+            },
+            {
+              "row": 22,
+              "column": 15
+            },
+            {
+              "row": 32,
+              "column": 13
+            }
+          ],
+          "draws": 9,
+          "rngState": 3960744304
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 45,
+              "column": 12
+            },
+            {
+              "row": 15,
+              "column": 4
+            },
+            {
+              "row": 34,
+              "column": 25
+            },
+            {
+              "row": 22,
+              "column": 15
+            },
+            {
+              "row": 33,
+              "column": 26
+            }
+          ],
+          "draws": 10,
+          "rngState": 322691699
+        }
+      ]
+    },
+    {
+      "map": "play",
+      "seed": 2026,
+      "initial": [
+        {
+          "row": 12,
+          "column": 7
+        },
+        {
+          "row": 6,
+          "column": 15
+        },
+        {
+          "row": 30,
+          "column": 15
+        },
+        {
+          "row": 38,
+          "column": 21
+        },
+        {
+          "row": 35,
+          "column": 8
+        }
+      ],
+      "draws": 6,
+      "rngState": 2457341624,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 30,
+              "column": 29
+            },
+            {
+              "row": 6,
+              "column": 15
+            },
+            {
+              "row": 30,
+              "column": 15
+            },
+            {
+              "row": 38,
+              "column": 21
+            },
+            {
+              "row": 35,
+              "column": 8
+            }
+          ],
+          "draws": 7,
+          "rngState": 1489982107
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 30,
+              "column": 29
+            },
+            {
+              "row": 33,
+              "column": 26
+            },
+            {
+              "row": 30,
+              "column": 15
+            },
+            {
+              "row": 38,
+              "column": 21
+            },
+            {
+              "row": 35,
+              "column": 8
+            }
+          ],
+          "draws": 9,
+          "rngState": 445935085
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 30,
+              "column": 29
+            },
+            {
+              "row": 33,
+              "column": 26
+            },
+            {
+              "row": 17,
+              "column": 12
+            },
+            {
+              "row": 38,
+              "column": 21
+            },
+            {
+              "row": 35,
+              "column": 8
+            }
+          ],
+          "draws": 10,
+          "rngState": 1734559996
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 30,
+              "column": 29
+            },
+            {
+              "row": 33,
+              "column": 26
+            },
+            {
+              "row": 17,
+              "column": 12
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 35,
+              "column": 8
+            }
+          ],
+          "draws": 11,
+          "rngState": 72594383
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 30,
+              "column": 29
+            },
+            {
+              "row": 33,
+              "column": 26
+            },
+            {
+              "row": 17,
+              "column": 12
+            },
+            {
+              "row": 10,
+              "column": 23
+            },
+            {
+              "row": 15,
+              "column": 4
+            }
+          ],
+          "draws": 12,
+          "rngState": 1247510358
+        }
+      ]
+    },
+    {
+      "map": "play",
+      "seed": 32767,
+      "initial": [
+        {
+          "row": 14,
+          "column": 5
+        },
+        {
+          "row": 42,
+          "column": 9
+        },
+        {
+          "row": 38,
+          "column": 5
+        },
+        {
+          "row": 18,
+          "column": 13
+        },
+        {
+          "row": 8,
+          "column": 11
+        }
+      ],
+      "draws": 6,
+      "rngState": 2083199621,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 17,
+              "column": 10
+            },
+            {
+              "row": 42,
+              "column": 9
+            },
+            {
+              "row": 38,
+              "column": 5
+            },
+            {
+              "row": 18,
+              "column": 13
+            },
+            {
+              "row": 8,
+              "column": 11
+            }
+          ],
+          "draws": 7,
+          "rngState": 1312793396
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 17,
+              "column": 10
+            },
+            {
+              "row": 32,
+              "column": 27
+            },
+            {
+              "row": 38,
+              "column": 5
+            },
+            {
+              "row": 18,
+              "column": 13
+            },
+            {
+              "row": 8,
+              "column": 11
+            }
+          ],
+          "draws": 8,
+          "rngState": 3864888615
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 17,
+              "column": 10
+            },
+            {
+              "row": 32,
+              "column": 27
+            },
+            {
+              "row": 9,
+              "column": 18
+            },
+            {
+              "row": 18,
+              "column": 13
+            },
+            {
+              "row": 8,
+              "column": 11
+            }
+          ],
+          "draws": 9,
+          "rngState": 3017894734
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 17,
+              "column": 10
+            },
+            {
+              "row": 32,
+              "column": 27
+            },
+            {
+              "row": 9,
+              "column": 18
+            },
+            {
+              "row": 42,
+              "column": 9
+            },
+            {
+              "row": 8,
+              "column": 11
+            }
+          ],
+          "draws": 10,
+          "rngState": 116200665
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 17,
+              "column": 10
+            },
+            {
+              "row": 32,
+              "column": 27
+            },
+            {
+              "row": 9,
+              "column": 18
+            },
+            {
+              "row": 42,
+              "column": 9
+            },
+            {
+              "row": 32,
+              "column": 11
+            }
+          ],
+          "draws": 11,
+          "rngState": 594805816
+        }
+      ]
+    },
+    {
+      "map": "social",
+      "seed": 1,
+      "initial": [
+        {
+          "row": 21,
+          "column": 8
+        },
+        {
+          "row": 27,
+          "column": 12
+        },
+        {
+          "row": 40,
+          "column": 21
+        },
+        {
+          "row": 49,
+          "column": 32
+        },
+        {
+          "row": 50,
+          "column": 15
+        }
+      ],
+      "draws": 5,
+      "rngState": 3403800452,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 46,
+              "column": 35
+            },
+            {
+              "row": 27,
+              "column": 12
+            },
+            {
+              "row": 40,
+              "column": 21
+            },
+            {
+              "row": 49,
+              "column": 32
+            },
+            {
+              "row": 50,
+              "column": 15
+            }
+          ],
+          "draws": 6,
+          "rngState": 1030492215
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 46,
+              "column": 35
+            },
+            {
+              "row": 39,
+              "column": 6
+            },
+            {
+              "row": 40,
+              "column": 21
+            },
+            {
+              "row": 49,
+              "column": 32
+            },
+            {
+              "row": 50,
+              "column": 15
+            }
+          ],
+          "draws": 7,
+          "rngState": 752224798
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 46,
+              "column": 35
+            },
+            {
+              "row": 39,
+              "column": 6
+            },
+            {
+              "row": 17,
+              "column": 28
+            },
+            {
+              "row": 49,
+              "column": 32
+            },
+            {
+              "row": 50,
+              "column": 15
+            }
+          ],
+          "draws": 8,
+          "rngState": 1924036713
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 46,
+              "column": 35
+            },
+            {
+              "row": 39,
+              "column": 6
+            },
+            {
+              "row": 17,
+              "column": 28
+            },
+            {
+              "row": 48,
+              "column": 11
+            },
+            {
+              "row": 50,
+              "column": 15
+            }
+          ],
+          "draws": 9,
+          "rngState": 1766988168
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 46,
+              "column": 35
+            },
+            {
+              "row": 39,
+              "column": 6
+            },
+            {
+              "row": 17,
+              "column": 28
+            },
+            {
+              "row": 48,
+              "column": 11
+            },
+            {
+              "row": 47,
+              "column": 24
+            }
+          ],
+          "draws": 10,
+          "rngState": 3750785579
+        }
+      ]
+    },
+    {
+      "map": "social",
+      "seed": 2,
+      "initial": [
+        {
+          "row": 22,
+          "column": 25
+        },
+        {
+          "row": 22,
+          "column": 9
+        },
+        {
+          "row": 13,
+          "column": 30
+        },
+        {
+          "row": 11,
+          "column": 18
+        },
+        {
+          "row": 9,
+          "column": 16
+        }
+      ],
+      "draws": 5,
+      "rngState": 4079776401,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 55,
+              "column": 20
+            },
+            {
+              "row": 22,
+              "column": 9
+            },
+            {
+              "row": 13,
+              "column": 30
+            },
+            {
+              "row": 11,
+              "column": 18
+            },
+            {
+              "row": 9,
+              "column": 16
+            }
+          ],
+          "draws": 6,
+          "rngState": 1287834384
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 55,
+              "column": 20
+            },
+            {
+              "row": 36,
+              "column": 33
+            },
+            {
+              "row": 13,
+              "column": 30
+            },
+            {
+              "row": 11,
+              "column": 18
+            },
+            {
+              "row": 9,
+              "column": 16
+            }
+          ],
+          "draws": 7,
+          "rngState": 956202387
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 55,
+              "column": 20
+            },
+            {
+              "row": 36,
+              "column": 33
+            },
+            {
+              "row": 30,
+              "column": 11
+            },
+            {
+              "row": 11,
+              "column": 18
+            },
+            {
+              "row": 9,
+              "column": 16
+            }
+          ],
+          "draws": 8,
+          "rngState": 1732194826
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 55,
+              "column": 20
+            },
+            {
+              "row": 36,
+              "column": 33
+            },
+            {
+              "row": 30,
+              "column": 11
+            },
+            {
+              "row": 28,
+              "column": 31
+            },
+            {
+              "row": 9,
+              "column": 16
+            }
+          ],
+          "draws": 10,
+          "rngState": 1200382164
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 55,
+              "column": 20
+            },
+            {
+              "row": 36,
+              "column": 33
+            },
+            {
+              "row": 30,
+              "column": 11
+            },
+            {
+              "row": 28,
+              "column": 31
+            },
+            {
+              "row": 43,
+              "column": 22
+            }
+          ],
+          "draws": 12,
+          "rngState": 3994883566
+        }
+      ]
+    },
+    {
+      "map": "social",
+      "seed": 42,
+      "initial": [
+        {
+          "row": 13,
+          "column": 32
+        },
+        {
+          "row": 38,
+          "column": 31
+        },
+        {
+          "row": 37,
+          "column": 32
+        },
+        {
+          "row": 42,
+          "column": 23
+        },
+        {
+          "row": 12,
+          "column": 19
+        }
+      ],
+      "draws": 5,
+      "rngState": 1054043289,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 38,
+              "column": 31
+            },
+            {
+              "row": 37,
+              "column": 32
+            },
+            {
+              "row": 42,
+              "column": 23
+            },
+            {
+              "row": 12,
+              "column": 19
+            }
+          ],
+          "draws": 6,
+          "rngState": 2991586552
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 37,
+              "column": 32
+            },
+            {
+              "row": 42,
+              "column": 23
+            },
+            {
+              "row": 12,
+              "column": 19
+            }
+          ],
+          "draws": 7,
+          "rngState": 525371355
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 9,
+              "column": 16
+            },
+            {
+              "row": 42,
+              "column": 23
+            },
+            {
+              "row": 12,
+              "column": 19
+            }
+          ],
+          "draws": 8,
+          "rngState": 2648453938
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 9,
+              "column": 16
+            },
+            {
+              "row": 25,
+              "column": 10
+            },
+            {
+              "row": 12,
+              "column": 19
+            }
+          ],
+          "draws": 9,
+          "rngState": 1036078381
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 38,
+              "column": 7
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 9,
+              "column": 16
+            },
+            {
+              "row": 25,
+              "column": 10
+            },
+            {
+              "row": 45,
+              "column": 8
+            }
+          ],
+          "draws": 11,
+          "rngState": 2123992335
+        }
+      ]
+    },
+    {
+      "map": "social",
+      "seed": 777,
+      "initial": [
+        {
+          "row": 35,
+          "column": 34
+        },
+        {
+          "row": 44,
+          "column": 35
+        },
+        {
+          "row": 43,
+          "column": 38
+        },
+        {
+          "row": 17,
+          "column": 36
+        },
+        {
+          "row": 45,
+          "column": 22
+        }
+      ],
+      "draws": 5,
+      "rngState": 3975126764,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 56,
+              "column": 23
+            },
+            {
+              "row": 44,
+              "column": 35
+            },
+            {
+              "row": 43,
+              "column": 38
+            },
+            {
+              "row": 17,
+              "column": 36
+            },
+            {
+              "row": 45,
+              "column": 22
+            }
+          ],
+          "draws": 6,
+          "rngState": 3159519743
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 56,
+              "column": 23
+            },
+            {
+              "row": 19,
+              "column": 26
+            },
+            {
+              "row": 43,
+              "column": 38
+            },
+            {
+              "row": 17,
+              "column": 36
+            },
+            {
+              "row": 45,
+              "column": 22
+            }
+          ],
+          "draws": 7,
+          "rngState": 125043910
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 56,
+              "column": 23
+            },
+            {
+              "row": 19,
+              "column": 26
+            },
+            {
+              "row": 29,
+              "column": 12
+            },
+            {
+              "row": 17,
+              "column": 36
+            },
+            {
+              "row": 45,
+              "column": 22
+            }
+          ],
+          "draws": 8,
+          "rngState": 3378587761
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 56,
+              "column": 23
+            },
+            {
+              "row": 19,
+              "column": 26
+            },
+            {
+              "row": 29,
+              "column": 12
+            },
+            {
+              "row": 26,
+              "column": 11
+            },
+            {
+              "row": 45,
+              "column": 22
+            }
+          ],
+          "draws": 9,
+          "rngState": 3960744304
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 56,
+              "column": 23
+            },
+            {
+              "row": 19,
+              "column": 26
+            },
+            {
+              "row": 29,
+              "column": 12
+            },
+            {
+              "row": 26,
+              "column": 11
+            },
+            {
+              "row": 38,
+              "column": 7
+            }
+          ],
+          "draws": 10,
+          "rngState": 322691699
+        }
+      ]
+    },
+    {
+      "map": "social",
+      "seed": 2026,
+      "initial": [
+        {
+          "row": 42,
+          "column": 5
+        },
+        {
+          "row": 51,
+          "column": 30
+        },
+        {
+          "row": 42,
+          "column": 33
+        },
+        {
+          "row": 53,
+          "column": 28
+        },
+        {
+          "row": 21,
+          "column": 36
+        }
+      ],
+      "draws": 5,
+      "rngState": 2160529753,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 23,
+              "column": 26
+            },
+            {
+              "row": 51,
+              "column": 30
+            },
+            {
+              "row": 42,
+              "column": 33
+            },
+            {
+              "row": 53,
+              "column": 28
+            },
+            {
+              "row": 21,
+              "column": 36
+            }
+          ],
+          "draws": 6,
+          "rngState": 2457341624
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 23,
+              "column": 26
+            },
+            {
+              "row": 44,
+              "column": 35
+            },
+            {
+              "row": 42,
+              "column": 33
+            },
+            {
+              "row": 53,
+              "column": 28
+            },
+            {
+              "row": 21,
+              "column": 36
+            }
+          ],
+          "draws": 7,
+          "rngState": 1489982107
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 23,
+              "column": 26
+            },
+            {
+              "row": 44,
+              "column": 35
+            },
+            {
+              "row": 17,
+              "column": 28
+            },
+            {
+              "row": 53,
+              "column": 28
+            },
+            {
+              "row": 21,
+              "column": 36
+            }
+          ],
+          "draws": 8,
+          "rngState": 4286239474
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 23,
+              "column": 26
+            },
+            {
+              "row": 44,
+              "column": 35
+            },
+            {
+              "row": 17,
+              "column": 28
+            },
+            {
+              "row": 40,
+              "column": 37
+            },
+            {
+              "row": 21,
+              "column": 36
+            }
+          ],
+          "draws": 9,
+          "rngState": 445935085
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 23,
+              "column": 26
+            },
+            {
+              "row": 44,
+              "column": 35
+            },
+            {
+              "row": 17,
+              "column": 28
+            },
+            {
+              "row": 40,
+              "column": 37
+            },
+            {
+              "row": 42,
+              "column": 19
+            }
+          ],
+          "draws": 10,
+          "rngState": 1734559996
+        }
+      ]
+    },
+    {
+      "map": "social",
+      "seed": 32767,
+      "initial": [
+        {
+          "row": 9,
+          "column": 22
+        },
+        {
+          "row": 54,
+          "column": 19
+        },
+        {
+          "row": 41,
+          "column": 32
+        },
+        {
+          "row": 24,
+          "column": 9
+        },
+        {
+          "row": 23,
+          "column": 8
+        }
+      ],
+      "draws": 5,
+      "rngState": 3285399914,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 45,
+              "column": 22
+            },
+            {
+              "row": 54,
+              "column": 19
+            },
+            {
+              "row": 41,
+              "column": 32
+            },
+            {
+              "row": 24,
+              "column": 9
+            },
+            {
+              "row": 23,
+              "column": 8
+            }
+          ],
+          "draws": 6,
+          "rngState": 2083199621
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 45,
+              "column": 22
+            },
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 41,
+              "column": 32
+            },
+            {
+              "row": 24,
+              "column": 9
+            },
+            {
+              "row": 23,
+              "column": 8
+            }
+          ],
+          "draws": 7,
+          "rngState": 1312793396
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 45,
+              "column": 22
+            },
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 56,
+              "column": 21
+            },
+            {
+              "row": 24,
+              "column": 9
+            },
+            {
+              "row": 23,
+              "column": 8
+            }
+          ],
+          "draws": 8,
+          "rngState": 3864888615
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 45,
+              "column": 22
+            },
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 56,
+              "column": 21
+            },
+            {
+              "row": 14,
+              "column": 31
+            },
+            {
+              "row": 23,
+              "column": 8
+            }
+          ],
+          "draws": 9,
+          "rngState": 3017894734
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 45,
+              "column": 22
+            },
+            {
+              "row": 28,
+              "column": 29
+            },
+            {
+              "row": 56,
+              "column": 21
+            },
+            {
+              "row": 14,
+              "column": 31
+            },
+            {
+              "row": 26,
+              "column": 27
+            }
+          ],
+          "draws": 10,
+          "rngState": 116200665
+        }
+      ]
+    },
+    {
+      "map": "study",
+      "seed": 1,
+      "initial": [
+        {
+          "row": 15,
+          "column": 26
+        },
+        {
+          "row": 6,
+          "column": 9
+        },
+        {
+          "row": 7,
+          "column": 14
+        },
+        {
+          "row": 34,
+          "column": 23
+        },
+        {
+          "row": 39,
+          "column": 8
+        }
+      ],
+      "draws": 5,
+      "rngState": 3403800452,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 8,
+              "column": 15
+            },
+            {
+              "row": 6,
+              "column": 9
+            },
+            {
+              "row": 7,
+              "column": 14
+            },
+            {
+              "row": 34,
+              "column": 23
+            },
+            {
+              "row": 39,
+              "column": 8
+            }
+          ],
+          "draws": 6,
+          "rngState": 1030492215
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 8,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 31
+            },
+            {
+              "row": 7,
+              "column": 14
+            },
+            {
+              "row": 34,
+              "column": 23
+            },
+            {
+              "row": 39,
+              "column": 8
+            }
+          ],
+          "draws": 7,
+          "rngState": 752224798
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 8,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 31
+            },
+            {
+              "row": 35,
+              "column": 22
+            },
+            {
+              "row": 34,
+              "column": 23
+            },
+            {
+              "row": 39,
+              "column": 8
+            }
+          ],
+          "draws": 8,
+          "rngState": 1924036713
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 8,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 31
+            },
+            {
+              "row": 35,
+              "column": 22
+            },
+            {
+              "row": 14,
+              "column": 7
+            },
+            {
+              "row": 39,
+              "column": 8
+            }
+          ],
+          "draws": 9,
+          "rngState": 1766988168
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 8,
+              "column": 15
+            },
+            {
+              "row": 20,
+              "column": 31
+            },
+            {
+              "row": 35,
+              "column": 22
+            },
+            {
+              "row": 14,
+              "column": 7
+            },
+            {
+              "row": 36,
+              "column": 17
+            }
+          ],
+          "draws": 10,
+          "rngState": 3750785579
+        }
+      ]
+    },
+    {
+      "map": "study",
+      "seed": 2,
+      "initial": [
+        {
+          "row": 16,
+          "column": 27
+        },
+        {
+          "row": 16,
+          "column": 19
+        },
+        {
+          "row": 11,
+          "column": 4
+        },
+        {
+          "row": 17,
+          "column": 18
+        },
+        {
+          "row": 6,
+          "column": 17
+        }
+      ],
+      "draws": 5,
+      "rngState": 4079776401,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 26,
+              "column": 29
+            },
+            {
+              "row": 16,
+              "column": 19
+            },
+            {
+              "row": 11,
+              "column": 4
+            },
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 6,
+              "column": 17
+            }
+          ],
+          "draws": 6,
+          "rngState": 1287834384
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 26,
+              "column": 29
+            },
+            {
+              "row": 6,
+              "column": 7
+            },
+            {
+              "row": 11,
+              "column": 4
+            },
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 6,
+              "column": 17
+            }
+          ],
+          "draws": 7,
+          "rngState": 956202387
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 26,
+              "column": 29
+            },
+            {
+              "row": 6,
+              "column": 7
+            },
+            {
+              "row": 8,
+              "column": 3
+            },
+            {
+              "row": 17,
+              "column": 18
+            },
+            {
+              "row": 6,
+              "column": 17
+            }
+          ],
+          "draws": 8,
+          "rngState": 1732194826
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 26,
+              "column": 29
+            },
+            {
+              "row": 6,
+              "column": 7
+            },
+            {
+              "row": 8,
+              "column": 3
+            },
+            {
+              "row": 40,
+              "column": 9
+            },
+            {
+              "row": 6,
+              "column": 17
+            }
+          ],
+          "draws": 9,
+          "rngState": 701608101
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 26,
+              "column": 29
+            },
+            {
+              "row": 6,
+              "column": 7
+            },
+            {
+              "row": 8,
+              "column": 3
+            },
+            {
+              "row": 40,
+              "column": 9
+            },
+            {
+              "row": 22,
+              "column": 31
+            }
+          ],
+          "draws": 10,
+          "rngState": 1200382164
+        }
+      ]
+    },
+    {
+      "map": "study",
+      "seed": 42,
+      "initial": [
+        {
+          "row": 30,
+          "column": 7
+        },
+        {
+          "row": 38,
+          "column": 19
+        },
+        {
+          "row": 9,
+          "column": 12
+        },
+        {
+          "row": 27,
+          "column": 28
+        },
+        {
+          "row": 28,
+          "column": 7
+        }
+      ],
+      "draws": 5,
+      "rngState": 1054043289,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 12,
+              "column": 5
+            },
+            {
+              "row": 38,
+              "column": 19
+            },
+            {
+              "row": 9,
+              "column": 12
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 28,
+              "column": 7
+            }
+          ],
+          "draws": 6,
+          "rngState": 2991586552
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 12,
+              "column": 5
+            },
+            {
+              "row": 23,
+              "column": 30
+            },
+            {
+              "row": 9,
+              "column": 12
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 28,
+              "column": 7
+            }
+          ],
+          "draws": 7,
+          "rngState": 525371355
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 12,
+              "column": 5
+            },
+            {
+              "row": 23,
+              "column": 30
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 27,
+              "column": 28
+            },
+            {
+              "row": 28,
+              "column": 7
+            }
+          ],
+          "draws": 8,
+          "rngState": 2648453938
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 12,
+              "column": 5
+            },
+            {
+              "row": 23,
+              "column": 30
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 42,
+              "column": 11
+            },
+            {
+              "row": 28,
+              "column": 7
+            }
+          ],
+          "draws": 9,
+          "rngState": 1036078381
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 12,
+              "column": 5
+            },
+            {
+              "row": 23,
+              "column": 30
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 42,
+              "column": 11
+            },
+            {
+              "row": 14,
+              "column": 15
+            }
+          ],
+          "draws": 10,
+          "rngState": 2263460668
+        }
+      ]
+    },
+    {
+      "map": "study",
+      "seed": 777,
+      "initial": [
+        {
+          "row": 11,
+          "column": 12
+        },
+        {
+          "row": 7,
+          "column": 10
+        },
+        {
+          "row": 16,
+          "column": 17
+        },
+        {
+          "row": 15,
+          "column": 26
+        },
+        {
+          "row": 15,
+          "column": 20
+        }
+      ],
+      "draws": 6,
+      "rngState": 3159519743,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 29,
+              "column": 26
+            },
+            {
+              "row": 7,
+              "column": 10
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 15,
+              "column": 26
+            },
+            {
+              "row": 15,
+              "column": 20
+            }
+          ],
+          "draws": 7,
+          "rngState": 125043910
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 29,
+              "column": 26
+            },
+            {
+              "row": 8,
+              "column": 21
+            },
+            {
+              "row": 16,
+              "column": 17
+            },
+            {
+              "row": 15,
+              "column": 26
+            },
+            {
+              "row": 15,
+              "column": 20
+            }
+          ],
+          "draws": 8,
+          "rngState": 3378587761
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 29,
+              "column": 26
+            },
+            {
+              "row": 8,
+              "column": 21
+            },
+            {
+              "row": 11,
+              "column": 24
+            },
+            {
+              "row": 15,
+              "column": 26
+            },
+            {
+              "row": 15,
+              "column": 20
+            }
+          ],
+          "draws": 9,
+          "rngState": 3960744304
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 29,
+              "column": 26
+            },
+            {
+              "row": 8,
+              "column": 21
+            },
+            {
+              "row": 11,
+              "column": 24
+            },
+            {
+              "row": 12,
+              "column": 5
+            },
+            {
+              "row": 15,
+              "column": 20
+            }
+          ],
+          "draws": 10,
+          "rngState": 322691699
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 29,
+              "column": 26
+            },
+            {
+              "row": 8,
+              "column": 21
+            },
+            {
+              "row": 11,
+              "column": 24
+            },
+            {
+              "row": 12,
+              "column": 5
+            },
+            {
+              "row": 33,
+              "column": 4
+            }
+          ],
+          "draws": 12,
+          "rngState": 4084546693
+        }
+      ]
+    },
+    {
+      "map": "study",
+      "seed": 2026,
+      "initial": [
+        {
+          "row": 11,
+          "column": 4
+        },
+        {
+          "row": 12,
+          "column": 13
+        },
+        {
+          "row": 6,
+          "column": 5
+        },
+        {
+          "row": 13,
+          "column": 22
+        },
+        {
+          "row": 40,
+          "column": 9
+        }
+      ],
+      "draws": 5,
+      "rngState": 2160529753,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 14,
+              "column": 21
+            },
+            {
+              "row": 12,
+              "column": 13
+            },
+            {
+              "row": 6,
+              "column": 5
+            },
+            {
+              "row": 13,
+              "column": 22
+            },
+            {
+              "row": 40,
+              "column": 9
+            }
+          ],
+          "draws": 6,
+          "rngState": 2457341624
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 14,
+              "column": 21
+            },
+            {
+              "row": 37,
+              "column": 20
+            },
+            {
+              "row": 6,
+              "column": 5
+            },
+            {
+              "row": 13,
+              "column": 22
+            },
+            {
+              "row": 40,
+              "column": 9
+            }
+          ],
+          "draws": 7,
+          "rngState": 1489982107
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 14,
+              "column": 21
+            },
+            {
+              "row": 37,
+              "column": 20
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 13,
+              "column": 22
+            },
+            {
+              "row": 40,
+              "column": 9
+            }
+          ],
+          "draws": 8,
+          "rngState": 4286239474
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 14,
+              "column": 21
+            },
+            {
+              "row": 37,
+              "column": 20
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 29,
+              "column": 26
+            },
+            {
+              "row": 40,
+              "column": 9
+            }
+          ],
+          "draws": 9,
+          "rngState": 445935085
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 14,
+              "column": 21
+            },
+            {
+              "row": 37,
+              "column": 20
+            },
+            {
+              "row": 39,
+              "column": 14
+            },
+            {
+              "row": 29,
+              "column": 26
+            },
+            {
+              "row": 18,
+              "column": 7
+            }
+          ],
+          "draws": 10,
+          "rngState": 1734559996
+        }
+      ]
+    },
+    {
+      "map": "study",
+      "seed": 32767,
+      "initial": [
+        {
+          "row": 27,
+          "column": 6
+        },
+        {
+          "row": 36,
+          "column": 21
+        },
+        {
+          "row": 8,
+          "column": 15
+        },
+        {
+          "row": 5,
+          "column": 18
+        },
+        {
+          "row": 10,
+          "column": 23
+        }
+      ],
+      "draws": 5,
+      "rngState": 3285399914,
+      "respawns": [
+        {
+          "index": 0,
+          "positions": [
+            {
+              "row": 26,
+              "column": 5
+            },
+            {
+              "row": 36,
+              "column": 21
+            },
+            {
+              "row": 8,
+              "column": 15
+            },
+            {
+              "row": 5,
+              "column": 18
+            },
+            {
+              "row": 10,
+              "column": 23
+            }
+          ],
+          "draws": 6,
+          "rngState": 2083199621
+        },
+        {
+          "index": 1,
+          "positions": [
+            {
+              "row": 26,
+              "column": 5
+            },
+            {
+              "row": 15,
+              "column": 16
+            },
+            {
+              "row": 8,
+              "column": 15
+            },
+            {
+              "row": 5,
+              "column": 18
+            },
+            {
+              "row": 10,
+              "column": 23
+            }
+          ],
+          "draws": 7,
+          "rngState": 1312793396
+        },
+        {
+          "index": 2,
+          "positions": [
+            {
+              "row": 26,
+              "column": 5
+            },
+            {
+              "row": 15,
+              "column": 16
+            },
+            {
+              "row": 38,
+              "column": 15
+            },
+            {
+              "row": 5,
+              "column": 18
+            },
+            {
+              "row": 10,
+              "column": 23
+            }
+          ],
+          "draws": 8,
+          "rngState": 3864888615
+        },
+        {
+          "index": 3,
+          "positions": [
+            {
+              "row": 26,
+              "column": 5
+            },
+            {
+              "row": 15,
+              "column": 16
+            },
+            {
+              "row": 38,
+              "column": 15
+            },
+            {
+              "row": 10,
+              "column": 3
+            },
+            {
+              "row": 10,
+              "column": 23
+            }
+          ],
+          "draws": 9,
+          "rngState": 3017894734
+        },
+        {
+          "index": 4,
+          "positions": [
+            {
+              "row": 26,
+              "column": 5
+            },
+            {
+              "row": 15,
+              "column": 16
+            },
+            {
+              "row": 38,
+              "column": 15
+            },
+            {
+              "row": 10,
+              "column": 3
+            },
+            {
+              "row": 41,
+              "column": 12
+            }
+          ],
+          "draws": 11,
+          "rngState": 594805816
+        }
+      ]
+    }
+  ],
+  "digits": [
+    {
+      "count": 10,
+      "interval": 40,
+      "frames": [
+        {
+          "time": 0,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 17,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 40,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 41,
+          "value": 3,
+          "lastTick": 41,
+          "initialFrame": false
+        },
+        {
+          "time": 58,
+          "value": 3,
+          "lastTick": 41,
+          "initialFrame": false
+        },
+        {
+          "time": 81,
+          "value": 3,
+          "lastTick": 41,
+          "initialFrame": false
+        },
+        {
+          "time": 82,
+          "value": 4,
+          "lastTick": 82,
+          "initialFrame": false
+        },
+        {
+          "time": 99,
+          "value": 4,
+          "lastTick": 82,
+          "initialFrame": false
+        },
+        {
+          "time": 100,
+          "value": 4,
+          "lastTick": 82,
+          "initialFrame": false
+        },
+        {
+          "time": 101,
+          "value": 4,
+          "lastTick": 82,
+          "initialFrame": false
+        },
+        {
+          "time": 102,
+          "value": 4,
+          "lastTick": 82,
+          "initialFrame": false
+        },
+        {
+          "time": 999,
+          "value": 5,
+          "lastTick": 999,
+          "initialFrame": false
+        },
+        {
+          "time": 1000,
+          "value": 5,
+          "lastTick": 999,
+          "initialFrame": false
+        },
+        {
+          "time": 1001,
+          "value": 5,
+          "lastTick": 999,
+          "initialFrame": false
+        },
+        {
+          "time": 1300,
+          "value": 6,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1320,
+          "value": 6,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1337,
+          "value": 6,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1354,
+          "value": 7,
+          "lastTick": 1354,
+          "initialFrame": false
+        },
+        {
+          "time": 1371,
+          "value": 7,
+          "lastTick": 1354,
+          "initialFrame": false
+        },
+        {
+          "time": 1388,
+          "value": 7,
+          "lastTick": 1354,
+          "initialFrame": false
+        },
+        {
+          "time": 1405,
+          "value": 8,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1422,
+          "value": 8,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1439,
+          "value": 8,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1456,
+          "value": 9,
+          "lastTick": 1456,
+          "initialFrame": false
+        },
+        {
+          "time": 1473,
+          "value": 9,
+          "lastTick": 1456,
+          "initialFrame": false
+        },
+        {
+          "time": 1490,
+          "value": 9,
+          "lastTick": 1456,
+          "initialFrame": false
+        },
+        {
+          "time": 1507,
+          "value": 0,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1524,
+          "value": 0,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1541,
+          "value": 0,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1558,
+          "value": 1,
+          "lastTick": 1558,
+          "initialFrame": false
+        },
+        {
+          "time": 1575,
+          "value": 1,
+          "lastTick": 1558,
+          "initialFrame": false
+        },
+        {
+          "time": 1592,
+          "value": 1,
+          "lastTick": 1558,
+          "initialFrame": false
+        },
+        {
+          "time": 1609,
+          "value": 2,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1626,
+          "value": 2,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1643,
+          "value": 2,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1660,
+          "value": 3,
+          "lastTick": 1660,
+          "initialFrame": false
+        },
+        {
+          "time": 1677,
+          "value": 3,
+          "lastTick": 1660,
+          "initialFrame": false
+        },
+        {
+          "time": 1694,
+          "value": 3,
+          "lastTick": 1660,
+          "initialFrame": false
+        },
+        {
+          "time": 1711,
+          "value": 4,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1728,
+          "value": 4,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1745,
+          "value": 4,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1762,
+          "value": 5,
+          "lastTick": 1762,
+          "initialFrame": false
+        },
+        {
+          "time": 1779,
+          "value": 5,
+          "lastTick": 1762,
+          "initialFrame": false
+        },
+        {
+          "time": 1796,
+          "value": 5,
+          "lastTick": 1762,
+          "initialFrame": false
+        },
+        {
+          "time": 1813,
+          "value": 6,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1830,
+          "value": 6,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1847,
+          "value": 6,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1864,
+          "value": 7,
+          "lastTick": 1864,
+          "initialFrame": false
+        },
+        {
+          "time": 1881,
+          "value": 7,
+          "lastTick": 1864,
+          "initialFrame": false
+        },
+        {
+          "time": 1898,
+          "value": 7,
+          "lastTick": 1864,
+          "initialFrame": false
+        },
+        {
+          "time": 1915,
+          "value": 8,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 1932,
+          "value": 8,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 1949,
+          "value": 8,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 1966,
+          "value": 9,
+          "lastTick": 1966,
+          "initialFrame": false
+        },
+        {
+          "time": 1983,
+          "value": 9,
+          "lastTick": 1966,
+          "initialFrame": false
+        },
+        {
+          "time": 2000,
+          "value": 9,
+          "lastTick": 1966,
+          "initialFrame": false
+        },
+        {
+          "time": 2017,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2034,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2051,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2068,
+          "value": 1,
+          "lastTick": 2068,
+          "initialFrame": false
+        },
+        {
+          "time": 2085,
+          "value": 1,
+          "lastTick": 2068,
+          "initialFrame": false
+        },
+        {
+          "time": 2102,
+          "value": 1,
+          "lastTick": 2068,
+          "initialFrame": false
+        },
+        {
+          "time": 2119,
+          "value": 2,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2136,
+          "value": 2,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2153,
+          "value": 2,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2170,
+          "value": 3,
+          "lastTick": 2170,
+          "initialFrame": false
+        },
+        {
+          "time": 2187,
+          "value": 3,
+          "lastTick": 2170,
+          "initialFrame": false
+        },
+        {
+          "time": 2204,
+          "value": 3,
+          "lastTick": 2170,
+          "initialFrame": false
+        },
+        {
+          "time": 2221,
+          "value": 4,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2238,
+          "value": 4,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2255,
+          "value": 4,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2272,
+          "value": 5,
+          "lastTick": 2272,
+          "initialFrame": false
+        },
+        {
+          "time": 2289,
+          "value": 5,
+          "lastTick": 2272,
+          "initialFrame": false
+        },
+        {
+          "time": 2306,
+          "value": 5,
+          "lastTick": 2272,
+          "initialFrame": false
+        },
+        {
+          "time": 2323,
+          "value": 6,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2340,
+          "value": 6,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2357,
+          "value": 6,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2374,
+          "value": 7,
+          "lastTick": 2374,
+          "initialFrame": false
+        },
+        {
+          "time": 2391,
+          "value": 7,
+          "lastTick": 2374,
+          "initialFrame": false
+        },
+        {
+          "time": 2408,
+          "value": 7,
+          "lastTick": 2374,
+          "initialFrame": false
+        },
+        {
+          "time": 2425,
+          "value": 8,
+          "lastTick": 2425,
+          "initialFrame": false
+        },
+        {
+          "time": 2442,
+          "value": 8,
+          "lastTick": 2425,
+          "initialFrame": false
+        },
+        {
+          "time": 2459,
+          "value": 8,
+          "lastTick": 2425,
+          "initialFrame": false
+        },
+        {
+          "time": 2476,
+          "value": 9,
+          "lastTick": 2476,
+          "initialFrame": false
+        },
+        {
+          "time": 2493,
+          "value": 9,
+          "lastTick": 2476,
+          "initialFrame": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "interval": 100,
+      "frames": [
+        {
+          "time": 0,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 17,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 40,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 41,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 58,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 81,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 82,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 99,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 100,
+          "value": 3,
+          "lastTick": 0,
+          "initialFrame": true
+        },
+        {
+          "time": 101,
+          "value": 3,
+          "lastTick": 101,
+          "initialFrame": false
+        },
+        {
+          "time": 102,
+          "value": 3,
+          "lastTick": 101,
+          "initialFrame": false
+        },
+        {
+          "time": 999,
+          "value": 0,
+          "lastTick": 999,
+          "initialFrame": false
+        },
+        {
+          "time": 1000,
+          "value": 0,
+          "lastTick": 999,
+          "initialFrame": false
+        },
+        {
+          "time": 1001,
+          "value": 0,
+          "lastTick": 999,
+          "initialFrame": false
+        },
+        {
+          "time": 1300,
+          "value": 1,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1320,
+          "value": 1,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1337,
+          "value": 1,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1354,
+          "value": 1,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1371,
+          "value": 1,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1388,
+          "value": 1,
+          "lastTick": 1300,
+          "initialFrame": false
+        },
+        {
+          "time": 1405,
+          "value": 2,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1422,
+          "value": 2,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1439,
+          "value": 2,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1456,
+          "value": 2,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1473,
+          "value": 2,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1490,
+          "value": 2,
+          "lastTick": 1405,
+          "initialFrame": false
+        },
+        {
+          "time": 1507,
+          "value": 3,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1524,
+          "value": 3,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1541,
+          "value": 3,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1558,
+          "value": 3,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1575,
+          "value": 3,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1592,
+          "value": 3,
+          "lastTick": 1507,
+          "initialFrame": false
+        },
+        {
+          "time": 1609,
+          "value": 0,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1626,
+          "value": 0,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1643,
+          "value": 0,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1660,
+          "value": 0,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1677,
+          "value": 0,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1694,
+          "value": 0,
+          "lastTick": 1609,
+          "initialFrame": false
+        },
+        {
+          "time": 1711,
+          "value": 1,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1728,
+          "value": 1,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1745,
+          "value": 1,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1762,
+          "value": 1,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1779,
+          "value": 1,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1796,
+          "value": 1,
+          "lastTick": 1711,
+          "initialFrame": false
+        },
+        {
+          "time": 1813,
+          "value": 2,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1830,
+          "value": 2,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1847,
+          "value": 2,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1864,
+          "value": 2,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1881,
+          "value": 2,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1898,
+          "value": 2,
+          "lastTick": 1813,
+          "initialFrame": false
+        },
+        {
+          "time": 1915,
+          "value": 3,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 1932,
+          "value": 3,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 1949,
+          "value": 3,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 1966,
+          "value": 3,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 1983,
+          "value": 3,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 2000,
+          "value": 3,
+          "lastTick": 1915,
+          "initialFrame": false
+        },
+        {
+          "time": 2017,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2034,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2051,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2068,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2085,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2102,
+          "value": 0,
+          "lastTick": 2017,
+          "initialFrame": false
+        },
+        {
+          "time": 2119,
+          "value": 1,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2136,
+          "value": 1,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2153,
+          "value": 1,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2170,
+          "value": 1,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2187,
+          "value": 1,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2204,
+          "value": 1,
+          "lastTick": 2119,
+          "initialFrame": false
+        },
+        {
+          "time": 2221,
+          "value": 2,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2238,
+          "value": 2,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2255,
+          "value": 2,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2272,
+          "value": 2,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2289,
+          "value": 2,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2306,
+          "value": 2,
+          "lastTick": 2221,
+          "initialFrame": false
+        },
+        {
+          "time": 2323,
+          "value": 3,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2340,
+          "value": 3,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2357,
+          "value": 3,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2374,
+          "value": 3,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2391,
+          "value": 3,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2408,
+          "value": 3,
+          "lastTick": 2323,
+          "initialFrame": false
+        },
+        {
+          "time": 2425,
+          "value": 0,
+          "lastTick": 2425,
+          "initialFrame": false
+        },
+        {
+          "time": 2442,
+          "value": 0,
+          "lastTick": 2425,
+          "initialFrame": false
+        },
+        {
+          "time": 2459,
+          "value": 0,
+          "lastTick": 2425,
+          "initialFrame": false
+        },
+        {
+          "time": 2476,
+          "value": 0,
+          "lastTick": 2425,
+          "initialFrame": false
+        },
+        {
+          "time": 2493,
+          "value": 0,
+          "lastTick": 2425,
+          "initialFrame": false
+        }
+      ]
+    }
+  ],
+  "rewards": [
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": 0,
+      "positive": false,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9876
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": 500,
+      "positive": false,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 10376
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": 99999900,
+      "positive": false,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 99990024
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": 99999900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 99999999
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": 2147483600,
+      "positive": false,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 99999999
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": 2147483600,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": -2147483600,
+      "positive": false,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 99999999
+    },
+    {
+      "spirit": 2,
+      "attribute": 0,
+      "before": -2147483600,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 3,
+      "attribute": 0,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 876
+    },
+    {
+      "spirit": 3,
+      "attribute": 0,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 1376
+    },
+    {
+      "spirit": 3,
+      "attribute": 0,
+      "before": 9900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9999
+    },
+    {
+      "spirit": 3,
+      "attribute": 0,
+      "before": 32760,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": -31900
+    },
+    {
+      "spirit": 3,
+      "attribute": 0,
+      "before": -32768,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": -31892
+    },
+    {
+      "spirit": 3,
+      "attribute": 1,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 876
+    },
+    {
+      "spirit": 3,
+      "attribute": 1,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 1376
+    },
+    {
+      "spirit": 3,
+      "attribute": 1,
+      "before": 9900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9999
+    },
+    {
+      "spirit": 3,
+      "attribute": 1,
+      "before": 32760,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": -31900
+    },
+    {
+      "spirit": 3,
+      "attribute": 1,
+      "before": -32768,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": -31892
+    },
+    {
+      "spirit": 3,
+      "attribute": 2,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 876
+    },
+    {
+      "spirit": 3,
+      "attribute": 2,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 1376
+    },
+    {
+      "spirit": 3,
+      "attribute": 2,
+      "before": 9900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9999
+    },
+    {
+      "spirit": 3,
+      "attribute": 2,
+      "before": 32760,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": -31900
+    },
+    {
+      "spirit": 3,
+      "attribute": 2,
+      "before": -32768,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": -31892
+    },
+    {
+      "spirit": 3,
+      "attribute": 3,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 876
+    },
+    {
+      "spirit": 3,
+      "attribute": 3,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 1376
+    },
+    {
+      "spirit": 3,
+      "attribute": 3,
+      "before": 9900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9999
+    },
+    {
+      "spirit": 3,
+      "attribute": 3,
+      "before": 32760,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": -31900
+    },
+    {
+      "spirit": 3,
+      "attribute": 3,
+      "before": -32768,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": -31892
+    },
+    {
+      "spirit": 4,
+      "attribute": 0,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 4,
+      "attribute": 0,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 4,
+      "attribute": 0,
+      "before": 9900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9024
+    },
+    {
+      "spirit": 4,
+      "attribute": 0,
+      "before": 32760,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 31884
+    },
+    {
+      "spirit": 4,
+      "attribute": 0,
+      "before": -32768,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 31892
+    },
+    {
+      "spirit": 4,
+      "attribute": 1,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 4,
+      "attribute": 1,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 4,
+      "attribute": 1,
+      "before": 9900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9024
+    },
+    {
+      "spirit": 4,
+      "attribute": 1,
+      "before": 32760,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 31884
+    },
+    {
+      "spirit": 4,
+      "attribute": 1,
+      "before": -32768,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 31892
+    },
+    {
+      "spirit": 4,
+      "attribute": 2,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 4,
+      "attribute": 2,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 4,
+      "attribute": 2,
+      "before": 9900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9024
+    },
+    {
+      "spirit": 4,
+      "attribute": 2,
+      "before": 32760,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 31884
+    },
+    {
+      "spirit": 4,
+      "attribute": 2,
+      "before": -32768,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 31892
+    },
+    {
+      "spirit": 4,
+      "attribute": 3,
+      "before": 0,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 4,
+      "attribute": 3,
+      "before": 500,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 0
+    },
+    {
+      "spirit": 4,
+      "attribute": 3,
+      "before": 9900,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 9024
+    },
+    {
+      "spirit": 4,
+      "attribute": 3,
+      "before": 32760,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 31884
+    },
+    {
+      "spirit": 4,
+      "attribute": 3,
+      "before": -32768,
+      "positive": true,
+      "digits": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "after": 31892
+    }
+  ]
+}

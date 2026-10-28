@@ -1,0 +1,11 @@
+node_modules/
+dist/
+target/
+src/wasm/
+research/
+output/
+.cache/
+*.log
+.DS_Store
+__pycache__/
+*.pyc

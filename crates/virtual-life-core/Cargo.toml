@@ -1,0 +1,14 @@
+[package]
+name = "virtual-life-core"
+version = "0.1.0"
+edition = "2024"
+description = "Evidence-backed Virtual Life browser runtime and original asset decoders"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = { version = "=1.0.154", features = ["float_roundtrip"] }
+wasm-bindgen = "=0.2.129"

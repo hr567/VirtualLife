@@ -1,0 +1,2367 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "method": "Original 0x4379f0 candidate loop and 0x438efc answer/settlement instructions; sound/text/clock are hooked",
+  "candidates": [
+    {
+      "seed": 0,
+      "contacts": [],
+      "offers": [
+        6,
+        7,
+        5,
+        2
+      ],
+      "rngState": 2832368235,
+      "rngDraws": 9
+    },
+    {
+      "seed": 0,
+      "contacts": [
+        0
+      ],
+      "offers": [
+        6,
+        7,
+        5,
+        2
+      ],
+      "rngState": 2832368235,
+      "rngDraws": 9
+    },
+    {
+      "seed": 0,
+      "contacts": [
+        3,
+        1,
+        7
+      ],
+      "offers": [
+        6,
+        5,
+        2,
+        4
+      ],
+      "rngState": 2006221698,
+      "rngDraws": 10
+    },
+    {
+      "seed": 0,
+      "contacts": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "offers": [
+        7,
+        5,
+        1,
+        3
+      ],
+      "rngState": 2090033518,
+      "rngDraws": 22
+    },
+    {
+      "seed": 1,
+      "contacts": [],
+      "offers": [
+        1,
+        3,
+        6,
+        4
+      ],
+      "rngState": 3884216597,
+      "rngDraws": 4
+    },
+    {
+      "seed": 1,
+      "contacts": [
+        0
+      ],
+      "offers": [
+        1,
+        3,
+        6,
+        4
+      ],
+      "rngState": 3884216597,
+      "rngDraws": 4
+    },
+    {
+      "seed": 1,
+      "contacts": [
+        3,
+        1,
+        7
+      ],
+      "offers": [
+        6,
+        4,
+        2,
+        0
+      ],
+      "rngState": 3750785579,
+      "rngDraws": 10
+    },
+    {
+      "seed": 1,
+      "contacts": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "offers": [
+        1,
+        3,
+        7,
+        5
+      ],
+      "rngState": 3289249106,
+      "rngDraws": 27
+    },
+    {
+      "seed": 42,
+      "contacts": [],
+      "offers": [
+        7,
+        0,
+        5,
+        3
+      ],
+      "rngState": 1054043289,
+      "rngDraws": 5
+    },
+    {
+      "seed": 42,
+      "contacts": [
+        0
+      ],
+      "offers": [
+        7,
+        5,
+        3,
+        4
+      ],
+      "rngState": 2648453938,
+      "rngDraws": 8
+    },
+    {
+      "seed": 42,
+      "contacts": [
+        3,
+        1,
+        7
+      ],
+      "offers": [
+        0,
+        5,
+        4,
+        6
+      ],
+      "rngState": 4110349206,
+      "rngDraws": 12
+    },
+    {
+      "seed": 42,
+      "contacts": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "offers": [
+        7,
+        5,
+        3,
+        1
+      ],
+      "rngState": 1036078381,
+      "rngDraws": 9
+    },
+    {
+      "seed": 1999,
+      "contacts": [],
+      "offers": [
+        6,
+        7,
+        5,
+        1
+      ],
+      "rngState": 2250852675,
+      "rngDraws": 4
+    },
+    {
+      "seed": 1999,
+      "contacts": [
+        0
+      ],
+      "offers": [
+        6,
+        7,
+        5,
+        1
+      ],
+      "rngState": 2250852675,
+      "rngDraws": 4
+    },
+    {
+      "seed": 1999,
+      "contacts": [
+        3,
+        1,
+        7
+      ],
+      "offers": [
+        6,
+        5,
+        2,
+        4
+      ],
+      "rngState": 407688991,
+      "rngDraws": 16
+    },
+    {
+      "seed": 1999,
+      "contacts": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "offers": [
+        7,
+        5,
+        1,
+        3
+      ],
+      "rngState": 277554500,
+      "rngDraws": 7
+    },
+    {
+      "seed": 4294967295,
+      "contacts": [],
+      "offers": [
+        3,
+        6,
+        5,
+        4
+      ],
+      "rngState": 2051848554,
+      "rngDraws": 5
+    },
+    {
+      "seed": 4294967295,
+      "contacts": [
+        0
+      ],
+      "offers": [
+        3,
+        6,
+        5,
+        4
+      ],
+      "rngState": 2051848554,
+      "rngDraws": 5
+    },
+    {
+      "seed": 4294967295,
+      "contacts": [
+        3,
+        1,
+        7
+      ],
+      "offers": [
+        6,
+        5,
+        4,
+        2
+      ],
+      "rngState": 3897748302,
+      "rngDraws": 9
+    },
+    {
+      "seed": 4294967295,
+      "contacts": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "offers": [
+        3,
+        5,
+        1,
+        7
+      ],
+      "rngState": 1081543021,
+      "rngDraws": 14
+    }
+  ],
+  "settlements": [
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [],
+      "money": 30000,
+      "afterContacts": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 30000,
+      "afterContacts": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 1,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 30000,
+      "afterContacts": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        7,
+        5,
+        3,
+        4
+      ],
+      "rngState": 2648453938,
+      "rngDraws": 8
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        7,
+        5,
+        3,
+        4
+      ],
+      "rngState": 2648453938,
+      "rngDraws": 8
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        7,
+        5,
+        3,
+        4
+      ],
+      "rngState": 2648453938,
+      "rngDraws": 8
+    },
+    {
+      "sex": 0,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27000,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 30000,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 30000,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 1,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 30000,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        3,
+        4,
+        1,
+        6
+      ],
+      "rngState": 4110349206,
+      "rngDraws": 12
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        3,
+        4,
+        1,
+        6
+      ],
+      "rngState": 4110349206,
+      "rngDraws": 12
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        3,
+        4,
+        1,
+        6
+      ],
+      "rngState": 4110349206,
+      "rngDraws": 12
+    },
+    {
+      "sex": 0,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 26200,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [],
+      "money": 30000,
+      "afterContacts": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 30000,
+      "afterContacts": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 1,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 30000,
+      "afterContacts": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        7,
+        5,
+        3,
+        4
+      ],
+      "rngState": 2648453938,
+      "rngDraws": 8
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        7,
+        5,
+        3,
+        4
+      ],
+      "rngState": 2648453938,
+      "rngDraws": 8
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        0,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        7,
+        5,
+        3,
+        4
+      ],
+      "rngState": 2648453938,
+      "rngDraws": 8
+    },
+    {
+      "sex": 1,
+      "candidate": 0,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [],
+      "money": 27400,
+      "afterContacts": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 30000,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 30000,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 1,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": false,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 30000,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 0,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        3,
+        4,
+        1,
+        6
+      ],
+      "rngState": 4110349206,
+      "rngDraws": 12
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": false,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        3,
+        4,
+        1,
+        6
+      ],
+      "rngState": 4110349206,
+      "rngDraws": 12
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": false,
+      "firstCorrect": true,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 1,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 0,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        5,
+        6,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 1,
+      "noticeKind": 0,
+      "returnKind": 1,
+      "offers": [
+        3,
+        4,
+        1,
+        6
+      ],
+      "rngState": 4110349206,
+      "rngDraws": 12
+    },
+    {
+      "sex": 1,
+      "candidate": 5,
+      "secondCorrect": true,
+      "firstCorrect": true,
+      "attempt": 1,
+      "giftLevel": 2,
+      "contacts": [
+        0,
+        2,
+        7
+      ],
+      "money": 27600,
+      "afterContacts": [
+        0,
+        2,
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "newTargets": [
+        7,
+        5,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "attempts": 2,
+      "noticeKind": 2,
+      "returnKind": 1,
+      "offers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rngState": 42,
+      "rngDraws": 0
+    }
+  ]
+}

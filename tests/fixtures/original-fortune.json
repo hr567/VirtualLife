@@ -1,0 +1,4173 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "method": "Original x86 scoring and clipping execute in Unicorn with decoded original records; animation omitted",
+  "cases": [
+    {
+      "recordId": 0,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        0,
+        5,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1234,
+        5961,
+        9999
+      ]
+    },
+    {
+      "recordId": 0,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        103,
+        5555,
+        9800
+      ]
+    },
+    {
+      "recordId": 0,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        -3
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9450,
+        8000,
+        6790
+      ]
+    },
+    {
+      "recordId": 1,
+      "choice": 0,
+      "answers": [
+        0,
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        0,
+        5,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1234,
+        5961,
+        9999
+      ]
+    },
+    {
+      "recordId": 1,
+      "choice": 1,
+      "answers": [
+        1,
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        8,
+        8
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5999,
+        9999
+      ]
+    },
+    {
+      "recordId": 1,
+      "choice": 4,
+      "answers": [
+        1,
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        0,
+        5,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9000,
+        8400,
+        7140
+      ]
+    },
+    {
+      "recordId": 2,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -2,
+        0,
+        -5
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1210,
+        5678,
+        9500
+      ]
+    },
+    {
+      "recordId": 2,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        5,
+        -3,
+        0,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        97,
+        5555,
+        9800
+      ]
+    },
+    {
+      "recordId": 2,
+      "choice": 4,
+      "answers": [
+        2
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        5,
+        -2,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9450,
+        7840,
+        7000
+      ]
+    },
+    {
+      "recordId": 3,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        -3,
+        -5,
+        0,
+        -5
+      ],
+      "outcome": null,
+      "after": [
+        970,
+        1173,
+        5678,
+        9500
+      ]
+    },
+    {
+      "recordId": 3,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        -3,
+        0,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        97,
+        5555,
+        9999
+      ]
+    },
+    {
+      "recordId": 3,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        3,
+        3,
+        0,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        9999,
+        9270,
+        8000,
+        7210
+      ]
+    },
+    {
+      "recordId": 4,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        5,
+        2,
+        0,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1050,
+        1258,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 4,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5555,
+        9800
+      ]
+    },
+    {
+      "recordId": 4,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        -3,
+        5,
+        0,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        9691,
+        9450,
+        8000,
+        7210
+      ]
+    },
+    {
+      "recordId": 5,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -3,
+        2,
+        -2
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1197,
+        5791,
+        9800
+      ]
+    },
+    {
+      "recordId": 5,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        2,
+        0,
+        0,
+        -4
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5555,
+        9408
+      ]
+    },
+    {
+      "recordId": 5,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        5,
+        0,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        9999,
+        9000,
+        8000,
+        7140
+      ]
+    },
+    {
+      "recordId": 6,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1295,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 6,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        4,
+        3,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        102,
+        5721,
+        9999
+      ]
+    },
+    {
+      "recordId": 6,
+      "choice": 4,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        4,
+        3,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9360,
+        8240,
+        7350
+      ]
+    },
+    {
+      "recordId": 7,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1295,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 7,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        2,
+        5,
+        0,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        103,
+        5555,
+        9800
+      ]
+    },
+    {
+      "recordId": 7,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        0,
+        -3,
+        -2
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9000,
+        7760,
+        6860
+      ]
+    },
+    {
+      "recordId": 8,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        5,
+        -7,
+        0,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        1050,
+        1148,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 8,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        -2,
+        6,
+        0,
+        -1
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        104,
+        5555,
+        9702
+      ]
+    },
+    {
+      "recordId": 8,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        -5,
+        12,
+        0,
+        1
+      ],
+      "outcome": null,
+      "after": [
+        9491,
+        9999,
+        8000,
+        7070
+      ]
+    },
+    {
+      "recordId": 9,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        5,
+        -3,
+        -4
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1295,
+        5508,
+        9600
+      ]
+    },
+    {
+      "recordId": 9,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        -2,
+        0,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        98,
+        5555,
+        9800
+      ]
+    },
+    {
+      "recordId": 9,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        -3,
+        0,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        8730,
+        8000,
+        7210
+      ]
+    },
+    {
+      "recordId": 10,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        -3,
+        -4,
+        0,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        970,
+        1185,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 10,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        3,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5721,
+        9996
+      ]
+    },
+    {
+      "recordId": 10,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        2,
+        0,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9180,
+        8000,
+        7350
+      ]
+    },
+    {
+      "recordId": 11,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        0,
+        0,
+        -5
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1234,
+        5678,
+        9500
+      ]
+    },
+    {
+      "recordId": 11,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        0,
+        -2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5555,
+        9604
+      ]
+    },
+    {
+      "recordId": 11,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        2,
+        0,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9180,
+        8000,
+        7350
+      ]
+    },
+    {
+      "recordId": 12,
+      "choice": 0,
+      "answers": [
+        0,
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        3,
+        -3,
+        2,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1030,
+        1197,
+        5791,
+        9999
+      ]
+    },
+    {
+      "recordId": 12,
+      "choice": 1,
+      "answers": [
+        1,
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        -2,
+        -5,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        98,
+        5278,
+        9800
+      ]
+    },
+    {
+      "recordId": 12,
+      "choice": 4,
+      "answers": [
+        4,
+        2
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        5,
+        8,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9450,
+        8640,
+        7000
+      ]
+    },
+    {
+      "recordId": 13,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        0,
+        -3,
+        -5
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1234,
+        5508,
+        9500
+      ]
+    },
+    {
+      "recordId": 13,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5555,
+        9996
+      ]
+    },
+    {
+      "recordId": 13,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        -2,
+        2,
+        3,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        9791,
+        9180,
+        8240,
+        7000
+      ]
+    },
+    {
+      "recordId": 14,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -5,
+        0,
+        -2
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1173,
+        5678,
+        9800
+      ]
+    },
+    {
+      "recordId": 14,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        -4,
+        0,
+        0,
+        -2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5555,
+        9604
+      ]
+    },
+    {
+      "recordId": 14,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9270,
+        8000,
+        7140
+      ]
+    },
+    {
+      "recordId": 15,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        0,
+        0,
+        -5
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1234,
+        5678,
+        9500
+      ]
+    },
+    {
+      "recordId": 15,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        -5,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5278,
+        9800
+      ]
+    },
+    {
+      "recordId": 15,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        2,
+        0,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9180,
+        8000,
+        7350
+      ]
+    },
+    {
+      "recordId": 16,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        3,
+        2,
+        5,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1030,
+        1258,
+        5961,
+        9999
+      ]
+    },
+    {
+      "recordId": 16,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        100,
+        5721,
+        9999
+      ]
+    },
+    {
+      "recordId": 16,
+      "choice": 4,
+      "answers": [
+        2
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        2,
+        0,
+        -2,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        9999,
+        9000,
+        7840,
+        7210
+      ]
+    },
+    {
+      "recordId": 17,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1030,
+        1258,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 17,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        3,
+        0,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5555,
+        9996
+      ]
+    },
+    {
+      "recordId": 17,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        4,
+        3,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9360,
+        8240,
+        7210
+      ]
+    },
+    {
+      "recordId": 18,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 8,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        0,
+        0,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1234,
+        5678,
+        9800
+      ]
+    },
+    {
+      "recordId": 18,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 14,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        0,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        99,
+        5555,
+        9604
+      ]
+    },
+    {
+      "recordId": 18,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 14,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        0,
+        0,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        9000,
+        8000,
+        6860
+      ]
+    },
+    {
+      "recordId": 19,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -3,
+        5,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1197,
+        5961,
+        9999
+      ]
+    },
+    {
+      "recordId": 19,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        -3
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        103,
+        5555,
+        9506
+      ]
+    },
+    {
+      "recordId": 19,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        0,
+        3,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9000,
+        8240,
+        7350
+      ]
+    },
+    {
+      "recordId": 20,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        -3,
+        0,
+        0,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        970,
+        1234,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 20,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        3,
+        -2,
+        -5
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        101,
+        5444,
+        9310
+      ]
+    },
+    {
+      "recordId": 20,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        0,
+        -3,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9000,
+        7760,
+        7140
+      ]
+    },
+    {
+      "recordId": 21,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        2,
+        -2,
+        0,
+        5
+      ],
+      "outcome": null,
+      "after": [
+        1020,
+        1210,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 21,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        -2,
+        3,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        101,
+        5555,
+        9996
+      ]
+    },
+    {
+      "recordId": 21,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        4,
+        2,
+        -3,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        9999,
+        9180,
+        7760,
+        7210
+      ]
+    },
+    {
+      "recordId": 22,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 8,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "outcome": 1,
+      "after": [
+        1000,
+        1271,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 22,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        2
+      ],
+      "outcome": 0,
+      "after": [
+        1,
+        103,
+        5555,
+        9996
+      ]
+    },
+    {
+      "recordId": 22,
+      "choice": 4,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        2
+      ],
+      "outcome": 0,
+      "after": [
+        9990,
+        9450,
+        8000,
+        7140
+      ]
+    },
+    {
+      "recordId": 23,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        4,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1283,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 23,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        -5,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5278,
+        9999
+      ]
+    },
+    {
+      "recordId": 23,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        4
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9270,
+        8000,
+        7280
+      ]
+    },
+    {
+      "recordId": 24,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 13,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        2,
+        5,
+        12,
+        0
+      ],
+      "outcome": 3,
+      "after": [
+        1020,
+        1295,
+        6359,
+        9999
+      ]
+    },
+    {
+      "recordId": 24,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 15,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        2,
+        5,
+        12,
+        0
+      ],
+      "outcome": 3,
+      "after": [
+        1,
+        103,
+        6221,
+        9800
+      ]
+    },
+    {
+      "recordId": 24,
+      "choice": 4,
+      "answers": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "score": 14,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        2,
+        5,
+        12,
+        0
+      ],
+      "outcome": 3,
+      "after": [
+        9999,
+        9450,
+        8960,
+        7000
+      ]
+    },
+    {
+      "recordId": 25,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1295,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 25,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        -2,
+        0,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        98,
+        5555,
+        9999
+      ]
+    },
+    {
+      "recordId": 25,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        -5,
+        0,
+        -5
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        8550,
+        8000,
+        6650
+      ]
+    },
+    {
+      "recordId": 26,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -5,
+        3,
+        -3
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1173,
+        5848,
+        9700
+      ]
+    },
+    {
+      "recordId": 26,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        5,
+        0,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        103,
+        5555,
+        9996
+      ]
+    },
+    {
+      "recordId": 26,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        -3,
+        2,
+        0
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        8730,
+        8160,
+        7000
+      ]
+    },
+    {
+      "recordId": 27,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 30,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        5,
+        0,
+        0,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        1050,
+        1234,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 27,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 24,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        5,
+        0,
+        0,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        99,
+        5555,
+        9999
+      ]
+    },
+    {
+      "recordId": 27,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 18,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        5,
+        0,
+        0,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        9999,
+        9000,
+        8000,
+        7210
+      ]
+    },
+    {
+      "recordId": 28,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 28,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        5,
+        0,
+        0,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        1050,
+        1234,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 28,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 24,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        5,
+        0,
+        0,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        99,
+        5555,
+        9999
+      ]
+    },
+    {
+      "recordId": 28,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 20,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        5,
+        0,
+        0,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        9999,
+        9000,
+        8000,
+        7350
+      ]
+    },
+    {
+      "recordId": 29,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 7,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        5,
+        -3,
+        0,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        1050,
+        1197,
+        5678,
+        9800
+      ]
+    },
+    {
+      "recordId": 29,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 9,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        5,
+        -3,
+        0,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        97,
+        5555,
+        9604
+      ]
+    },
+    {
+      "recordId": 29,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 4,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        5,
+        -3,
+        0,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        9999,
+        8730,
+        8000,
+        6860
+      ]
+    },
+    {
+      "recordId": 30,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0
+      ],
+      "score": 2,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        2,
+        -3,
+        -3,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        1020,
+        1197,
+        5508,
+        9800
+      ]
+    },
+    {
+      "recordId": 30,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1
+      ],
+      "score": 11,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        2,
+        -3,
+        -3,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        97,
+        5389,
+        9604
+      ]
+    },
+    {
+      "recordId": 30,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2
+      ],
+      "score": 5,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        2,
+        -3,
+        -3,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        9999,
+        8730,
+        7760,
+        6860
+      ]
+    },
+    {
+      "recordId": 31,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -2,
+        5,
+        4
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1210,
+        5961,
+        9999
+      ]
+    },
+    {
+      "recordId": 31,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        5,
+        4,
+        0,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        102,
+        5555,
+        9999
+      ]
+    },
+    {
+      "recordId": 31,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        2,
+        3,
+        3
+      ],
+      "outcome": null,
+      "after": [
+        9990,
+        9180,
+        8240,
+        7210
+      ]
+    },
+    {
+      "recordId": 34,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0
+      ],
+      "score": 7,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -5,
+        5,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1173,
+        5961,
+        9800
+      ]
+    },
+    {
+      "recordId": 34,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        -5,
+        5,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        95,
+        5832,
+        9604
+      ]
+    },
+    {
+      "recordId": 34,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2
+      ],
+      "score": 11,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        -5,
+        5,
+        -2
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        8550,
+        8400,
+        6860
+      ]
+    },
+    {
+      "recordId": 35,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 11,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        -5,
+        2,
+        0,
+        -5
+      ],
+      "outcome": 2,
+      "after": [
+        950,
+        1258,
+        5678,
+        9500
+      ]
+    },
+    {
+      "recordId": 35,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 15,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        -5,
+        2,
+        0,
+        -5
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        100,
+        5555,
+        9310
+      ]
+    },
+    {
+      "recordId": 35,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 10,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        -5,
+        2,
+        0,
+        -5
+      ],
+      "outcome": 2,
+      "after": [
+        9491,
+        9180,
+        8000,
+        6650
+      ]
+    },
+    {
+      "recordId": 36,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 18,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        5,
+        5,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1295,
+        5961,
+        9999
+      ]
+    },
+    {
+      "recordId": 36,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 12,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        5,
+        5,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        103,
+        5832,
+        9999
+      ]
+    },
+    {
+      "recordId": 36,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 6,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        5,
+        5,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        9450,
+        8400,
+        7350
+      ]
+    },
+    {
+      "recordId": 38,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 13,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        -5,
+        0,
+        -5,
+        -5
+      ],
+      "outcome": 0,
+      "after": [
+        950,
+        1234,
+        5395,
+        9500
+      ]
+    },
+    {
+      "recordId": 38,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 17,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        -5,
+        2,
+        0,
+        -3
+      ],
+      "outcome": 1,
+      "after": [
+        1,
+        100,
+        5555,
+        9506
+      ]
+    },
+    {
+      "recordId": 38,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 15,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        -5,
+        2,
+        0,
+        -3
+      ],
+      "outcome": 1,
+      "after": [
+        9491,
+        9180,
+        8000,
+        6790
+      ]
+    },
+    {
+      "recordId": 39,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 28,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        2,
+        3,
+        5,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        1020,
+        1271,
+        5961,
+        9999
+      ]
+    },
+    {
+      "recordId": 39,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 20,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        2,
+        3,
+        5,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        101,
+        5832,
+        9999
+      ]
+    },
+    {
+      "recordId": 39,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 24,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        2,
+        3,
+        5,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        9999,
+        9270,
+        8400,
+        7350
+      ]
+    },
+    {
+      "recordId": 40,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 28,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        5,
+        5,
+        2
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1295,
+        5961,
+        9999
+      ]
+    },
+    {
+      "recordId": 40,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 20,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        5,
+        5,
+        2
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        103,
+        5832,
+        9996
+      ]
+    },
+    {
+      "recordId": 40,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 24,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        5,
+        5,
+        2
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        9450,
+        8400,
+        7140
+      ]
+    },
+    {
+      "recordId": 41,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 30,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -2,
+        -3,
+        0
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1210,
+        5508,
+        9999
+      ]
+    },
+    {
+      "recordId": 41,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 14,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        -2,
+        -3,
+        0
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        98,
+        5389,
+        9800
+      ]
+    },
+    {
+      "recordId": 41,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 28,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        -2,
+        -3,
+        0
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        8820,
+        7760,
+        7000
+      ]
+    },
+    {
+      "recordId": 42,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 26,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        5,
+        -3,
+        -2,
+        0
+      ],
+      "outcome": 2,
+      "after": [
+        1050,
+        1197,
+        5565,
+        9999
+      ]
+    },
+    {
+      "recordId": 42,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 22,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        5,
+        -3,
+        -2,
+        0
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        97,
+        5444,
+        9800
+      ]
+    },
+    {
+      "recordId": 42,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 24,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        5,
+        -3,
+        -2,
+        0
+      ],
+      "outcome": 2,
+      "after": [
+        9999,
+        8730,
+        7840,
+        7000
+      ]
+    },
+    {
+      "recordId": 43,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 28,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        0,
+        -2,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1234,
+        5565,
+        9999
+      ]
+    },
+    {
+      "recordId": 43,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 20,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        -2,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        99,
+        5444,
+        9999
+      ]
+    },
+    {
+      "recordId": 43,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 24,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        0,
+        -2,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        9000,
+        7840,
+        7210
+      ]
+    },
+    {
+      "recordId": 44,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 27,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1271,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 44,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 17,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        101,
+        5555,
+        9999
+      ]
+    },
+    {
+      "recordId": 44,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 19,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        5
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        9270,
+        8000,
+        7350
+      ]
+    },
+    {
+      "recordId": 45,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 22,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        0,
+        -5,
+        -3
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1234,
+        5395,
+        9700
+      ]
+    },
+    {
+      "recordId": 45,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 20,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        -5,
+        -3
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        99,
+        5278,
+        9506
+      ]
+    },
+    {
+      "recordId": 45,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 30,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        0,
+        -5,
+        -3
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        9000,
+        7600,
+        6790
+      ]
+    },
+    {
+      "recordId": 46,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 30,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        1000,
+        1271,
+        5678,
+        9999
+      ]
+    },
+    {
+      "recordId": 46,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 20,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        1,
+        101,
+        5555,
+        9999
+      ]
+    },
+    {
+      "recordId": 46,
+      "choice": 4,
+      "answers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 22,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        0,
+        3,
+        0,
+        3
+      ],
+      "outcome": 2,
+      "after": [
+        9990,
+        9270,
+        8000,
+        7210
+      ]
+    },
+    {
+      "recordId": 47,
+      "choice": 0,
+      "answers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        -8,
+        11,
+        10,
+        -3
+      ],
+      "outcome": null,
+      "after": [
+        920,
+        1369,
+        6245,
+        9700
+      ]
+    },
+    {
+      "recordId": 47,
+      "choice": 1,
+      "answers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        5,
+        10,
+        1,
+        12
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        108,
+        5610,
+        9999
+      ]
+    },
+    {
+      "recordId": 47,
+      "choice": 4,
+      "answers": [
+        2,
+        1,
+        1,
+        2,
+        3,
+        2,
+        2,
+        2,
+        1
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        4,
+        5,
+        6,
+        12
+      ],
+      "outcome": null,
+      "after": [
+        9999,
+        9450,
+        8480,
+        7840
+      ]
+    },
+    {
+      "recordId": 48,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        0,
+        -2,
+        3,
+        -3
+      ],
+      "outcome": null,
+      "after": [
+        1000,
+        1210,
+        5848,
+        9700
+      ]
+    },
+    {
+      "recordId": 48,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        -3,
+        2,
+        0,
+        -2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        100,
+        5555,
+        9604
+      ]
+    },
+    {
+      "recordId": 48,
+      "choice": 4,
+      "answers": [
+        4
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        3,
+        0,
+        0,
+        4
+      ],
+      "outcome": null,
+      "after": [
+        9999,
+        9000,
+        8000,
+        7280
+      ]
+    },
+    {
+      "recordId": 49,
+      "choice": 0,
+      "answers": [
+        0
+      ],
+      "score": 0,
+      "before": [
+        1000,
+        1234,
+        5678,
+        9999
+      ],
+      "percentages": [
+        5,
+        -2,
+        0,
+        -2
+      ],
+      "outcome": null,
+      "after": [
+        1050,
+        1210,
+        5678,
+        9800
+      ]
+    },
+    {
+      "recordId": 49,
+      "choice": 1,
+      "answers": [
+        1
+      ],
+      "score": 0,
+      "before": [
+        1,
+        99,
+        5555,
+        9800
+      ],
+      "percentages": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "outcome": null,
+      "after": [
+        1,
+        99,
+        5666,
+        9996
+      ]
+    },
+    {
+      "recordId": 49,
+      "choice": 4,
+      "answers": [
+        3
+      ],
+      "score": 0,
+      "before": [
+        9990,
+        9000,
+        8000,
+        7000
+      ],
+      "percentages": [
+        2,
+        2,
+        0,
+        -4
+      ],
+      "outcome": null,
+      "after": [
+        9999,
+        9180,
+        8000,
+        6720
+      ]
+    }
+  ]
+}

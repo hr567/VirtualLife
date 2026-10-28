@@ -1,0 +1,2942 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "method": "Unicorn executes original selection block0x00439be7..00439d06 with loop registers initialized to original entry values and property income block0x0042aa92..0042ab64",
+  "stock": [
+    {
+      "seed": 1,
+      "stage": 2,
+      "career": -1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        2,
+        5
+      ],
+      "special": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 2,
+      "career": -1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        2,
+        5
+      ],
+      "special": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": -1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        8,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": -1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        8,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 0,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        0,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 0,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        0,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        1,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        1,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 2,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        2,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 2,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        2,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 3,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        3,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 3,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        3,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 4,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        4,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 4,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        4,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 5,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        5,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 5,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        5,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 6,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        6,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 6,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        6,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 7,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        7,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 7,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        7,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 8,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        8,
+        9,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 8,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        8,
+        9,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 9,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        10,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 9,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        10,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 10,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        11,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 10,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        11,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 11,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        12,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 11,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        12,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 12,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        13,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 12,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        13,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 13,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        15,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 13,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        14,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 14,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        16,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 14,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        16,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 15,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 15,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 16,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        19,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 16,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        19,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 17,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        20,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 17,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        20,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 18,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        21,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 18,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        21,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 19,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        22,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 19,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        22,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 20,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        23,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 20,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        23,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 21,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        24,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 21,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        24,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 22,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        25,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 22,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        25,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 23,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        26,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 23,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        26,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 24,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        8,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "career": 24,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        2,
+        4,
+        8
+      ],
+      "special": [
+        8,
+        13,
+        19
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 2,
+      "career": -1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        5
+      ],
+      "special": [
+        0,
+        2,
+        5
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 2,
+      "career": -1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        5
+      ],
+      "special": [
+        0,
+        2,
+        5
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": -1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        4,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": -1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        4,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 0,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        0,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 0,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        0,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        1,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        1,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 2,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        2,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 2,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        2,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 3,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        3,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 3,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        3,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 4,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        4,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 4,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        4,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 5,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        5,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 5,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        5,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 6,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        6,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 6,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        6,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 7,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        7,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 7,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        7,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 8,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        8,
+        9,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 8,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        8,
+        9,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 9,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        10,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 9,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        10,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 10,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        11,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 10,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        11,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 11,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        12,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 11,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        12,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 12,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        13,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 12,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        13,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 13,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        15,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 13,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        14,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 14,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        16,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 14,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        16,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 15,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        17,
+        18,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 15,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        17,
+        18,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 16,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        19,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 16,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        19,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 17,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        20,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 17,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        20,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 18,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        21,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 18,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        21,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 19,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        22,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 19,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        22,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 20,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        23,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 20,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        23,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 21,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        24,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 21,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        24,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 22,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        25,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 22,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        25,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 23,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        26,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 23,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        26,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 24,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        4,
+        15,
+        18
+      ]
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "career": 24,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        4,
+        6
+      ],
+      "special": [
+        4,
+        14,
+        18
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 2,
+      "career": -1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        5
+      ],
+      "special": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 2,
+      "career": -1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        5
+      ],
+      "special": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": -1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        7,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": -1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        7,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 0,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        0,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 0,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        0,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 1,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        1,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 1,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        1,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 2,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        2,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 2,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        2,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 3,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        3,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 3,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        3,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 4,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        4,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 4,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        4,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 5,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        5,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 5,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        5,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 6,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        6,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 6,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        6,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 7,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        7,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 7,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        7,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 8,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        8,
+        9,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 8,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        8,
+        9,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 9,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        10,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 9,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        10,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 10,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        11,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 10,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        11,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 11,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        12,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 11,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        12,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 12,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        13,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 12,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        13,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 13,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        15,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 13,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        14,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 14,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        16,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 14,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        16,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 15,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        17,
+        18,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 15,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        17,
+        18,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 16,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        19,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 16,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        19,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 17,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        20,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 17,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        20,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 18,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        21,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 18,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        21,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 19,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        22,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 19,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        22,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 20,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        23,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 20,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        23,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 21,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        24,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 21,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        24,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 22,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        25,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 22,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        25,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 23,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        26,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 23,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        26,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 24,
+      "sex": 0,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        7,
+        10,
+        25
+      ]
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "career": 24,
+      "sex": 1,
+      "draws": 6,
+      "ordinary": [
+        1,
+        3,
+        8
+      ],
+      "special": [
+        7,
+        10,
+        25
+      ]
+    }
+  ],
+  "income": [
+    {
+      "stage": 2,
+      "initialMoney": 0,
+      "expectedMoney": 60000
+    },
+    {
+      "stage": 2,
+      "initialMoney": 12345,
+      "expectedMoney": 72345
+    },
+    {
+      "stage": 2,
+      "initialMoney": 2147400000,
+      "expectedMoney": 2147460000
+    },
+    {
+      "stage": 3,
+      "initialMoney": 0,
+      "expectedMoney": 105000
+    },
+    {
+      "stage": 3,
+      "initialMoney": 12345,
+      "expectedMoney": 117345
+    },
+    {
+      "stage": 3,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2147462296
+    },
+    {
+      "stage": 4,
+      "initialMoney": 0,
+      "expectedMoney": 108500
+    },
+    {
+      "stage": 4,
+      "initialMoney": 12345,
+      "expectedMoney": 120845
+    },
+    {
+      "stage": 4,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2147458796
+    },
+    {
+      "stage": 5,
+      "initialMoney": 0,
+      "expectedMoney": 216500
+    },
+    {
+      "stage": 5,
+      "initialMoney": 12345,
+      "expectedMoney": 228845
+    },
+    {
+      "stage": 5,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2147350796
+    },
+    {
+      "stage": 6,
+      "initialMoney": 0,
+      "expectedMoney": 288500
+    },
+    {
+      "stage": 6,
+      "initialMoney": 12345,
+      "expectedMoney": 300845
+    },
+    {
+      "stage": 6,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2147278796
+    },
+    {
+      "stage": 7,
+      "initialMoney": 0,
+      "expectedMoney": 288500
+    },
+    {
+      "stage": 7,
+      "initialMoney": 12345,
+      "expectedMoney": 300845
+    },
+    {
+      "stage": 7,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2147278796
+    },
+    {
+      "stage": 8,
+      "initialMoney": 0,
+      "expectedMoney": 408500
+    },
+    {
+      "stage": 8,
+      "initialMoney": 12345,
+      "expectedMoney": 420845
+    },
+    {
+      "stage": 8,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2147158796
+    },
+    {
+      "stage": 9,
+      "initialMoney": 0,
+      "expectedMoney": 508500
+    },
+    {
+      "stage": 9,
+      "initialMoney": 12345,
+      "expectedMoney": 520845
+    },
+    {
+      "stage": 9,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2147058796
+    },
+    {
+      "stage": 10,
+      "initialMoney": 0,
+      "expectedMoney": 508500
+    },
+    {
+      "stage": 10,
+      "initialMoney": 12345,
+      "expectedMoney": 520845
+    },
+    {
+      "stage": 10,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2147058796
+    },
+    {
+      "stage": 11,
+      "initialMoney": 0,
+      "expectedMoney": 588500
+    },
+    {
+      "stage": 11,
+      "initialMoney": 12345,
+      "expectedMoney": 600845
+    },
+    {
+      "stage": 11,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2146978796
+    },
+    {
+      "stage": 12,
+      "initialMoney": 0,
+      "expectedMoney": 636500
+    },
+    {
+      "stage": 12,
+      "initialMoney": 12345,
+      "expectedMoney": 648845
+    },
+    {
+      "stage": 12,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2146930796
+    },
+    {
+      "stage": 13,
+      "initialMoney": 0,
+      "expectedMoney": 640500
+    },
+    {
+      "stage": 13,
+      "initialMoney": 12345,
+      "expectedMoney": 652845
+    },
+    {
+      "stage": 13,
+      "initialMoney": 2147400000,
+      "expectedMoney": -2146926796
+    }
+  ]
+}

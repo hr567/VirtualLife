@@ -1,0 +1,3157 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "method": "Unicorn executes original N2Game.exe x86; only record loading and presentation are hooked",
+  "functions": {
+    "selector": "0x0040c2e0 opcode 28",
+    "missionResult": "0x0040bc30"
+  },
+  "selectors": [
+    {
+      "name": "intro",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1500,
+      "rngDraws": 0,
+      "rngState": 0,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "intro",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1500,
+      "rngDraws": 0,
+      "rngState": 1,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "intro",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1500,
+      "rngDraws": 0,
+      "rngState": 2,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "intro",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1500,
+      "rngDraws": 0,
+      "rngState": 4,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "intro",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1500,
+      "rngDraws": 0,
+      "rngState": 42,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "intro",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1500,
+      "rngDraws": 0,
+      "rngState": 100,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "intro",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1500,
+      "rngDraws": 0,
+      "rngState": 1000,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "intro",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1500,
+      "rngDraws": 0,
+      "rngState": 12345,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story1501",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1501,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1501,
+      "rngDraws": 1,
+      "rngState": 2531011,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1502,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story1501",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1501,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 68,
+      "rngDraws": 3,
+      "rngState": 415139642,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story1501",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1501,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1501,
+      "rngDraws": 1,
+      "rngState": 2959037,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1502,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story1501",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1501,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1563,
+      "rngDraws": 4,
+      "rngState": 2172805640,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1501,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story1501",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1501,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1501,
+      "rngDraws": 1,
+      "rngState": 11519557,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1502,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story1501",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1501,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1501,
+      "rngDraws": 1,
+      "rngState": 23932311,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1502,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story1501",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1501,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1501,
+      "rngDraws": 1,
+      "rngState": 216544011,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1502,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story1501",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1501,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1501,
+      "rngDraws": 1,
+      "rngState": 2644521496,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1502,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_reject",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1502,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1507,
+      "rngDraws": 1,
+      "rngState": 2531011,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1508,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_reject",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1502,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 68,
+      "rngDraws": 3,
+      "rngState": 415139642,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1502,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_reject",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1502,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1507,
+      "rngDraws": 1,
+      "rngState": 2959037,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1508,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_reject",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1502,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1563,
+      "rngDraws": 4,
+      "rngState": 2172805640,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1502,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_reject",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1502,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1507,
+      "rngDraws": 1,
+      "rngState": 11519557,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1508,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_reject",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1502,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1507,
+      "rngDraws": 1,
+      "rngState": 23932311,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1508,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_reject",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1502,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1507,
+      "rngDraws": 1,
+      "rngState": 216544011,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1508,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_reject",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1502,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1507,
+      "rngDraws": 1,
+      "rngState": 2644521496,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1508,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_accept",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1506,
+        "0x004b64c6": 1,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1506,
+      "rngDraws": 1,
+      "rngState": 2531011,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1507,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "story_accept",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1506,
+        "0x004b64c6": 1,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 68,
+      "rngDraws": 3,
+      "rngState": 415139642,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1506,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_accept",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1506,
+        "0x004b64c6": 1,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1506,
+      "rngDraws": 1,
+      "rngState": 2959037,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1507,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "story_accept",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1506,
+        "0x004b64c6": 1,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1563,
+      "rngDraws": 4,
+      "rngState": 2172805640,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1506,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_accept",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1506,
+        "0x004b64c6": 1,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1506,
+      "rngDraws": 1,
+      "rngState": 11519557,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1507,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "story_accept",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1506,
+        "0x004b64c6": 1,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1506,
+      "rngDraws": 1,
+      "rngState": 23932311,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1507,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "story_accept",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1506,
+        "0x004b64c6": 1,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1506,
+      "rngDraws": 1,
+      "rngState": 216544011,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1507,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "story_accept",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1506,
+        "0x004b64c6": 1,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1506,
+      "rngDraws": 1,
+      "rngState": 2644521496,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1507,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "story_poor",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500000
+      },
+      "nextNode": 68,
+      "rngDraws": 3,
+      "rngState": 3539360597,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_poor",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500000
+      },
+      "nextNode": 68,
+      "rngDraws": 3,
+      "rngState": 415139642,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_poor",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500000
+      },
+      "nextNode": 67,
+      "rngDraws": 3,
+      "rngState": 1585885983,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_poor",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500000
+      },
+      "nextNode": 1563,
+      "rngDraws": 4,
+      "rngState": 2172805640,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_poor",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500000
+      },
+      "nextNode": 1563,
+      "rngDraws": 4,
+      "rngState": 1969769998,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_poor",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500000
+      },
+      "nextNode": 67,
+      "rngDraws": 3,
+      "rngState": 354910409,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_poor",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500000
+      },
+      "nextNode": 1563,
+      "rngDraws": 4,
+      "rngState": 920050988,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_poor",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500000
+      },
+      "nextNode": 1564,
+      "rngDraws": 4,
+      "rngState": 1449997005,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_rich",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500001
+      },
+      "nextNode": 1510,
+      "rngDraws": 1,
+      "rngState": 2531011,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1511,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_rich",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500001
+      },
+      "nextNode": 68,
+      "rngDraws": 3,
+      "rngState": 415139642,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_rich",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500001
+      },
+      "nextNode": 1510,
+      "rngDraws": 1,
+      "rngState": 2959037,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1511,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_rich",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500001
+      },
+      "nextNode": 1563,
+      "rngDraws": 4,
+      "rngState": 2172805640,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1510,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_rich",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500001
+      },
+      "nextNode": 1510,
+      "rngDraws": 1,
+      "rngState": 11519557,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1511,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_rich",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500001
+      },
+      "nextNode": 1510,
+      "rngDraws": 1,
+      "rngState": 23932311,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1511,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_rich",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500001
+      },
+      "nextNode": 1510,
+      "rngDraws": 1,
+      "rngState": 216544011,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1511,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "story_rich",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1510,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 500001
+      },
+      "nextNode": 1510,
+      "rngDraws": 1,
+      "rngState": 2644521496,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1511,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "complete_student",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 67,
+      "rngDraws": 2,
+      "rngState": 505908858,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_student",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1563,
+      "rngDraws": 3,
+      "rngState": 415139642,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_student",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1563,
+      "rngDraws": 3,
+      "rngState": 1585885983,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_student",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1564,
+      "rngDraws": 3,
+      "rngState": 3927378665,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_student",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24123,
+      "rngDraws": 3,
+      "rngState": 1171099367,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_student",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1564,
+      "rngDraws": 3,
+      "rngState": 354910409,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_student",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24112,
+      "rngDraws": 3,
+      "rngState": 1759629789,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_student",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 2,
+        "0x004b6498": 0,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24111,
+      "rngDraws": 3,
+      "rngState": 3837989202,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_career",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": 3,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 2,
+        "0x004b648a": 10000
+      },
+      "nextNode": 311,
+      "rngDraws": 2,
+      "rngState": 505908858,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_career",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": 3,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 2,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1584,
+      "rngDraws": 3,
+      "rngState": 415139642,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_career",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": 3,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 2,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1577,
+      "rngDraws": 3,
+      "rngState": 1585885983,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_career",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": 3,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 2,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1577,
+      "rngDraws": 3,
+      "rngState": 3927378665,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_career",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": 3,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 2,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24123,
+      "rngDraws": 3,
+      "rngState": 1171099367,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_career",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": 3,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 2,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1589,
+      "rngDraws": 3,
+      "rngState": 354910409,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_career",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": 3,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 2,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24112,
+      "rngDraws": 3,
+      "rngState": 1759629789,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_career",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": 3,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 2,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24111,
+      "rngDraws": 3,
+      "rngState": 3837989202,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "career24",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": 24,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 5,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1355,
+      "rngDraws": 2,
+      "rngState": 505908858,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "career24",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": 24,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 5,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1353,
+      "rngDraws": 2,
+      "rngState": 3357800067,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "career24",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": 24,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 5,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1352,
+      "rngDraws": 2,
+      "rngState": 1914723980,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "career24",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": 24,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 5,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1351,
+      "rngDraws": 2,
+      "rngState": 3323539102,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "career24",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": 24,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 5,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1351,
+      "rngDraws": 2,
+      "rngState": 26255348,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "career24",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": 24,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 5,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1352,
+      "rngDraws": 2,
+      "rngState": 2227188222,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "career24",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": 24,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 5,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1352,
+      "rngDraws": 2,
+      "rngState": 538833314,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "career24",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": 24,
+        "0x004b64c2": 0,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 6,
+        "0x004b6498": 0,
+        "0x004b64a6": 5,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1355,
+      "rngDraws": 2,
+      "rngState": 1255958651,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 0
+      }
+    },
+    {
+      "name": "complete_female",
+      "seed": 0,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 4,
+        "0x004b6498": 1,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 2122,
+      "rngDraws": 2,
+      "rngState": 505908858,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_female",
+      "seed": 1,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 4,
+        "0x004b6498": 1,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1569,
+      "rngDraws": 3,
+      "rngState": 415139642,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_female",
+      "seed": 2,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 4,
+        "0x004b6498": 1,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1569,
+      "rngDraws": 3,
+      "rngState": 1585885983,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_female",
+      "seed": 4,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 4,
+        "0x004b6498": 1,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1570,
+      "rngDraws": 3,
+      "rngState": 3927378665,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_female",
+      "seed": 42,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 4,
+        "0x004b6498": 1,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24123,
+      "rngDraws": 3,
+      "rngState": 1171099367,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_female",
+      "seed": 100,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 4,
+        "0x004b6498": 1,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 1570,
+      "rngDraws": 3,
+      "rngState": 354910409,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_female",
+      "seed": 1000,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 4,
+        "0x004b6498": 1,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24112,
+      "rngDraws": 3,
+      "rngState": 1759629789,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    },
+    {
+      "name": "complete_female",
+      "seed": 12345,
+      "fields": {
+        "0x004b64a2": -1,
+        "0x004b64c2": 1,
+        "0x004b64ca": 1500,
+        "0x004b64c6": 0,
+        "0x004b649e": 4,
+        "0x004b6498": 1,
+        "0x004b64a6": 0,
+        "0x004b648a": 10000
+      },
+      "nextNode": 24111,
+      "rngDraws": 3,
+      "rngState": 3837989202,
+      "skillTriggers": [
+        1
+      ],
+      "after": {
+        "0x004b64ca": 1500,
+        "0x004b64c2": 1
+      }
+    }
+  ],
+  "missionResults": [
+    {
+      "name": "positive_multiplier",
+      "words": [
+        1,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        100,
+        0,
+        5,
+        65534,
+        61440,
+        61440,
+        61440,
+        61440,
+        0,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440
+      ],
+      "multiplier": 3,
+      "fields": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "after": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10300,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 250,
+        "0x004b6494": 80,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "amplified": true,
+      "lostLevel": false
+    },
+    {
+      "name": "level_loss",
+      "words": [
+        1,
+        61440,
+        61440,
+        61440,
+        61440,
+        0,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        0,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440
+      ],
+      "multiplier": 1,
+      "fields": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 450,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 3,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "after": {
+        "0x004b6484": 82,
+        "0x004b6486": 82,
+        "0x004b6488": 250,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 2,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "amplified": false,
+      "lostLevel": true
+    },
+    {
+      "name": "normal_inventory_cap",
+      "words": [
+        1,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        3,
+        2,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440
+      ],
+      "multiplier": 2,
+      "fields": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 7,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "after": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 7,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 1,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "amplified": false,
+      "lostLevel": false
+    },
+    {
+      "name": "special_inventory_cap",
+      "words": [
+        1,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        3,
+        21,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440
+      ],
+      "multiplier": 2,
+      "fields": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 7,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "after": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 7,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 1,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "amplified": false,
+      "lostLevel": false
+    },
+    {
+      "name": "unlimited_item999",
+      "words": [
+        1,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        3,
+        1,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440
+      ],
+      "multiplier": 2,
+      "fields": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "after": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 3,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "amplified": false,
+      "lostLevel": false
+    },
+    {
+      "name": "short_wrap",
+      "words": [
+        1,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        100,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        0,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440
+      ],
+      "multiplier": 1,
+      "fields": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 32700,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "after": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 0,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "amplified": false,
+      "lostLevel": false
+    },
+    {
+      "name": "multiplier_wrap",
+      "words": [
+        1,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        65535,
+        20000,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        0,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        20000,
+        0,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440,
+        61440
+      ],
+      "multiplier": 3,
+      "fields": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 100,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "after": {
+        "0x004b6484": 100,
+        "0x004b6486": 100,
+        "0x004b6488": 0,
+        "0x004b648a": 10000,
+        "0x004b648e": 100,
+        "0x004b6490": 100,
+        "0x004b6492": 9999,
+        "0x004b6494": 100,
+        "0x004b6496": 0,
+        "0x004b64a4": 1,
+        "0x004b64e2": 0,
+        "0x004b64e4": 0,
+        "0x004b9ef8": 0,
+        "0x004b9efa": 0,
+        "0x004b9efc": 0,
+        "0x004b9efe": 0,
+        "0x004b9f00": 0,
+        "0x004b9f02": 0,
+        "0x004b9f04": 0,
+        "0x004b9f06": 0,
+        "0x004b9f08": 0,
+        "0x004b9f0a": 0,
+        "0x004b9f0c": 0,
+        "0x004b9f0e": 0,
+        "0x004b9f10": 0,
+        "0x004b9f14": 0,
+        "0x004b9f16": 0,
+        "0x004b9f18": 0,
+        "0x004b9f1a": 0,
+        "0x004b9f1c": 0,
+        "0x004b9f1e": 0,
+        "0x004b9f20": 0,
+        "0x004b9f22": 0,
+        "0x004b9f24": 0,
+        "0x004b9f26": 0,
+        "0x004b9f28": 0,
+        "0x004b9f2a": 0,
+        "0x004b9f2c": 0,
+        "0x004b9f2e": 0,
+        "0x004b9f30": 0,
+        "0x004b9f32": 0,
+        "0x004b9f34": 0,
+        "0x004b9f36": 0,
+        "0x004b9f38": 0,
+        "0x004b9f3a": 0,
+        "0x004b9f3c": 0,
+        "0x004b9f3e": 0,
+        "0x004b9f40": 0,
+        "0x004b9f42": 0,
+        "0x004b9f44": 0,
+        "0x004b9f46": 0,
+        "0x004b9f48": 0
+      },
+      "amplified": true,
+      "lostLevel": false
+    }
+  ]
+}

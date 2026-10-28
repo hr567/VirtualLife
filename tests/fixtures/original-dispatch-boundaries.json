@@ -1,0 +1,98 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "function": "0x0040c2e0",
+  "method": "Original x86 dispatcher; first-match catalog loader and presentation hooks; stop after eight repeated loads",
+  "cases": [
+    {
+      "entry": 0,
+      "loads": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "loopNode": 0,
+      "loopRecord": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "presentation": [],
+      "outcome": "original dispatcher repeats the same opcode-0 record without advancing"
+    },
+    {
+      "entry": 661,
+      "loads": [
+        661,
+        661,
+        661,
+        661,
+        661,
+        661,
+        661,
+        661
+      ],
+      "loopNode": 661,
+      "loopRecord": [
+        661,
+        0,
+        10958,
+        2,
+        0,
+        0
+      ],
+      "presentation": [],
+      "outcome": "original dispatcher repeats the same opcode-0 record without advancing"
+    },
+    {
+      "entry": 26287,
+      "loads": [
+        26287,
+        26288,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "loopNode": 0,
+      "loopRecord": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "presentation": [
+        {
+          "function": "0x0040b430",
+          "args": [
+            8216,
+            0,
+            0
+          ]
+        },
+        {
+          "function": "0x0040b360",
+          "args": [
+            26289,
+            1,
+            607
+          ]
+        }
+      ],
+      "outcome": "original dispatcher repeats the same opcode-0 record without advancing"
+    }
+  ]
+}

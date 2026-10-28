@@ -1,0 +1,688 @@
+{
+  "method": "Original N2Game.exe 0x458030, with input/output guard instrumentation. Zero-initialized buffers; visible indices and six-bit palette only. No OS calls.",
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "cases": [
+    {
+      "resource": "cd/data/map/play/h.flc",
+      "sha256": "8df05fedf116ffd0f7dc0c3ed14ec5b7ca12e8b8ded0554f6289e0e0b9364846",
+      "width": 160,
+      "height": 120,
+      "frames": [
+        {
+          "indicesHash": 337193317,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2964948712,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2705133606,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2278508501,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1980907320,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2822866644,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3953889007,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2186829157,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 825559259,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1759410212,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1319292803,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3231540829,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3422805669,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2191207204,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2310935976,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2687963031,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2818746322,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1479122586,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3439591128,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 643287382,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1269551325,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2540271466,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 213291540,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 978404221,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1324702927,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 4069987274,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 337998130,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 4022803348,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3006289969,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3548293293,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 4126371245,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3570247577,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2760432619,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2740414899,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 503109871,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3775480962,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1741981183,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1235354620,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1985317402,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2085820943,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3196957447,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3492461542,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 676061540,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3339076165,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3305072730,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2938232910,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1359862262,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2318228494,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2421412971,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 316119841,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 443346261,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 4036468192,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3652746724,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2138851835,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1319775034,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1220076722,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 346113730,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3399137847,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1801095722,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1782550728,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2921761343,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1047106172,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1894896867,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2798778796,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 4051292220,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2200180991,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1839640388,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1125127775,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2158544424,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 94380917,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 819680851,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 281935874,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 843277415,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 808030063,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 123584636,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 4220120325,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1902084571,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2565776103,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2709368775,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 384744116,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3398363012,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2576515806,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2133792586,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1379103809,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 586990614,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1784762800,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1859821390,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 3573832607,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 1692460717,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 361053196,
+          "paletteHash": 4047885503
+        },
+        {
+          "indicesHash": 2078893050,
+          "paletteHash": 4047885503
+        }
+      ],
+      "guard": {
+        "sourceReadBytes": 0,
+        "sourceReadMaximum": 0,
+        "imageWriteBytes": 17948,
+        "imageWriteMaximum": 3869
+      },
+      "fault": null
+    },
+    {
+      "resource": "cd/data/map/play/top.flc",
+      "sha256": "93900fa1c4d400b33a8a222cc0f40058c081a9cdf8bb690193eec9ff92ad5891",
+      "width": 171,
+      "height": 107,
+      "frames": [
+        {
+          "indicesHash": 1306961471,
+          "paletteHash": 4120656325
+        },
+        {
+          "indicesHash": 3407903012,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 2134226919,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 932360227,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 3936101318,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 1984411616,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 2388883306,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 896086132,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 2934484138,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 766468086,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 44002347,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 1041640668,
+          "paletteHash": 1520953389
+        }
+      ],
+      "guard": {
+        "sourceReadBytes": 0,
+        "sourceReadMaximum": 0,
+        "imageWriteBytes": 32880,
+        "imageWriteMaximum": 9267
+      },
+      "fault": null
+    },
+    {
+      "resource": "cd/data/map/play/top_h.flc",
+      "sha256": "bd2df1cd003eb307c8df710161633cb2cedf79ebc8e7091c7619577c724e6f3f",
+      "width": 178,
+      "height": 98,
+      "frames": [
+        {
+          "indicesHash": 3004756885,
+          "paletteHash": 4120656325
+        },
+        {
+          "indicesHash": 3020255224,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 3266049390,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 307222606,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 1877732844,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 2813443068,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 2539026523,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 1291790520,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 1394175138,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 2991296425,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 171419820,
+          "paletteHash": 1520953389
+        },
+        {
+          "indicesHash": 2388136813,
+          "paletteHash": 1520953389
+        }
+      ],
+      "guard": {
+        "sourceReadBytes": 0,
+        "sourceReadMaximum": 0,
+        "imageWriteBytes": 0,
+        "imageWriteMaximum": 0
+      },
+      "fault": null
+    },
+    {
+      "resource": "cd/data/map/play/water_2.flc",
+      "sha256": "b8ecc09c2fec6a0fedaf12bfc698c8197a536b061b77c564a7f9ef35f8a79862",
+      "width": 160,
+      "height": 120,
+      "frames": [
+        {
+          "indicesHash": 3109214661,
+          "paletteHash": 4120656325
+        },
+        {
+          "indicesHash": 2496063446,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 2629876438,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 3901964858,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 4258733121,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 2038687030,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 760930672,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 1515296515,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 2685086567,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 1021720462,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 3634199324,
+          "paletteHash": 1519676737
+        },
+        {
+          "indicesHash": 2996679824,
+          "paletteHash": 1519676737
+        }
+      ],
+      "guard": {
+        "sourceReadBytes": 0,
+        "sourceReadMaximum": 0,
+        "imageWriteBytes": 0,
+        "imageWriteMaximum": 0
+      },
+      "fault": {
+        "frame": 12,
+        "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)"
+      }
+    },
+    {
+      "resource": "cd/data/charani/m24/m24w1c.flc",
+      "sha256": "a8781f3704892e9561e696f1f4bb13dda523ecfc5b97f82faead238ba53ee4ac",
+      "width": 200,
+      "height": 200,
+      "frames": [
+        {
+          "indicesHash": 73013957,
+          "paletteHash": 4120656325
+        },
+        {
+          "indicesHash": 1441604571,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 763365558,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 2328696274,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 2473393087,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 741265921,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 3186293692,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 1297095111,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 2864900043,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 2047565293,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 289511831,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 2319831253,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 1089496816,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 3924787,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 3578767653,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 2582463123,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 3754787149,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 408462005,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 4116473675,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 3761111290,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 1495252037,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 1902337206,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 1422485434,
+          "paletteHash": 807261858
+        },
+        {
+          "indicesHash": 505240569,
+          "paletteHash": 807261858
+        }
+      ],
+      "guard": {
+        "sourceReadBytes": 0,
+        "sourceReadMaximum": 0,
+        "imageWriteBytes": 0,
+        "imageWriteMaximum": 0
+      },
+      "fault": null
+    }
+  ]
+}

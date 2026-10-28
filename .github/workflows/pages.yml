@@ -1,0 +1,89 @@
+name: Verify and publish Virtual Life
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      CARGO_TERM_COLOR: always
+      PLAYWRIGHT_OUTPUT_DIR: ${{ runner.temp }}/virtual-life-web-qa
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          lfs: true
+          persist-credentials: false
+      - name: Verify Git LFS objects
+        run: git lfs fsck
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '26.12.1'
+      - uses: pnpm/action-setup@v6.1.0
+        with:
+          version: 12.14.0
+          run_install: false
+      - name: Install exact frontend dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Verify original resource bytes
+        run: pnpm verify:assets
+      - name: Install pinned Rust and WebAssembly tools
+        run: |
+          rustup show active-toolchain
+          cargo install wasm-bindgen-cli --version 0.2.129 --locked
+      - name: Verify original formats and native core
+        run: |
+          pnpm test:formats
+          cargo test --locked --workspace
+          cargo run --locked --release -p virtual-life-core --example validate_assets -- assets/game/objects
+      - name: Build static site and verify Pages artifact
+        run: |
+          pnpm build
+          pnpm verify:dist
+      - name: Install browser and software GPU dependencies
+        run: |
+          pnpm exec playwright install --with-deps chromium
+          sudo apt-get update
+          sudo apt-get install -y mesa-vulkan-drivers fonts-noto-cjk
+      - name: Test actual WebGPU, game flows, local saves and offline behavior
+        run: pnpm test:web
+      - name: Preserve browser test evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: browser-evidence
+          path: ${{ runner.temp }}/virtual-life-web-qa
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Package actual static files for Pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: dist
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v6.0.0
+      - name: Publish verified static artifact
+        id: deployment
+        uses: actions/deploy-pages@v5.0.1

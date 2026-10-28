@@ -1,0 +1,62 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "method": "Unchanged x86 span 0x401e66..0x401f48, no hooks or instruction substitutions. All 14 reachable housing investment stages.",
+  "investments": [
+    {
+      "stage": 0,
+      "value": 0
+    },
+    {
+      "stage": 1,
+      "value": 0
+    },
+    {
+      "stage": 2,
+      "value": 60000
+    },
+    {
+      "stage": 3,
+      "value": 105000
+    },
+    {
+      "stage": 4,
+      "value": 108500
+    },
+    {
+      "stage": 5,
+      "value": 216500
+    },
+    {
+      "stage": 6,
+      "value": 288500
+    },
+    {
+      "stage": 7,
+      "value": 288500
+    },
+    {
+      "stage": 8,
+      "value": 408500
+    },
+    {
+      "stage": 9,
+      "value": 508500
+    },
+    {
+      "stage": 10,
+      "value": 508500
+    },
+    {
+      "stage": 11,
+      "value": 588500
+    },
+    {
+      "stage": 12,
+      "value": 636500
+    },
+    {
+      "stage": 13,
+      "value": 640500
+    }
+  ]
+}

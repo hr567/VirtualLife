@@ -1,0 +1,2070 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "method": "Unicorn runs original 0x0042b930 through 0x0042bbdf; only allocation and audio loading are hooked",
+  "cases": [
+    {
+      "seed": 0,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 8,
+      "rngState": 2115878600,
+      "visits": 1
+    },
+    {
+      "seed": 0,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 8,
+      "rngState": 2115878600,
+      "visits": 1
+    },
+    {
+      "seed": 0,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 8,
+      "rngState": 2115878600,
+      "visits": 0
+    },
+    {
+      "seed": 0,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 8,
+      "rngState": 2115878600,
+      "visits": 0
+    },
+    {
+      "seed": 0,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 10
+        },
+        {
+          "group": 0,
+          "index": 5
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 5
+        },
+        {
+          "group": 2,
+          "index": 7
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 10,
+      "rngState": 2006221698,
+      "visits": 1
+    },
+    {
+      "seed": 0,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 10
+        },
+        {
+          "group": 0,
+          "index": 5
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 5
+        },
+        {
+          "group": 2,
+          "index": 7
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 10,
+      "rngState": 2006221698,
+      "visits": 1
+    },
+    {
+      "seed": 0,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 10
+        },
+        {
+          "group": 0,
+          "index": 5
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 4,
+          "index": 0
+        },
+        {
+          "group": 4,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 16,
+      "rngState": 1043415696,
+      "visits": 0
+    },
+    {
+      "seed": 0,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 10
+        },
+        {
+          "group": 0,
+          "index": 5
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 4,
+          "index": 1
+        },
+        {
+          "group": 4,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 14,
+      "rngState": 2165923046,
+      "visits": 0
+    },
+    {
+      "seed": 1,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 9,
+      "rngState": 1766988168,
+      "visits": 1
+    },
+    {
+      "seed": 1,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 9,
+      "rngState": 1766988168,
+      "visits": 1
+    },
+    {
+      "seed": 1,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 9,
+      "rngState": 1766988168,
+      "visits": 0
+    },
+    {
+      "seed": 1,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 9,
+      "rngState": 1766988168,
+      "visits": 0
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 13
+        },
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 4
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 9
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 3,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 9,
+      "rngState": 1766988168,
+      "visits": 1
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 13
+        },
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 4
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 9
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 3,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 9,
+      "rngState": 1766988168,
+      "visits": 1
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 4,
+          "index": 2
+        },
+        {
+          "group": 4,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 4
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 9
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 3,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 13,
+      "rngState": 3673273548,
+      "visits": 0
+    },
+    {
+      "seed": 1,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 4,
+          "index": 5
+        },
+        {
+          "group": 4,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 4
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 9
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 3,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 13,
+      "rngState": 3673273548,
+      "visits": 0
+    },
+    {
+      "seed": 2,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 14,
+      "rngState": 39715800,
+      "visits": 1
+    },
+    {
+      "seed": 2,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 14,
+      "rngState": 39715800,
+      "visits": 1
+    },
+    {
+      "seed": 2,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 14,
+      "rngState": 39715800,
+      "visits": 0
+    },
+    {
+      "seed": 2,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 14,
+      "rngState": 39715800,
+      "visits": 0
+    },
+    {
+      "seed": 2,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 3
+        },
+        {
+          "group": 0,
+          "index": 12
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 8,
+      "rngState": 1732194826,
+      "visits": 1
+    },
+    {
+      "seed": 2,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 3
+        },
+        {
+          "group": 0,
+          "index": 12
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 8,
+      "rngState": 1732194826,
+      "visits": 1
+    },
+    {
+      "seed": 2,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 3
+        },
+        {
+          "group": 4,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 4,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 14,
+      "rngState": 39715800,
+      "visits": 0
+    },
+    {
+      "seed": 2,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 3
+        },
+        {
+          "group": 4,
+          "index": 7
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 4,
+          "index": 9
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 12,
+      "rngState": 3994883566,
+      "visits": 0
+    },
+    {
+      "seed": 42,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 15,
+      "rngState": 2300605059,
+      "visits": 1
+    },
+    {
+      "seed": 42,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 15,
+      "rngState": 2300605059,
+      "visits": 1
+    },
+    {
+      "seed": 42,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 15,
+      "rngState": 2300605059,
+      "visits": 0
+    },
+    {
+      "seed": 42,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 4
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 2
+        }
+      ],
+      "draws": 15,
+      "rngState": 2300605059,
+      "visits": 0
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 7
+        },
+        {
+          "group": 0,
+          "index": 8
+        },
+        {
+          "group": 1,
+          "index": 4
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 9
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 4
+        }
+      ],
+      "draws": 8,
+      "rngState": 2648453938,
+      "visits": 1
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 7
+        },
+        {
+          "group": 0,
+          "index": 8
+        },
+        {
+          "group": 1,
+          "index": 4
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 9
+        },
+        {
+          "group": 3,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 4
+        }
+      ],
+      "draws": 8,
+      "rngState": 2648453938,
+      "visits": 1
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 7
+        },
+        {
+          "group": 4,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 4
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 9
+        },
+        {
+          "group": 4,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 4
+        }
+      ],
+      "draws": 15,
+      "rngState": 2300605059,
+      "visits": 0
+    },
+    {
+      "seed": 42,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 7
+        },
+        {
+          "group": 4,
+          "index": 1
+        },
+        {
+          "group": 1,
+          "index": 4
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 9
+        },
+        {
+          "group": 4,
+          "index": 9
+        },
+        {
+          "group": 3,
+          "index": 4
+        }
+      ],
+      "draws": 14,
+      "rngState": 465243840,
+      "visits": 0
+    },
+    {
+      "seed": 777,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 10,
+      "rngState": 322691699,
+      "visits": 1
+    },
+    {
+      "seed": 777,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 10,
+      "rngState": 322691699,
+      "visits": 1
+    },
+    {
+      "seed": 777,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 10,
+      "rngState": 322691699,
+      "visits": 0
+    },
+    {
+      "seed": 777,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 10,
+      "rngState": 322691699,
+      "visits": 0
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 13
+        },
+        {
+          "group": 0,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 7
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 8,
+      "rngState": 3378587761,
+      "visits": 1
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 13
+        },
+        {
+          "group": 0,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 1
+        },
+        {
+          "group": 2,
+          "index": 7
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 8,
+      "rngState": 3378587761,
+      "visits": 1
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 13
+        },
+        {
+          "group": 0,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 4,
+          "index": 1
+        },
+        {
+          "group": 4,
+          "index": 0
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 12,
+      "rngState": 4084546693,
+      "visits": 0
+    },
+    {
+      "seed": 777,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 13
+        },
+        {
+          "group": 0,
+          "index": 3
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 4,
+          "index": 7
+        },
+        {
+          "group": 4,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 3
+        },
+        {
+          "group": 3,
+          "index": 0
+        }
+      ],
+      "draws": 12,
+      "rngState": 4084546693,
+      "visits": 0
+    },
+    {
+      "seed": 32767,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 11,
+      "rngState": 594805816,
+      "visits": 1
+    },
+    {
+      "seed": 32767,
+      "stage": 2,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 11,
+      "rngState": 594805816,
+      "visits": 1
+    },
+    {
+      "seed": 32767,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 11,
+      "rngState": 594805816,
+      "visits": 0
+    },
+    {
+      "seed": 32767,
+      "stage": 2,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 0
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 2,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 11,
+      "rngState": 594805816,
+      "visits": 0
+    },
+    {
+      "seed": 32767,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 11
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 7
+        },
+        {
+          "group": 2,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 9,
+      "rngState": 3017894734,
+      "visits": 1
+    },
+    {
+      "seed": 32767,
+      "stage": 6,
+      "previousVisits": 0,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 11
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 2,
+          "index": 7
+        },
+        {
+          "group": 2,
+          "index": 1
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 9,
+      "rngState": 3017894734,
+      "visits": 1
+    },
+    {
+      "seed": 32767,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": false,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 11
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 4,
+          "index": 0
+        },
+        {
+          "group": 4,
+          "index": 2
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 13,
+      "rngState": 2652009586,
+      "visits": 0
+    },
+    {
+      "seed": 32767,
+      "stage": 6,
+      "previousVisits": 2,
+      "hasCandidate": true,
+      "offers": [
+        {
+          "group": 0,
+          "index": 1
+        },
+        {
+          "group": 0,
+          "index": 11
+        },
+        {
+          "group": 1,
+          "index": 2
+        },
+        {
+          "group": 1,
+          "index": 3
+        },
+        {
+          "group": 4,
+          "index": 8
+        },
+        {
+          "group": 4,
+          "index": 5
+        },
+        {
+          "group": 3,
+          "index": 0
+        },
+        {
+          "group": 3,
+          "index": 1
+        }
+      ],
+      "draws": 13,
+      "rngState": 2652009586,
+      "visits": 0
+    }
+  ]
+}

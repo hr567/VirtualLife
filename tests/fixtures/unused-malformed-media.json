@@ -1,0 +1,76 @@
+{
+  "method": "Native 0x458030 plus original play.mmi resource references",
+  "cases": [
+    {
+      "resource": "cd/data/map/play/h.flc",
+      "sha256": "8df05fedf116ffd0f7dc0c3ed14ec5b7ca12e8b8ded0554f6289e0e0b9364846",
+      "bytes": 600759,
+      "fnv32": 4186408477,
+      "error": "frame 0: FLIC byte run exceeds image buffer",
+      "evidence": {
+        "guard": {
+          "sourceReadBytes": 0,
+          "sourceReadMaximum": 0,
+          "imageWriteBytes": 17948,
+          "imageWriteMaximum": 3869
+        },
+        "fault": null
+      },
+      "reason": "Unused by original play.mmi; preserved unchanged, rejected by the bounded runtime decoder."
+    },
+    {
+      "resource": "cd/data/map/play/top.flc",
+      "sha256": "93900fa1c4d400b33a8a222cc0f40058c081a9cdf8bb690193eec9ff92ad5891",
+      "bytes": 71234,
+      "fnv32": 306582038,
+      "error": "frame 0: Truncated binary data at offset 10358 (need 1 bytes)",
+      "evidence": {
+        "guard": {
+          "sourceReadBytes": 0,
+          "sourceReadMaximum": 0,
+          "imageWriteBytes": 32880,
+          "imageWriteMaximum": 9267
+        },
+        "fault": null
+      },
+      "reason": "Unused by original play.mmi; preserved unchanged, rejected by the bounded runtime decoder."
+    },
+    {
+      "resource": "cd/data/map/play/top_h.flc",
+      "sha256": "bd2df1cd003eb307c8df710161633cb2cedf79ebc8e7091c7619577c724e6f3f",
+      "bytes": 126006,
+      "fnv32": 89558003,
+      "error": "frame 11: Truncated binary data at offset 8186 (need 1 bytes)",
+      "evidence": {
+        "guard": {
+          "sourceReadBytes": 0,
+          "sourceReadMaximum": 0,
+          "imageWriteBytes": 0,
+          "imageWriteMaximum": 0
+        },
+        "fault": null
+      },
+      "reason": "Unused by original play.mmi; preserved unchanged, rejected by the bounded runtime decoder."
+    },
+    {
+      "resource": "cd/data/map/play/water_2.flc",
+      "sha256": "b8ecc09c2fec6a0fedaf12bfc698c8197a536b061b77c564a7f9ef35f8a79862",
+      "bytes": 391736,
+      "fnv32": 1876235795,
+      "error": "frame 11: FLIC delta skips beyond image",
+      "evidence": {
+        "guard": {
+          "sourceReadBytes": 0,
+          "sourceReadMaximum": 0,
+          "imageWriteBytes": 0,
+          "imageWriteMaximum": 0
+        },
+        "fault": {
+          "frame": 12,
+          "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)"
+        }
+      },
+      "reason": "Unused by original play.mmi; preserved unchanged, rejected by the bounded runtime decoder."
+    }
+  ]
+}

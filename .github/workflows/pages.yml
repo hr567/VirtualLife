@@ -44,6 +44,7 @@ jobs:
       - name: Verify original formats and native core
         run: |
           pnpm test:formats
+          pnpm test:loading
           cargo test --locked --workspace
           cargo run --locked --release -p virtual-life-core --example validate_assets -- assets/game/objects
       - name: Build static site and verify Pages artifact

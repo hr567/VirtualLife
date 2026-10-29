@@ -23,6 +23,13 @@ import type { Command, DecodedBitmap, EngineResult, FirebeeState, FireState, Fis
 
 const directions = [[-1, 1], [-1, -1], [1, -1], [1, 1]] as const;
 const turns = [[0, 8, undefined, 4], [5, 1, 9, undefined], [undefined, 6, 2, 10], [11, undefined, 7, 3]] as const;
+/** Native 0x473738 button table; artwork and hitboxes share the same geometry. */
+const hudMenuButtons = [
+  { label: '参数一览', resourceId: 'install/bmp/pm06a09.bmp', y: 247 },
+  { label: '道具一览', resourceId: 'install/bmp/pm06a10.bmp', y: 284 },
+  { label: '地图浏览', resourceId: 'install/bmp/pm06a11.bmp', y: 321 },
+  { label: '系统操作', resourceId: 'install/bmp/pm06a12.bmp', y: 358 },
+].map(button => ({ ...button, x: 558, width: 52, height: 30 }));
 interface Movement { type: 'moved'; fromTileId: number; tiles: number[]; rolled?: number }
 
 /** Original map projection, recovered from 0x00417d60. */
@@ -281,7 +288,7 @@ export class GameplayView {
     const frame = this.assets.object('install/bmp/pm06a04.bmp').media!;
     images.push({ resourceId: 'install/bmp/pm06a04.bmp', x: 156, y: 4, width: frame.width!, height: frame.height!, transparentPaletteIndex: 1 });
     if (healthWidth > 0) images.push({ resourceId: 'install/bmp/pm06a05.bmp', x: 161, y: 7, width: healthWidth, height: 9, source: { x: 0, y: 0, width: healthWidth, height: 9 }, transparentPaletteIndex: 1 });
-    for (const [index, y] of [247, 286, 325, 364].entries()) images.push({ resourceId: `install/bmp/pm06a${String(index + 9).padStart(2, '0')}.bmp`, x: 544, y, width: 52, height: 30, frames: 3 });
+    for (const { resourceId, x, y, width, height } of hudMenuButtons) images.push({ resourceId, x, y, width, height, frames: 3, transparentPaletteIndex: 1 });
     return images;
   }
 
@@ -607,18 +614,18 @@ export class GameplayView {
     }
     this.ui.append(textAt(snapshot.player?.name ?? '', 581, 159, 'hud-centered'));
     this.ui.append(textAt(`${snapshot.stats.age ?? ''}岁`, 575, 216, 'hud-centered'));
-    const labels = ['参数一览', '道具一览', '地图浏览', '系统操作'];
-    for (const [index, y] of [247, 286, 325, 364].entries()) {
-      const control = controlAt(labels[index]!, 544, y, 52, 30, () => {
+    for (const [index, { label, resourceId, x, y, width, height }] of hudMenuButtons.entries()) {
+      const control = controlAt(label, x, y, width, height, () => {
         if (index === 0) void this.#command({ type: 'openStatus' });
         if (index === 1) void this.#command({ type: 'openInventory' });
         if (index === 2) void this.#showMapOverview(snapshot);
         if (index === 3) this.optionsMenu();
       });
-      const resourceId = `install/bmp/pm06a${String(index + 9).padStart(2, '0')}.bmp`;
       control.onpointerenter = control.onfocus = () => this.renderer.setSpriteFrame(resourceId, 1, 3);
       control.onpointerleave = control.onblur = () => this.renderer.setSpriteFrame(resourceId, 0, 3);
       control.onpointerdown = () => this.renderer.setSpriteFrame(resourceId, 2, 3);
+      control.onpointerup = () => this.renderer.setSpriteFrame(resourceId, 1, 3);
+      control.onpointercancel = () => this.renderer.setSpriteFrame(resourceId, 0, 3);
       this.ui.append(control);
     }
     const roll = controlAt('掷骰子', 549, 402, 73, 68, () => {

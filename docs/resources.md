@@ -19,7 +19,7 @@ The observed disc has 3,726 cabinet descriptors, including three deleted descrip
 
 Including the two ending videos and the final-battle opening video/audio derivatives, the current manifest contains **6,673 logical resources, 5,079 objects and 625,990,137 stored bytes**. `pnpm verify:assets` recomputes these counts and all SHA-256 hashes; the generated site has a separate 1,000,000,000-byte budget check.
 
-`manifest.resources[resourceId].sha256` selects an entry in `manifest.objects`. Each object contains `{sha256, path, bytes, media}`. `path` starts with `assets/` and is relative to the deployed application root; resolve it against the application's base URL, including the repository prefix on GitHub Pages. Do not preload every object.
+`manifest.resources[resourceId].sha256` selects an entry in `manifest.objects`. Each object contains `{sha256, path, bytes, media}`. `path` starts with `assets/` and is relative to the deployed application root; resolve it against the application's base URL, including the repository prefix on GitHub Pages. `src/preload-plan.ts` selects upcoming scene resources for bounded background downloads; do not preload every object. `AssetCache` validates length and SHA-256 before persisting bytes in `virtual-life-disc-v1`, shares downloads by hash, and gives each decoder a separate transferable buffer.
 
 The source metadata records original spelling, cabinet entry index, compressed length, and expanded length where relevant. Every public source's SHA-256 is its referenced object's hash. Content collisions and differing bytes at an existing output path fail extraction. Rerunning the same disc produces stable JSON without wall-clock timestamps.
 

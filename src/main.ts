@@ -6,6 +6,7 @@ import { GameplayView } from './gameplay';
 import { BrowserStorage, checksum } from './storage';
 import { setMasterVolume } from './audio';
 import { OptionsView } from './options';
+import { mapResources, resourcePlan } from './preload-plan';
 import type { Command, EngineResult, GameMap, Profile, Snapshot } from './types';
 
 const app = document.querySelector<HTMLElement>('#app')!;
@@ -105,6 +106,7 @@ function autosave(): void {
 
 async function setMap(map: GameMap, dispatch = true): Promise<void> {
   if (!renderer) throw new Error('画面尚未准备好。');
+  assets.prefetch(mapResources(map));
   navigation++;
   setBusy(true);
   optionsView?.hide();
@@ -144,6 +146,7 @@ async function mainMenu(): Promise<void> {
     canvas.parentElement?.classList.add('menu-mode');
     mapChoice.value = '';
     message('原版主菜单已载入。进度保存在本机浏览器。');
+    assets.prefetch(resourcePlan(assets, snapshot));
   } finally { loading.hidden = true; setBusy(false); }
 }
 
@@ -193,6 +196,7 @@ async function newGame(): Promise<void> {
   optionsView?.hide();
   await gameplay?.hide();
   mode = 'profile';
+  assets.prefetch(resourcePlan(assets));
   element('original-menu').hidden = true;
   setBusy(true);
   await renderer.setScene([{ resourceId: 'install/bmp/pm0301.bmp', x: 0, y: 0, width: 640, height: 480 }], assets);
@@ -330,6 +334,7 @@ async function serviceWorker(): Promise<void> {
 
 async function start(): Promise<void> {
   const storageReady = BrowserStorage.open().then(value => { storage = value; }).catch(() => { storageProblem = '浏览器存储不可用，当前进度无法保存。'; });
+  void serviceWorker();
   assets = await Assets.load(engine);
   snapshot = await engine.init(assets.engineContent);
   contentId = await checksum(JSON.parse(await engine.serialize()).contentHash);
@@ -355,7 +360,6 @@ async function start(): Promise<void> {
   }, () => { void saveMenu().catch(error => message(explain(error))); }, async () => { await mainMenu(); }, value => { void storage?.setSetting('masterVolume', value); }, message);
   gameplay = new GameplayView(renderer, assets, engine, element('logical-ui'), sendGameCommand, message, () => { void saveMenu().catch(error => message(explain(error))); }, () => { void openSystemOptions().catch(error => message(explain(error))); });
   setMasterVolume(await storage?.setting('masterVolume', 50) ?? 50);
-  await serviceWorker();
   const saved = await storage?.load().catch(error => { message(explain(error)); return undefined; });
   if (saved && saved.contentId === contentId) {
     const result = await engine.restore(saved.payload);
@@ -368,6 +372,7 @@ async function start(): Promise<void> {
 
 async function showGame(result: EngineResult): Promise<void> {
   if (!gameplay) return;
+  assets.prefetch(resourcePlan(assets, result.snapshot));
   if (result.snapshot.phase === 'completed') { await mainMenu(); message(result.snapshot.message); return; }
   optionsView?.hide();
   mode = 'playing';
@@ -388,11 +393,16 @@ async function openSystemOptions(): Promise<void> {
 async function sendGameCommand(command: Command): Promise<EngineResult> {
   const currentNavigation = navigation;
   const previousPhase = snapshot?.pending?.state?.phase;
+  const previousScene = `${snapshot?.pending?.kind}:${snapshot?.pending?.game}:${previousPhase}`;
   const result = await engine.dispatch(command);
   snapshot = result.snapshot;
   const timed = command.type === 'minigameTick' || command.type === 'relationshipTick' || command.type === 'competitionTick' || command.type === 'endingTick' || command.type === 'battleTick' || command.type === 'inventoryTick' || command.type === 'statusTick';
   if (currentNavigation === navigation && mode === 'playing' && (result.ok || snapshot.pending)) {
-    if (timed) await gameplay?.show(snapshot, result.events);
+    if (timed) {
+      const scene = `${snapshot.pending?.kind}:${snapshot.pending?.game}:${snapshot.pending?.state?.phase}`;
+      if (scene !== previousScene) assets.prefetch(resourcePlan(assets, snapshot));
+      await gameplay?.show(snapshot, result.events);
+    }
     else await showGame(result);
   }
   if (!timed || previousPhase !== snapshot.pending?.state?.phase) autosave();

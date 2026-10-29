@@ -12,6 +12,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "test:web": "playwright test",
     "test:formats": "node --test tools/legacy-formats.test.mjs tools/verify-assets.test.mjs",
+    "test:loading": "node --test tools/asset-cache.test.mjs",
     "verify:assets": "node tools/verify-assets.mjs",
     "verify:dist": "node tools/verify-assets.mjs --dist"
   },

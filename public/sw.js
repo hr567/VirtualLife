@@ -30,15 +30,21 @@ self.addEventListener('fetch', event => {
   if (url.pathname.endsWith('/sw.js') || url.pathname.endsWith('/shell-files.json')) return;
   const isDiscObject = url.pathname.includes('/assets/game/objects/');
   event.respondWith((async () => {
-    const cache = await caches.open(isDiscObject ? OBJECTS : SHELL);
     const key = event.request.mode === 'navigate' ? new URL('index.html', base).href : event.request;
     // This scope contains only same-origin static files. Vite's CORS middleware
     // adds Vary: Origin although their bytes do not vary; module requests must
     // match the installation's precache requests when the browser is offline.
-    const cached = await cache.match(key, { ignoreVary: true });
-    if (cached) return cached;
+    let cache;
+    try {
+      cache = await caches.open(isDiscObject ? OBJECTS : SHELL);
+      if (event.request.cache !== 'reload') {
+        const cached = await cache.match(key, { ignoreVary: true });
+        if (cached) return cached;
+      }
+    } catch { /* Cache availability must not prevent online play. */ }
     const response = await fetch(event.request);
-    if (response.ok && response.type === 'basic') {
+    // Assets commits disc objects only after checking their length and SHA-256.
+    if (!isDiscObject && cache && response.ok && response.type === 'basic') {
       try { await cache.put(key, response.clone()); }
       catch { /* Storage pressure must not prevent online play or delete save records. */ }
     }

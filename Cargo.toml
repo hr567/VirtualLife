@@ -1,6 +1,17 @@
 [workspace]
-members = ["crates/virtual-life-core"]
-resolver = "2"
+members = ["crates/virtual-life-core", "crates/virtual-life-app", "crates/virtual-life-web"]
+resolver = "3"
+
+[workspace.dependencies]
+bevy = { version = "=0.20.1", default-features = false }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = { version = "=1.0.154", features = ["float_roundtrip"] }
+sha2 = "=0.11.1"
+wasm-bindgen = "=0.2.129"
+wasm-bindgen-futures = "=0.4.79"
+serde-wasm-bindgen = "=0.6.5"
+js-sys = "=0.3.106"
+web-sys = "=0.3.106"
 
 [profile.release]
 lto = true

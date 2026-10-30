@@ -36,7 +36,7 @@ impl EndingFlow{
 
 #[derive(Clone,Debug,Deserialize)]
 #[serde(rename_all="camelCase")]
-pub struct EpilogueRules{pub subtitles:[Vec<Subtitle>;2],pub segments:Vec<Segment>,pub credits:CreditsRules,pub outro_metadata:VideoMetadata}
+pub struct EpilogueRules{pub subtitles:[Vec<Subtitle>;2],pub segments:Vec<Segment>,pub credits:CreditsRules,pub outro_metadata:VideoMetadata,pub loss_outro_metadata:VideoMetadata}
 #[derive(Clone,Debug,Deserialize)]
 #[serde(rename_all="camelCase")]
 pub struct Subtitle{pub text:String,pub segment:usize,pub duration_ms:u32}
@@ -92,7 +92,7 @@ impl EndingMovie{
      }
     }else{self.phase=MoviePhase::Outro;self.video_time_ms=0;self.displayed_video_time_ms=0;self.displayed_subtitle=None;self.seek_serial=self.seek_serial.wrapping_add(1);}
    }
-   MoviePhase::Outro=>{if self.video_time_ms>=rules.outro_metadata.duration_ms{self.phase=MoviePhase::Finished;}}
+   MoviePhase::Outro=>{let duration=if self.victory{rules.outro_metadata.duration_ms}else{rules.loss_outro_metadata.duration_ms};if self.video_time_ms>=duration{self.phase=MoviePhase::Finished;}}
    MoviePhase::Finished=>{}
   }
  }
@@ -136,6 +136,58 @@ impl EndingCredits{
 mod tests{
  use super::*;use serde_json::Value;
  fn rules()->EpilogueRules{let root:Value=serde_json::from_str(include_str!("../../../assets/catalog/rules.json")).unwrap();serde_json::from_value(root["epilogue"].clone()).unwrap()}
+ #[test]
+ fn outro_boundaries_match_original_x86_with_real_victory_bytes() {
+  let fixture: Value = serde_json::from_str(include_str!("../../../tests/fixtures/original-epilogue-outros.json")).unwrap();
+  let manifest: Value = serde_json::from_str(include_str!("../../../assets/manifest.json")).unwrap();
+  let rules = rules();
+  assert_eq!(fixture["sourceSha256"], "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0");
+  assert_eq!(fixture["entryPoint"], "0x00452260");
+  assert_eq!(fixture["cases"].as_array().unwrap().len(), 2);
+  for case in fixture["cases"].as_array().unwrap() {
+   let victory = case["victory"].as_bool().unwrap();
+   assert_eq!(case["victoryByte"], u64::from(victory));
+   assert_eq!(case["nativePhase"], if victory { 3 } else { 2 });
+   assert_eq!(case["openedClip"], if victory { "ProEpi\\aopen04.avi" } else { "ProEpi\\aopen03.avi" });
+   let source = case["sourceResource"].as_str().unwrap();
+   let derived = case["derivedResource"].as_str().unwrap();
+   assert_eq!(manifest["resources"][source]["sha256"], case["sourceClipSha256"]);
+   assert_eq!(manifest["resources"][derived]["sha256"], case["derivedClipSha256"]);
+   assert_eq!(manifest["resources"][derived]["derivedFrom"], source);
+   let object = manifest["objects"].as_array().unwrap().iter().find(|object| object["sha256"] == case["derivedClipSha256"]).unwrap();
+   assert_eq!(object["media"]["durationMs"], case["durationMs"]);
+   assert_eq!(object["media"]["frames"], case["decodedFrames"]);
+   assert_eq!(object["media"]["frameRate"], case["frameRate"]);
+   assert_eq!(object["media"]["decodedFramesVerified"], true);
+   let duration = if victory { rules.outro_metadata.duration_ms } else { rules.loss_outro_metadata.duration_ms };
+   assert_eq!(u64::from(duration), case["durationMs"].as_u64().unwrap());
+   let mut game = EndingMovie::new(victory, &rules);
+   // The generator enters phase 1 after its final subtitle, allowing the real
+   // victory byte branch to choose the clip before the two boundary frames.
+   game.subtitle_index = rules.subtitles[usize::from(victory)].len();
+   game.tick(0, &rules);
+   assert_eq!(game.phase, MoviePhase::Outro);
+   assert_eq!(case["frames"].as_array().unwrap().len(), 2);
+   for frame in case["frames"].as_array().unwrap() {
+    game.tick(frame["elapsedMs"].as_u64().unwrap() as u32, &rules);
+    let actual = serde_json::to_value(&game).unwrap();
+    assert_eq!(game.phase != MoviePhase::Finished, frame["after"]["alive"].as_bool().unwrap(), "{case}");
+    assert_eq!(actual["phase"], frame["after"]["phase"]);
+    assert_eq!(actual["videoTimeMs"], frame["after"]["videoTimeMs"]);
+    game = serde_json::from_value(actual).unwrap();
+   }
+  }
+ }
+ #[test]fn victory_and_defeat_outros_end_at_their_own_original_frame_count(){
+  let rules=rules();
+  assert_eq!(rules.loss_outro_metadata.duration_ms,11667);
+  assert_eq!(rules.outro_metadata.duration_ms,7792);
+  for (victory,duration) in [(false,11667),(true,7792)]{
+   let mut game=EndingMovie::new(victory,&rules);game.phase=MoviePhase::Outro;
+   game.tick(duration-1,&rules);assert_eq!(game.phase,MoviePhase::Outro);
+   game.tick(1,&rules);assert_eq!(game.phase,MoviePhase::Finished);
+  }
+ }
  #[test]fn credits_require_key_release_and_single_frame_scroll(){let rules=rules();let mut game=EndingCredits::new(&rules.credits);
   game.escape_released=true;game.tick(2500,&rules.credits);assert!(!game.fading_in);assert!(!game.fading_out);assert_eq!(game.offset,359);
   game.s_pressed=true;game.tick(50,&rules.credits);assert_eq!(game.offset,359);game.tick(1,&rules.credits);assert_eq!(game.offset,319);
@@ -160,7 +212,12 @@ mod tests{
   game.input_s(true);game.input_escape();game.tick(1,&rules.credits);assert!(game.fading_out);assert_eq!(game.speed,-1);
  }
  #[test]fn ending_frames_match_original_x86(){
-  let rules=rules();let fixture:Value=serde_json::from_str(include_str!("../../../tests/fixtures/original-epilogue.json")).unwrap();
+  let mut rules=rules();let fixture:Value=serde_json::from_str(include_str!("../../../tests/fixtures/original-epilogue.json")).unwrap();
+  // The historical adapter fixes OBJ+4 to 1 for every subtitle-table case,
+  // and its DirectShow completion hook always uses aopen04's duration.
+  // Preserve those original vectors with their actual simulated device;
+  // production and the separate outro-boundary vectors use each real clip.
+  rules.loss_outro_metadata.duration_ms=rules.outro_metadata.duration_ms;
   for(sequence,row)in fixture["movies"].as_array().unwrap().iter().enumerate(){let mut game=EndingMovie::new(row["victory"].as_bool().unwrap(),&rules);
    for(frame,row)in row["frames"].as_array().unwrap().iter().enumerate(){game.escape_released=row["escape"].as_bool().unwrap();game.tick(row["elapsedMs"].as_u64().unwrap()as u32,&rules);let actual=serde_json::to_value(&game).unwrap();
     for(key,value)in row["after"].as_object().unwrap(){if game.phase==MoviePhase::Finished&&(key=="videoTimeMs"||key=="displayedVideoTimeMs"){continue;}assert_eq!(&actual[key],value,"movie {sequence} frame {frame} {key}");}

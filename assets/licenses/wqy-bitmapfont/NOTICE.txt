@@ -1,0 +1,43 @@
+WenQuanYi Bitmap Song 0.9.9 — generated subset for Virtual Life
+
+Copyright (C) 2004-2007, The WenQuanYi Project Board of Trustees and
+Qianqian Fang. The original contributors and previous font sources are
+credited in the accompanying unmodified AUTHORS file.
+
+Upstream release: https://sourceforge.net/projects/wqy/files/wqy-bitmapfont/0.9.9/
+Upstream source archive: https://archive.debian.org/debian/pool/main/x/xfonts-wqy/xfonts-wqy_0.9.9.orig.tar.gz
+Source archive SHA-256: 16ec5207c2a0b9f555637c0721ec17408d7429b0950f0b728d99a03daae3f630
+The source files call this version "0.9.9 (1.0 beta) [Hero], release 8".
+
+Complete upstream source archive on this site:
+../../game/objects/16/16ec5207c2a0b9f555637c0721ec17408d7429b0950f0b728d99a03daae3f630.tar.gz
+Generation source on this site: export-bitmap-font.py
+Project source: https://github.com/hr567/VirtualLife
+
+Changes made 2026-10-30: select the game's shared character repertoire
+from the original 12, 13 and 16 pixel medium BDF strikes; place each BBX
+at the source font-wide baseline, uniformly normalize its line cell to
+the requested strike using disjoint-bin foreground OR on shrinking axes
+and nearest-neighbor on enlarging axes, and pack fixed cells as one-bit rows.
+Missing glyphs
+use the source square/question mark. The runtime scales large sizes and
+generates bold. No individual glyph drawings are manually adjusted.
+
+The font and generated subset are distributed under GNU GPL version 2
+with the upstream font embedding exception. See COPYING for the complete
+GPL version 2 text. The following upstream exception is retained and
+extended to this generated font subset:
+
+As a special exception, if you create a document which uses this
+font, and embed this font or unaltered portions of this font into
+the document, this font does not by itself cause the resulting
+document to be covered by the GNU General Public License. This
+exception does not however invalidate any other reasons why the
+document might be covered by the GNU General Public License. If you
+modify this font, you may extend this exception to your version of
+the font, but you are not obligated to do so. If you do not wish to
+do so, delete this exception statement from your version.
+
+The font carries no warranty; see COPYING. This notice describes the
+font resource's terms and does not replace licenses of other project
+code or original game assets.

@@ -12,7 +12,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vite/client", "@webgpu/types", "node"]
+    "types": ["vite/client", "node"]
   },
-  "include": ["src", "vite.config.ts", "playwright.config.ts", "tests/web"]
+  "include": ["web", "vite.config.ts", "playwright.config.ts", "tests/bevy-web"]
 }

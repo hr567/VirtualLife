@@ -135031,6 +135031,7 @@
       455
     ],
     "movie": "derived/proepi/aopen02.webm",
+    "lossOutro": "derived/proepi/aopen03.webm",
     "outro": "derived/proepi/aopen04.webm",
     "narration": [
       "cd/data/proepi/back.wav",
@@ -135356,6 +135357,18 @@
       "frameRate": "24/1",
       "frames": 120,
       "durationMs": 5000
+    },
+    "lossOutroMetadata": {
+      "kind": "webm",
+      "videoCodec": "vp9",
+      "losslessEncoding": true,
+      "decodedFramesVerified": true,
+      "pixelFormat": "yuv444p",
+      "width": 640,
+      "height": 180,
+      "frameRate": "24/1",
+      "frames": 280,
+      "durationMs": 11667
     },
     "outroMetadata": {
       "kind": "webm",

@@ -3,6 +3,7 @@ import { createReadStream } from 'node:fs';
 import { cp, readFile, stat, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
+const outputDirectory = process.env.VIRTUAL_LIFE_TEST_API === '1' ? 'output/test-site' : 'dist';
 
 // Disc objects live outside public/ so binary provenance and LFS tracking remain clear.
 function discAssets(): Plugin {
@@ -32,15 +33,15 @@ function discAssets(): Plugin {
       shell = Object.keys(bundle);
     },
     async closeBundle() {
-      await cp(root, path.resolve('dist/assets'), { recursive: true });
+      await cp(root, path.resolve(outputDirectory, 'assets'), { recursive: true });
       const worker = await readFile('public/sw.js', 'utf8');
       const buildHash = createHash('sha256').update(shell.join('\n')).update(worker);
-      const catalogs = ['assets/manifest.json', 'assets/catalog/maps.json', 'assets/catalog/rules.json', 'assets/catalog/events.json', 'assets/catalog/questionnaires.json'];
+      const catalogs = ['assets/manifest.json', 'assets/catalog/maps.json', 'assets/catalog/rules.json', 'assets/catalog/events.json', 'assets/catalog/questionnaires.json', 'assets/catalog/glyphs.json', 'assets/catalog/native-ui.json', 'assets/catalog/native-housing.json', 'assets/catalog/native-fortune.json', 'assets/catalog/native-school.json', 'assets/catalog/native-allocation.json', 'assets/catalog/native-profile.json'];
       for (const file of catalogs) buildHash.update(await readFile(file));
       const buildId = buildHash.digest('hex').slice(0, 16);
       const files = [...new Set(['index.html', ...shell, ...catalogs])];
-      await writeFile('dist/shell-files.json', JSON.stringify(files));
-      await writeFile('dist/sw.js', worker.replace('__BUILD_ID__', buildId));
+      await writeFile(path.join(outputDirectory, 'shell-files.json'), JSON.stringify(files));
+      await writeFile(path.join(outputDirectory, 'sw.js'), worker.replace('__BUILD_ID__', buildId));
     },
   };
 }
@@ -48,6 +49,5 @@ function discAssets(): Plugin {
 export default defineConfig({
   base: '/VirtualLife/',
   plugins: [discAssets()],
-  worker: { format: 'es' },
-  build: { target: 'es2022' },
+  build: { target: 'es2022', outDir: outputDirectory },
 });

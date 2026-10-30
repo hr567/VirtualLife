@@ -51,6 +51,10 @@ impl Decoder {
 
     pub fn reset(&mut self) { self.current = 0; self.pixels.fill(0); self.palette.fill([0,0,0,255]); }
     pub fn indices(&self)->Vec<u8>{self.pixels.clone()}
+    /// Complete current color table, including indices not used by the current image.
+    pub fn palette(&self) -> [[u8; 4]; 256] { self.palette }
+    /// Zero-based most recently decoded frame; zero before the first decode or after reset.
+    pub fn current_frame(&self) -> usize { self.current.saturating_sub(1) }
 
     pub fn next_frame(&mut self) -> Result<Vec<u8>, String> {
         if self.current == self.frame_count { self.reset(); }

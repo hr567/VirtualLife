@@ -1,0 +1,597 @@
+{
+  "formatVersion": 1,
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "evidence": [
+    "0x004296b0",
+    "0x0042a0e0",
+    "0x0042a550",
+    "0x0042a120",
+    "0x0042b2e0"
+  ],
+  "layers": [
+    {
+      "resource": "install/pm0i/pm0i01.bmp",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 480,
+      "transparent": null,
+      "source": "0x0047aea8"
+    },
+    {
+      "resource": "install/boss/be201a.bmp",
+      "x": 16,
+      "y": 133,
+      "width": 211,
+      "height": 350,
+      "transparent": 1,
+      "source": "0x0047aed0"
+    }
+  ],
+  "blink": {
+    "resource": "install/boss/be201a.bmp",
+    "x": 16,
+    "y": 133,
+    "width": 211,
+    "height": 350,
+    "transparent": 1,
+    "source": "0x0047aef8"
+  },
+  "music": "install/sound/music/n2buyland.wav",
+  "buySound": "install/sound/g6/g6s02.wav",
+  "houseSound": "install/sound/g6/g6s03.wav",
+  "paletteSections": [
+    {
+      "resource": "install/boss/be201a.bmp",
+      "first": 142,
+      "last": 161,
+      "source": "0x0042a550"
+    },
+    {
+      "resource": "install/public/button/yes_a.flc",
+      "first": 162,
+      "last": 200,
+      "source": "0x0042a6b7"
+    }
+  ],
+  "previewPalette": {
+    "first": 2,
+    "last": 141,
+    "purchaseCall": "0x0042a6df",
+    "investmentCall": "0x0042a733",
+    "untouchedBackgroundRange": [
+      201,
+      255
+    ]
+  },
+  "houses": [
+    {
+      "id": 0,
+      "resource": "install/pm0i/e1.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": 1,
+      "frameCount": 100,
+      "interval": 71,
+      "source": "0x0047af20",
+      "description": "豪华气派的欧洲风格住宅是成功人士的首选，价格60000元，不过家具要您自己配。就买欧洲住宅吗？"
+    },
+    {
+      "id": 1,
+      "resource": "install/pm0i/a1.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": 1,
+      "frameCount": 100,
+      "interval": 71,
+      "source": "0x0047af5c",
+      "description": "这是个充分展现现代美学的美国风格住宅，单价40000元，家具嘛，还得您自个儿买。美国住宅是您合适的居室，怎么样，快做决定吧！"
+    },
+    {
+      "id": 2,
+      "resource": "install/pm0i/j1.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": 1,
+      "frameCount": 100,
+      "interval": 71,
+      "source": "0x0047af98",
+      "description": "日本式住宅宁静舒适，单价60000元，不含家具。您动心了吧？"
+    },
+    {
+      "id": 3,
+      "resource": "install/pm0i/c1.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": 1,
+      "frameCount": 100,
+      "interval": 71,
+      "source": "0x0047afd4",
+      "description": "这套不含家具的中国式住宅古色古香，优惠价也是50000元。买下它吧！"
+    }
+  ],
+  "investments": [
+    {
+      "id": 0,
+      "resource": "install/pm0i/europe1.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 51,
+      "interval": 114,
+      "source": "0x0047b010"
+    },
+    {
+      "id": 1,
+      "resource": "install/pm0i/europe2.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 51,
+      "interval": 71,
+      "source": "0x0047b056"
+    },
+    {
+      "id": 2,
+      "resource": "install/pm0i/europe.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 51,
+      "interval": 114,
+      "source": "0x0047b09c"
+    },
+    {
+      "id": 3,
+      "resource": "install/pm0i/america2.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 56,
+      "interval": 128,
+      "source": "0x0047b0e2"
+    },
+    {
+      "id": 4,
+      "resource": "install/pm0i/america3.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 56,
+      "interval": 128,
+      "source": "0x0047b128"
+    },
+    {
+      "id": 5,
+      "resource": "install/pm0i/america1.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 56,
+      "interval": 128,
+      "source": "0x0047b16e"
+    },
+    {
+      "id": 6,
+      "resource": "install/pm0i/japan1.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 51,
+      "interval": 71,
+      "source": "0x0047b1b4"
+    },
+    {
+      "id": 7,
+      "resource": "install/pm0i/japan2.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 41,
+      "interval": 71,
+      "source": "0x0047b1fa"
+    },
+    {
+      "id": 8,
+      "resource": "install/pm0i/japan.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 47,
+      "interval": 71,
+      "source": "0x0047b240"
+    },
+    {
+      "id": 9,
+      "resource": "install/pm0i/china3_1.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 51,
+      "interval": 71,
+      "source": "0x0047b286"
+    },
+    {
+      "id": 10,
+      "resource": "install/pm0i/china3_2.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 51,
+      "interval": 71,
+      "source": "0x0047b2cc"
+    },
+    {
+      "id": 11,
+      "resource": "install/pm0i/china3.flc",
+      "x": 357,
+      "y": 51,
+      "width": 200,
+      "height": 200,
+      "transparent": "firstPixel",
+      "frameCount": 51,
+      "interval": 71,
+      "source": "0x0047b312"
+    }
+  ],
+  "previous": {
+    "resource": "install/pm0i/pm0i02.bmp",
+    "x": 364,
+    "y": 278,
+    "width": 32,
+    "height": 93,
+    "transparent": 1,
+    "frameCount": 3,
+    "frameHeight": 31
+  },
+  "next": {
+    "resource": "install/pm0i/pm0i03.bmp",
+    "x": 430,
+    "y": 278,
+    "width": 32,
+    "height": 93,
+    "transparent": 1,
+    "frameCount": 3,
+    "frameHeight": 31
+  },
+  "yes": {
+    "resource": "install/public/button/y01.bmp",
+    "x": 393,
+    "y": 423,
+    "width": 59,
+    "height": 75,
+    "transparent": 1,
+    "frameCount": 3,
+    "frameHeight": 25
+  },
+  "no": {
+    "resource": "install/public/button/n01.bmp",
+    "x": 458,
+    "y": 423,
+    "width": 59,
+    "height": 75,
+    "transparent": 1,
+    "frameCount": 3,
+    "frameHeight": 25
+  },
+  "invest": [
+    {
+      "resource": "install/pm0i/invest.flc",
+      "x": 393,
+      "y": 423,
+      "width": 59,
+      "height": 25,
+      "transparent": 1,
+      "frameCount": 6,
+      "interval": 71
+    },
+    {
+      "resource": "install/pm0i/investb.flc",
+      "x": 393,
+      "y": 423,
+      "width": 59,
+      "height": 25,
+      "transparent": 1,
+      "frameCount": 6,
+      "interval": 71
+    }
+  ],
+  "income": [
+    {
+      "resource": "install/pm0i/revenue.flc",
+      "x": 458,
+      "y": 423,
+      "width": 59,
+      "height": 25,
+      "transparent": 1,
+      "frameCount": 6,
+      "interval": 171
+    },
+    {
+      "resource": "install/pm0i/revenueb.flc",
+      "x": 458,
+      "y": 423,
+      "width": 59,
+      "height": 25,
+      "transparent": 1,
+      "frameCount": 6,
+      "interval": 171
+    }
+  ],
+  "back": [
+    {
+      "resource": "install/public/button/exita.flc",
+      "x": 519,
+      "y": 272,
+      "width": 62,
+      "height": 62,
+      "transparent": 1,
+      "frameCount": 15,
+      "interval": 114
+    },
+    {
+      "resource": "install/public/button/exitb.flc",
+      "x": 519,
+      "y": 272,
+      "width": 62,
+      "height": 62,
+      "transparent": 1,
+      "frameCount": 15,
+      "interval": 114
+    }
+  ],
+  "text": {
+    "x": 128,
+    "y": 371,
+    "width": 400,
+    "height": 100,
+    "size": 16,
+    "weight": 700,
+    "lineHeight": 16,
+    "color": [
+      255,
+      255,
+      255,
+      255
+    ]
+  },
+  "clocks": {
+    "introMs": 20000,
+    "insufficientMs": 10000,
+    "blinkStartMs": 2000,
+    "blinkPeriodMs": 2100
+  },
+  "messages": {
+    "greeting": "您好，您是光顾本店的第一位顾客，我将为您提供房产购买的消息，放心，我可是会尽力帮您的喔!",
+    "select": "您现在还没有属于自己的住宅吧，我已经替您准备了四种款式的住宅供您挑选，它们能提升您的魅力、体力、智力或道德。",
+    "insufficient": "看来您现在手头不宽裕，我很想帮助您，对于您放弃这次投资机会我深表遗憾，希望下次我可以为您提供服务。再见，祝您好运！",
+    "completed": "谢谢您在我这里投资房产，我想您一定会得到丰厚的回报。再次感谢您的光临，再见!",
+    "investOnly": "您想继续投资吗？",
+    "investAndIncome": "继续投资还是提取收益?",
+    "incomeOnly": "请您提取收益吧！",
+    "specialGreeting": "仁爱路我属第一，你赶快把东西交给我，我马上交给大哥， 大哥会做相应处理的。你可以回去交差了。不过走之前最好看看我这里的房产，大哥可很关心弟兄们的私人生活喔。"
+  },
+  "stageDescriptions": [
+    "欢迎光顾，我上次出售给您的住宅不错吧。这次我听说东边有块地皮上要建一幢神龙别墅，建好后可以出租给大老板居住，十分值得投资。第一期工程需要投资150000元，我保证把这别墅租出去，您每个月都可得到投资额80%的收益了。",
+    "您好，欢迎再次光临。您这次可以收取您投资的房产收益，只要按下“收益”键就行。不过我又帮您找了一个投资机会，只要您追加投资80000元，您以后的房产收益每次都是总投资额的75%，每次啊！这样的机会您可别错过吧。",
+    "欢迎欢迎，这次您一样可以收取巨额房产收益。我又帮您联系了投资事宜，这次您还是只要追加投资80000元，就可以每次获得三次总投资额75%的收益。",
+    "您好，您是我的老主顾了，这次来是收取收益呢，还是想继续投资？如果想继续投资，请投资这座梦幻别墅，保证一建好就有人要租，收益不成问题。第一期投资额是160000元，本期工程收益是投资额的80%，您满意吗？",
+    "您又来了。您现在可收取的收益真是越来越多了。关于投资的项目只有一个，就是梦幻别墅要进行第二期工程，需要追加投资85000元，以后依然可以每次获得总投资额80%的收益。",
+    "欢迎光临。这次您大概要收取房产收益了吧。不过如果您想继续投资也可以，只要追加85000元的资金，您以后每月可从梦幻别墅那儿上收取总投资额80%的红利。",
+    "您好！您的投资已经获得丰厚的收益，不过投资是永无止境的，这里又要建造一幢通灵别墅，需要投资150000元，任何投资者都可获得每月投资额70%的收益，怎样，您有兴趣吗？",
+    "您好，您的收益已经替您准备好了，只要按一下“收益”键即可到手。也许您对上次的投资感兴趣，这幢通灵别墅第二期工程需投资80000元，完工后每次可得到总投资额的75%，条件很优厚啊。",
+    "欢迎欢迎！还记得那幢通灵别墅吗？您已经进行了两期投资，最后一期投资需要资金80000元，建成后每次就可获得三次投资总投资额的75%红利。当然如果您不愿投资，只提取收益也行。",
+    "欢迎光顾。这次您如果不想提取收益而要投资的话，我这儿有一大块空地，可以建一个星球饭店出租给西亚的石油王子居住，收取相当投资额60%的租金，它的投资额是180000元。",
+    "您是来提领收益的吗？如果不是，还记得上次为石油王子建的星球饭店吗？它的第二阶段投资需90000元，这样您以后每次就可以获得总投资额65%的租金。",
+    "老朋友您好啊，见到您真高兴！来拿收益吧？如果还想投资就投资石油王子住的星球饭店吧。第二期工程需要资金90000元，当然收益还是每次总投资额的65%。",
+    "能再次见到您真高兴，我相信您一定是个有所作为的人，我曾为您创造了巨大的财富。现在您已经可以坐享其成了，现在您已经不必进行投资，只要收取属于您的房产收益就行了。"
+  ],
+  "hud": {
+    "money": {
+      "x": 77,
+      "y": 46
+    },
+    "intelligence": {
+      "x": 77,
+      "y": 17
+    },
+    "morality": {
+      "x": 229,
+      "y": 17
+    },
+    "charm": {
+      "x": 379,
+      "y": 17
+    },
+    "stamina": {
+      "x": 530,
+      "y": 17
+    }
+  },
+  "gains": {
+    "evidence": "0x0042b2e0",
+    "effectY": 160,
+    "digitY": 230,
+    "digitSpacing": 30,
+    "stepX": 6,
+    "stepY": 16,
+    "digits": [
+      {
+        "resource": "install/public/0.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/1.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/2.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/3.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/4.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/5.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/6.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/7.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/8.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      },
+      {
+        "resource": "install/public/9.bmp",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 40,
+        "transparent": 1
+      }
+    ],
+    "order": [
+      {
+        "attribute": "charm",
+        "x": 356,
+        "y": 17,
+        "effect": {
+          "resource": "install/public/eff/mei_up.flc",
+          "x": 356,
+          "y": 160,
+          "width": 75,
+          "height": 75,
+          "transparent": 1,
+          "frameCount": 11,
+          "interval": 114
+        }
+      },
+      {
+        "attribute": "morality",
+        "x": 206,
+        "y": 17,
+        "effect": {
+          "resource": "install/public/eff/role_up.flc",
+          "x": 206,
+          "y": 160,
+          "width": 75,
+          "height": 75,
+          "transparent": 1,
+          "frameCount": 14,
+          "interval": 114
+        }
+      },
+      {
+        "attribute": "intelligence",
+        "x": 54,
+        "y": 17,
+        "effect": {
+          "resource": "install/public/eff/smart_up.flc",
+          "x": 54,
+          "y": 160,
+          "width": 75,
+          "height": 75,
+          "transparent": 1,
+          "frameCount": 18,
+          "interval": 114
+        }
+      },
+      {
+        "attribute": "stamina",
+        "x": 507,
+        "y": 17,
+        "effect": {
+          "resource": "install/public/eff/body_up.flc",
+          "x": 507,
+          "y": 160,
+          "width": 75,
+          "height": 75,
+          "transparent": 1,
+          "frameCount": 11,
+          "interval": 114
+        }
+      }
+    ]
+  },
+  "originalDifferences": [
+    "The Japanese house description says 60000, while the executable price table charges 40000. Preserve both.",
+    "Business investment amounts and income are provided by the core; prose promises are not rewritten to match those tables."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "entryPoint": "0x00452260",
+  "method": "Execute unmodified 00452260 for the real defeat/victory outro branches.\n\nOnly input polling, graphics and the DirectShow device are deterministic mocks.\nThe original victory byte chooses AOPEN03/native phase 2 or AOPEN04/phase 3.\nThe device reports the corresponding verified manifest clip duration; this is\nnot a measurement of DirectShow scheduling or a Windows GUI recording.\n",
+  "cases": [
+    {
+      "victory": false,
+      "victoryByte": 0,
+      "nativePhase": 2,
+      "openedClip": "ProEpi\\aopen03.avi",
+      "sourceResource": "cd/data/proepi/aopen03.avi",
+      "sourceClipSha256": "57a076b2966cd20fb81c587618dd9656f18851025e6d085f0b276f4c8d61f8d4",
+      "derivedResource": "derived/proepi/aopen03.webm",
+      "derivedClipSha256": "c024cfe299661a0afc0f98c2d118955346ede97d9a0c49a5543f2b0595736152",
+      "durationMs": 11667,
+      "decodedFrames": 280,
+      "frameRate": "24/1",
+      "frames": [
+        {
+          "elapsedMs": 11666,
+          "after": {
+            "alive": true,
+            "nativePhase": 2,
+            "videoTimeMs": 11666,
+            "phase": "outro"
+          }
+        },
+        {
+          "elapsedMs": 1,
+          "after": {
+            "alive": false,
+            "nativePhase": 2,
+            "videoTimeMs": 11667,
+            "phase": "finished"
+          }
+        }
+      ]
+    },
+    {
+      "victory": true,
+      "victoryByte": 1,
+      "nativePhase": 3,
+      "openedClip": "ProEpi\\aopen04.avi",
+      "sourceResource": "cd/data/proepi/aopen04.avi",
+      "sourceClipSha256": "7b7c02d799e4cefee336f805b844e021f1dfc6af4a80b1fe376563fb4e007c2c",
+      "derivedResource": "derived/proepi/aopen04.webm",
+      "derivedClipSha256": "034aa0d3395530d600b8235d7f0dc8a7f9db2d7d376a26bd4bbe3beac09e0a00",
+      "durationMs": 7792,
+      "decodedFrames": 187,
+      "frameRate": "24/1",
+      "frames": [
+        {
+          "elapsedMs": 7791,
+          "after": {
+            "alive": true,
+            "nativePhase": 3,
+            "videoTimeMs": 7791,
+            "phase": "outro"
+          }
+        },
+        {
+          "elapsedMs": 1,
+          "after": {
+            "alive": false,
+            "nativePhase": 3,
+            "videoTimeMs": 7792,
+            "phase": "finished"
+          }
+        }
+      ]
+    }
+  ]
+}

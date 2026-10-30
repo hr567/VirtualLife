@@ -1,0 +1,112 @@
+{
+  "formatVersion": 1,
+  "status": "blocked-before-original-game-surface",
+  "acceptedAsVisualBaseline": false,
+  "source": {
+    "executable": "research/runtime/N2Game.exe",
+    "sha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+    "bytes": 679936,
+    "executableModified": false,
+    "gameplayMemoryModified": false
+  },
+  "environment": {
+    "operatingSystem": "Windows Server 2025, build 10.0.26100",
+    "automation": "Computer Use @oai/sky, Windows.Graphics.Capture",
+    "workingDirectory": "research/runtime",
+    "disc": {
+      "drive": "E:\\",
+      "getDriveTypeW": 5,
+      "requiredOriginalFile": "E:\\Data\\Evaluate\\Evaluate.ttf",
+      "requiredOriginalFileBytes": 4950424
+    },
+    "randomSeed": null,
+    "randomSeedReason": "Original gameplay initialization was not reached. No seed was injected or inferred."
+  },
+  "attempts": [
+    {
+      "action": "Launch the pre-existing original N2Game.exe through Computer Use",
+      "observedWindowTitle": "Virtual Life",
+      "result": "Original modal error: Virtual Life disc not found!",
+      "artifact": "output/original-reference/disc-error.png",
+      "artifactSha256": "070acf0803ecb91c1dfd47e4e6df814f0cf11a0374d5a96b84aecf806ef607c1",
+      "artifactWidth": 382,
+      "artifactHeight": 302,
+      "isGameSurface": false
+    },
+    {
+      "action": "Open the same unmodified executable in the pre-existing x32dbg",
+      "result": "Executable loaded; debugger stopped at its system breakpoint. Qt command text insertion did not populate the command field; accessibility set_value timed out.",
+      "artifact": "output/original-reference/debugger-system-breakpoint.png",
+      "artifactSha256": "7d3036993c64737e6691e40085140ba3baee9b0432e18520c4914aa257cf17eb",
+      "isGameSurface": false,
+      "bootstrapScriptExecuted": false
+    },
+    {
+      "action": "After the user explicitly reauthorized GUI work, record original installation metadata and attempt a reversible repair",
+      "registryKey": "HKLM\\Software\\Inventec\\Virtual Life",
+      "registryView": 32,
+      "previousValues": {},
+      "attemptedValues": { "CD Path": "E:\\", "Install Type": "Typical" },
+      "result": "Initial sandbox attempt failed with PermissionError / WinError 5 before any SetValueEx call. A later formally approved helper successfully supplied the two temporary values and automatically restored them.",
+      "valuesWritten": false,
+      "verifiedValuesAfterAttempt": {},
+      "localAudit": "research/original-reference/installation-session.json"
+    },
+    {
+      "action": "Launch the original with the temporary installation metadata supplied by the approved, automatically restoring helper",
+      "result": "Original startup failed after reporting that the IV50 Indeo decoder is unavailable, then dereferenced a missing DirectShow sample at executable address 0x00451b62.",
+      "artifact": "output/original-reference/startup-events.json",
+      "evidence": ["Video-For-Windows event 1 at 2026-10-29T17:58:55+08:00 and 17:58:56+08:00", "Application Error event 1000 at 2026-10-29T17:58:58+08:00, exception c0000005, offset 00051b62"],
+      "isGameSurface": false
+    },
+    {
+      "action": "Extract the original installation medium's IV50 DLLs locally and test a process-only codec registration, without installing a system codec",
+      "source": "E:/Directx/DXMWEB.EXE, embedded CAB, dxmedia.EXE embedded CAB, original ir50_32.dll / ir50_qc.dll / ir50_qcx.dll",
+      "result": "Local codec initialization did not finish within the 30-second diagnostic bound. The launcher terminated only its own test child. This did not establish working IV50 playback.",
+      "systemCodecInstalled": false,
+      "isGameSurface": false
+    },
+    {
+      "action": "Prepare a startup-only in-memory introduction bypass; compare the exact call bytes before patching the suspended child",
+      "processId": 69920,
+      "patch": {"address": "0x004236ac", "before": "e89fe40200", "after": "33c0909090", "meaning": "Return movie-finished instead of polling the unavailable introduction sample"},
+      "result": "No targetable original window was returned by Computer Use. A later read-only WOW64 main-thread stack showed return address 0x0040ec61, the original disc-error MessageBox return site, so this run never reached the introduction or a game surface.",
+      "threadInspection": "output/original-reference/inspect-original-thread.py",
+      "executableFileModified": false,
+      "gameplayMemoryModified": false,
+      "introductionPlaybackValidated": false,
+      "isGameSurface": false
+    },
+    {
+      "action": "Launch the startup-only test launcher through Computer Use while the approved installation helper was active",
+      "launcher": "output/original-reference/skip-opening.exe",
+      "result": "The launch/window-list tool call did not return a result and was deliberately interrupted. The process/window outcome is unknown; no screenshot or game surface was captured from this attempt.",
+      "toolResult": "aborted by user",
+      "nativeSurfaceCaptured": false,
+      "introductionPlaybackValidated": false,
+      "isGameSurface": false
+    }
+  ],
+  "diagnosis": {
+    "function": "0x0045ab70",
+    "source": "research/decompiled/functions/0045ab70.c",
+    "originalReads": ["32-bit HKLM Software\\Inventec\\Virtual Life / CD Path", "32-bit HKLM Software\\Inventec\\Virtual Life / Install Type"],
+    "pathContract": "CD Path is the disc root E:\\; the original function appends Data\\Evaluate\\Evaluate.ttf itself.",
+    "installationContract": "Install Type must match one of the original accepted strings; Typical selects the original DAT_004e7bd0=1 mode.",
+    "mediaFunction": "0x00451b50, null sample dereference at 0x00451b62 after unavailable IV50 codec",
+    "installationRestoration": {"status": "restored", "values": {}, "verifiedAt": "2026-10-29T10:33:07.816378+00:00", "audit": "research/original-reference/installation-session.json"},
+    "remainingRequirement": "The interactive-desktop launch did not return an observable native surface. Further startup investigation is deferred; native graphics compatibility and visual equivalence remain unverified."
+  },
+  "scenes": {
+    "mainMenu": { "status": "not-captured" },
+    "characterCreation": { "status": "not-captured" },
+    "map": { "status": "not-captured" },
+    "eventsAndShops": { "status": "not-captured" },
+    "minigames": { "status": "not-captured" },
+    "competition": { "status": "not-captured" },
+    "ordinaryBattle": { "status": "not-captured" },
+    "finalBattle": { "status": "not-captured" },
+    "ending": { "status": "not-captured" }
+  },
+  "boundary": "Startup and debugger screenshots are diagnostic evidence only. They are not 640x480 gameplay frames and cannot establish original-game visual equivalence. Existing web screenshots and machine-code fixtures are separate evidence and are never substituted for native GUI captures."
+}

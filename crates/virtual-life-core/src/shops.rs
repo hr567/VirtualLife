@@ -104,10 +104,15 @@ impl NativeShop{
             let item=catalog.furniture.get(index).ok_or("Missing original furniture offer")?;
             offers.push(NativeShopOffer{category:0,catalog_index:index,inventory_id:-1,price:item.price,description:item.description.clone(),resource:item.resource.clone(),purchased:false,bonus_attribute:Some(item.bonus_attribute),bonus_amount:item.bonus_amount});
         }
+        // FUN_004399b0 copies only the first three eligible ids from the waiting
+        // list into 0x004e5cdc..0x004e5ce8. Remaining equipment waits for a visit.
+        let mut retrieval_count=0;
         for (id,item)in known.iter().enumerate(){
             if item.learned && item.level==0 && !carried.iter().any(|slot|slot.id==id as i16){
+                if retrieval_count==3{break;}
                 let definition=definitions.iter().find(|definition|definition.id==id).ok_or("Missing original carried-equipment definition")?;
                 offers.push(NativeShopOffer{category:1,catalog_index:id,inventory_id:id as i16,price:0,description:format!("领取{}\n{}",definition.name,definition.description),resource:definition.icon.clone(),purchased:false,bonus_attribute:None,bonus_amount:0});
+                retrieval_count+=1;
             }
         }
         for(category,items,indices)in[(2,ordinary,ordinary_indices),(3,special,special_indices)]{
@@ -155,6 +160,23 @@ impl NativeShop{
 mod tests{
     use super::*;
     fn rules()->serde_json::Value{serde_json::from_str(include_str!("../../../assets/catalog/rules.json")).unwrap()}
+    #[test]
+    fn equipment_retrieval_exposes_only_three_original_slots_and_leaves_the_rest_for_next_visit(){
+        let rules=rules();let catalog:ItemShopCatalog=serde_json::from_value(rules["itemShop"].clone()).unwrap();let definitions:Vec<EquipmentDefinition>=serde_json::from_value(rules["equipment"].clone()).unwrap();
+        let mut known=vec![EquipmentKnowledge{learned:false,level:0};18];for item in &mut known[..8]{item.learned=true;}known[2].level=1;
+        let mut carried=vec![EquipmentSlot{id:-1,level:0};8];carried[0]=EquipmentSlot{id:1,level:0};
+        let mut player=LegacyPlayer::initialize();let mut housing=HousingState::default();let mut rng=ReplayRng::new(1);
+        let mut shop=NativeShop::generate(&catalog,&player,&housing,&known,&carried,&definitions,&mut rng).unwrap();
+        let initial_rng=rng.clone();
+        assert_eq!(shop.offers.iter().filter(|offer|offer.category==1).map(|offer|offer.inventory_id).collect::<Vec<_>>(),vec![0,3,4]);
+        let indices=shop.offers.iter().enumerate().filter(|(_,offer)|offer.category==1).map(|(index,_)|index).collect::<Vec<_>>();
+        let mut ordinary=vec![0;13];let mut special=vec![0;27];
+        for index in indices{assert!(shop.purchase(index,&mut player,&mut housing,&mut ordinary,&mut special,&known,&mut carried).unwrap().received);}
+        assert_eq!(rng,initial_rng);
+        assert_eq!(shop.offers.iter().filter(|offer|offer.category==1).count(),3);
+        let next=NativeShop::generate(&catalog,&player,&housing,&known,&carried,&definitions,&mut rng).unwrap();
+        assert_eq!(next.offers.iter().filter(|offer|offer.category==1).map(|offer|offer.inventory_id).collect::<Vec<_>>(),vec![5,6,7]);
+    }
     #[test]
     fn item_shop_and_property_income_match_original_machine_code(){
         let rules=rules();let catalog:ItemShopCatalog=serde_json::from_value(rules["itemShop"].clone()).unwrap();

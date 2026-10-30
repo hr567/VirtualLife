@@ -8,15 +8,16 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent.parent
 parser=argparse.ArgumentParser()
 parser.add_argument('--ffmpeg',type=Path,default=ROOT/'research/tools/ffmpeg/ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe')
-parser.add_argument('--only',choices=['all','endings','opening'],default='all')
+parser.add_argument('--only',choices=['all','endings','opening','loss'],default='all')
 args=parser.parse_args();ffmpeg=args.ffmpeg.resolve();ffprobe=ffmpeg.with_name('ffprobe.exe'if ffmpeg.suffix=='.exe'else'ffprobe')
 manifest_path=ROOT/'assets/manifest.json';manifest=json.loads(manifest_path.read_text(encoding='utf8'))
 objects={entry['sha256']:entry for entry in manifest['objects']};temporary=ROOT/'output/ending-videos';temporary.mkdir(parents=True,exist_ok=True)
 version=subprocess.check_output([str(ffmpeg),'-version'],text=True).splitlines()[0]
 results=[]
-movies = [('proepi', 'aopen02'), ('proepi', 'aopen04'), ('video', 'ffopening')]
+movies = [('proepi', 'aopen02'), ('proepi', 'aopen03'), ('proepi', 'aopen04'), ('video', 'ffopening')]
 for folder,name in movies:
     if args.only == 'opening' and name != 'ffopening' or args.only == 'endings' and name == 'ffopening': continue
+    if args.only == 'loss' and name != 'aopen03': continue
     source_id=f'cd/data/{folder}/{name}.avi';source_hash=manifest['resources'][source_id]['sha256'];source=ROOT/objects[source_hash]['path']
     streams=json.loads(subprocess.check_output([str(ffprobe),'-v','error','-show_streams','-of','json',str(source)],text=True))['streams']
     probe=next(stream for stream in streams if stream['codec_type']=='video')

@@ -6,9 +6,17 @@ description = "Evidence-backed Virtual Life browser runtime and original asset d
 publish = false
 
 [lib]
-crate-type = ["cdylib", "rlib"]
+crate-type = ["rlib"]
 
 [dependencies]
-serde = { version = "=1.0.229", features = ["derive"] }
-serde_json = { version = "=1.0.154", features = ["float_roundtrip"] }
-wasm-bindgen = "=0.2.129"
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+
+[features]
+# Offline browser evidence generation only. Never enabled in the production WASM client.
+test-support = []
+
+[[example]]
+name = "export_web_scenarios"
+required-features = ["test-support"]

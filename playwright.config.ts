@@ -3,9 +3,9 @@ import os from 'node:os';
 import path from 'node:path';
 
 export default defineConfig({
-  testDir: './tests/web',
+  testDir: './tests/bevy-web',
   outputDir: process.env.PLAYWRIGHT_OUTPUT_DIR ?? path.join(os.tmpdir(), 'virtual-life-web-qa'),
-  timeout: 60_000,
+  timeout: 120_000,
   expect: { timeout: 20_000 },
   fullyParallel: false,
   workers: 1,
@@ -21,7 +21,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
   webServer: process.env.PLAYWRIGHT_EXTERNAL_SERVER ? undefined : {
-    command: 'pnpm preview --port 4173',
+    command: 'node tools/serve-test-site.mjs',
     url: 'http://127.0.0.1:4173/VirtualLife/',
     reuseExistingServer: !process.env.CI,
     timeout: 30_000,

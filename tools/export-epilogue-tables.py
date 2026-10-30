@@ -43,7 +43,7 @@ ending={
  'segments':[{'startMs':read(0x46b968+index*24,'<q')//10000,'endMs':read(0x46b970+index*24,'<q')//10000,'color':color(u32(0x46b978+index*24))}for index in range(2)],
  'font':font,'fontHeightArgument':subtitle_height,'fontSize':effective_subtitle_height,'characterSpacing':2,
  'subtitleRect':[i32(0x46b958+index*4)for index in range(4)],
- 'movie':'derived/proepi/aopen02.webm','outro':'derived/proepi/aopen04.webm',
+ 'movie':'derived/proepi/aopen02.webm','lossOutro':'derived/proepi/aopen03.webm','outro':'derived/proepi/aopen04.webm',
  'narration':['cd/data/proepi/back.wav','cd/data/proepi/pass.wav'],'music':'cd/data/proepi/bgm.wav',
  'video':{'x':0,'y':60,'width':640,'height':360,'sourceHeight':180,'scanlines':True},
  'credits':{'paragraphs':paragraphs,'rect':credits_rect,'font':font,'fontSize':20,'characterSpacing':2,'color':'#e0e0e0',
@@ -51,7 +51,7 @@ ending={
    'end':bitmap('cd/data/proepi/end.bmp')},
  'choice':{'background':bitmap('install/'+resource(raw(0x479aa4))),'buttons':[dict(bitmap('install/'+resource(raw(address))),x=x,y=274)for address,x in [(0x479a94,253),(0x479a84,349)]],'cursor':bitmap('install/'+resource(raw(0x479a70)))},
 }
-for key in ['movie','outro']:
+for key in ['movie','lossOutro','outro']:
     if ending[key]in manifest['resources']:ending[key+'Metadata']=objects[manifest['resources'][ending[key]]['sha256']]['media']
 path=ROOT/'assets/catalog/rules.json';rules=json.loads(path.read_text(encoding='utf8'));rules['epilogue']=ending
 path.write_text(json.dumps(rules,ensure_ascii=False,indent=2)+'\n',encoding='utf8')

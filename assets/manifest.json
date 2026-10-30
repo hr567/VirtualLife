@@ -22,17 +22,18 @@
     }
   },
   "statistics": {
-    "resourceCount": 6673,
-    "uniqueObjectCount": 5079,
-    "sourceBytes": 866672170,
-    "storedBytes": 625990137,
+    "resourceCount": 6676,
+    "uniqueObjectCount": 5082,
+    "sourceBytes": 885589741,
+    "storedBytes": 644907708,
     "deduplicatedBytes": 240682033,
-    "derivedResourceCount": 4
+    "derivedResourceCount": 7
   },
   "catalogs": {
     "maps": "assets/catalog/maps.json",
     "events": "assets/catalog/events.json",
-    "questionnaires": "assets/catalog/questionnaires.json"
+    "questionnaires": "assets/catalog/questionnaires.json",
+    "glyphs": "assets/catalog/glyphs.json"
   },
   "objects": [
     {
@@ -7691,6 +7692,14 @@
         "pixelOffset": 1078,
         "paletteEntries": 256,
         "transparency": "not-established"
+      }
+    },
+    {
+      "sha256": "16ec5207c2a0b9f555637c0721ec17408d7429b0950f0b728d99a03daae3f630",
+      "path": "assets/game/objects/16/16ec5207c2a0b9f555637c0721ec17408d7429b0950f0b728d99a03daae3f630.tar.gz",
+      "bytes": 6610742,
+      "media": {
+        "kind": "font-source-archive"
       }
     },
     {
@@ -29904,6 +29913,17 @@
         "bitsPerPixel": 8,
         "speedRaw": 71,
         "transparency": "not-established"
+      }
+    },
+    {
+      "sha256": "5e6618436a56285e96362f78246039aaa9290dde05cdf114490aeff202fcff16",
+      "path": "assets/game/objects/5e/5e6618436a56285e96362f78246039aaa9290dde05cdf114490aeff202fcff16.bin",
+      "bytes": 620330,
+      "derivedFrom": "16ec5207c2a0b9f555637c0721ec17408d7429b0950f0b728d99a03daae3f630",
+      "media": {
+        "kind": "bitmap-font",
+        "pixelFormat": "mono1",
+        "glyphCount": 7565
       }
     },
     {
@@ -59689,6 +59709,24 @@
         "speedRaw": 71,
         "transparency": "not-established"
       }
+    },
+    {
+      "sha256": "c024cfe299661a0afc0f98c2d118955346ede97d9a0c49a5543f2b0595736152",
+      "path": "assets/game/objects/c0/c024cfe299661a0afc0f98c2d118955346ede97d9a0c49a5543f2b0595736152.webm",
+      "bytes": 11686499,
+      "media": {
+        "kind": "webm",
+        "videoCodec": "vp9",
+        "losslessEncoding": true,
+        "decodedFramesVerified": true,
+        "pixelFormat": "yuv444p",
+        "width": 640,
+        "height": 180,
+        "frameRate": "24/1",
+        "frames": 280,
+        "durationMs": 11667
+      },
+      "derivedFrom": "57a076b2966cd20fb81c587618dd9656f18851025e6d085f0b276f4c8d61f8d4"
     },
     {
       "sha256": "c02da7285f1acfcbd10037ddcd7fce87379b049f5f6159454b73122223dceeac",
@@ -140376,6 +140414,51 @@
           "-map_metadata",
           "-1"
         ]
+      }
+    },
+    "derived/proepi/aopen03.webm": {
+      "sha256": "c024cfe299661a0afc0f98c2d118955346ede97d9a0c49a5543f2b0595736152",
+      "derivedFrom": "cd/data/proepi/aopen03.avi",
+      "conversion": {
+        "tool": "ffmpeg version N-128121-g86444dd368-20261027 Copyright (c) 2000-2026 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "libvpx-vp9",
+          "-lossless",
+          "1",
+          "-pix_fmt",
+          "yuv444p",
+          "-g",
+          "1",
+          "-threads",
+          "1",
+          "-fflags",
+          "+bitexact",
+          "-flags:v",
+          "+bitexact",
+          "-map_metadata",
+          "-1"
+        ]
+      }
+    },
+    "derived/font/wqy-source.tar.gz": {
+      "sha256": "16ec5207c2a0b9f555637c0721ec17408d7429b0950f0b728d99a03daae3f630",
+      "derivation": {
+        "sourceUrl": "https://archive.debian.org/debian/pool/main/x/xfonts-wqy/xfonts-wqy_0.9.9.orig.tar.gz",
+        "license": "GPL v2.0 with the upstream font embedding exception"
+      }
+    },
+    "derived/font/wqy-bitmaps.bin": {
+      "sha256": "5e6618436a56285e96362f78246039aaa9290dde05cdf114490aeff202fcff16",
+      "derivedFrom": "derived/font/wqy-source.tar.gz",
+      "derivation": {
+        "tool": "tools/export-bitmap-font.py",
+        "font": "WenQuanYi Bitmap Song",
+        "version": "0.9.9",
+        "license": "GPL v2.0 with the upstream font embedding exception"
       }
     }
   }

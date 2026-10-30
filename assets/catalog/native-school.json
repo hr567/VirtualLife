@@ -1,0 +1,942 @@
+{
+  "formatVersion": 1,
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "evidence": [
+    "0x0043e030",
+    "0x0043f100",
+    "0x0043ed90",
+    "0x0043eac0"
+  ],
+  "background": {
+    "resource": "install/w/pm0701.bmp",
+    "x": 0,
+    "y": 0,
+    "width": 640,
+    "height": 480,
+    "transparent": null
+  },
+  "questionPanel": {
+    "resource": "install/w/pm0703.bmp",
+    "x": 289,
+    "y": 59,
+    "width": 267,
+    "height": 346,
+    "transparent": 1
+  },
+  "scorePanel": {
+    "resource": "install/w/pm0706.bmp",
+    "x": 289,
+    "y": 59,
+    "width": 309,
+    "height": 247,
+    "transparent": 1
+  },
+  "presenter": {
+    "resource": "install/w/vl01.flc",
+    "x": 70,
+    "y": 38,
+    "width": 222,
+    "height": 286,
+    "transparent": "firstPixel",
+    "frameCount": 30,
+    "interval": 71
+  },
+  "presenterEntrance": {
+    "x": 0,
+    "y": 3,
+    "stepX": 8,
+    "stepY": 4,
+    "targetX": 70,
+    "targetY": 38
+  },
+  "questionEntrance": {
+    "x": 400,
+    "y": 59,
+    "targetX": 289,
+    "stepX": -1
+  },
+  "introText": {
+    "x": 128,
+    "y": 351,
+    "width": 400,
+    "height": 120,
+    "size": 16,
+    "weight": 700,
+    "color": [
+      255,
+      255,
+      255,
+      255
+    ]
+  },
+  "questionText": {
+    "x": 300,
+    "y": 146,
+    "width": 240,
+    "height": 232,
+    "size": 16,
+    "weight": 700,
+    "color": [
+      0,
+      255,
+      255,
+      255
+    ],
+    "lineHeight": 16
+  },
+  "answerPrefixes": [
+    "   A:",
+    "   B:",
+    "   C:",
+    "   D:"
+  ],
+  "questionSeparator": "                     ",
+  "yes": {
+    "resource": "install/public/button/y01.bmp",
+    "x": 393,
+    "y": 436,
+    "width": 59,
+    "height": 75,
+    "transparent": 1,
+    "frameCount": 3,
+    "frameHeight": 25
+  },
+  "no": {
+    "resource": "install/public/button/n01.bmp",
+    "x": 458,
+    "y": 436,
+    "width": 59,
+    "height": 75,
+    "transparent": 1,
+    "frameCount": 3,
+    "frameHeight": 25
+  },
+  "selector": {
+    "resource": "install/public/select.flc",
+    "x": 0,
+    "y": 0,
+    "width": 26,
+    "height": 23,
+    "transparent": "firstPixel",
+    "frameCount": 2,
+    "interval": 228
+  },
+  "correct": {
+    "resource": "install/w/r01.flc",
+    "x": 364,
+    "y": 217,
+    "width": 121,
+    "height": 84,
+    "transparent": "firstPixel",
+    "frameCount": 6,
+    "interval": 142
+  },
+  "wrong": {
+    "resource": "install/w/w01.flc",
+    "x": 364,
+    "y": 217,
+    "width": 77,
+    "height": 84,
+    "transparent": "firstPixel",
+    "frameCount": 8,
+    "interval": 142
+  },
+  "win": {
+    "resource": "install/public/win.flc",
+    "x": 160,
+    "y": 120,
+    "width": 320,
+    "height": 240,
+    "transparent": "firstPixel",
+    "frameCount": 33,
+    "interval": 142
+  },
+  "lost": {
+    "resource": "install/public/lost.flc",
+    "x": 160,
+    "y": 120,
+    "width": 320,
+    "height": 240,
+    "transparent": "firstPixel",
+    "frameCount": 35,
+    "interval": 142
+  },
+  "resultAnimations": [
+    {
+      "resource": "install/harvest/v_bg.flc",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 480,
+      "transparent": "firstPixel",
+      "frameCount": 16,
+      "interval": 370
+    },
+    {
+      "resource": "install/harvest/v_banani.flc",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 480,
+      "transparent": "firstPixel",
+      "frameCount": 15,
+      "interval": 142
+    },
+    {
+      "resource": "install/harvest/v_banl.flc",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 431,
+      "transparent": "firstPixel",
+      "frameCount": 5,
+      "interval": 35
+    },
+    {
+      "resource": "install/harvest/v_banw.flc",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 431,
+      "transparent": "firstPixel",
+      "frameCount": 5,
+      "interval": 35
+    }
+  ],
+  "music": "install/sound/music/hightest.wav",
+  "sounds": {
+    "correct": "install/sound/a0/a0s01.wav",
+    "wrong": "install/sound/a0/a0s02.wav",
+    "select": "install/sound/a0/a0s03.wav",
+    "confirm": "install/sound/a0/a0s04.wav",
+    "step": "install/sound/a0/a0s05.wav",
+    "intro": "install/sound/q0/q0s02.wav",
+    "question": "install/sound/q0/q0s04.wav",
+    "win": "install/sound/testwin.wav",
+    "lost": "install/sound/testfail.wav"
+  },
+  "messages": {
+    "intro": "嘿，你好，我是你的吉祥物，我将永远陪在你身旁，安慰你，保佑你，为你的成功竭尽全力。",
+    "invite": "高中毕业后，你有两个选择，一个是直接工作，不上大学，但是你选择的职业范围有限。另一个选择是上大学，体会有趣的大学生活，不过你必须通过「高考」，只有答对率在60%以上，才能进入大学，否则你就要再修炼一下。怎么样，还是要参加高考吧。",
+    "repeat": "没有工作的日子还不错吧，学习进步得如何？现在，你可以直接工作，也可以再次参加「虚拟城高考」进入大学。你还是选择参加考试吗？"
+  },
+  "paletteSections": [
+    {
+      "resource": "install/w/vl01.flc",
+      "first": 163,
+      "last": 254,
+      "source": "0x0043f1a0"
+    },
+    {
+      "resource": "install/public/button/yes_a.flc",
+      "first": 163,
+      "last": 200,
+      "source": "0x0043f1bc"
+    }
+  ],
+  "gdiIndexMaps": {
+    "install/public/button/n01.bmp": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        163,
+        118
+      ],
+      [
+        255,
+        255
+      ]
+    ],
+    "install/public/button/y01.bmp": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        163,
+        118
+      ],
+      [
+        255,
+        255
+      ]
+    ],
+    "install/w/pm0701.bmp": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        10,
+        10
+      ],
+      [
+        11,
+        11
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        13,
+        13
+      ],
+      [
+        14,
+        14
+      ],
+      [
+        16,
+        16
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        19,
+        19
+      ],
+      [
+        22,
+        22
+      ],
+      [
+        23,
+        23
+      ],
+      [
+        24,
+        24
+      ],
+      [
+        25,
+        25
+      ],
+      [
+        26,
+        26
+      ],
+      [
+        27,
+        27
+      ],
+      [
+        28,
+        28
+      ],
+      [
+        29,
+        29
+      ],
+      [
+        30,
+        30
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        32,
+        32
+      ],
+      [
+        33,
+        33
+      ],
+      [
+        34,
+        34
+      ],
+      [
+        35,
+        35
+      ],
+      [
+        36,
+        36
+      ],
+      [
+        37,
+        37
+      ],
+      [
+        38,
+        38
+      ],
+      [
+        39,
+        39
+      ],
+      [
+        40,
+        40
+      ],
+      [
+        41,
+        41
+      ],
+      [
+        42,
+        42
+      ],
+      [
+        43,
+        43
+      ],
+      [
+        44,
+        44
+      ],
+      [
+        45,
+        45
+      ],
+      [
+        46,
+        46
+      ],
+      [
+        47,
+        47
+      ],
+      [
+        48,
+        48
+      ],
+      [
+        49,
+        49
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        51,
+        51
+      ],
+      [
+        52,
+        52
+      ],
+      [
+        53,
+        53
+      ],
+      [
+        54,
+        54
+      ],
+      [
+        55,
+        55
+      ],
+      [
+        56,
+        56
+      ],
+      [
+        57,
+        57
+      ],
+      [
+        58,
+        58
+      ],
+      [
+        59,
+        59
+      ],
+      [
+        60,
+        60
+      ],
+      [
+        61,
+        61
+      ],
+      [
+        62,
+        62
+      ],
+      [
+        63,
+        63
+      ],
+      [
+        64,
+        64
+      ],
+      [
+        65,
+        65
+      ],
+      [
+        66,
+        66
+      ],
+      [
+        67,
+        67
+      ],
+      [
+        68,
+        68
+      ],
+      [
+        69,
+        69
+      ],
+      [
+        71,
+        71
+      ],
+      [
+        72,
+        72
+      ],
+      [
+        73,
+        73
+      ],
+      [
+        74,
+        74
+      ],
+      [
+        75,
+        75
+      ],
+      [
+        76,
+        76
+      ],
+      [
+        77,
+        77
+      ],
+      [
+        78,
+        78
+      ],
+      [
+        79,
+        79
+      ],
+      [
+        80,
+        80
+      ],
+      [
+        81,
+        81
+      ],
+      [
+        82,
+        82
+      ],
+      [
+        83,
+        83
+      ],
+      [
+        84,
+        84
+      ],
+      [
+        85,
+        85
+      ],
+      [
+        86,
+        86
+      ],
+      [
+        89,
+        89
+      ],
+      [
+        90,
+        90
+      ],
+      [
+        91,
+        91
+      ],
+      [
+        92,
+        92
+      ],
+      [
+        93,
+        93
+      ],
+      [
+        94,
+        94
+      ],
+      [
+        95,
+        95
+      ],
+      [
+        96,
+        96
+      ],
+      [
+        97,
+        97
+      ],
+      [
+        98,
+        98
+      ],
+      [
+        100,
+        100
+      ],
+      [
+        101,
+        101
+      ],
+      [
+        102,
+        102
+      ],
+      [
+        105,
+        105
+      ],
+      [
+        106,
+        106
+      ],
+      [
+        107,
+        107
+      ],
+      [
+        135,
+        135
+      ],
+      [
+        137,
+        137
+      ],
+      [
+        138,
+        138
+      ],
+      [
+        139,
+        139
+      ],
+      [
+        255,
+        255
+      ]
+    ],
+    "install/w/pm0703.bmp": [
+      [
+        0,
+        0
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        10,
+        10
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        19,
+        19
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        32,
+        32
+      ],
+      [
+        33,
+        33
+      ],
+      [
+        44,
+        44
+      ],
+      [
+        45,
+        45
+      ],
+      [
+        48,
+        48
+      ],
+      [
+        49,
+        49
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        53,
+        53
+      ],
+      [
+        54,
+        54
+      ],
+      [
+        55,
+        55
+      ],
+      [
+        56,
+        56
+      ],
+      [
+        57,
+        57
+      ],
+      [
+        58,
+        58
+      ],
+      [
+        62,
+        62
+      ],
+      [
+        65,
+        65
+      ],
+      [
+        68,
+        68
+      ],
+      [
+        71,
+        71
+      ],
+      [
+        73,
+        73
+      ],
+      [
+        91,
+        91
+      ],
+      [
+        98,
+        98
+      ],
+      [
+        107,
+        107
+      ],
+      [
+        134,
+        134
+      ],
+      [
+        135,
+        135
+      ],
+      [
+        136,
+        136
+      ],
+      [
+        137,
+        137
+      ],
+      [
+        138,
+        138
+      ],
+      [
+        139,
+        139
+      ],
+      [
+        255,
+        255
+      ]
+    ],
+    "install/w/pm0706.bmp": [
+      [
+        0,
+        0
+      ],
+      [
+        178,
+        135
+      ],
+      [
+        179,
+        108
+      ],
+      [
+        180,
+        57
+      ],
+      [
+        181,
+        16
+      ],
+      [
+        186,
+        16
+      ],
+      [
+        187,
+        3
+      ],
+      [
+        188,
+        4
+      ],
+      [
+        190,
+        136
+      ],
+      [
+        193,
+        45
+      ],
+      [
+        195,
+        30
+      ],
+      [
+        198,
+        47
+      ],
+      [
+        203,
+        47
+      ],
+      [
+        204,
+        64
+      ],
+      [
+        207,
+        67
+      ],
+      [
+        208,
+        67
+      ],
+      [
+        209,
+        77
+      ],
+      [
+        210,
+        82
+      ],
+      [
+        212,
+        82
+      ],
+      [
+        213,
+        81
+      ],
+      [
+        215,
+        74
+      ],
+      [
+        216,
+        97
+      ],
+      [
+        217,
+        96
+      ],
+      [
+        223,
+        78
+      ],
+      [
+        225,
+        100
+      ],
+      [
+        231,
+        66
+      ],
+      [
+        232,
+        91
+      ],
+      [
+        233,
+        105
+      ],
+      [
+        238,
+        103
+      ],
+      [
+        254,
+        45
+      ]
+    ]
+  },
+  "gdiObservation": {
+    "fixture": "tests/fixtures/original-native-ui-gdi.json",
+    "method": "Original LoadImageA(0x2010) -> StretchBlt(SRCCOPY) into 8-bit DIB with construction-time primary palette; later FLC palette updates are separate.",
+    "platform": "Windows-2025Server-10.0.26100-SP0"
+  }
+}

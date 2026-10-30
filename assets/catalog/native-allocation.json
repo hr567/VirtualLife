@@ -1,0 +1,139 @@
+{
+  "formatVersion": 1,
+  "sourceSha256": "e725c9c7dd9de766cd1bf66dba18260858e447980c65efbd292a9cd3687ef4c0",
+  "evidence": {
+    "functions": [
+      "0x00420250",
+      "0x00420840",
+      "0x004205f0",
+      "0x004206a0",
+      "0x00420730",
+      "0x0040e840",
+      "0x0040e880"
+    ],
+    "initializerSha256": "a95bdc8dbd67a82b36b0b8a7bea5283243d043dbc1958b1c1792b4d01aefe347",
+    "previewTimeoutMs": 5001,
+    "font": "original ASCII bitmap, 8x16, palette index 0; centered in ten characters"
+  },
+  "preview": {
+    "resource": "install/bmp/pm0ma01.bmp",
+    "x": 186,
+    "y": 73,
+    "width": 208,
+    "height": 298,
+    "transparent": 1,
+    "ok": {
+      "resource": "install/ani/oka6.flc",
+      "x": 316,
+      "y": 301,
+      "width": 62,
+      "height": 62,
+      "transparent": 1,
+      "frameCount": 5,
+      "interval": 114,
+      "hover": "install/ani/okb6.flc"
+    }
+  },
+  "allocation": {
+    "resource": "install/bmp/pm0mb01.bmp",
+    "x": 167,
+    "y": 74,
+    "width": 237,
+    "height": 296,
+    "transparent": 1,
+    "ok": {
+      "resource": "install/ani/oka6.flc",
+      "x": 326,
+      "y": 300,
+      "width": 62,
+      "height": 62,
+      "transparent": 1,
+      "frameCount": 5,
+      "interval": 114,
+      "hover": "install/ani/okb6.flc"
+    }
+  },
+  "buttons": [
+    {
+      "resource": "install/bmp/pm0mb02.bmp",
+      "x": 212,
+      "y": 300,
+      "width": 82,
+      "height": 78,
+      "transparent": 1,
+      "frameCount": 3
+    },
+    {
+      "resource": "install/bmp/pm0mb03.bmp",
+      "x": 238,
+      "y": 136,
+      "width": 21,
+      "height": 63,
+      "transparent": 1,
+      "frameCount": 3
+    },
+    {
+      "resource": "install/bmp/pm0mb03.bmp",
+      "x": 238,
+      "y": 174,
+      "width": 21,
+      "height": 63,
+      "transparent": 1,
+      "frameCount": 3
+    },
+    {
+      "resource": "install/bmp/pm0mb03.bmp",
+      "x": 238,
+      "y": 212,
+      "width": 21,
+      "height": 63,
+      "transparent": 1,
+      "frameCount": 3
+    },
+    {
+      "resource": "install/bmp/pm0mb03.bmp",
+      "x": 238,
+      "y": 250,
+      "width": 21,
+      "height": 63,
+      "transparent": 1,
+      "frameCount": 3
+    },
+    {
+      "resource": "install/bmp/pm0mb04.bmp",
+      "x": 358,
+      "y": 136,
+      "width": 21,
+      "height": 63,
+      "transparent": 1,
+      "frameCount": 3
+    },
+    {
+      "resource": "install/bmp/pm0mb04.bmp",
+      "x": 358,
+      "y": 174,
+      "width": 21,
+      "height": 63,
+      "transparent": 1,
+      "frameCount": 3
+    },
+    {
+      "resource": "install/bmp/pm0mb04.bmp",
+      "x": 358,
+      "y": 212,
+      "width": 21,
+      "height": 63,
+      "transparent": 1,
+      "frameCount": 3
+    },
+    {
+      "resource": "install/bmp/pm0mb04.bmp",
+      "x": 358,
+      "y": 250,
+      "width": 21,
+      "height": 63,
+      "transparent": 1,
+      "frameCount": 3
+    }
+  ]
+}

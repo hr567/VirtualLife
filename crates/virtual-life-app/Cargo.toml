@@ -1,0 +1,17 @@
+[package]
+name = "virtual-life-app"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[features]
+default = []
+test-api = []
+web-client = ["bevy/bevy_winit", "bevy/2d_bevy_render", "bevy/ui_bevy_render", "bevy/bevy_ui_widgets", "bevy/bevy_picking", "bevy/ui_picking", "bevy/bevy_clipboard", "bevy/keyboard", "bevy/mouse", "bevy/touch", "bevy/bevy_audio", "bevy/wav", "bevy/webgpu"]
+
+[dependencies]
+bevy = { workspace = true, features = ["std", "default_app"] }
+serde.workspace = true
+serde_json.workspace = true
+virtual-life-core = { path = "../virtual-life-core" }
+encoding_rs = "=0.8.42"

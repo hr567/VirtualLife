@@ -80,6 +80,8 @@ export async function verifyAssets(root, { published = false } = {}) {
   }
   if (manifest.statistics.resourceCount !== Object.keys(manifest.resources).length ||
       manifest.statistics.uniqueObjectCount !== byHash.size || manifest.statistics.storedBytes !== storedBytes) throw new Error('Manifest statistics disagree with verified resources');
+  const derivedResourceCount = Object.keys(manifest.resources).filter(id => id.startsWith('derived/')).length;
+  if ((manifest.statistics.derivedResourceCount ?? 0) !== derivedResourceCount) throw new Error(`Manifest derivedResourceCount must equal ${derivedResourceCount} derived/ resources`);
   for (const catalog of new Set([...Object.values(manifest.catalogs), 'assets/catalog/rules.json'])) {
     await fileInfo(localPath(root, catalog));
     JSON.parse(await readFile(localPath(root, catalog), 'utf8'));

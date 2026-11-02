@@ -27,7 +27,7 @@
     "sourceBytes": 1013970879,
     "storedBytes": 773288846,
     "deduplicatedBytes": 240682033,
-    "derivedResourceCount": 9
+    "derivedResourceCount": 10
   },
   "catalogs": {
     "maps": "assets/catalog/maps.json",

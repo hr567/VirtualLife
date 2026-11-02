@@ -51,6 +51,7 @@ for folder,name in movies:
 manifest['objects']=sorted(objects.values(),key=lambda entry:entry['sha256'])
 statistics=manifest['statistics'];statistics['resourceCount']=len(manifest['resources']);statistics['uniqueObjectCount']=len(objects);statistics['storedBytes']=sum(entry['bytes']for entry in objects.values())
 statistics['sourceBytes']=sum(objects[entry['sha256']]['bytes']for entry in manifest['resources'].values());statistics['deduplicatedBytes']=statistics['sourceBytes']-statistics['storedBytes']
-statistics['derivedResourceCount']=sum('derivedFrom'in entry for entry in manifest['resources'].values())
+# Count the derived namespace, including source archives without derivedFrom.
+statistics['derivedResourceCount']=sum(key.startswith('derived/') for key in manifest['resources'])
 manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 print(json.dumps(results,indent=2))

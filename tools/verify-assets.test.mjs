@@ -18,7 +18,7 @@ async function fixture(t) {
   await writeFile(path.join(root, 'assets/catalog/rules.json'), '{}');
   const manifest = { formatVersion: 1, objects: [{ sha256, path: objectPath, bytes: bytes.length }],
     resources: { 'install/image.bmp': { sha256 } }, catalogs: { rules: 'assets/catalog/rules.json' },
-    statistics: { resourceCount: 1, uniqueObjectCount: 1, storedBytes: bytes.length } };
+    statistics: { resourceCount: 1, uniqueObjectCount: 1, storedBytes: bytes.length, derivedResourceCount: 0 } };
   await writeFile(path.join(root, 'assets/manifest.json'), JSON.stringify(manifest));
   return { root, bytes, objectPath, manifest };
 }
@@ -44,6 +44,35 @@ test('publication shell and resource references must resolve to validated files'
   manifest.resources['install/missing.bmp'] = { sha256: '0'.repeat(64) };
   await writeFile(path.join(root, 'assets/manifest.json'), JSON.stringify(manifest));
   await assert.rejects(verifyAssets(root), /Missing object/);
+});
+
+test('original-only extraction manifests can omit derived resource statistics', async t => {
+  const { root, manifest } = await fixture(t);
+  delete manifest.statistics.derivedResourceCount;
+  await writeFile(path.join(root, 'assets/manifest.json'), JSON.stringify(manifest));
+  await verifyAssets(root);
+});
+
+test('derived resource statistics count source archives and conversions by namespace', async t => {
+  const { root, manifest } = await fixture(t);
+  const { sha256 } = manifest.resources['install/image.bmp'];
+  const manifestPath = path.join(root, 'assets/manifest.json');
+  for (const [id, resource, expectedCount] of [
+    ['derived/font/source.tar.gz', { sha256 }, 1],
+    ['derived/font/bitmaps.bin', { sha256, derivedFrom: 'derived/font/source.tar.gz' }, 2],
+    ['install/copied.bmp', { sha256, derivedFrom: 'install/image.bmp' }, 2],
+  ]) {
+    manifest.resources[id] = resource;
+    manifest.statistics.resourceCount++;
+    manifest.statistics.derivedResourceCount = expectedCount;
+    await writeFile(manifestPath, JSON.stringify(manifest));
+    await verifyAssets(root);
+  }
+  for (const count of [undefined, 0, 1, 3]) {
+    manifest.statistics.derivedResourceCount = count;
+    await writeFile(manifestPath, JSON.stringify(manifest));
+    await assert.rejects(verifyAssets(root), /derivedResourceCount must equal 2/);
+  }
 });
 
 test('artifact paths reject traversal, absolute paths, Windows drives and alternate streams', () => {

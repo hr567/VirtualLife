@@ -206,8 +206,14 @@ async function assertMoviePixels(page: Page, reference: JSHandle<ReferenceVideo>
   const pending = await ending(page), frame = Math.floor(pending.state.movie.displayedVideoTimeMs * fps / 1000);
   const source = await decode(reference, frame);
   expect(source.pixels).toMatchObject({ width: sourceObject.media.width, height: sourceObject.media.height });
-  const actual = png(await page.locator('#game-canvas').screenshot({ path: info.outputPath(`${name}-bevy.png`) }));
-  expect(differingPixels(actual, expectedFrame(source.pixels, pending)), `Decoded frame ${frame}, nearest-neighbor video and bundled bitmap subtitle pixels`).toBe(0);
+  const expected = expectedFrame(source.pixels, pending);
+  let actual!: Pixels;
+  // Diagnostics publish before WebGPU finishes presenting the new texture.
+  // Keep the clock frozen and require the exact frame, rather than an old one.
+  await expect.poll(async () => {
+    actual = png(await page.locator('#game-canvas').screenshot({ path: info.outputPath(`${name}-bevy.png`) }));
+    return differingPixels(actual, expected);
+  }, { message: `Decoded frame ${frame}, nearest-neighbor video and bundled bitmap subtitle pixels` }).toBe(0);
   const b = epilogue.video;
   for (let y = 1; y < b.height; y += 2) for (let x = 0; x < b.width; x++) {
     const at = ((y + b.y) * actual.width + x + b.x) * 4;

@@ -342,6 +342,24 @@ pub(super) fn event(
     snapshot: &Value,
     ui: &PresentationState,
 ) {
+    if snapshot["pending"]["spirit"].as_u64().is_some() {
+        // 0041ea10 draws the 374x348 description at (0x85, 0x42) over
+        // the current map. It does not use the N1 frame or dialogue box.
+        compose(f, c, snapshot, ui);
+        f.controls.clear();
+        f.tick = None;
+        let resource = c.resolve(s(snapshot, "/scene/backgroundResource"));
+        sprite(f, "spirit-description", resource, 133, 66, 150);
+        control(
+            f,
+            "spirit-continue",
+            "继续",
+            Rect::new(0, 0, 640, 480),
+            Action::Game(json!({"type":"chooseOption","index":0})),
+            &["Enter", "Space", "Escape"],
+        );
+        return;
+    }
     let scene = &snapshot["scene"];
     let pattern = c.resolve(s(scene, "/patternResource"));
     if !pattern.is_empty() {
@@ -385,7 +403,7 @@ pub(super) fn event(
     let choice = s(snapshot, "/pending/kind") == "choice";
     if choice {
         let options = a(snapshot, "/pending/options");
-        // Non-N1 host prompts (for example a spirit encounter) still carry
+        // Other non-N1 host prompts still carry
         // meaningful explanatory text. N1 itself draws only its four options.
         if !options.iter().any(|option| option.get("nodeId").is_some()) {
             text(

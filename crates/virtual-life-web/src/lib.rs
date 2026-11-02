@@ -19,7 +19,7 @@ impl bevy::prelude::Plugin for BrowserPlatformPlugin {
 #[cfg(target_arch = "wasm32")]
 #[wasm_bindgen::prelude::wasm_bindgen(start)]
 pub fn start() {
-    let mut app = virtual_life_app::build_app();
+    let mut app = virtual_life_app::build_app_with_display(browser::use_canvas_2d());
     app.add_plugins(BrowserPlatformPlugin);
     app.run();
 }

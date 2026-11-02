@@ -43,33 +43,46 @@ struct AudioWaves(WaveCache<Handle<AudioSource>>);
 #[derive(Resource, Default, Clone)]
 struct DeviceFailure(Arc<Mutex<Option<String>>>);
 
-pub fn configure(app: &mut App) {
-    app.add_plugins(
-        DefaultPlugins
-            .set(ImagePlugin::default_nearest())
-            .set(WindowPlugin {
-                primary_window: Some(Window {
-                    title: "虚拟人生".into(),
-                    canvas: Some("#game-canvas".into()),
-                    resolution: WindowResolution::new(640, 480),
-                    fit_canvas_to_parent: true,
-                    prevent_default_event_handling: true,
-                    ..default()
-                }),
+pub fn configure(app: &mut App, canvas_2d: bool) {
+    let mut plugins = DefaultPlugins
+        .build()
+        .set(ImagePlugin::default_nearest())
+        .set(WindowPlugin {
+            primary_window: Some(Window {
+                title: "虚拟人生".into(),
+                canvas: Some("#game-canvas".into()),
+                resolution: WindowResolution::new(640, 480),
+                fit_canvas_to_parent: true,
+                prevent_default_event_handling: true,
                 ..default()
             }),
-    );
+            ..default()
+        });
+    if canvas_2d {
+        // Keep the existing window, physical input, audio and schedules.
+        plugins = plugins
+            .disable::<bevy::render::RenderPlugin>()
+            .disable::<bevy::core_pipeline::CorePipelinePlugin>()
+            .disable::<bevy::post_process::PostProcessPlugin>()
+            .disable::<bevy::gizmos_render::GizmoRenderPlugin>()
+            .disable::<bevy::sprite_render::SpriteRenderPlugin>()
+            .disable::<bevy::ui_render::UiRenderPlugin>();
+    }
+    app.add_plugins(plugins);
     app.add_plugins(crate::input::InputPlugin)
         .init_resource::<PlayingAudio>()
         .init_resource::<AudioWaves>()
         .init_resource::<DeviceFailure>()
         .insert_resource(ClearColor(Color::BLACK))
-        .add_systems(Startup, setup_canvas)
-        .add_systems(
-            PreUpdate,
-            device_failure.after(crate::input::GameInputSystems),
-        )
-        .add_systems(PostUpdate, (upload_canvas, synchronize_audio).chain());
+        .add_systems(PostUpdate, synchronize_audio);
+    if !canvas_2d {
+        app.add_systems(Startup, setup_canvas)
+            .add_systems(
+                PreUpdate,
+                device_failure.after(crate::input::GameInputSystems),
+            )
+            .add_systems(PostUpdate, upload_canvas.before(synchronize_audio));
+    }
 }
 
 fn setup_canvas(
@@ -143,7 +156,6 @@ fn device_failure(
 ) {
     let error = failure.0.lock().ok().and_then(|mut error| error.take());
     if let Some(error) = error {
-
         host.request(&mut requests, "fatal", serde_json::json!({"message":error}));
         host.error = Some(error);
         host.hidden = true;

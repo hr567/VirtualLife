@@ -13,6 +13,14 @@ extern "C" {
     fn create_platform(callback: &Function) -> Result<JsValue, JsValue>;
 }
 
+#[wasm_bindgen(module = "/../../web/display.js")]
+extern "C" {
+    #[wasm_bindgen(js_name = useCanvas2d)]
+    pub fn use_canvas_2d() -> bool;
+    #[wasm_bindgen(js_name = presentCanvas2d, catch)]
+    fn present_canvas_2d(bytes: &[u8]) -> Result<(), JsValue>;
+}
+
 /// JS handles intentionally remain on the browser thread, outside Send resources.
 struct BrowserPlatform {
     handle: JsValue,
@@ -105,8 +113,18 @@ impl Plugin for BrowserPlatformPlugin {
         app.init_resource::<PlatformRequests>()
             .init_resource::<PlatformEvents>()
             .add_systems(Startup, initialize)
-            .add_systems(PreUpdate, receive_events)
+            .add_systems(
+                PreUpdate,
+                receive_events.before(virtual_life_app::input::GameInputSystems),
+            )
             .add_systems(Last, send_requests);
+        if app
+            .world()
+            .resource::<virtual_life_app::Canvas2dDisplay>()
+            .0
+        {
+            app.add_systems(Last, present_canvas.before(send_requests));
+        }
     }
 }
 
@@ -126,9 +144,52 @@ fn initialize(world: &mut World) {
     }
 }
 
-fn receive_events(platform: Option<NonSend<BrowserPlatform>>, mut events: ResMut<PlatformEvents>) {
+fn present_canvas(
+    pixels: Res<virtual_life_app::pixels::PixelCanvas>,
+    mut last_revision: Local<Option<u64>>,
+    mut display_failed: Local<bool>,
+    mut host: ResMut<virtual_life_app::runtime::GameHost>,
+    mut requests: ResMut<PlatformRequests>,
+) {
+    if *last_revision == Some(pixels.revision) || *display_failed {
+        return;
+    }
+    match present_canvas_2d(&pixels.rgba) {
+        Ok(()) => *last_revision = Some(pixels.revision),
+        Err(error) => {
+            *display_failed = true;
+            let message = format!("画面显示失败：{error:?}");
+            host.error = Some(message.clone());
+            host.hidden = true;
+            host.request(
+                &mut requests,
+                "fatal",
+                serde_json::json!({"message":message}),
+            );
+        }
+    }
+}
+
+fn receive_events(
+    platform: Option<NonSend<BrowserPlatform>>,
+    mut events: ResMut<PlatformEvents>,
+    mut viewport: ResMut<virtual_life_app::input::CanvasViewport>,
+) {
     if let Some(platform) = platform {
-        events.0.extend(platform.incoming.borrow_mut().drain(..));
+        for event in platform.incoming.borrow_mut().drain(..) {
+            if event.operation == "viewportSize" {
+                if let (Some(width), Some(height)) = (
+                    event.value["width"].as_f64(),
+                    event.value["height"].as_f64(),
+                ) {
+                    if width.is_finite() && height.is_finite() && width > 0.0 && height > 0.0 {
+                        viewport.0 = Some((width as f32, height as f32));
+                    }
+                }
+            } else {
+                events.0.push_back(event);
+            }
+        }
     }
 }
 

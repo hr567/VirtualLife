@@ -245,6 +245,48 @@ fn native_scene_fixtures_reference_only_verified_original_resources() {
 }
 
 #[test]
+fn all_spirit_encounter_backdrops_and_older_save_paths_resolve_to_original_art() {
+    let c = content();
+    let ui = PresentationState {
+        screen: Screen::Game,
+        ..Default::default()
+    };
+    for number in 1..=5 {
+        let original = format!("cd/data/spirit/sen-{number:02}.bmp");
+        for resource in [
+            original.clone(),
+            format!("cd/data/spirit/sen_{number:02}.bmp"),
+        ] {
+            let snapshot = json!({"scene":{"backgroundResource":resource},"pending":{"kind":"choice","spirit":number-1,"options":[{"index":0,"text":"继续"}]}});
+            let frame = compose(&c, &snapshot, &ui);
+            check_resources(&c, &frame, &resource);
+            let backdrop = frame
+                .sprites
+                .iter()
+                .find(|sprite| sprite.id == "spirit-description")
+                .expect("spirit backdrop");
+            assert_eq!(backdrop.resource_id, original);
+            let bitmap = original_bitmap(&c, &original);
+            assert_eq!((bitmap.width, bitmap.height), (374, 348));
+            assert_eq!((backdrop.x, backdrop.y), (133, 66));
+            assert_eq!(backdrop.transparent, Transparency::Index(1));
+            assert!(
+                !frame
+                    .sprites
+                    .iter()
+                    .any(|sprite| sprite.id == "event-talk" || sprite.id == "event-frame")
+            );
+            assert_eq!(frame.controls.len(), 1);
+            assert_eq!(frame.controls[0].bounds, Rect::new(0, 0, 640, 480));
+        }
+    }
+    assert_eq!(
+        c.resolve("cd/data/spirit/sen_99.bmp"),
+        "cd/data/spirit/sen_99.bmp"
+    );
+}
+
+#[test]
 fn native_games_retain_their_original_ready_screens_and_input_regions() {
     let c = content();
     let ui = PresentationState {

@@ -1,10 +1,23 @@
 import { installAudioContextTracking, SaveStorage, downloadSave, SAVE_SLOTS } from './platform.js';
+import { chooseDisplay } from './display.js';
 
 const status = document.querySelector('#boot-status');
 installAudioContextTracking();
 let failed = false;
-function showFailure(error) {
+let renderer;
+const retryKey = `virtual-life-display-retry:${import.meta.env.BASE_URL}`;
+function showFailure(error, retryDisplay = true) {
   if (failed) return;
+  // Retrying before the first usable scene cannot discard gameplay. A later
+  // device loss keeps the existing pause/export/reload recovery behavior.
+  if (retryDisplay && renderer === 'webgpu' && document.querySelector('#game-canvas')?.dataset.ready !== 'true') {
+    try {
+      sessionStorage.setItem(retryKey, 'canvas2d');
+      failed = true;
+      location.reload();
+      return;
+    } catch { /* Storage may be disabled; retain the normal error recovery. */ }
+  }
   failed = true;
   status.replaceChildren(); status.hidden = false; status.setAttribute('role', 'alert');
   const message = document.createElement('p');
@@ -37,14 +50,17 @@ function showFailure(error) {
   }).catch(() => {});
 }
 window.addEventListener('virtual-life-fatal', event => showFailure(event.detail));
+window.addEventListener('virtual-life-startup-error', event => showFailure(event.detail, false));
 window.addEventListener('error', event => { if (event.error) showFailure(event.error); });
 document.addEventListener('keydown', event => {
   if (['F6', 'F10', 'F11'].includes(event.code)) event.preventDefault();
 });
 try {
   if (!window.isSecureContext) throw new Error('请通过 HTTPS 或 localhost 打开游戏。');
-  if (!navigator.gpu) throw new Error('此浏览器未提供 WebGPU，请使用支持 WebGPU 的浏览器。');
-  if (!await navigator.gpu.requestAdapter({ powerPreference: 'low-power' })) throw new Error('无法取得 WebGPU 显卡设备，请检查浏览器和显卡支持后重试。');
+  let retry;
+  try { retry = sessionStorage.getItem(retryKey); sessionStorage.removeItem(retryKey); } catch { /* Optional. */ }
+  renderer = retry === 'canvas2d' ? 'canvas2d' : await chooseDisplay();
+  document.querySelector('#game-canvas').dataset.renderer = renderer;
   // The wasm start function creates the sole Bevy application and event loop.
   // wasm-bindgen captures the AudioContext constructor when its module loads.
   // Import after installing the gesture gate so CPAL uses the tracked context.

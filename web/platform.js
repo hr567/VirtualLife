@@ -425,6 +425,18 @@ export function createPlatform(callback) {
     Object.defineProperty(window, '__virtualLifeBevy', { configurable: true, value: Object.freeze(api) });
   };
   publishDiagnostics();
+  const viewportCanvas = document.querySelector('#game-canvas');
+  const viewportSize = () => {
+    const bounds = viewportCanvas?.getBoundingClientRect();
+    if (bounds?.width > 0 && bounds.height > 0) emit(0, 'viewportSize', { width: bounds.width, height: bounds.height });
+  };
+  if (viewportCanvas) {
+    const observer = new ResizeObserver(viewportSize);
+    observer.observe(viewportCanvas);
+    cleanups.push(() => observer.disconnect());
+    listen(window, 'resize', viewportSize);
+    viewportSize();
+  }
   const visibility = () => {
     emit(0, 'visibility', { hidden: document.hidden, online: navigator.onLine }); assets?.schedule();
   };
@@ -477,6 +489,10 @@ export function createPlatform(callback) {
       diagnostics = Object.freeze(structuredClone(payload));
       const canvas = document.querySelector('canvas');
       if (canvas) {
+        if (payload.loading === false && !payload.error) canvas.dataset.ready = 'true';
+        if (payload.error && canvas.dataset.ready !== 'true') {
+          window.dispatchEvent(new CustomEvent('virtual-life-startup-error', { detail: payload.error }));
+        }
         canvas.setAttribute('aria-label', payload.description || '虚拟人生');
         canvas.setAttribute('aria-busy', String(!!payload.loading));
         canvas.setAttribute('aria-description', (payload.controls ?? []).filter(control => control.enabled).map(control => control.label).join('，'));

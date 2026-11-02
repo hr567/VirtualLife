@@ -1,6 +1,6 @@
 # 虚拟人生 · Bevy 网页重制
 
-从 1999 年《虚拟人生》原光盘恢复的浏览器版本。完整 Bevy 应用编译为 WebAssembly，统一管理游戏流程、原版界面、输入、画面、音频和资源生命周期，通过 WebGPU 呈现原版 640×480 画面。游戏状态、随机数和存档在设备本地运行，网站只分发静态文件。
+从 1999 年《虚拟人生》原光盘恢复的浏览器版本。完整 Bevy 应用编译为 WebAssembly，统一管理游戏流程、原版界面、输入、画面、音频和资源生命周期，通过 WebGPU 或自动后备的 Canvas 2D 呈现原版 640×480 画面。游戏状态、随机数和存档在设备本地运行，网站只分发静态文件。
 
 [在线试玩](https://hr567.github.io/VirtualLife/) · [项目仓库](https://github.com/hr567/VirtualLife)。GitHub Pages 发布路径为 `/VirtualLife/`；仓库内实现和线上已部署版本可能不同。
 
@@ -27,7 +27,7 @@ pnpm preview
 
 打开 `http://127.0.0.1:4173/VirtualLife/`。开发模式使用 `pnpm dev`；修改 Rust 后需要重新生成 WASM。构建与调试步骤见 [开发说明](docs/development.md)。
 
-目标客户端是网页。浏览器必须在 HTTPS 或 localhost 环境中成功取得 WebGPU 适配器；没有 WebGL 回退。手机以横屏操作为宜。玩家无需安装 Rust 或 Bevy。
+目标客户端是网页，需在 HTTPS 或 localhost 环境中打开。启动时优先使用 WebGPU；没有可用适配器、请求失败或超时则自动使用 Canvas 2D。首个可用场景之前的显示初始化失败会自动重载一次并选择 Canvas 2D；游戏运行中的设备丢失仍暂停并提供存档导出和刷新恢复。两种路径共享原像素合成器、输入与游戏时序。手机以横屏操作为宜。玩家无需安装 Rust 或 Bevy。
 
 正常构建使用仓库中保存的原始素材、规则目录、影片衍生文件和固定字形图集，不需要光盘、原 EXE、Windows 字体、Ghidra、Python 或 FFmpeg。素材使用 Git LFS，部署产物包含实际文件，浏览器不调用 Git LFS 接口。
 
@@ -56,7 +56,7 @@ pnpm build
 pnpm verify:dist
 ```
 
-测试站点位于 `output/test-site/`，独立编译确定性输入和时间接口；生产站点位于 `dist/`，不启用测试输入接口。浏览器测试使用实际 Chromium WebGPU，Linux CI 配置软件 GPU。可用 `PLAYWRIGHT_GPU=hardware` 检查实际设备适配器；没有适配器的环境不能计为浏览器测试通过。
+测试站点位于 `output/test-site/`，独立编译确定性输入和时间接口；生产站点位于 `dist/`，不启用测试输入接口。浏览器测试优先使用 Chromium WebGPU，Linux CI 配置软件 GPU；无适配器时检查自动后备路径。`display.spec.ts` 另在禁用 GPU、WebGPU、WebGL 和加速 Canvas 的浏览器中核对原菜单像素与交互。可用 `PLAYWRIGHT_GPU=hardware` 检查实际设备适配器；Canvas 2D 的通过结果不能作为 WebGPU 验收证明。
 
 `main` 的 GitHub Actions 在资源、Rust、平台、浏览器及静态产物检查通过后发布 Pages，产物上限为 1,000,000,000 字节。生成的 WASM 绑定、`dist/`、测试报告和研究数据库不提交。验收层次与复核方法见 [验证说明](docs/validation.md)。
 

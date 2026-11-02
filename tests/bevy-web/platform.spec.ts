@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 import { createHash } from 'node:crypto';
 import { control, create, diagnostic, freeze, importScenario, open, ready, scenario, saveSelected } from './helpers';
+import { png } from './images';
 
 interface SaveRecord { slot: string; format: string; version: number; savedAt: string; contentId: string; payload: string; checksum: string }
 interface ObservedDevice { destroy(): void; lost: Promise<{ reason: string; message: string }> }
@@ -123,7 +124,17 @@ test('an uncached scene fails visibly offline and its retry loads the same scene
   const failed = await diagnostic(page);
   expect(failed.snapshot.pending).toMatchObject({ kind: 'minigame', game: 'gas' });
   expect(failed.controls).toContainEqual(expect.objectContaining({ label: '重试 / 返回', enabled: true }));
-  await page.screenshot({ path: info.outputPath('offline-uncached-scene-error.png') });
+  const image = png(await page.locator('#game-canvas').screenshot({ path: info.outputPath('offline-uncached-scene-error.png') }));
+  const scale = Math.min(image.width / 640, image.height / 480);
+  const pixel = (x: number, y: number): number[] => {
+    const px = Math.floor((image.width - 640 * scale) / 2 + x * scale);
+    const py = Math.floor((image.height - 480 * scale) / 2 + y * scale);
+    return [...image.rgba.slice((py * image.width + px) * 4, (py * image.width + px) * 4 + 3)];
+  };
+  expect(Math.max(...pixel(100, 150)), 'Error panel must actually be drawn').toBeLessThan(30);
+  let labelPixels = 0;
+  for (let y = 290; y < 314; y++) for (let x = 232; x < 412; x++) if (pixel(x, y).every(channel => channel > 200)) labelPixels++;
+  expect(labelPixels, 'Retry label must actually be rendered').toBeGreaterThan(20);
   await context.setOffline(false);
   await page.keyboard.press('Enter'); await ready(page);
   expect((await diagnostic(page)).snapshot.pending).toMatchObject({ kind: 'minigame', game: 'gas' });
@@ -133,32 +144,38 @@ test('an uncached scene fails visibly offline and its retry loads the same scene
 });
 
 for (const unavailable of ['missing', 'null-adapter'] as const) {
-  test(`startup explains WebGPU ${unavailable} and offers reload and save export`, async ({ page }, info) => {
+  test(`startup renders through Canvas 2D when WebGPU is ${unavailable}`, async ({ page }, info) => {
     await page.addInitScript(mode => {
       if (mode === 'missing') Object.defineProperty(Navigator.prototype, 'gpu', { configurable: true, get: () => undefined });
       else {
-        const gpu = Reflect.get(navigator, 'gpu');
-        if (!gpu) throw new Error('This test requires the configured real WebGPU browser before replacing requestAdapter');
-        Object.defineProperty(gpu, 'requestAdapter', { configurable: true, value: async () => null });
+        Object.defineProperty(navigator, 'gpu', { configurable: true, value: { requestAdapter: async () => null } });
       }
     }, unavailable);
-    await page.goto('./');
-    const status = page.locator('#boot-status');
-    await expect(status).toHaveAttribute('role', 'alert');
-    await expect(status).toContainText(unavailable === 'missing' ? '此浏览器未提供 WebGPU' : '无法取得 WebGPU 显卡设备');
-    await expect(status.getByRole('button', { name: '重新加载', exact: true })).toBeVisible();
-    await expect(status.getByRole('button', { name: '导出本版本存档', exact: true })).toBeVisible();
+    const errors = await open(page);
+    await expect(page.locator('#boot-status')).toBeHidden();
+    await expect(page.locator('#game-canvas')).toHaveAttribute('data-renderer', 'canvas2d');
     expect(await page.title()).toBe('虚拟人生');
-    expect(await page.evaluate(() => window.__virtualLifeBevy)).toBeUndefined();
+    expect((await diagnostic(page)).controls.some(control => control.label === '开始新游戏')).toBe(true);
+    expect(errors).toEqual([]);
     await page.screenshot({ path: info.outputPath(`webgpu-${unavailable}.png`) });
   });
 }
+
+test('startup resource failures stay readable before any game fonts load', async ({ page }, info) => {
+  await page.route('**/assets/catalog/rules.json', route => route.abort('failed'));
+  await page.goto('./');
+  const status = page.locator('#boot-status');
+  await expect(status).toHaveAttribute('role', 'alert');
+  await expect(status.getByRole('button', { name: '重新加载', exact: true })).toBeVisible();
+  await expect(status.getByRole('button', { name: '导出本版本存档', exact: true })).toBeVisible();
+  await page.screenshot({ path: info.outputPath('startup-resource-error-readable.png') });
+});
 
 test('destroying the actual Bevy GPU device preserves an exportable save and reload creates a new device', async ({ page }, info) => {
   await page.addInitScript(() => {
     window.__qaGpuDevices = [];
     const gpu = Reflect.get(navigator, 'gpu');
-    if (!gpu) throw new Error('The device-loss case requires WebGPU');
+    if (!gpu) return;
     const requestAdapter = gpu.requestAdapter.bind(gpu);
     gpu.requestAdapter = async (options?: GPURequestAdapterOptions) => {
       const adapter = await requestAdapter(options);
@@ -171,7 +188,9 @@ test('destroying the actual Bevy GPU device preserves an exportable save and rel
       return adapter;
     };
   });
-  await open(page); await create(page); await freeze(page);
+  await open(page);
+  test.skip(await page.locator('#game-canvas').getAttribute('data-renderer') !== 'webgpu', 'Requires an actual WebGPU device; this browser uses Canvas 2D.');
+  await create(page); await freeze(page);
   await saves(page); await saveSelected(page);
   await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
   await control(page, '返回游戏');

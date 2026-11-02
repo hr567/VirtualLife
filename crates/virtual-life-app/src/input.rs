@@ -51,6 +51,11 @@ pub struct ActiveInputs {
     last_mouse_point: Option<(i32, i32)>,
     pointer_from_key: bool,
 }
+
+/// CSS pixels reported by the browser for the actual canvas. Some browsers
+/// report a different physical pixel box under DPR emulation or page zoom.
+#[derive(bevy::prelude::Resource, Default)]
+pub struct CanvasViewport(pub Option<(f32, f32)>);
 impl Default for ActiveInputs {
     fn default() -> Self {
         Self {
@@ -247,6 +252,7 @@ mod web {
     impl Plugin for InputPlugin {
         fn build(&self, app: &mut App) {
             app.init_resource::<ActiveInputs>()
+                .init_resource::<CanvasViewport>()
                 .add_systems(
                     PreUpdate,
                     (
@@ -744,6 +750,7 @@ mod web {
     }
     fn pointer_input(
         windows: Query<&Window, With<PrimaryWindow>>,
+        viewport: Res<CanvasViewport>,
         buttons: Res<ButtonInput<MouseButton>>,
         scene: Res<CurrentScene>,
         mut host: ResMut<GameHost>,
@@ -765,9 +772,10 @@ mod web {
         {
             return;
         }
+        let (width, height) = viewport.0.unwrap_or((window.width(), window.height()));
         let point = window
             .cursor_position()
-            .map(|p| logical(window.width(), window.height(), (p.x, p.y)))
+            .map(|p| logical(width, height, (p.x, p.y)))
             .unwrap_or((-1, -1));
         // Polling an unchanged mouse must not move a keyboard-controlled hammer cursor back.
         let moved = inputs.last_mouse_point != Some(point);
@@ -849,18 +857,16 @@ mod web {
     fn touch_input(
         mut events: MessageReader<TouchInput>,
         windows: Query<&Window, With<PrimaryWindow>>,
+        viewport: Res<CanvasViewport>,
         scene: Res<CurrentScene>,
         mut host: ResMut<GameHost>,
         mut inputs: ResMut<ActiveInputs>,
         mut actions: ResMut<Actions>,
     ) {
         let Ok(window) = windows.single() else { return };
+        let (width, height) = viewport.0.unwrap_or((window.width(), window.height()));
         for event in events.read() {
-            let point = logical(
-                window.width(),
-                window.height(),
-                (event.position.x, event.position.y),
-            );
+            let point = logical(width, height, (event.position.x, event.position.y));
             let source = Source::Touch(event.id);
             if blocked(&host, &inputs) {
                 continue;

@@ -481,6 +481,19 @@ impl SceneContent<'_> {
     pub fn resolve(&self, path: &str) -> String {
         let path = path.replace('\\', "/").to_lowercase();
         let path = path.trim_start_matches("./");
+        // Older web saves used an underscore for these five original backdrops.
+        // Resolve that historical typo only at display time, preserving checksums.
+        if let Some(number) = path
+            .strip_prefix("cd/data/spirit/sen_")
+            .and_then(|s| s.strip_suffix(".bmp"))
+        {
+            if ["01", "02", "03", "04", "05"].contains(&number) {
+                let original = format!("cd/data/spirit/sen-{number}.bmp");
+                if self.manifest["resources"].get(&original).is_some() {
+                    return original;
+                }
+            }
+        }
         for candidate in [
             path.to_owned(),
             format!("install/{path}"),

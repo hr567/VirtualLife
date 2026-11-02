@@ -35,12 +35,21 @@ pub struct PlatformRequests(pub VecDeque<PlatformRequest>);
 #[derive(Resource, Default)]
 pub struct PlatformEvents(pub VecDeque<PlatformEvent>);
 
+/// The browser may present the same CPU-composited pixels without a GPU.
+#[derive(Resource)]
+pub struct Canvas2dDisplay(pub bool);
+
 pub fn build_app() -> App {
+    build_app_with_display(false)
+}
+
+pub fn build_app_with_display(canvas_2d: bool) -> App {
     let mut app = App::new();
     #[cfg(not(feature = "web-client"))]
     app.add_plugins(MinimalPlugins);
     #[cfg(feature = "web-client")]
-    client::configure(&mut app);
+    client::configure(&mut app, canvas_2d);
+    app.insert_resource(Canvas2dDisplay(canvas_2d));
     app.init_resource::<PlatformRequests>()
         .init_resource::<PlatformEvents>();
     app.add_plugins(runtime::GamePlugin);

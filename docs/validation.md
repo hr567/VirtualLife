@@ -19,9 +19,15 @@ Rust 测试保留 `tests/fixtures/original-*.json` 中的原指令差分样本�
 
 浏览器测试用例位于 `tests/bevy-web/`。生产页面不提供测试输入接口；确定性时间和输入由单独测试构建启用，平台检查还限制其运行来源。测试场景使用本次新存档格式，不重新引入旧网页存档兼容。
 
+`render_benchmark` 的 `--record-all` 模式复用生产合成器，输出当前场景清单、系统页面、道具与参数分页、地图总览及原生商店状态的 640×480 RGBA 帧和对应 `.scene.json`。例如运行 `cargo run --locked -p virtual-life-app --example render_benchmark -- 1 <结果.json> --record-all <帧目录>`。输出应放在仓库外；缺失资源、解码失败或无效存档会记录并返回失败。清单外的历史文件不计入当前覆盖范围。分页使用真实领域命令，原生面板的静止状态通过表现时钟推进，分类与确认使用当前控件的选择动作。
+
+这些合成帧用于检查素材、坐标、裁剪和图层，不能替代浏览器截图、显示设备检查或原程序 GUI 基准；视频帧仍需浏览器解码验证。神灵说明页依照原 `0x41ea10` 在地图上以 `(133, 66)` 绘制 `374×348` 的 `spirit/sen-01..05.bmp`，不套用 N1 对白布局。早期 Bevy 存档中的 `sen_01..05.bmp` 拼写仅在显示时解析为对应原文件，存档内容和校验值不改写。
+
 ## 浏览器环境和证据
 
-默认 Playwright 使用实际 Chromium WebGPU，Linux CI 通过软件适配器执行。`PLAYWRIGHT_GPU=hardware` 使用当前浏览器实际提供的设备，`PLAYWRIGHT_CHANNEL` 可指定已有 Chromium 系浏览器通道。WebGPU 对象存在但没有可用适配器时，不能计为画面测试通过。
+默认 Playwright 优先使用 Chromium WebGPU，Linux CI 通过软件适配器执行。`PLAYWRIGHT_GPU=hardware` 使用当前浏览器实际提供的设备，`PLAYWRIGHT_CHANNEL` 可指定已有 Chromium 系浏览器通道。无适配器时客户端自动选择 Canvas 2D；`#game-canvas` 的 `data-renderer` 记录实际路径。Canvas 2D 的截图与交互结果应独立记录，不能计为 WebGPU 验收通过。`display.spec.ts` 显式关闭 GPU、WebGPU、WebGL、软件栅格和加速 Canvas，核对原菜单逐像素结果、真实建角输入和静止画面缩放后的重绘。
+
+高分屏用例检查竖屏 DPR=2 的实际 backing 尺寸及触屏建角；平台用例检查首屏目录失败的 DOM 恢复入口，以及未缓存场景离线失败时错误面板和重试文字的真实像素。仅有诊断状态中的错误或控件不算画面已显示。
 
 截图和失败证据默认写到系统临时目录，可通过 `PLAYWRIGHT_OUTPUT_DIR` 指定。测试完成状态、用例数量、跳过项和退出码以本次运行报告为准。源码中已存在测试、或曾在旧 TypeScript 客户端通过，不代表它们已在当前 Bevy 客户端运行通过。
 

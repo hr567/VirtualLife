@@ -269,9 +269,9 @@ fn ordinary(
                 10,
             );
         }
-        let track = a(st, "/layers")
-            .first()
-            .unwrap_or(&st["tracks"][format!("help{}", n(st, "/helpPage"))]);
+        // Input can change the help page before the next domain tick rebuilds
+        // `layers`. Read its own track, not the previous battle/teaching layer.
+        let track = &st["tracks"][format!("help{}", n(st, "/helpPage"))];
         ordinary_animation(f, "battle-help", track, r, 20);
         control(
             f,
@@ -1776,6 +1776,25 @@ mod tests {
         assert!(b(&snapshot, "/pending/state/help"));
         assert_eq!(n(&snapshot, "/pending/state/helpPage"), 0);
         for page in 1..=9 {
+            let before = serde_json::to_value(session.snapshot()).unwrap();
+            let frame = crate::presentation::compose(
+                &c,
+                &before,
+                &PresentationState {
+                    screen: Screen::Game,
+                    ..Default::default()
+                },
+            );
+            let illustration = frame
+                .sprites
+                .iter()
+                .find(|sprite| sprite.id == "battle-help")
+                .expect("current help illustration");
+            assert_eq!(
+                illustration.resource_id,
+                format!("install/pm0e/hgf{page:02}.flc")
+            );
+            assert_eq!((illustration.x, illustration.y), (0, 0));
             public_control(&mut session, &c, "battle-help-next");
             let snapshot = serde_json::to_value(session.snapshot()).unwrap();
             assert_eq!(n(&snapshot, "/pending/state/helpPage"), page);

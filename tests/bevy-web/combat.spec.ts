@@ -10,12 +10,16 @@ async function frame(page: Page, milliseconds=16): Promise<void> {
   await ready(page);
 }
 
-test('ordinary battle F1 opens help and Enter closes all nine pages through the core', async ({ page }) => {
+test('ordinary battle F1 opens help and Enter closes all nine pages through the core', async ({ page }, info) => {
   const errors=await open(page); await freeze(page); await importScenario(page,'activity-battle-ordinary-playing');
   expect((await snapshot(page)).pending).toMatchObject({kind:'battle',game:'ordinary',state:{phase:'playing',help:false}});
   await page.keyboard.press('F1');
   await expect.poll(async()=>(await snapshot(page)).pending?.state?.help).toBe(true);
   for(let pageIndex=1;pageIndex<=9;pageIndex++){
+    // Each page now loads its real illustration immediately, including while
+    // the deterministic domain clock is frozen.
+    await ready(page);
+    await page.locator('#game-canvas').screenshot({path:info.outputPath(`battle-help-${pageIndex}.png`)});
     await page.keyboard.press('Enter');
     await expect.poll(async()=>(await snapshot(page)).pending?.state?.helpPage).toBe(pageIndex);
   }

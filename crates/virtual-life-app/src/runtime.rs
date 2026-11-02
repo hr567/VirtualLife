@@ -738,7 +738,7 @@ pub fn prepare_scene(
         resources.insert(content.resolve(&summary.actor_resource));
         resources.insert(content.resolve(&summary.portrait_resource));
     }
-    if !frame.texts.is_empty() {
+    if !frame.texts.is_empty() || host.error.is_some() {
         resources.insert("install/font/ascfont.16".into());
         resources.insert("install/font/stdfont.16".into());
         if bank.glyphs.is_some() {

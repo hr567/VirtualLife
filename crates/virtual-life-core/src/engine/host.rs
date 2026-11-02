@@ -189,7 +189,7 @@ impl GameSession {
                     json!({"kind":"choice","text":"神灵将与你同行。","options":[{"index":0,"text":"继续"}],"spirit":spirit}),
                 );
                 self.state.phase = "event".into();
-                self.state.scene = json!({"backgroundResource":format!("cd/data/spirit/sen_{:02}.bmp",[3,2,1,4,5][*spirit])});
+                self.state.scene = json!({"backgroundResource":format!("cd/data/spirit/sen-{:02}.bmp",[3,2,1,4,5][*spirit])});
             }
             Some(HostActivity::SpiritLottery { game }) => {
                 self.state.pending = Some(

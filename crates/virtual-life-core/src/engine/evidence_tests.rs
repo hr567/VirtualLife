@@ -1422,6 +1422,7 @@ fn spirit_encounter_pauses_landed_tile_and_saved_slots_finish_before_turn_settle
         runtime.state.host_activity,
         Some(HostActivity::SpiritEncounter { spirit: 2 })
     ));
+    assert_eq!(runtime.state.scene["backgroundResource"], "cd/data/spirit/sen-01.bmp");
     assert!(!events.iter().any(|event| event["type"] == "tileTriggered"));
     assert_eq!(runtime.state.spirits.active, Some(2));
     assert_eq!(runtime.state.spirits.expires_turn, 10);

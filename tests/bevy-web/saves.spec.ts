@@ -92,7 +92,10 @@ test('another page changing a manual slot prevents a stale overwrite',async({pag
 });
 
 test('system save and load use the shared slot list and return through options to the game',async({page})=>{
-  await open(page);await page.keyboard.press('F6');await ready(page);
+  await open(page);await page.keyboard.press('F6');
+  // Wait for F6 to leave the ready menu before checking the overlay's assets.
+  await expect.poll(async()=>(await diagnostic(page)).screen).toBe('Saves');
+  await ready(page);
   const back=(await diagnostic(page)).controls.find(c=>c.label==='返回游戏')!,canvas=(await page.locator('#game-canvas').boundingBox())!;
   await page.mouse.move(canvas.x+(back.bounds.x+back.bounds.width/2)*canvas.width/640,canvas.y+(back.bounds.y+back.bounds.height/2)*canvas.height/480);
   await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));

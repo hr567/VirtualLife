@@ -26,25 +26,42 @@ impl GameSession {
         .unwrap()
     }
 
+    /// Check a domain save without changing gameplay or its random stream.
+    pub fn validate_save(&self, save_json: &str) -> Result<(), GameError> {
+        self.parse_save(save_json)
+            .map(|_| ())
+            .map_err(|(code, message)| GameError {
+                code: code.into(),
+                message,
+            })
+    }
+
     pub fn restore(&mut self, save_json: &str) -> GameResponse {
+        match self.parse_save(save_json) {
+            Ok(save) => {
+                self.state = save.state;
+                self.response(None, vec![json!({"type":"stateRestored"})])
+            }
+            Err(error) => self.response(Some(error), vec![]),
+        }
+    }
+
+    fn parse_save(&self, save_json: &str) -> Result<Save, (&'static str, String)> {
         let save: Save = match serde_json::from_str(save_json) {
             Ok(save) => save,
-            Err(e) => return self.response(Some(("invalid_save", e.to_string())), vec![]),
+            Err(e) => return Err(("invalid_save", e.to_string())),
         };
         if save.format != SAVE_FORMAT
             || save.version != SAVE_VERSION
             || save.state.schema_version != SAVE_VERSION
         {
-            return self.response(Some(("save_version", "不支持此存档版本。".into())), vec![]);
+            return Err(("save_version", "不支持此存档版本。".into()));
         }
         if save.content_hash != self.content_hash {
-            return self.response(
-                Some(("content_mismatch", "存档与当前原版资源清单不匹配。".into())),
-                vec![],
-            );
+            return Err(("content_mismatch", "存档与当前原版资源清单不匹配。".into()));
         }
         if save.checksum != digest(&serde_json::to_vec(&save.state).unwrap()) {
-            return self.response(Some(("save_checksum", "存档校验失败。".into())), vec![]);
+            return Err(("save_checksum", "存档校验失败。".into()));
         }
         if ![
             "ready",
@@ -56,10 +73,7 @@ impl GameSession {
         ]
         .contains(&save.state.phase.as_str())
         {
-            return self.response(
-                Some(("invalid_save", "此存档状态无法识别。".into())),
-                vec![],
-            );
+            return Err(("invalid_save", "此存档状态无法识别。".into()));
         }
         if save
             .state
@@ -68,10 +82,7 @@ impl GameSession {
             .is_some_and(|persistent| !valid_battle_persistent(persistent))
             || !self.valid_saved_activity(&save.state)
         {
-            return self.response(
-                Some(("invalid_save", "存档的战斗或物品栏记录不完整。".into())),
-                vec![],
-            );
+            return Err(("invalid_save", "存档的战斗或物品栏记录不完整。".into()));
         }
         if save.state.inventory.ordinary.len() != 13
             || save.state.inventory.special.len() != 27
@@ -93,10 +104,7 @@ impl GameSession {
                 .as_ref()
                 .is_some_and(|mission| mission.words.len() != 11)
         {
-            return self.response(
-                Some(("invalid_save", "存档的道具、职业或任务记录不完整。".into())),
-                vec![],
-            );
+            return Err(("invalid_save", "存档的道具、职业或任务记录不完整。".into()));
         }
         if !(-1..=3).contains(&save.state.housing.style)
             || !(0..=15).contains(&save.state.housing.furniture)
@@ -106,10 +114,7 @@ impl GameSession {
                 && (save.state.housing.furniture != 0 || save.state.housing.investment_stage != 0)
             || save.state.housing.style >= 0 && save.state.housing.investment_stage == 0
         {
-            return self.response(
-                Some(("invalid_save", "存档的住宅状态无效。".into())),
-                vec![],
-            );
+            return Err(("invalid_save", "存档的住宅状态无效。".into()));
         }
         match (&save.state.map_id, save.state.tile_id) {
             (Some(id), Some(tile))
@@ -119,10 +124,7 @@ impl GameSession {
                     .any(|map| &map.id == id && tile < map.chips.len()) => {}
             (None, None) if save.state.phase == "ready" => {}
             _ => {
-                return self.response(
-                    Some(("invalid_save", "存档地图或坐标无效。".into())),
-                    vec![],
-                );
+                return Err(("invalid_save", "存档地图或坐标无效。".into()));
             }
         }
         if let Some(player) = &save.state.legacy_player {
@@ -135,15 +137,12 @@ impl GameSession {
                 || !["playing", "event", "blocked", "completed"]
                     .contains(&save.state.phase.as_str())
             {
-                return self.response(Some(("invalid_save", "存档角色资料无效。".into())), vec![]);
+                return Err(("invalid_save", "存档角色资料无效。".into()));
             }
             if save.state.stats != player.stats()
                 || save.state.turn != player.i16(0x4b64aa).unwrap().max(0) as u32
             {
-                return self.response(
-                    Some(("invalid_save", "存档参数与角色状态不一致。".into())),
-                    vec![],
-                );
+                return Err(("invalid_save", "存档参数与角色状态不一致。".into()));
             }
             if save.state.phase == "event"
                 && ((save.state.vm.is_none()
@@ -151,23 +150,16 @@ impl GameSession {
                     && save.state.host_activity.is_none())
                     || save.state.pending.is_none())
             {
-                return self.response(
-                    Some(("invalid_save", "存档事件状态不完整。".into())),
-                    vec![],
-                );
+                return Err(("invalid_save", "存档事件状态不完整。".into()));
             }
         } else if save.state.turn != 0
             || save.state.player.is_some()
             || save.state.stats != Stats::default()
             || !["ready", "exploring"].contains(&save.state.phase.as_str())
         {
-            return self.response(
-                Some(("invalid_save", "存档缺少原版角色状态。".into())),
-                vec![],
-            );
+            return Err(("invalid_save", "存档缺少原版角色状态。".into()));
         }
-        self.state = save.state;
-        self.response(None, vec![json!({"type":"stateRestored"})])
+        Ok(save)
     }
     pub(super) fn valid_saved_activity(&self, state: &State) -> bool {
         match &state.host_activity {

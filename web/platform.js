@@ -1,6 +1,10 @@
 /** Browser services for the Bevy client. No game rules or visible game rendering live here. */
 const SAVE_DATABASE = 'virtual-life-bevy';
 const SAVE_FORMAT = 'virtual-life-bevy-save';
+export const SAVE_DATABASE_VERSION = 2;
+export const SAVE_SLOTS = Object.freeze(Array.from({ length: 9 }, (_, index) => `slot-${index}`));
+const checkSlot = slot => { if (!SAVE_SLOTS.includes(slot)) throw new Error('无效的存档槽。'); };
+const recordToken = record => record ? JSON.stringify(record) : null;
 const OBJECT_CACHE = 'virtual-life-disc-v1';
 const MEMORY_LIMIT = 32 * 1024 * 1024;
 const AUDIO_CONTEXTS = Symbol.for('virtual-life-bevy.audio-contexts');
@@ -61,68 +65,97 @@ export class SaveStorage {
   constructor(database) { this.database = database; }
 
   static async open(indexedDb = globalThis.indexedDB) {
-    const opening = indexedDb.open(SAVE_DATABASE, 1);
-    opening.onupgradeneeded = () => {
+    const opening = indexedDb.open(SAVE_DATABASE, SAVE_DATABASE_VERSION);
+    opening.onupgradeneeded = event => {
       const database = opening.result;
       if (!database.objectStoreNames.contains('saves')) database.createObjectStore('saves', { keyPath: 'slot' });
       if (!database.objectStoreNames.contains('settings')) database.createObjectStore('settings');
+      if (event.oldVersion === 1) {
+        const store = opening.transaction.objectStore('saves');
+        for (const [source, destination] of [['current', 'slot-1'], ['previous', 'slot-2']]) {
+          const reading = store.get(source);
+          reading.onsuccess = () => {
+            if (reading.result) store.put({ ...reading.result, slot: destination });
+            store.delete(source);
+          };
+        }
+      }
     };
     const database = await request(opening);
     database.onversionchange = () => database.close();
     return new SaveStorage(database);
   }
 
-  async load(slot = 'current', contentId) {
-    if (!['current', 'previous'].includes(slot)) throw new Error('无效的存档槽。');
+  async load(slot, contentId) {
+    checkSlot(slot);
     const record = await request(this.database.transaction('saves').objectStore('saves').get(slot));
     return record ? validateSave(record, contentId) : null;
   }
 
-  save(payload, contentId) {
+  async list(contentId) {
+    const store = this.database.transaction('saves').objectStore('saves');
+    const records = await Promise.all(SAVE_SLOTS.map(slot => request(store.get(slot))));
+    return Promise.all(records.map(async (record, index) => {
+      const summary = { slot: SAVE_SLOTS[index], occupied: !!record, valid: false, token: recordToken(record) };
+      if (!record) return summary;
+      try {
+        await validateSave(record, contentId);
+        const payload = JSON.parse(record.payload);
+        return { ...summary, valid: true, savedAt: record.savedAt, name: payload.state?.player?.name ?? '', turn: payload.state?.turn ?? 0 };
+      } catch (error) { return { ...summary, error: failure(error) }; }
+    }));
+  }
+
+  save(slot, payload, contentId, expected) {
+    checkSlot(slot);
     if (typeof payload !== 'string' || typeof contentId !== 'string' || !contentId) {
       return Promise.reject(new Error('存档内容或资源版本无效。'));
     }
-    const writing = this.#writes.then(async () => {
+    return this.#enqueue(async () => {
       const record = {
-        format: SAVE_FORMAT, version: 1, slot: 'current',
+        format: SAVE_FORMAT, version: 1, slot,
         savedAt: new Date().toISOString(), contentId, payload,
         checksum: await sha256(new TextEncoder().encode(payload)),
       };
-      // WebCrypto runs outside IndexedDB transactions. Compare again inside the
-      // write transaction to preserve both slots when two tabs save together.
-      for (let attempt = 0; attempt < 8; attempt++) {
-        const old = await request(this.database.transaction('saves').objectStore('saves').get('current'));
-        let valid = false;
-        if (old) {
-          try { await validateSave(old); valid = true; } catch { /* Keep the last good backup. */ }
-        }
-        const transaction = this.database.transaction('saves', 'readwrite');
-        const done = transactionDone(transaction);
-        const store = transaction.objectStore('saves');
-        const latest = store.get('current');
-        let conflict = false;
-        let writeError;
-        latest.onsuccess = () => {
-          if (JSON.stringify(latest.result) !== JSON.stringify(old)) {
-            conflict = true; transaction.abort(); return;
-          }
-          try {
-            if (valid) store.put({ ...old, slot: 'previous' });
-            store.put(record);
-          } catch (error) { writeError = error; transaction.abort(); }
-        };
-        try { await done; return record; }
-        catch (error) {
-          if (conflict) continue;
-          const cause = writeError ?? error;
-          if (cause?.name === 'QuotaExceededError') throw new Error('存储空间不足，旧存档已保留。请释放空间或导出备份。');
-          throw cause;
-        }
-      }
-      throw new Error('其他页面正在保存，请关闭重复的游戏页面后重试。');
+      return this.#put(record, expected);
     });
+  }
+
+  import(slot, record, contentId, expected) {
+    checkSlot(slot);
+    return this.#enqueue(async () => {
+      await validateSave(record, contentId);
+      const { format, version, savedAt, payload, checksum } = record;
+      return this.#put({ slot, format, version, savedAt, payload, checksum, contentId: record.contentId }, expected);
+    });
+  }
+
+  #enqueue(action) {
+    const writing = this.#writes.then(action);
     this.#writes = writing.catch(() => {});
     return writing;
+  }
+
+  async #put(record, expected) {
+    const transaction = this.database.transaction('saves', 'readwrite');
+    const done = transactionDone(transaction);
+    const store = transaction.objectStore('saves');
+    const latest = store.get(record.slot);
+    let writeError;
+    latest.onsuccess = () => {
+      if (expected !== undefined && recordToken(latest.result) !== expected) {
+        writeError = new Error('该槽位已被其他页面修改，请刷新列表后重试。');
+        transaction.abort(); return;
+      }
+      try { store.put(record); }
+      catch (error) { writeError = error; transaction.abort(); }
+    };
+    try { await done; return record; }
+    catch (error) {
+      const cause = writeError ?? error;
+      if (cause?.name === 'QuotaExceededError') throw new Error('存储空间不足，旧存档已保留。请释放空间或导出备份。');
+      throw cause;
+    }
   }
 
   async settings() {
@@ -351,7 +384,8 @@ export function downloadSave(record) {
   const { slot: _slot, ...exported } = record;
   const url = URL.createObjectURL(new Blob([JSON.stringify(exported)], { type: 'application/json' }));
   const anchor = document.createElement('a'); anchor.href = url;
-  anchor.download = `虚拟人生-Bevy-${record.savedAt.slice(0, 10)}.vlsave.json`; anchor.click();
+  const slot = record.slot?.replace('slot-', '') ?? '备份';
+  anchor.download = `虚拟人生-槽位${slot}-${record.savedAt.replace(/[:.]/g, '-')}.vlsave.json`; anchor.click();
   setTimeout(() => URL.revokeObjectURL(url), 10_000);
 }
 
@@ -406,7 +440,9 @@ export function createPlatform(callback) {
     return { state };
   };
   const gestureUnlock = () => {
-    if (!audioUnlocked) void unlockAudio().catch(error => emit(0, 'audioUnlocked', null, undefined, failure(error)));
+    // A previously unlocked context may suspend again (or a new Bevy context
+    // may appear). Check the live contexts on every real gesture.
+    void unlockAudio().catch(error => emit(0, 'audioUnlocked', null, undefined, failure(error)));
   };
   listen(document, 'pointerdown', gestureUnlock); listen(document, 'keydown', gestureUnlock);
 
@@ -463,11 +499,14 @@ export function createPlatform(callback) {
       if (!assets) throw new Error('资源目录尚未初始化。');
       assets.prefetch(payload.resources ?? payload.resourceIds ?? []); return null;
     },
-    async save(payload) { storage ??= await SaveStorage.open(); return storage.save(payload.payload, payload.contentId); },
+    async save(payload) { storage ??= await SaveStorage.open(); return storage.save(payload.slot, payload.payload, payload.contentId, payload.expected); },
+    async listSaves(payload) { storage ??= await SaveStorage.open(); return storage.list(payload.contentId); },
+    async commitImport(payload) { storage ??= await SaveStorage.open(); return storage.import(payload.slot, payload.record, payload.contentId, payload.expected); },
     async load(payload) { storage ??= await SaveStorage.open(); return storage.load(payload.slot, payload.contentId); },
     async settingsGet(payload) { storage ??= await SaveStorage.open(); return payload.key ? storage.setting(payload.key) : storage.settings(); },
     async settingsSet(payload) { storage ??= await SaveStorage.open(); return storage.setting(payload.key, payload.value); },
     async import(payload) {
+      checkSlot(payload.slot);
       const file = await chooseSave();
       if (file.size > 8 * 1024 * 1024) throw new Error('存档文件超过 8 MiB 限制。');
       return validateSave(JSON.parse(await file.text()), payload.contentId);

@@ -520,7 +520,7 @@ pub enum VmEffect {
     #[serde(rename_all = "camelCase")]
     Dialogue { dialogue_id: i32, content: DialogueText, left_id: i32, right_id: i32 },
     #[serde(rename_all = "camelCase")]
-    ClearPortraits { left: bool, right: bool },
+    ClearPortraits { left: bool, right: bool, #[serde(default)] hold_frames:u16 },
     #[serde(rename_all = "camelCase")]
     Choice { group_id: i32, options: Vec<ChoiceOption> },
     ApplyResult { result: ResultDelta },
@@ -634,7 +634,7 @@ impl LegacyVm {
                     break;
                 }
                 5 | 8 | 10 | 11 | 13 | 20 | 21 => self.program_counter = next,
-                6 => { effects.push(VmEffect::ClearPortraits { left: b != 0, right: c != 0 }); self.program_counter = next; }
+                6 => { effects.push(VmEffect::ClearPortraits { left: b != 0, right: c != 0, hold_frames:50 }); self.program_counter = next; }
                 7 => {
                     let group = program.choices.get(&c).ok_or_else(|| format!("Original choice group {c} is missing"))?;
                     let mut options = Vec::new();
@@ -652,7 +652,7 @@ impl LegacyVm {
                 9 => { effects.push(VmEffect::ConfigureCondition { condition: program.condition_setup(a)? }); self.finish(&mut effects); break; }
                 12 => {
                     if a > 0 { effects.push(VmEffect::ApplyResult { result: program.result_delta(a)? }); }
-                    effects.push(VmEffect::ClearPortraits {left:true,right:true});
+                    effects.push(VmEffect::ClearPortraits {left:true,right:true,hold_frames:0});
                     if self.relationship_nodes.is_empty() {self.finish(&mut effects);break;}
                     self.program_counter=self.relationship_nodes.remove(0);
                 }

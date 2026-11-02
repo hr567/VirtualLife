@@ -48,6 +48,135 @@ fn content() -> SceneContent<'static> {
         rules: r,
     }
 }
+
+#[test]
+fn nine_save_positions_preserve_original_manual_rows_and_modal_hit_targets() {
+    let c = content();
+    let mut ui = PresentationState {
+        screen: Screen::Saves,
+        ..Default::default()
+    };
+    ui.saves.ready = true;
+    ui.saves.can_save = true;
+    ui.saves.slots=json!((0..9).map(|slot|json!({"occupied":true,"valid":true,"name":format!("存档角色{slot}"),"savedAt":"2026-11-02T01:00:00.000Z"})).collect::<Vec<_>>());
+    let frame = compose(&c, &Value::Null, &ui);
+    for back in a(&c.rules["optionsRendering"]["save"], "/back") {
+        assert!(
+            frame
+                .required_resources
+                .iter()
+                .any(|resource| resource == s(back, "/resource"))
+        );
+    }
+    assert_eq!(
+        frame
+            .controls
+            .iter()
+            .filter(|control| control.id.starts_with("save-import-"))
+            .count(),
+        9
+    );
+    assert_eq!(
+        frame
+            .controls
+            .iter()
+            .filter(|control| control.id.starts_with("save-export-"))
+            .count(),
+        9
+    );
+    for slot in 1..=8 {
+        let row = frame
+            .controls
+            .iter()
+            .find(|control| control.id == format!("save-slot-{slot}"))
+            .unwrap();
+        assert_eq!(row.bounds.y, 71 + (slot - 1) * 36);
+    }
+    let enabled: Vec<_> = frame
+        .controls
+        .iter()
+        .filter(|control| control.enabled)
+        .collect();
+    for (index, left) in enabled.iter().enumerate() {
+        for right in enabled.iter().skip(index + 1) {
+            let a = left.bounds;
+            let b = right.bounds;
+            assert!(
+                a.x + a.width as i32 <= b.x
+                    || b.x + b.width as i32 <= a.x
+                    || a.y + a.height as i32 <= b.y
+                    || b.y + b.height as i32 <= a.y,
+                "overlapping controls: {} and {}",
+                left.id,
+                right.id
+            );
+        }
+    }
+    ui.saves.selected = 0;
+    let automatic = compose(&c, &Value::Null, &ui);
+    assert!(
+        !automatic
+            .controls
+            .iter()
+            .find(|control| control.id == "save-selected")
+            .unwrap()
+            .enabled
+    );
+    ui.saves.confirm = true;
+    let modal = compose(&c, &Value::Null, &ui);
+    assert_eq!(
+        modal
+            .controls
+            .iter()
+            .filter(|control| control.enabled)
+            .count(),
+        2
+    );
+    if let Some(directory) = std::env::var_os("VIRTUAL_LIFE_QA_IMAGE_DIR") {
+        let directory = std::path::PathBuf::from(directory);
+        std::fs::create_dir_all(&directory).unwrap();
+        let mut bank = crate::pixels::ImageBank::default();
+        let bytes = |resource: &str| {
+            let sha = s(&c.manifest["resources"][resource], "/sha256");
+            let object = c.manifest["objects"]
+                .as_array()
+                .unwrap()
+                .iter()
+                .find(|object| object["sha256"] == sha)
+                .unwrap();
+            std::fs::read(root().join(s(object, "/path"))).unwrap()
+        };
+        for sprite in &frame.sprites {
+            bank.insert(sprite.resource_id.clone(), bytes(&sprite.resource_id));
+        }
+        let metadata: Value = serde_json::from_slice(
+            &std::fs::read(root().join("assets/catalog/glyphs.json")).unwrap(),
+        )
+        .unwrap();
+        let mut glyphs: crate::pixels::GlyphAtlas = serde_json::from_value(metadata).unwrap();
+        glyphs
+            .set_pixels(bytes(crate::font::UI_FONT_RESOURCE))
+            .unwrap();
+        bank.glyphs = Some(glyphs);
+        for (name, frame) in [("save-slots.bmp", frame), ("save-confirm.bmp", modal)] {
+            let mut canvas = crate::pixels::PixelCanvas::default();
+            canvas.compose(&frame, &mut bank);
+            let mut bmp = vec![0; 54];
+            bmp[0..2].copy_from_slice(b"BM");
+            bmp[2..6].copy_from_slice(&(54 + canvas.rgba.len() as u32).to_le_bytes());
+            bmp[10..14].copy_from_slice(&54u32.to_le_bytes());
+            bmp[14..18].copy_from_slice(&40u32.to_le_bytes());
+            bmp[18..22].copy_from_slice(&640i32.to_le_bytes());
+            bmp[22..26].copy_from_slice(&(-480i32).to_le_bytes());
+            bmp[26..28].copy_from_slice(&1u16.to_le_bytes());
+            bmp[28..30].copy_from_slice(&32u16.to_le_bytes());
+            for pixel in canvas.rgba.chunks_exact(4) {
+                bmp.extend_from_slice(&[pixel[2], pixel[1], pixel[0], 255]);
+            }
+            std::fs::write(directory.join(name), bmp).unwrap();
+        }
+    }
+}
 fn fixture(name: &str) -> Value {
     let v: Value = serde_json::from_slice(
         &std::fs::read(root().join(format!("tests/fixtures/browser-{name}.json"))).unwrap(),

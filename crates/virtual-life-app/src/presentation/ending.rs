@@ -179,7 +179,7 @@ fn summary(f: &mut SceneFrame, st: &Value, rules: &Value) {
     }
 }
 
-fn movie(f: &mut SceneFrame, st: &Value, rules: &Value) {
+pub(super) fn movie(f: &mut SceneFrame, st: &Value, rules: &Value) {
     let movie = &st["movie"];
     let video = &rules["video"];
     f.video = Some(SceneVideo {

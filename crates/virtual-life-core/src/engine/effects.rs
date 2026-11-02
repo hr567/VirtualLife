@@ -161,6 +161,8 @@ pub enum GameEffectKind {
     TurnCompleted,
     #[serde(rename = "birthday")]
     Birthday,
+    #[serde(rename = "lifeNotice")]
+    LifeNotice,
     #[serde(rename = "stateRestored")]
     StateRestored,
 }

@@ -2,7 +2,7 @@
 // picker, canvas controls and keyboard; the test API only supplies frame time.
 import { test, expect, type Page, type TestInfo } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { control, diagnostic, freeze, importScenario, open, ready, scenario, type Control } from './helpers';
+import { control, diagnostic, freeze, importScenario, open, ready, scenario, type Control, saveSelected } from './helpers';
 
 interface Choice { index: number; text: string; disabled?: boolean }
 interface Offer { index: number; name?: string; description?: string; category?: number; price: number; bought?: boolean; purchased?: boolean; disabled?: boolean }
@@ -106,10 +106,10 @@ async function reachableControls(page: Page, filter: (control: Control) => boole
 }
 async function currentRecord(page: Page): Promise<SavedRecord | null> {
   return page.evaluate(() => new Promise((resolve, reject) => {
-    const opening = indexedDB.open('virtual-life-bevy', 1);
+    const opening = indexedDB.open('virtual-life-bevy', 2);
     opening.onerror = () => reject(opening.error);
     opening.onsuccess = () => {
-      const db = opening.result, transaction = db.transaction('saves'), request = transaction.objectStore('saves').get('current');
+      const db = opening.result, transaction = db.transaction('saves'), request = transaction.objectStore('saves').get('slot-1');
       request.onsuccess = () => resolve(request.result ?? null);
       request.onerror = () => reject(request.error);
       transaction.oncomplete = () => db.close();
@@ -124,7 +124,7 @@ async function save(page: Page): Promise<SavedPayload> {
   // Time on the save screen must not advance a native timer or core clock.
   await clock(page, 1234);
   expect(await snapshot(page)).toEqual(domainBeforeMenu);
-  await control(page, '保存当前进度');
+  await saveSelected(page);
   await expect.poll(async () => (await currentRecord(page))?.savedAt).not.toBe(previous);
   await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
   return JSON.parse((await currentRecord(page))!.payload) as SavedPayload;
@@ -136,7 +136,7 @@ async function saveReload(page: Page, info: TestInfo, name: string): Promise<Sav
   expect(saved.presentation, 'Production saves must retain Bevy presentation state').toBeDefined();
   await page.reload(); await ready(page); await freeze(page);
   expect((await diagnostic(page)).screen).toBe('Menu');
-  await control(page, '继续游戏'); await ready(page);
+  await control(page, '继续游戏'); await control(page, '读取选中槽位'); await ready(page);
   expect(await snapshot(page)).toEqual(before);
   await page.locator('#game-canvas').screenshot({ path: info.outputPath(`${name}-restored.png`) });
   return saved;

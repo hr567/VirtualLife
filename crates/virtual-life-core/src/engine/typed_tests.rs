@@ -60,6 +60,24 @@ fn typed_inputs_preserve_strict_sequence_and_automatic_ui_sequence() {
     );
 }
 #[test]
+fn save_validation_and_normal_or_controlled_roll_preflight_do_not_change_state() {
+    let mut session = started();
+    let before = session.save();
+    assert!(session.validate_save(&before).is_ok());
+    assert!(session.validate_save("{}").is_err());
+    assert!(session.validate_roll(None).is_ok());
+    assert!(session.validate_roll(Some(1)).is_err());
+    assert_eq!(session.save(), before);
+    session.state.spirits.active = Some(0);
+    let before = session.save();
+    for value in 1..=8 {
+        assert!(session.validate_roll(Some(value)).is_ok());
+    }
+    assert!(session.validate_roll(Some(0)).is_err());
+    assert!(session.validate_roll(Some(9)).is_err());
+    assert_eq!(session.save(), before);
+}
+#[test]
 fn typed_frames_and_restored_frames_preserve_native_rng_and_timers() {
     let mut original = started();
     original.program=Some(LegacyProgram::from_json(r#"{"program":{"nodes":[{"words":[30000,23,30001,0,0,0]},{"words":[30001,12,0,0,0,0]}]}}"#).unwrap());

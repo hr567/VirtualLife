@@ -78,6 +78,79 @@ fn real_runtime() -> Runtime {
     );
     runtime
 }
+
+#[test]
+fn n1_portraits_resolve_player_expressions_and_refresh_each_dialogue() {
+    let mut runtime = real_runtime();
+    for (sex, stage, career, expected) in [
+        (0, 2, -1, "umf02d.bmp"),
+        (1, 6, 0, "uw201d.bmp"),
+        (0, 6, 3, "um204d.bmp"),
+    ] {
+        let player = runtime.state.legacy_player.as_mut().unwrap();
+        player.set_i16(0x4b6498, sex).unwrap();
+        player.set_i16(0x4b649e, stage).unwrap();
+        player.set_i16(0x4b64a2, career).unwrap();
+        runtime.state.vm = Some(LegacyVm::new(22656));
+        runtime.advance_vm(&mut vec![]);
+        assert_eq!(
+            runtime.state.scene["leftPortraitResource"],
+            format!("install/bmp/{expected}")
+        );
+    }
+    runtime.state.vm = Some(LegacyVm::new(11026));
+    runtime.advance_vm(&mut vec![]);
+    assert_eq!(
+        runtime.state.pending.as_ref().unwrap()["rightPortraitId"],
+        68
+    );
+    assert_eq!(runtime.state.scene["rightPortraitId"], 68);
+    assert_eq!(
+        runtime.state.scene["rightPortraitResource"],
+        "install/bmp/pm208c.bmp"
+    );
+    runtime.state.scene["rightPortraitId"] = json!(66);
+    runtime.state.scene["rightPortraitResource"] = json!("install/bmp/pm208a.bmp");
+    let unchanged = runtime.serialize();
+    assert_eq!(
+        runtime.snapshot_value()["scene"]["rightPortraitResource"],
+        "install/bmp/pm208c.bmp"
+    );
+    assert_eq!(
+        runtime.serialize(),
+        unchanged,
+        "old dialogue projection never rewrites saved state"
+    );
+    runtime.state.vm = Some(LegacyVm::new(11005));
+    runtime.advance_vm(&mut vec![]);
+    assert_eq!(
+        runtime.state.scene["rightPortraitId"], 70,
+        "zero in opcode 4 preserves the existing portrait"
+    );
+    let saved = runtime.serialize();
+    let mut restored = real_runtime();
+    assert_eq!(
+        serde_json::from_str::<Value>(&restored.restore(&saved)).unwrap()["ok"],
+        true
+    );
+    assert_eq!(runtime.state.scene, restored.state.scene);
+}
+
+#[test]
+fn n1_visual_effects_keep_modes_and_intermediate_scenes_in_order() {
+    let mut runtime = real_runtime();
+    runtime.state.vm = Some(LegacyVm::new(22653));
+    let before = runtime.state.rng.clone();
+    let mut effects = vec![];
+    runtime.advance_vm(&mut effects);
+    assert_eq!(runtime.state.rng, before);
+    assert_eq!(runtime.state.scene["patternScrollMode"], 2);
+    assert_eq!(runtime.state.scene["backgroundMode"], 0);
+    let pattern = effects.iter().find(|v| v["type"] == "pattern").unwrap();
+    assert!(pattern["scene"]["backgroundResource"].is_null());
+    let bg = effects.iter().find(|v| v["type"] == "background").unwrap();
+    assert_eq!(bg["scene"]["backgroundResource"], "install/bmp/bg253.bmp");
+}
 fn next(runtime: &mut Runtime, kind: &str, index: usize) -> Value {
     dispatch(
         runtime,

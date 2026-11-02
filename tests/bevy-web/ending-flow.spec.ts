@@ -2,7 +2,7 @@
 // public ending UI; it is separate from the full-life probes' defeat routes.
 import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { control, diagnostic, freeze, importScenario, open, ready, scenario } from './helpers';
+import { control, diagnostic, freeze, importScenario, open, ready, scenario, saveSelected } from './helpers';
 import { bmp, blit, differingPixels, png, type Pixels } from './images';
 
 interface Credits {
@@ -86,8 +86,8 @@ test('winning ending survives credits save and reaches original end image and re
   const saved = (await diagnostic(page)).snapshot;
   await page.keyboard.press('F6'); await expect.poll(async () => (await diagnostic(page)).screen).toBe('Saves');
   await frame(page, 1000); expect((await diagnostic(page)).snapshot).toEqual(saved);
-  await control(page, '保存当前进度'); await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
-  await page.reload(); await ready(page); await freeze(page); await control(page, '继续游戏'); await ready(page);
+  await saveSelected(page); await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
+  await page.reload(); await ready(page); await freeze(page); await control(page, '继续游戏'); await control(page, '读取选中槽位'); await ready(page);
   expect((await diagnostic(page)).snapshot).toEqual(saved);
   await page.screenshot({ path: info.outputPath('winning-credits-restored.png') });
 
@@ -105,10 +105,11 @@ test('winning ending survives credits save and reaches original end image and re
   expect(errors).toEqual([]);
 });
 
-test('ending the winning life returns to the menu and a completed save cannot resume a stranded game', async ({ page }, info) => {
+test('ending the winning life returns to the menu without overwriting the manual save', async ({ page }, info) => {
   test.setTimeout(180_000);
   await page.setViewportSize({ width: 640, height: 480 });
   const errors = await open(page); await freeze(page); await importScenario(page, 'ending-win');
+  const originalPayload = JSON.parse(readFileSync(scenario('ending-win'), 'utf8')).payload as string;
   const initial = await snapshot(page);
   expect(initial.pending).toMatchObject({ kind: 'ending', state: { phase: 'summary', victory: true } });
   await frame(page, 1800); await frame(page, 151);
@@ -131,28 +132,23 @@ test('ending the winning life returns to the menu and a completed save cannot re
   expect(await snapshot(page)).toMatchObject({ phase: 'completed', pending: null, life: { incarnation: initial.life.incarnation } });
   const completed = (await diagnostic(page)).snapshot;
   await expect.poll(() => page.evaluate(() => new Promise<string | undefined>((resolve, reject) => {
-    const opening = indexedDB.open('virtual-life-bevy', 1);
+    const opening = indexedDB.open('virtual-life-bevy', 2);
     opening.onerror = () => reject(opening.error);
     opening.onsuccess = () => {
-      const db = opening.result, reading = db.transaction('saves').objectStore('saves').get('current');
+      const db = opening.result, reading = db.transaction('saves').objectStore('saves').get('slot-1');
       reading.onerror = () => reject(reading.error);
       reading.onsuccess = () => {
         db.close();
         const record = reading.result as { payload: string } | undefined;
-        resolve(record ? JSON.parse(record.payload).state.phase as string : undefined);
+        resolve(record?.payload);
       };
     };
-  }))).toBe('completed');
+  }))).toBe(originalPayload);
   await page.screenshot({ path: info.outputPath('completed-life-menu.png') });
-  await page.reload(); await ready(page); await freeze(page);
-  await control(page, '继续游戏'); await ready(page);
-  await expect.poll(async () => (await diagnostic(page)).snapshot.phase).toBe('completed');
-  expect((await diagnostic(page)).screen).toBe('Menu');
-  expect((await diagnostic(page)).snapshot).toEqual(completed);
-  await frame(page, 1000);
-  expect((await diagnostic(page)).screen).toBe('Menu');
-  expect((await diagnostic(page)).snapshot).toEqual(completed);
-  expect((await diagnostic(page)).controls.some(control => control.label === '开始新游戏' && control.enabled)).toBe(true);
-  await page.screenshot({ path: info.outputPath('completed-save-continue-menu.png') });
+  await frame(page,1000);expect((await diagnostic(page)).screen).toBe('Menu');expect((await diagnostic(page)).snapshot).toEqual(completed);
+  await page.reload();await ready(page);await freeze(page);
+  await control(page,'继续游戏');await control(page,'读取选中槽位');await ready(page);
+  expect((await diagnostic(page)).screen).toBe('Game');expect((await diagnostic(page)).snapshot).toEqual(initial);
+  await page.screenshot({path:info.outputPath('manual-save-survives-completed-life.png')});
   expect(errors).toEqual([]);
 });

@@ -5,6 +5,7 @@ mod battle;
 mod clocks;
 mod competition;
 mod ending;
+mod events;
 mod map;
 mod minigames;
 mod native_allocation;
@@ -18,12 +19,25 @@ mod shell;
 #[cfg(test)]
 mod tests;
 pub use clocks::accept_response;
+pub(crate) use events::valid_sequence;
+pub use events::{advance as advance_sequence, blocking as sequence_active, start_movie};
+fn native_result(snapshot: &Value, ui: &PresentationState) -> bool {
+    native_fortune::owns_result(snapshot, ui) || native_school::owns_result(snapshot, ui)
+}
 pub fn update_presentation(
     c: &SceneContent<'_>,
     snapshot: &Value,
     ui: &mut PresentationState,
     elapsed_ms: u32,
 ) {
+    if ui.runtime.motion.is_none()
+        && events::blocking(ui)
+        && !native_result(snapshot, ui)
+        && matches!(ui.screen, Screen::Game | Screen::Menu)
+    {
+        events::update(c, ui, elapsed_ms);
+        return;
+    }
     native_panels::update(c, snapshot, ui, elapsed_ms);
     native_housing::update(c, snapshot, ui, elapsed_ms);
     native_fortune::update(c, snapshot, ui, elapsed_ms);
@@ -61,6 +75,12 @@ pub fn compose(content: &SceneContent<'_>, snapshot: &Value, ui: &PresentationSt
             }
         }
     }
+    if matches!(ui.screen, Screen::Game | Screen::Menu)
+        && !native_result(snapshot, ui)
+        && events::compose(&mut frame, content, ui)
+    {
+        return frame;
+    }
     frame.key = format!(
         "{:?}:{}:{}:{}",
         ui.screen,
@@ -72,7 +92,7 @@ pub fn compose(content: &SceneContent<'_>, snapshot: &Value, ui: &PresentationSt
         Screen::Menu => shell::menu(&mut frame, ui),
         Screen::Profile => shell::profile(&mut frame, content, ui),
         Screen::Options => shell::options(&mut frame, content, ui),
-        Screen::Saves => shell::saves(&mut frame, ui),
+        Screen::Saves => shell::saves(&mut frame, content, ui),
         Screen::MapOverview => map::overview(&mut frame, content, snapshot, ui),
         Screen::Game => {
             if native_school::compose(&mut frame, content, snapshot, ui)

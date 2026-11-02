@@ -1,6 +1,10 @@
 //! Native high-school examination, recovered from 0043e030/0043f100/0043ed90.
 use super::*;
 
+pub(super) fn owns_result(snapshot: &Value, ui: &PresentationState) -> bool {
+    s(snapshot, "/nativeView/kind") != "schoolExam" && ui.profile["_nativeSchool"]["active"] == true
+}
+
 fn choose(index: i32) -> Action {
     Action::Game(json!({"type":"chooseOption","index":index}))
 }
@@ -643,7 +647,14 @@ mod tests {
         let mut ui = game(&before, "question");
         ui.profile["_schoolAnswerEvent"] = json!({"revision":2,"previousView":before["nativeView"],"answer":{"answered":10,"score":50,"correct":false}});
         let after = json!({"revision":2,"pending":null});
-        update(&c, &after, &mut ui, 16);
+        super::super::events::accept(
+            &c,
+            &before,
+            &after,
+            &[json!({"type":"birthday","resource":"install/bmp/jm01.bmp"})],
+            &mut ui,
+        );
+        super::super::update_presentation(&c, &after, &mut ui, 16);
         assert_eq!(s(&ui.profile, "/_nativeSchool/phase"), "feedback");
         let mut f = SceneFrame::default();
         assert!(compose(&mut f, &c, &after, &ui));
@@ -656,15 +667,18 @@ mod tests {
         let saved = serde_json::to_value(&ui).unwrap();
         let mut ui: PresentationState = serde_json::from_value(saved).unwrap();
         clock(&mut ui, "school-feedback", 7);
-        update(&c, &after, &mut ui, 16);
+        super::super::update_presentation(&c, &after, &mut ui, 16);
         assert_eq!(s(&ui.profile, "/_nativeSchool/phase"), "resultOpening");
         clock(&mut ui, "school-result-door", 14);
-        update(&c, &after, &mut ui, 16);
+        super::super::update_presentation(&c, &after, &mut ui, 16);
         clock(&mut ui, "school-result-band", 4);
-        update(&c, &after, &mut ui, 16);
+        super::super::update_presentation(&c, &after, &mut ui, 16);
         let last = n(&manifest["_nativeSchool"]["lost"], "/frameCount") as u32 - 1;
         clock(&mut ui, "school-result-final", last);
-        update(&c, &after, &mut ui, 16);
+        super::super::update_presentation(&c, &after, &mut ui, 16);
         assert!(!compose(&mut SceneFrame::default(), &c, &after, &ui));
+        assert_eq!(ui.runtime.sequence.as_ref().unwrap().cues[0].elapsed_ms, 0);
+        let f = super::super::compose(&c, &after, &ui);
+        assert!(f.sprites.iter().any(|sprite| sprite.id == "map-notice"));
     }
 }

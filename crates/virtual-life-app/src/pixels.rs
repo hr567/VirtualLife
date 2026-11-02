@@ -292,6 +292,27 @@ impl PixelCanvas {
                     };
                     let own_palette = sp.palette.as_deref().and_then(|id| bank.palette(id));
                     let chosen = own_palette.as_ref().or(palette.as_ref());
+                    let adjusted = sp.palette_effect.as_ref().and_then(|effect| {
+                        let mut colors =
+                            chosen.copied().or_else(|| bank.palette(&sp.resource_id))?;
+                        for color in &mut colors[22..62] {
+                            if effect.grayscale {
+                                let gray = ((u16::from(color[0])
+                                    + u16::from(color[1])
+                                    + u16::from(color[2]))
+                                    / 3) as u8;
+                                color[..3].fill(gray);
+                            }
+                            for component in &mut color[..3] {
+                                if effect.subtract != 0 {
+                                    *component = component.saturating_sub(effect.subtract).max(1);
+                                }
+                                *component = (*component).min(effect.ceiling);
+                            }
+                        }
+                        Some(colors)
+                    });
+                    let chosen = adjusted.as_ref().or(chosen);
                     // FLIC decoding already selected a complete frame. Only
                     // indexed bitmap button strips need vertical frame slicing.
                     let frame_count = if matches!(
@@ -1043,6 +1064,64 @@ mod tests {
         );
         assert_eq!(&canvas.rgba[0..4], &[0, 0, 0, 0]);
         assert_eq!(&canvas.rgba[4..8], &[50, 25, 127, 255]);
+    }
+
+    #[test]
+    fn n1_palette_effects_use_integer_channels_and_leave_other_indices_unchanged() {
+        let mut bank = ImageBank::default();
+        let mut palette = [[0, 0, 0, 255]; 256];
+        palette[22] = [120, 60, 0, 255];
+        palette[100] = [1, 2, 3, 255];
+        bank.palettes.insert("effect".into(), palette);
+        bank.decoded.insert(
+            "effect".into(),
+            Decoded::Bitmap(Arc::new(PixelImage {
+                width: 2,
+                height: 1,
+                rgba: vec![120, 60, 0, 255, 1, 2, 3, 255],
+                indices: Some(vec![22, 100]),
+            })),
+        );
+        for (effect, expected) in [
+            (
+                PaletteEffect {
+                    grayscale: true,
+                    subtract: 0,
+                    ceiling: 255,
+                },
+                [60, 60, 60, 255],
+            ),
+            (
+                PaletteEffect {
+                    grayscale: false,
+                    subtract: 6,
+                    ceiling: 255,
+                },
+                [114, 54, 1, 255],
+            ),
+            (
+                PaletteEffect {
+                    grayscale: false,
+                    subtract: 0,
+                    ceiling: 12,
+                },
+                [12, 12, 0, 255],
+            ),
+        ] {
+            let frame = SceneFrame {
+                sprites: vec![SceneSprite {
+                    resource_id: "effect".into(),
+                    transparent: Transparency::Opaque,
+                    palette_effect: Some(effect),
+                    ..Default::default()
+                }],
+                ..Default::default()
+            };
+            let mut canvas = PixelCanvas::default();
+            canvas.compose(&frame, &mut bank);
+            assert_eq!(&canvas.rgba[..4], &expected);
+            assert_eq!(&canvas.rgba[4..8], &[1, 2, 3, 255]);
+        }
     }
     #[test]
     fn source_strip_clip_and_repeat_preserve_original_pixels() {

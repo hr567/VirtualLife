@@ -7,7 +7,7 @@ import { SaveStorage, sha256, validateSave, VerifiedAssets } from '../../../web/
 // requests, and aborts discard every mutation, including the backup rotation.
 class TransactionalDatabase {
   stores = { saves: new Map(), settings: new Map() };
-  failCurrent = false;
+  failSlot = null;
   transaction(name, mode) {
     const working = new Map(structuredClone([...this.stores[name]]));
     let pending = 0, aborted = false;
@@ -36,8 +36,8 @@ class TransactionalDatabase {
       getAllKeys: () => operation(() => [...working.keys()]),
       getAll: () => operation(() => structuredClone([...working.values()])),
       put: (value, key) => {
-        if (value?.slot === 'current' && this.failCurrent) {
-          this.failCurrent = false; throw new DOMException('full', 'QuotaExceededError');
+        if (value?.slot === this.failSlot) {
+          this.failSlot = null; throw new DOMException('full', 'QuotaExceededError');
         }
         return operation(() => { working.set(key ?? value.slot, structuredClone(value)); return key ?? value.slot; });
       },
@@ -46,62 +46,59 @@ class TransactionalDatabase {
   }
 }
 
-test('save rotation retains the last valid backup when the current record is corrupt', async () => {
-  const database = new TransactionalDatabase(); const storage = new SaveStorage(database);
-  await storage.save('first', 'content'); await storage.save('second', 'content');
-  assert.equal((await storage.load('previous')).payload, 'first');
-  database.stores.saves.get('current').checksum = '0'.repeat(64);
-  await storage.save('third', 'content');
-  assert.equal((await storage.load()).payload, 'third');
-  assert.equal((await storage.load('previous')).payload, 'first');
+test('nine slots persist independently and automatic saves only replace slot zero', async () => {
+  const database=new TransactionalDatabase(), storage=new SaveStorage(database);
+  for(let slot=0;slot<9;slot++) await storage.save('slot-'+slot,JSON.stringify({state:{player:{name:'角色'+slot},turn:slot}}),'content');
+  const before=structuredClone([...database.stores.saves]);
+  await storage.save('slot-0','next roll','content');
+  assert.equal((await storage.load('slot-0')).payload,'next roll');
+  for(let slot=1;slot<9;slot++) assert.deepEqual(await storage.load('slot-'+slot),before[slot][1]);
+  await assert.rejects(storage.load('slot-9'),/无效/);
+  assert.throws(()=>storage.save('current','payload','content'),/无效/);
 });
 
-test('a failed current write rolls back both slots and settings use their own store', async () => {
-  const database = new TransactionalDatabase(); const storage = new SaveStorage(database);
-  await storage.save('first', 'content'); await storage.save('second', 'content');
-  const before = structuredClone([...database.stores.saves]); database.failCurrent = true;
-  await assert.rejects(storage.save('third', 'content'), /旧存档已保留/);
-  assert.deepEqual([...database.stores.saves], before);
-  await storage.setting('volume', 37); assert.equal(await storage.setting('volume'), 37);
-  assert.deepEqual(await storage.settings(), { volume: 37 }); assert.deepEqual([...database.stores.saves], before);
+test('quota failure retains an existing slot and a later write still succeeds', async () => {
+  const database=new TransactionalDatabase(), storage=new SaveStorage(database);
+  await storage.save('slot-0','before','content');
+  const before=structuredClone([...database.stores.saves]);database.failSlot='slot-0';
+  await assert.rejects(storage.save('slot-0','failed','content'),/旧存档已保留/);
+  assert.deepEqual([...database.stores.saves],before);
+  await storage.save('slot-0','after','content');assert.equal((await storage.load('slot-0')).payload,'after');
+  await storage.setting('volume',37);assert.equal(await storage.setting('volume'),37);
 });
 
-test('save calls keep their order while the first WebCrypto checksum is delayed', async () => {
-  const database = new TransactionalDatabase(); const storage = new SaveStorage(database);
-  const original = crypto.subtle.digest;
-  let release, started;
-  const waiting = new Promise(resolve => { release = resolve; });
-  const hashing = new Promise(resolve => { started = resolve; });
-  crypto.subtle.digest = async function (algorithm, bytes) {
-    if (new TextDecoder().decode(bytes) === 'first') { started(); await waiting; }
-    return original.call(this, algorithm, bytes);
-  };
+test('imports target the requested slot and preserve exported bytes and save time', async () => {
+  const database=new TransactionalDatabase(), storage=new SaveStorage(database);
+  const record=await storage.save('slot-3','import payload','content');
+  await storage.import('slot-8',record,'content',null);
+  assert.deepEqual(await storage.load('slot-8'),{...record,slot:'slot-8'});
+  assert.deepEqual(await storage.load('slot-3'),record);
+  await assert.rejects(storage.import('slot-8',{...record,payload:'corrupt'},'content'),/校验/);
+  await assert.rejects(storage.import('slot-8',record,'different'),/不同/);
+  assert.deepEqual(await storage.load('slot-8'),{...record,slot:'slot-8'});
+});
+
+test('slot listing distinguishes empty, invalid, and valid saves and rejects stale manual writes', async () => {
+  const database=new TransactionalDatabase(), storage=new SaveStorage(database);
+  await storage.save('slot-1',JSON.stringify({state:{player:{name:'角色'},turn:12}}),'content');
+  const listed=await storage.list('content');assert.equal(listed.length,9);
+  assert.equal(listed[0].occupied,false);assert.equal(listed[1].name,'角色');assert.equal(listed[1].valid,true);
+  await storage.save('slot-1','other tab','content');
+  await assert.rejects(storage.save('slot-1','stale','content',listed[1].token),/其他页面/);
+  assert.equal((await storage.load('slot-1')).payload,'other tab');
+  database.stores.saves.get('slot-1').checksum='0'.repeat(64);
+  assert.equal((await storage.list('content'))[1].valid,false);
+});
+
+test('writes keep their order while the first WebCrypto checksum is delayed', async () => {
+  const database=new TransactionalDatabase(), storage=new SaveStorage(database), original=crypto.subtle.digest;
+  let release,started;const waiting=new Promise(resolve=>release=resolve), hashing=new Promise(resolve=>started=resolve);
+  crypto.subtle.digest=async function(algorithm,bytes){if(new TextDecoder().decode(bytes)==='first'){started();await waiting;}return original.call(this,algorithm,bytes);};
   try {
-    const first = storage.save('first', 'content'); await hashing;
-    const second = storage.save('second', 'content');
-    assert.equal(database.stores.saves.size, 0);
-    release(); await Promise.all([first, second]);
-    assert.equal((await storage.load()).payload, 'second');
-    assert.equal((await storage.load('previous')).payload, 'first');
-  } finally { release(); crypto.subtle.digest = original; }
-});
-
-test('another connection writing between validation and commit is retried without losing its backup', async () => {
-  const database = new TransactionalDatabase(); const storage = new SaveStorage(database);
-  await storage.save('first', 'content');
-  const competing = { ...(await storage.load()), payload: 'other tab', checksum: await sha256(new TextEncoder().encode('other tab')) };
-  const transaction = database.transaction.bind(database);
-  let raced = false;
-  database.transaction = (name, mode) => {
-    if (name === 'saves' && mode === 'readwrite' && !raced) {
-      raced = true; database.stores.saves.set('current', competing);
-    }
-    return transaction(name, mode);
-  };
-  await storage.save('this tab', 'content');
-  assert.ok(raced);
-  assert.equal((await storage.load()).payload, 'this tab');
-  assert.equal((await storage.load('previous')).payload, 'other tab');
+    const first=storage.save('slot-0','first','content');await hashing;
+    const second=storage.save('slot-0','second','content');assert.equal(database.stores.saves.size,0);
+    release();await Promise.all([first,second]);assert.equal((await storage.load('slot-0')).payload,'second');
+  }finally{release();crypto.subtle.digest=original;}
 });
 
 async function fixture(contents = ['original disc bytes']) {

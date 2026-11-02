@@ -262,6 +262,41 @@ fn run() -> Result<(), String> {
         &content,
         "activities",
     )?);
+    for id in [
+        "n1-dynamic",
+        "n1-expression",
+        "birthday-before",
+        "payday-promotion",
+        "payday-demotion",
+        "payday-mastery",
+        "life-notice-10",
+        "life-notice-3",
+    ] {
+        let mut session = GameSession::from_content(content.clone())?;
+        let response = session.send(GameCommand::NewGame {
+            seq: 0,
+            profile: Profile {
+                name: "表现回归".into(),
+                sex: "male".into(),
+                birth_month: 1,
+                birth_day: 1,
+                blood_type: "A".into(),
+            },
+            seed: 1,
+        });
+        if !response.ok {
+            return Err(format!("Evidence player: {:?}", response.error));
+        }
+        let payload = session.presentation_evidence(id)?;
+        summaries.push(write_scenario(
+            &directory,
+            id,
+            &mut session,
+            payload,
+            "isolated original N1 instructions and explicit presentation preconditions",
+            None,
+        )?);
+    }
     let index = json!({"format":"virtual-life-bevy-browser-scenarios","version":1,"savedAt":SAVED_AT,"scenarios":summaries});
     fs::write(
         directory.join("manifest.json"),

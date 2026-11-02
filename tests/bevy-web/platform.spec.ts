@@ -2,15 +2,15 @@ import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 import { createHash } from 'node:crypto';
-import { control, create, diagnostic, freeze, importScenario, open, ready, scenario } from './helpers';
+import { control, create, diagnostic, freeze, importScenario, open, ready, scenario, saveSelected } from './helpers';
 
 interface SaveRecord { slot: string; format: string; version: number; savedAt: string; contentId: string; payload: string; checksum: string }
 interface ObservedDevice { destroy(): void; lost: Promise<{ reason: string; message: string }> }
 declare global { interface Window { __qaGpuDevices?: ObservedDevice[]; __qaAudioMeters?: AnalyserNode[] } }
 
-async function records(page: Page): Promise<{ current?: SaveRecord; previous?: SaveRecord }> {
+async function records(page: Page): Promise<Record<string, SaveRecord | undefined>> {
   return page.evaluate(() => new Promise((resolve, reject) => {
-    const opening = indexedDB.open('virtual-life-bevy', 1);
+    const opening = indexedDB.open('virtual-life-bevy', 2);
     opening.onerror = () => reject(opening.error);
     opening.onsuccess = () => {
       const db = opening.result, transaction = db.transaction('saves'), request = transaction.objectStore('saves').getAll();
@@ -54,53 +54,35 @@ function checkedSave(record:SaveRecord):{state:unknown;presentation?:{screen:str
   const payload=JSON.parse(record.payload);expect(payload).toMatchObject({format:'virtual-life-bevy-save',version:1,contentHash:record.contentId});return payload;
 }
 
-test('a corrupt current save can restore its valid backup and the UI rejects old-format imports', async ({ page }, info) => {
-  const errors = await open(page); await freeze(page);
-  await importScenario(page, 'map-seed-1');
-  await expect.poll(async () => (await records(page)).current?.payload).toContain('原版回归1');
-  await importScenario(page, 'map-seed-4');
-  await expect.poll(async () => (await records(page)).current?.payload).toContain('原版回归4');
-  const previous = (await records(page)).previous;
-  expect(previous?.payload).toContain('原版回归1');
-  await page.evaluate(() => new Promise<void>((resolve, reject) => {
-    const opening = indexedDB.open('virtual-life-bevy', 1);
-    opening.onerror = () => reject(opening.error);
-    opening.onsuccess = () => {
-      const db = opening.result, transaction = db.transaction('saves', 'readwrite'), store = transaction.objectStore('saves');
-      const request = store.get('current');
-      request.onsuccess = () => store.put({ ...request.result, checksum: '0'.repeat(64) });
-      transaction.oncomplete = () => { db.close(); resolve(); };
-      transaction.onerror = () => reject(transaction.error);
-    };
-  }));
-  await saves(page); await control(page, '读取当前进度');
-  await expect.poll(async () => (await diagnostic(page)).notice).toContain('存档校验失败');
-  expect((await diagnostic(page)).screen).toBe('Saves');
-  await control(page, '恢复上一份备份'); await ready(page);
-  expect((await diagnostic(page)).snapshot.player).toMatchObject({ name: '原版回归1' });
-  expect((await records(page)).previous?.payload).toBe(previous!.payload);
-
-  await saves(page);
-  const picking = page.waitForEvent('filechooser'); await control(page, '导入存档');
-  await (await picking).setFiles({ name: 'old-client.vlsave.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify({ ...previous, format: 'virtual-life-save' })) });
-  await expect.poll(async () => (await diagnostic(page)).notice).toContain('不支持的存档格式');
-  expect((await diagnostic(page)).screen).toBe('Saves');
-  expect((await diagnostic(page)).snapshot.player).toMatchObject({ name: '原版回归1' });
-  await page.screenshot({ path: info.outputPath('backup-restored-old-format-rejected.png') });
-  expect(errors).toEqual([]);
+test('independent slots preserve the valid record when another is corrupt and old imports are rejected', async ({ page }, info) => {
+  const errors=await open(page);await freeze(page);
+  await importScenario(page,'map-seed-1');
+  await importScenario(page,'map-seed-4',2);
+  const before=await records(page);expect(before['slot-1']?.payload).toContain('原版回归1');expect(before['slot-2']?.payload).toContain('原版回归4');
+  await page.evaluate(()=>new Promise<void>((resolve,reject)=>{const opening=indexedDB.open('virtual-life-bevy',2);opening.onerror=()=>reject(opening.error);opening.onsuccess=()=>{const db=opening.result,tx=db.transaction('saves','readwrite'),store=tx.objectStore('saves'),read=store.get('slot-1');read.onsuccess=()=>store.put({...read.result,checksum:'0'.repeat(64)});tx.oncomplete=()=>{db.close();resolve();};tx.onerror=()=>reject(tx.error);};}));
+  await saves(page);await control(page,'选择槽位 1');
+  expect((await diagnostic(page)).controls.find(c=>c.label==='读取选中槽位')?.enabled).toBe(false);
+  await control(page,'选择槽位 2');await control(page,'读取选中槽位');await ready(page);
+  expect((await diagnostic(page)).snapshot.player).toMatchObject({name:'原版回归4'});
+  expect((await records(page))['slot-2']).toEqual(before['slot-2']);
+  await saves(page);const picking=page.waitForEvent('filechooser');await control(page,'导入槽位 1');
+  await(await picking).setFiles({name:'old-client.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({...before['slot-2'],format:'virtual-life-save'}))});
+  await expect.poll(async()=>(await diagnostic(page)).notice).toContain('不支持的存档格式');
+  expect((await diagnostic(page)).snapshot.player).toMatchObject({name:'原版回归4'});
+  await page.screenshot({path:info.outputPath('independent-slots-corrupt-import.png')});expect(errors).toEqual([]);
 });
 
 test('cached menu and map reload offline without changing the saved player', async ({ page, context }, info) => {
   const failures:{url:string;failure:string|null}[]=[];
   page.on('requestfailed',request=>failures.push({url:request.url(),failure:request.failure()?.errorText??null}));
   const errors = await open(page); await freeze(page); await importScenario(page, 'map-seed-1');
-  await expect.poll(async () => (await records(page)).current?.payload).toContain('原版回归1');
+  await expect.poll(async () => (await records(page))['slot-1']?.payload).toContain('原版回归1');
   // Give the displayed map one original frame online so its decoration
   // resources are actually visited, then save that complete presentation.
   // Importing at frameMs=0 alone does not initialize these map animations.
   await page.evaluate(()=>window.__virtualLifeBevy!.input!({frameMs:16}));
   await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
-  await ready(page);await saves(page);await control(page,'保存当前进度');
+  await ready(page);await saves(page);await saveSelected(page);
   await expect.poll(async()=>(await diagnostic(page)).notice).toContain('进度已保存');
   await control(page,'返回游戏');await ready(page);
   const before=(await diagnostic(page)).snapshot;
@@ -111,7 +93,7 @@ test('cached menu and map reload offline without changing the saved player', asy
   // Reload starts a real clock in a fresh WASM instance. Freeze before loading
   // the cached snapshot, rather than advancing it into new resource requests.
   await freeze(page);
-  try{await control(page,'继续游戏');await ready(page);}finally{await info.attach('offline-network-failures',{body:JSON.stringify(failures,null,2),contentType:'application/json'});}
+  try{await control(page, '继续游戏'); await control(page, '读取选中槽位');await ready(page);}finally{await info.attach('offline-network-failures',{body:JSON.stringify(failures,null,2),contentType:'application/json'});}
   expect((await diagnostic(page)).snapshot).toEqual(before);
   expect((await diagnostic(page)).snapshot.player).toMatchObject({ name: '原版回归1' });
   expect((await diagnostic(page)).snapshot.mapId).toBe('park');
@@ -133,8 +115,10 @@ test('an uncached scene fails visibly offline and its retry loads the same scene
   // The save screen's original fonts must be cached while online; only the
   // imported game scene is meant to exercise an offline cache miss.
   await context.setOffline(true);
-  const picking = page.waitForEvent('filechooser'); await control(page, '导入存档');
+  const picking = page.waitForEvent('filechooser'); await control(page, '导入槽位 1');
   await (await picking).setFiles(scenario('gas'));
+  await expect.poll(async () => (await diagnostic(page)).notice).toContain('存档已导入');
+  await control(page, '读取选中槽位');
   await expect.poll(async () => (await diagnostic(page)).error).toBeTruthy();
   const failed = await diagnostic(page);
   expect(failed.snapshot.pending).toMatchObject({ kind: 'minigame', game: 'gas' });
@@ -188,10 +172,10 @@ test('destroying the actual Bevy GPU device preserves an exportable save and rel
     };
   });
   await open(page); await create(page); await freeze(page);
-  await saves(page); await control(page, '保存当前进度');
+  await saves(page); await saveSelected(page);
   await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
   await control(page, '返回游戏');
-  const before = (await records(page)).current!;
+  const before = (await records(page))['slot-1']!;
   const beforePayload=checkedSave(before);
   const beforeSnapshot=(await diagnostic(page)).snapshot;
   await expect.poll(() => page.evaluate(() => window.__qaGpuDevices?.length ?? 0)).toBeGreaterThan(0);
@@ -201,8 +185,8 @@ test('destroying the actual Bevy GPU device preserves an exportable save and rel
   });
   expect(loss.reason).toBe('destroyed');
   await expect(page.locator('#boot-status')).toHaveAttribute('role', 'alert');
-  await expect.poll(async () => (await records(page)).current?.savedAt).not.toBe(before.savedAt);
-  const saved = (await records(page)).current!;
+  expect((await records(page))['slot-1']).toEqual(before);
+  const saved = (await records(page))['slot-1']!;
   const savedPayload=checkedSave(saved);
   const{presentation:beforePresentation,...beforeDomain}=beforePayload;
   const{presentation:savedPresentation,...savedDomain}=savedPayload;
@@ -222,7 +206,7 @@ test('destroying the actual Bevy GPU device preserves an exportable save and rel
   await ready(page);
   await freeze(page);
   await expect.poll(() => page.evaluate(() => window.__qaGpuDevices?.length ?? 0)).toBeGreaterThan(0);
-  await control(page, '继续游戏'); await ready(page);
+  await control(page, '继续游戏'); await control(page, '读取选中槽位'); await ready(page);
   expect((await diagnostic(page)).snapshot).toEqual(beforeSnapshot);
 });
 
@@ -262,6 +246,7 @@ test('a real gesture resumes Bevy audio and opening the save screen pauses and r
   await expect.poll(() => audioEnergy(page), { timeout: 15_000 }).toBeLessThan(0.000001);
   await page.screenshot({ path: info.outputPath('bevy-audio-paused-in-saves.png') });
   await control(page, '返回游戏'); await ready(page);
+  await expect.poll(async () => (await diagnostic(page)).screen).toBe('Game');
   await expect.poll(() => audioEnergy(page), { timeout: 15_000 }).toBeGreaterThan(0.00001);
   expect(errors).toEqual([]);
 });

@@ -1,6 +1,12 @@
 //! FUN_00436b80's original fortune panel, text surface and selection controls.
 use super::*;
 const FIELD: &str = "_nativeFortune";
+// The core has already settled the turn, but the original result page still
+// belongs to the native call. Turn-end notices follow it, rather than cover it.
+pub(super) fn owns_result(snapshot: &Value, ui: &PresentationState) -> bool {
+    s(snapshot, "/nativeView/kind") != "fortune"
+        && ["settling", "result"].contains(&s(&ui.profile[FIELD], "/phase"))
+}
 fn choose(index: i32) -> Action {
     Action::Game(json!({"type":"chooseOption","index":index.max(0)}))
 }
@@ -610,5 +616,34 @@ mod tests {
                 ..
             }
         )));
+        let mut queued = restored;
+        super::super::events::accept(
+            &c,
+            &snap,
+            &snap,
+            &[json!({"type":"birthday","resource":"install/bmp/jm01.bmp"})],
+            &mut queued,
+        );
+        super::super::update_presentation(&c, &snap, &mut queued, 1000);
+        let queued: PresentationState =
+            serde_json::from_str(&serde_json::to_string(&queued).unwrap()).unwrap();
+        assert_eq!(
+            queued.runtime.sequence.as_ref().unwrap().cues[0].elapsed_ms,
+            0
+        );
+        let f = super::super::compose(&c, &snap, &queued);
+        let done = f
+            .controls
+            .iter()
+            .find(|control| control.id == "fortune-result-continue")
+            .unwrap()
+            .action
+            .clone();
+        assert!(!f.sprites.iter().any(|sprite| sprite.id == "map-notice"));
+        let mut queued = queued;
+        apply(&mut queued, &done);
+        super::super::update_presentation(&c, &snap, &mut queued, 1);
+        let f = super::super::compose(&c, &snap, &queued);
+        assert!(f.sprites.iter().any(|sprite| sprite.id == "map-notice"));
     }
 }

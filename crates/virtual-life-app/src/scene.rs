@@ -73,11 +73,20 @@ pub struct SceneSprite {
     pub z: i32,
     pub palette: Option<String>,
     pub color_scale: Option<([u8; 2], [f32; 3])>,
+    /// N1 background palette effects affect only entries 22..61.
+    #[serde(default)]
+    pub palette_effect: Option<PaletteEffect>,
     pub repeat: bool,
     /// Original GDI DIB-to-display-palette index mapping, if present.
     pub index_map: Vec<[u8; 2]>,
     /// Presentation-only clock, advanced at most once per visible Bevy frame.
     pub playback: Option<Playback>,
+}
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+pub struct PaletteEffect {
+    pub grayscale: bool,
+    pub subtract: u8,
+    pub ceiling: u8,
 }
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Playback {
@@ -139,9 +148,11 @@ pub enum UiAction {
     OpenSaves,
     Save,
     Load,
-    LoadPrevious,
-    Import,
-    Export,
+    SelectSave(usize),
+    Import(usize),
+    Export(usize),
+    ConfirmSave,
+    CancelSave,
     Options,
     MapOverview,
     Back,
@@ -151,6 +162,7 @@ pub enum UiAction {
     ConfirmAllocation,
     SetVolume(i32),
     EditName,
+    AdvancePresentation,
 }
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub enum Action {
@@ -249,6 +261,8 @@ pub enum Screen {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct PresentationState {
+    #[serde(skip)]
+    pub saves: SaveMenuState,
     pub screen: Screen,
     pub time_ms: u64,
     pub scene_ms: u64,
@@ -264,6 +278,7 @@ pub struct PresentationState {
 impl Default for PresentationState {
     fn default() -> Self {
         Self {
+            saves: SaveMenuState::default(),
             screen: Screen::Menu,
             time_ms: 0,
             scene_ms: 0,
@@ -275,6 +290,29 @@ impl Default for PresentationState {
             allocations: json!({"intelligence":0,"morality":0,"charm":0,"stamina":0}),
             volume: 50,
             runtime: PresentationRuntime::default(),
+        }
+    }
+}
+#[derive(Clone, Debug)]
+pub struct SaveMenuState {
+    pub parent_return: Screen,
+    pub selected: usize,
+    pub slots: Value,
+    pub ready: bool,
+    pub busy: bool,
+    pub confirm: bool,
+    pub can_save: bool,
+}
+impl Default for SaveMenuState {
+    fn default() -> Self {
+        Self {
+            parent_return: Screen::Menu,
+            selected: 1,
+            slots: Value::Null,
+            ready: false,
+            busy: false,
+            confirm: false,
+            can_save: false,
         }
     }
 }
@@ -301,6 +339,31 @@ pub struct PresentationRuntime {
     pub relationship_question: String,
     pub preload_key: String,
     pub preload_resources: Vec<String>,
+    #[serde(default)]
+    pub sequence: Option<NativeSequence>,
+    #[serde(default)]
+    pub background: BackgroundAnimationState,
+}
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+pub struct BackgroundAnimationState {
+    pub key: String,
+    pub frame: u32,
+    pub started: bool,
+}
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct NativeSequence {
+    pub snapshot: Value,
+    pub cues: std::collections::VecDeque<NativeCue>,
+}
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
+pub struct NativeCue {
+    pub kind: String,
+    pub scene: Value,
+    pub data: Value,
+    pub frame: u32,
+    pub elapsed_ms: u64,
+    pub started: bool,
+    pub serial: u64,
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct PatternAnimationState {

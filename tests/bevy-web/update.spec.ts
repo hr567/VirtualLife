@@ -6,7 +6,7 @@ import { createReadStream, readFileSync } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
-import { control, diagnostic, freeze, importScenario, open, ready } from './helpers';
+import { control, diagnostic, freeze, importScenario, open, ready, saveSelected } from './helpers';
 
 interface SaveRecord { format: string; version: number; contentId: string; payload: string; checksum: string; savedAt: string }
 interface WorkerState { scope: string | null; active: string | null; waiting: string | null; installing: string | null; caches: string[]; controller: boolean }
@@ -77,10 +77,10 @@ async function workerState(page: Page, scope: string): Promise<WorkerState> {
 }
 async function record(page: Page): Promise<SaveRecord | null> {
   return page.evaluate(() => new Promise((resolve, reject) => {
-    const opening = indexedDB.open('virtual-life-bevy', 1);
+    const opening = indexedDB.open('virtual-life-bevy', 2);
     opening.onerror = () => reject(opening.error);
     opening.onsuccess = () => {
-      const db = opening.result, transaction = db.transaction('saves'), request = transaction.objectStore('saves').get('current');
+      const db = opening.result, transaction = db.transaction('saves'), request = transaction.objectStore('saves').get('slot-1');
       request.onsuccess = () => resolve(request.result ?? null);
       request.onerror = () => reject(request.error);
       transaction.oncomplete = () => db.close();
@@ -91,7 +91,7 @@ async function saveCurrent(page: Page): Promise<void> {
   const previous = (await record(page))?.savedAt;
   await page.keyboard.press('F6');
   await expect.poll(async () => (await diagnostic(page)).screen).toBe('Saves');
-  await control(page, '保存当前进度');
+  await saveSelected(page);
   await expect.poll(async () => (await record(page))?.savedAt).not.toBe(previous);
   await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
   await page.keyboard.press('F6');
@@ -110,7 +110,7 @@ test('a real SW update waits for both old game pages to close and preserves disc
     await saveCurrent(page1);
 
     const page2 = await context.newPage();
-    const errors2 = await open(page2); await freeze(page2); await control(page2, '继续游戏'); await ready(page2);
+    const errors2 = await open(page2); await freeze(page2); await control(page2, '继续游戏'); await control(page2, '读取选中槽位'); await ready(page2);
     await expect.poll(async () => !!(await page2.evaluate(() => navigator.serviceWorker.controller))).toBe(true);
     await saveCurrent(page2);
     const before = (await diagnostic(page2)).snapshot;
@@ -176,7 +176,7 @@ test('a real SW update waits for both old game pages to close and preserves disc
     const current = await context.newPage();
     const errors3 = await open(current); await freeze(current);
     await expect.poll(async () => !!(await current.evaluate(() => navigator.serviceWorker.controller))).toBe(true);
-    await control(current, '继续游戏'); await ready(current);
+    await control(current, '继续游戏'); await control(current, '读取选中槽位'); await ready(current);
     expect((await diagnostic(current)).snapshot).toEqual(before);
     const final = await workerState(current, site.url);
     expect(final).toMatchObject({ active: 'activated', waiting: null, controller: true });

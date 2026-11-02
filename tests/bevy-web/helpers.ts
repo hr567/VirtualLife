@@ -9,13 +9,21 @@ declare global { interface Window { __virtualLifeBevy?: { readonly diagnostics: 
 export async function diagnostic(page: Page): Promise<Diagnostic> {
   return page.evaluate(() => window.__virtualLifeBevy?.diagnostics ?? { screen: 'Boot', loading: true, error: null, notice: '', controls: [], snapshot: {} });
 }
-export async function ready(page: Page): Promise<void> {
-  await expect.poll(async () => (await diagnostic(page))?.loading, { timeout: 90_000 }).toBe(false);
+export async function ready(page: Page, keepOpening = false): Promise<void> {
+  let dismissed = false;
+  await expect.poll(async () => {
+    const state=await diagnostic(page);
+    if (!keepOpening && !dismissed && state.screen==='Menu' && state.controls.length>0 && !state.controls.some(control=>control.label==='开始新游戏')) {
+      dismissed=true;await page.keyboard.press('Escape');return true;
+    }
+    return state.loading;
+  }, { timeout: 90_000 }).toBe(false);
   expect((await diagnostic(page)).error).toBeNull();
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
 }
 export async function control(page: Page, label: string): Promise<void> {
   await ready(page);
+  await expect.poll(async () => (await diagnostic(page)).controls.some(control => control.label === label && control.enabled), { message: 'Enabled Bevy control: '+label }).toBe(true);
   const selected = (await diagnostic(page)).controls.find(control => control.label === label && control.enabled);
   expect(selected, `Missing enabled Bevy control: ${label}`).toBeDefined();
   const canvas = await page.locator('#game-canvas').boundingBox();
@@ -32,6 +40,10 @@ export async function open(page: Page): Promise<string[]> {
   const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
   await page.goto('./');
   await expect.poll(async () => (await diagnostic(page))?.screen, { timeout: 90_000 }).toBe('Menu');
+  if ((await diagnostic(page)).controls.some(control=>control.id==='native-presentation-continue')) {
+    await page.keyboard.press('Escape');
+    await expect.poll(async()=>(await diagnostic(page)).controls.some(control=>control.label==='开始新游戏')).toBe(true);
+  }
   await ready(page);
   expect(await page.title()).toBe('虚拟人生');
   await expect(page.locator('#boot-status')).toBeHidden();
@@ -48,6 +60,9 @@ export async function create(page: Page): Promise<void> {
   await page.getByRole('textbox', { name: '角色姓名' }).fill('原版回归');
   await control(page, '确定');
   await expect.poll(async () => (await diagnostic(page)).screen).toBe('Game'); await ready(page);
+  if ((await diagnostic(page)).controls.some(control=>control.label==='跳过开场影片')) {
+    await page.keyboard.press('Escape'); await ready(page);
+  }
 }
 export function scenario(name: string): string {
   const directory = 'output/bevy-scenarios';
@@ -56,12 +71,22 @@ export function scenario(name: string): string {
   if (!file) throw new Error(`Missing fresh Bevy test scenario: ${name}`);
   return path.resolve(directory, file);
 }
-export async function importScenario(page: Page, name: string): Promise<void> {
-  await page.keyboard.press('F6');
+export async function saveSelected(page:Page):Promise<void> {
+  await control(page,'保存选中槽位');
+  await expect.poll(async()=>{const state=await diagnostic(page);return state.controls.some(c=>c.label==='确定覆盖' && c.enabled) || state.notice.includes('进度已保存');}).toBe(true);
+  if((await diagnostic(page)).controls.some(c=>c.label==='确定覆盖' && c.enabled))await control(page,'确定覆盖');
+  await expect.poll(async()=>(await diagnostic(page)).notice).toContain('进度已保存');
+}
+export async function importScenario(page: Page, name: string, slot=1): Promise<void> {
+  if((await diagnostic(page)).screen!=='Saves')await page.keyboard.press('F6');
   await expect.poll(async () => (await diagnostic(page)).screen).toBe('Saves');
   const picking = page.waitForEvent('filechooser');
-  await control(page, '导入存档');
+  await control(page, '导入槽位 '+slot);
   await (await picking).setFiles(scenario(name));
+  await expect.poll(async()=>{const state=await diagnostic(page);return state.controls.some(c=>c.label==='确定覆盖' && c.enabled) || state.notice.includes('存档已导入');}).toBe(true);
+  if((await diagnostic(page)).controls.some(c=>c.label==='确定覆盖' && c.enabled))await control(page,'确定覆盖');
+  await expect.poll(async()=>(await diagnostic(page)).notice).toContain('存档已导入');
+  await control(page,'读取选中槽位');
   await expect.poll(async () => (await diagnostic(page)).screen, { timeout: 30_000 }).toBe('Game');
   await ready(page);
 }

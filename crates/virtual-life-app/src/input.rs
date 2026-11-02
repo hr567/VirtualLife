@@ -282,12 +282,18 @@ mod web {
     }
     fn scope(host: &GameHost) -> String {
         format!(
-            "{:?}:{}:{}:{}:error={}",
+            "{:?}:{}:{}:{}:error={}:cue={:?}",
             host.ui.screen,
             s(&host.snapshot, "/pending/kind"),
             game(host),
             s(&host.snapshot, "/pending/state/phase"),
-            host.error.is_some()
+            host.error.is_some(),
+            host.ui
+                .runtime
+                .sequence
+                .as_ref()
+                .and_then(|q| q.cues.front())
+                .map(|cue| cue.serial)
         )
     }
     fn editing(host: &GameHost) -> bool {
@@ -301,6 +307,7 @@ mod web {
 
     fn held_game(host: &GameHost) -> bool {
         host.ui.screen == Screen::Game
+            && !crate::presentation::sequence_active(&host.ui)
             && ["fist", "firebee"].contains(&game(host))
             && s(&host.snapshot, "/pending/state/phase") == "playing"
     }
@@ -428,6 +435,19 @@ mod web {
         let names = key_names(key);
         let source = Source::Key(names[0].clone());
         if !down {
+            if !host.hidden
+                && names.iter().any(|key| key == "Escape")
+                && host
+                    .ui
+                    .runtime
+                    .sequence
+                    .as_ref()
+                    .and_then(|q| q.cues.front())
+                    .is_some_and(|cue| cue.kind == "prologue")
+            {
+                emit(actions, Action::Ui(UiAction::AdvancePresentation));
+                return;
+            }
             if let Some(capture) = inputs.captures.remove(&source) {
                 if capture.held.is_none() {
                     if let Some(action) = capture.control.on_release {
@@ -446,6 +466,20 @@ mod web {
             return;
         }
         if !repeat {
+            if names.iter().any(|key| key == "Escape")
+                && host
+                    .ui
+                    .runtime
+                    .sequence
+                    .as_ref()
+                    .and_then(|q| q.cues.front())
+                    .is_some_and(|cue| cue.kind == "opening")
+            {
+                // The original startup uses GetAsyncKeyState. Allow its skip
+                // while the large movie's first browser frame is downloading.
+                emit(actions, Action::Ui(UiAction::AdvancePresentation));
+                return;
+            }
             if names.iter().any(|key| key == "F6") {
                 if host.ui.runtime.motion.is_none() {
                     release_capture_edges(host, inputs);
@@ -585,6 +619,26 @@ mod web {
         actions: &mut Actions,
     ) {
         let mut target = hit(scene, point);
+        if !mouse
+            && host
+                .ui
+                .runtime
+                .sequence
+                .as_ref()
+                .and_then(|q| q.cues.front())
+                .is_some_and(|cue| ["opening", "prologue"].contains(&cue.kind.as_str()))
+        {
+            // Touch has no Escape key; tapping the movie provides the same
+            // skip action without changing the original desktop hitboxes.
+            target = scene
+                .controls
+                .iter()
+                .find(|c| c.id == "native-presentation-continue")
+                .cloned();
+            if let Some(control) = target.as_mut() {
+                control.on_press = Some(control.action.clone());
+            }
+        }
         if game(host) == "hammer" && s(&host.snapshot, "/pending/state/phase") == "playing" {
             if let Some(control) = target.as_mut() {
                 let action = hammer_action(control, point, mouse);

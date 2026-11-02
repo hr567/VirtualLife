@@ -421,6 +421,9 @@ pub(super) fn options(f: &mut SceneFrame, c: &SceneContent<'_>, ui: &Presentatio
     } else {
         r
     };
+    for back in a(selected, "/back") {
+        f.required_resources.push(s(back, "/resource").into());
+    }
     image(f, "options-background", &selected["background"], 0);
     f.palette = selected["background"]["resource"]
         .as_str()
@@ -555,42 +558,245 @@ pub(super) fn options(f: &mut SceneFrame, c: &SceneContent<'_>, ui: &Presentatio
         f.requests.push(SceneRequest::CursorHidden(true));
     }
 }
-pub(super) fn saves(f: &mut SceneFrame, _ui: &PresentationState) {
-    sprite(f, "save-background", "install/bmp/pm0201.bmp", 0, 0, 0);
+fn save_button(
+    f: &mut SceneFrame,
+    ui: &PresentationState,
+    id: &str,
+    label: &str,
+    bounds: Rect,
+    action: UiAction,
+    enabled: bool,
+) {
+    let color = if !enabled {
+        [35, 40, 54, 220]
+    } else if ui.pressed.as_deref() == Some(id) {
+        [46, 78, 115, 255]
+    } else if ui.hover.as_deref() == Some(id) {
+        [82, 109, 140, 255]
+    } else {
+        [48, 66, 92, 255]
+    };
+    f.fills.push(SceneFill {
+        id: format!("{id}-background"),
+        bounds,
+        color,
+        z: 910,
+        ..Default::default()
+    });
     text(
         f,
-        "save-title",
-        "存档管理",
-        Rect::new(200, 100, 240, 32),
-        [255; 4],
+        &format!("{id}-text"),
+        label,
+        Rect::new(
+            bounds.x + 6,
+            bounds.y + 4,
+            bounds.width.saturating_sub(8),
+            bounds.height,
+        ),
+        if enabled {
+            [255; 4]
+        } else {
+            [135, 140, 150, 255]
+        },
     );
-    for (i, (label, action)) in [
-        ("保存当前进度", UiAction::Save),
-        ("读取当前进度", UiAction::Load),
-        ("恢复上一份备份", UiAction::LoadPrevious),
-        ("导入存档", UiAction::Import),
-        ("导出存档", UiAction::Export),
-        ("返回游戏", UiAction::Back),
-    ]
-    .into_iter()
-    .enumerate()
-    {
-        let y = 155 + i as i32 * 42;
+    f.texts.last_mut().unwrap().z = 920;
+    control(f, id, label, bounds, Action::Ui(action), &[]);
+    f.controls.last_mut().unwrap().enabled = enabled;
+}
+
+pub(super) fn saves(f: &mut SceneFrame, c: &SceneContent<'_>, ui: &PresentationState) {
+    f.requests.push(SceneRequest::CursorHidden(false));
+    let native = &c.rules["optionsRendering"]["save"];
+    // Both states must be ready before input: loading on the first hover can
+    // otherwise swallow the press/release that should leave this overlay.
+    for back in a(native, "/back") {
+        f.required_resources.push(s(back, "/resource").into());
+    }
+    image(f, "save-background", &native["background"], 0);
+    f.palette = native["background"]["resource"].as_str().map(str::to_owned);
+    let menu = &ui.saves;
+    let available = menu.ready && !menu.busy && !menu.confirm;
+    for slot in 0..9 {
+        let y = if slot == 0 {
+            37
+        } else {
+            71 + (slot as i32 - 1) * 36
+        };
+        let bounds = Rect::new(144, y, 305, 25);
+        if slot == 0 || slot == menu.selected {
+            f.fills.push(SceneFill {
+                id: format!("save-slot-{slot}-highlight"),
+                bounds,
+                color: if slot == menu.selected {
+                    [49, 86, 125, 245]
+                } else {
+                    [42, 48, 64, 240]
+                },
+                z: 1,
+                ..Default::default()
+            });
+        }
+        let record = &menu.slots[slot];
+        let description = if !menu.ready {
+            "读取中".to_owned()
+        } else if record["occupied"] != true {
+            "空".to_owned()
+        } else if record["valid"] != true {
+            "损坏/版本不符".to_owned()
+        } else {
+            s(record, "/name")
+                .chars()
+                .take(if slot == 0 { 4 } else { 8 })
+                .collect()
+        };
+        let prefix = if slot == 0 {
+            "0 自动".to_owned()
+        } else {
+            format!("{slot}")
+        };
         text(
             f,
-            &format!("save-text-{i}"),
-            label,
-            Rect::new(220, y, 200, 32),
+            &format!("save-slot-{slot}-text"),
+            format!("{prefix} · {description}"),
+            Rect::new(148, y + 4, 188, 20),
             [255; 4],
         );
+        f.texts.last_mut().unwrap().clip = Some(Rect::new(148, y, 188, 25));
         control(
             f,
-            &format!("save-{i}"),
-            label,
-            Rect::new(200, y, 240, 32),
-            Action::Ui(action),
+            &format!("save-slot-{slot}"),
+            &format!("选择槽位 {slot}"),
+            Rect::new(144, y, 192, 25),
+            Action::Ui(UiAction::SelectSave(slot)),
             &[],
         );
+        f.controls.last_mut().unwrap().enabled = available;
+        for (id, label, x, action, enabled) in [
+            (
+                format!("save-import-{slot}"),
+                "导入",
+                342,
+                UiAction::Import(slot),
+                available,
+            ),
+            (
+                format!("save-export-{slot}"),
+                "导出",
+                394,
+                UiAction::Export(slot),
+                available && record["valid"] == true,
+            ),
+        ] {
+            save_button(f, ui, &id, label, Rect::new(x, y, 48, 25), action, enabled);
+            f.controls.last_mut().unwrap().label = format!("{label}槽位 {slot}");
+        }
+    }
+    let record = &menu.slots[menu.selected];
+    let details = if menu.busy {
+        "正在处理存档…".into()
+    } else if let Some(time) = record["savedAt"].as_str() {
+        format!(
+            "保存时间 {}",
+            time.replace('T', " ").chars().take(24).collect::<String>()
+        )
+    } else {
+        format!("已选择槽位 {}", menu.selected)
+    };
+    text(
+        f,
+        "save-details",
+        details,
+        Rect::new(144, 350, 350, 18),
+        [255; 4],
+    );
+    save_button(
+        f,
+        ui,
+        "save-selected",
+        "保存选中槽位",
+        Rect::new(144, 374, 144, 28),
+        UiAction::Save,
+        available && menu.selected > 0 && menu.can_save,
+    );
+    save_button(
+        f,
+        ui,
+        "load-selected",
+        "读取选中槽位",
+        Rect::new(302, 374, 144, 28),
+        UiAction::Load,
+        available && record["valid"] == true,
+    );
+    save_button(
+        f,
+        ui,
+        "save-refresh",
+        "刷新列表",
+        Rect::new(144, 408, 104, 25),
+        UiAction::OpenSaves,
+        !menu.busy && !menu.confirm,
+    );
+    let hover = usize::from(ui.hover.as_deref() == Some("save-back"));
+    let mut back = native["back"][hover].clone();
+    back["frame"] = json!(ui.runtime.options_frames[hover]);
+    animation(f, "save-back-icon", &back, 4);
+    control(
+        f,
+        "save-back",
+        "返回游戏",
+        Rect::new(
+            n(&back, "/x"),
+            n(&back, "/y"),
+            n(&back, "/width") as u32,
+            n(&back, "/height") as u32,
+        ),
+        Action::Ui(UiAction::Back),
+        &[],
+    );
+    f.controls.last_mut().unwrap().enabled = !menu.confirm;
+    f.controls.last_mut().unwrap().keys.push("Escape".into());
+    if menu.confirm {
+        for control in &mut f.controls {
+            control.enabled = false;
+        }
+        f.fills.push(SceneFill {
+            id: "save-confirm-panel".into(),
+            bounds: Rect::new(138, 170, 330, 140),
+            color: [18, 28, 46, 255],
+            z: 11000,
+            ..Default::default()
+        });
+        text(
+            f,
+            "save-confirm-question",
+            format!("覆盖槽位 {} 的已有存档？", menu.selected),
+            Rect::new(158, 192, 300, 24),
+            [255; 4],
+        );
+        f.texts.last_mut().unwrap().z = 11001;
+        for (id, label, x, action, key) in [
+            (
+                "save-confirm-yes",
+                "确定覆盖",
+                170,
+                UiAction::ConfirmSave,
+                "Enter",
+            ),
+            (
+                "save-confirm-no",
+                "取消",
+                324,
+                UiAction::CancelSave,
+                "Escape",
+            ),
+        ] {
+            save_button(f, ui, id, label, Rect::new(x, 254, 116, 32), action, true);
+            f.fills.last_mut().unwrap().z = 11001;
+            f.texts.last_mut().unwrap().z = 11002;
+            let control = f.controls.last_mut().unwrap();
+            control.z = 11003;
+            control.keys.push(key.into());
+        }
     }
 }
 

@@ -373,20 +373,7 @@ pub(super) fn event(
         }
     }
     sprite(f, "event-frame", "install/bmp/frame.bmp", 0, 0, 1);
-    let background = c.resolve(s(scene, "/backgroundResource"));
-    if !background.is_empty() {
-        let media = c.media(&background);
-        let framed = n(&media, "/width") == 500 && n(&media, "/height") == 268;
-        let index = sprite(
-            f,
-            "event-background",
-            background,
-            if framed { 70 } else { 0 },
-            if framed { 31 } else { 0 },
-            2,
-        );
-        f.sprites[index].transparent = Transparency::Opaque;
-    }
+    super::events::background(f, c, scene, ui);
     for (key, x) in [("leftPortraitResource", 70), ("rightPortraitResource", 482)] {
         let path = s(scene, &format!("/{key}"));
         if !path.is_empty() {
@@ -517,7 +504,7 @@ pub(super) fn event(
             f,
             "event-continue",
             "继续对话",
-            Rect::new(166, 304, 308, 112),
+            Rect::new(0, 0, 640, 480),
             Action::Game(json!({"type":"advanceEvent"})),
             &["Enter", "Space"],
         );

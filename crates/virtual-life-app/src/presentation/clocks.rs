@@ -21,7 +21,7 @@ pub fn update_presentation(
         ui.runtime.overview_frame = 0;
         ui.runtime.overview_color = 0;
     }
-    if ui.screen == Screen::Options {
+    if matches!(ui.screen, Screen::Options | Screen::Saves) {
         ui.runtime.options_elapsed += u64::from(elapsed_ms);
         if ui.runtime.options_elapsed > 114 {
             ui.runtime.options_elapsed = 0;
@@ -44,42 +44,12 @@ pub fn update_presentation(
         }
     }
     if ui.screen == Screen::Game && ["dialogue", "choice"].contains(&s(snapshot, "/pending/kind")) {
-        let scene = &snapshot["scene"];
-        let pattern = c.resolve(s(scene, "/patternResource"));
-        let key = format!(
-            "{pattern}:{}:{}",
-            n(scene, "/patternScrollMode"),
-            s(scene, "/backgroundResource")
-        );
-        let p = &mut ui.runtime.pattern;
-        if p.key != key {
-            *p = PatternAnimationState {
-                key,
-                ..Default::default()
-            };
-        } else {
-            p.elapsed += u64::from(elapsed_ms);
-            if p.elapsed > 250 {
-                p.elapsed = 0;
-                let mode = n(scene, "/patternScrollMode");
-                if mode == 3 || mode == 4 {
-                    p.x -= if mode == 4 { p.direction } else { 1 };
-                }
-                if mode == 1 || mode == 4 {
-                    p.y += 1
-                } else if mode == 2 || mode == 3 {
-                    p.y -= 1
-                }
-                p.x %= 80;
-                p.y %= 80;
-                p.counter = (p.counter + 1) % 3;
-                if p.counter == 0 && mode == 4 {
-                    p.direction *= -1;
-                }
-            }
-        }
+        super::events::advance_scene(&snapshot["scene"], ui, elapsed_ms);
     } else {
-        ui.runtime.pattern = PatternAnimationState::default();
+        ui.runtime.pattern = PatternAnimationState {
+            direction: ui.runtime.pattern.direction,
+            ..Default::default()
+        };
     }
     let round = n(snapshot, "/pending/state/round");
     if s(snapshot, "/pending/kind") == "relationship"
@@ -294,6 +264,7 @@ pub fn accept_response(
     events: &[Value],
     ui: &mut PresentationState,
 ) {
+    super::events::accept(c, previous, next, events, ui);
     if let Some(answer) = events
         .iter()
         .find(|event| s(event, "/type") == "examAnswer")

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { bmp, png, blit, differingPixels, type Pixels } from './images';
-import { diagnostic, ready, control, open, freeze, create, importScenario } from './helpers';
+import { diagnostic, ready, control, open, freeze, create, importScenario, saveSelected } from './helpers';
 
 const manifest = JSON.parse(readFileSync('assets/manifest.json', 'utf8'));
 function original(resource: string): Pixels {
@@ -61,14 +61,14 @@ test('Chinese input, original map, fresh save and reload work through Bevy contr
   expect((await diagnostic(page)).snapshot.player).toMatchObject({ name: '原版回归' });
   await page.screenshot({ path: info.outputPath('original-map.png') });
   await page.keyboard.press('F6'); await expect.poll(async () => (await diagnostic(page)).screen).toBe('Saves');
-  await control(page, '保存当前进度'); await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
+  await saveSelected(page); await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
   const stored = await page.evaluate(() => new Promise<unknown>((resolve, reject) => {
-    const opening = indexedDB.open('virtual-life-bevy', 1);
-    opening.onsuccess = () => { const db = opening.result, request = db.transaction('saves').objectStore('saves').get('current'); request.onsuccess = () => { db.close(); resolve(request.result); }; request.onerror = () => reject(request.error); };
+    const opening = indexedDB.open('virtual-life-bevy', 2);
+    opening.onsuccess = () => { const db = opening.result, request = db.transaction('saves').objectStore('saves').get('slot-1'); request.onsuccess = () => { db.close(); resolve(request.result); }; request.onerror = () => reject(request.error); };
     opening.onerror = () => reject(opening.error);
   }));
   expect(stored).toMatchObject({ format: 'virtual-life-bevy-save', version: 1 });
-  await page.reload(); await ready(page); await control(page, '继续游戏'); await ready(page);
+  await page.reload(); await ready(page); await control(page, '继续游戏'); await control(page, '读取选中槽位'); await ready(page);
   expect((await diagnostic(page)).snapshot.player).toMatchObject({ name: '原版回归' }); expect(errors).toEqual([]);
 });
 
@@ -82,9 +82,9 @@ for (const name of ['gas', 'fist', 'fire', 'firebee', 'spirit-slots', 'relations
       expect(state.snapshot.pending).toMatchObject({ kind: 'battle', game: 'ordinary', state: { showOpening: true } });
     } else expect(state.controls.some(control => control.enabled)).toBe(true);
     await page.screenshot({ path: info.outputPath(`${name}.png`) });
-    await page.keyboard.press('F6'); await control(page, '保存当前进度');
+    await page.keyboard.press('F6'); await saveSelected(page);
     await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
-    await page.reload(); await ready(page); await freeze(page); await control(page, '继续游戏'); await ready(page);
+    await page.reload(); await ready(page); await freeze(page); await control(page, '继续游戏'); await control(page, '读取选中槽位'); await ready(page);
     expect((await diagnostic(page)).snapshot.pending).toEqual(state.snapshot.pending); expect(errors).toEqual([]);
   });
 }
@@ -120,11 +120,9 @@ test('the previous website database is neither loaded nor exported', async ({ pa
   const downloads: string[] = [];
   page.on('download', download => downloads.push(download.suggestedFilename()));
   const errors = await open(page); await control(page, '继续游戏');
-  await expect.poll(async () => (await diagnostic(page)).notice).toContain('尚无本版本存档');
-  await page.keyboard.press('F6');
+
   await expect.poll(async () => (await diagnostic(page)).screen).toBe('Saves');
-  await control(page, '导出存档');
-  await expect.poll(async () => (await diagnostic(page)).notice).toContain('还没有可以导出的存档');
+  await expect.poll(async () => (await diagnostic(page)).controls.find(c=>c.label==='导出槽位 1')?.enabled).toBe(false);
   expect(await page.evaluate(() => (window as unknown as { __legacyDatabaseAudit: unknown }).__legacyDatabaseAudit)).toEqual({ opens: [], deletions: [] });
   expect(downloads).toEqual([]);
   // This page has no application init script, so it can independently verify

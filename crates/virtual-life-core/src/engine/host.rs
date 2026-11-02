@@ -2,6 +2,64 @@
 use super::*;
 
 impl GameSession {
+    // 0040a190: zero preserves the current portrait. Only the left portrait
+    // resolves 998..1006 through the player/career table at 00477258.
+    fn event_portrait(&self, id: i32, left: bool) -> Option<String> {
+        if left && (998..=1006).contains(&id) {
+            let player = self.state.legacy_player.as_ref()?;
+            let life = player.life();
+            let index = i32::from(player.i16(0x4b6498).ok()?) * 31
+                + i32::from(life.stage)
+                + i32::from(life.profession.max(0));
+            // Both original 62-entry tables contain identical file names;
+            // the HUD table uses face/, while N1 loads bmp/.
+            let path = self.rules.as_ref()?["characters"]["portraits"]
+                .get(usize::try_from(index).ok()?)?
+                .as_str()?;
+            let mut name = path.rsplit('/').next()?.as_bytes().to_vec();
+            if id > 1000 {
+                // The original adjusts byte 9 of "bmp\\umf02a.bmp".
+                *name.get_mut(5)? = name[5].wrapping_add((id - 1001) as u8);
+            }
+            return Some(format!("install/bmp/{}", String::from_utf8(name).ok()?));
+        }
+        self.program.as_ref()?.portrait_resource(id)
+    }
+
+    fn update_event_portraits(&mut self, left: i32, right: i32) {
+        for (id, is_left, key) in [(left, true, "left"), (right, false, "right")] {
+            if id != 0 {
+                let resource = self.event_portrait(id, is_left);
+                self.state.scene[format!("{key}PortraitId")] = json!(id);
+                self.state.scene[format!("{key}PortraitResource")] = json!(resource);
+            }
+        }
+    }
+
+    pub(super) fn event_scene_snapshot(&self) -> Value {
+        let mut scene = self.state.scene.clone();
+        if let Some(pending) = self
+            .state
+            .pending
+            .as_ref()
+            .filter(|v| v["kind"] == "dialogue")
+        {
+            // Previously saved Bevy dialogues retain the actual N1 portrait
+            // arguments. Repair their read-only projection without rewriting
+            // the saved state, checksum or zero/preserve semantics.
+            for (key, left) in [("left", true), ("right", false)] {
+                if let Some(id) = pending[format!("{key}PortraitId")]
+                    .as_i64()
+                    .filter(|id| *id != 0)
+                {
+                    scene[format!("{key}PortraitId")] = json!(id);
+                    scene[format!("{key}PortraitResource")] =
+                        json!(self.event_portrait(id as i32, left));
+                }
+            }
+        }
+        scene
+    }
     pub(super) fn refresh_host_activity(&mut self) {
         match self.state.host_activity.as_ref() {
             Some(HostActivity::StatShop { shop }) => {
@@ -856,22 +914,29 @@ impl GameSession {
         for effect in batch.effects {
             events.push(serde_json::to_value(&effect).unwrap());
             match effect {
-                VmEffect::Pattern { resource_id, .. } => {
+                VmEffect::Pattern {
+                    resource_id,
+                    scroll_mode,
+                    ..
+                } => {
                     self.state.scene["patternResource"] = json!(resource_id);
+                    self.state.scene["patternScrollMode"] = json!(scroll_mode);
+                    self.state.scene["patternSerial"] =
+                        json!(self.state.scene["patternSerial"].as_u64().unwrap_or(0) + 1);
                     self.state.scene["backgroundResource"] = Value::Null;
                 }
-                VmEffect::Background { resource_id, .. } => {
+                VmEffect::Background {
+                    resource_id, mode, ..
+                } => {
                     self.state.scene["backgroundResource"] = json!(resource_id);
+                    self.state.scene["backgroundMode"] = json!(mode);
+                    self.state.scene["backgroundSerial"] =
+                        json!(self.state.scene["backgroundSerial"].as_u64().unwrap_or(0) + 1);
                 }
                 VmEffect::Portraits {
                     left_id, right_id, ..
                 } => {
-                    self.state.scene["leftPortraitId"] = json!(left_id);
-                    self.state.scene["rightPortraitId"] = json!(right_id);
-                    self.state.scene["leftPortraitResource"] =
-                        json!(self.program.as_ref().unwrap().portrait_resource(left_id));
-                    self.state.scene["rightPortraitResource"] =
-                        json!(self.program.as_ref().unwrap().portrait_resource(right_id));
+                    self.update_event_portraits(left_id, right_id);
                 }
                 VmEffect::Dialogue {
                     dialogue_id,
@@ -879,6 +944,7 @@ impl GameSession {
                     left_id,
                     right_id,
                 } => {
+                    self.update_event_portraits(left_id, right_id);
                     let speaker = content.speaker.map(|speaker| match speaker {
                         DialogueSpeaker::Player => self
                             .state
@@ -893,7 +959,7 @@ impl GameSession {
                     );
                     self.state.message = "".into();
                 }
-                VmEffect::ClearPortraits { left, right } => {
+                VmEffect::ClearPortraits { left, right, .. } => {
                     if left {
                         self.state.scene["leftPortraitResource"] = Value::Null;
                     }
@@ -1086,6 +1152,15 @@ impl GameSession {
                 }
                 VmEffect::Finished => {}
             }
+            // Preserve intermediate graphic states for the original blocking
+            // transitions, even when several N1 instructions share one batch.
+            if let Some(event) = events.last_mut() {
+                if ["pattern", "background", "portraits", "clearPortraits"]
+                    .contains(&event["type"].as_str().unwrap_or(""))
+                {
+                    event["scene"] = self.state.scene.clone();
+                }
+            }
         }
         self.sync_player();
         if batch.finished {
@@ -1249,6 +1324,13 @@ impl GameSession {
                     .find(|item| item["id"].as_i64() == Some(i64::from(stage)))
             })
             .and_then(|item| item["stageTurns"].as_i64());
+        if stage == 6 {
+            if let Some(remaining) = limit.map(|limit| limit - i64::from(outcome.stage_turn)) {
+                if remaining == 10 || remaining == 3 {
+                    events.push(json!({"type":"lifeNotice","index":if remaining==10 {0}else{1}}));
+                }
+            }
+        }
         if (2..=4).contains(&stage)
             && limit.is_some_and(|limit| i64::from(outcome.stage_turn) == limit / 2)
         {

@@ -1,7 +1,7 @@
 // Real pointer/keyboard input; frame-time input only controls the original clock.
 import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { control, diagnostic, freeze, importScenario, open, ready, scenario } from './helpers';
+import { control, diagnostic, freeze, importScenario, open, ready, scenario, saveSelected } from './helpers';
 
 interface RelationshipSnapshot {
   lastSeq: number;
@@ -22,7 +22,7 @@ async function move(page: Page, x: number, y: number): Promise<void> {
 }
 async function stored(page: Page, store: 'settings' | 'saves', key: string): Promise<unknown> {
   return page.evaluate(({ store, key }) => new Promise((resolve, reject) => {
-    const opening = indexedDB.open('virtual-life-bevy', 1);
+    const opening = indexedDB.open('virtual-life-bevy', 2);
     opening.onerror = () => reject(opening.error);
     opening.onsuccess = () => {
       const db = opening.result, reading = db.transaction(store).objectStore(store).get(key);
@@ -102,13 +102,13 @@ test('relationship answers keep click selection through save and accept original
   expect(choice).toBeDefined();
   await control(page, choice!.label);
   expect(await relationship(page)).toEqual(first);
-  await page.keyboard.press('F6'); await control(page, '保存当前进度');
+  await page.keyboard.press('F6'); await saveSelected(page);
   await expect.poll(async () => (await diagnostic(page)).notice).toContain('进度已保存');
-  const record = await stored(page, 'saves', 'current') as { payload: string };
+  const record = await stored(page, 'saves', 'slot-1') as { payload: string };
   expect(JSON.parse(record.payload).presentation.profile._relationshipAnswer).toBe(1);
   // One hovered frame and selectOffer each draw two original answer positions.
   expect(JSON.parse(record.payload).state.rng.draws).toBe(initialRngDraws + 4);
-  await page.reload(); await ready(page); await freeze(page); await control(page, '继续游戏'); await ready(page);
+  await page.reload(); await ready(page); await freeze(page); await control(page, '继续游戏'); await control(page, '读取选中槽位'); await ready(page);
   expect(await relationship(page)).toEqual(first);
   await page.screenshot({ path: info.outputPath('relationship-selection-restored.png') });
   const selected = (await diagnostic(page)).controls.find(control => control.id === 'relationship-answer-1');

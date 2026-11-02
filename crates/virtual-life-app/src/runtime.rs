@@ -8,6 +8,8 @@ use bevy::prelude::*;
 use serde_json::{Value, json};
 use std::collections::{HashSet, VecDeque};
 use virtual_life_core::{GameCommand, GameResponse, GameSession};
+#[path = "saves.rs"]
+mod saves;
 
 #[derive(Resource, Default)]
 pub struct Actions(pub VecDeque<Action>);
@@ -28,6 +30,7 @@ fn clean_restored_input(ui: &mut PresentationState) {
             "_uiSoundClickSerial",
             "_uiSoundHover",
             "_uiSoundPressed",
+            "_diceChoices",
         ] {
             profile.remove(key);
         }
@@ -52,6 +55,7 @@ fn decode_save(payload: &str) -> Result<(String, Option<PresentationState>), Str
                 .map_err(|error| format!("存档中的场景状态无效：{error}"))?;
             if !ui.profile.is_object()
                 || !ui.allocations.is_object()
+                || !presentation::valid_sequence(&ui)
                 || ui.runtime.motion.as_ref().is_some_and(|motion| {
                     motion.frames.len() > 2048 || motion.cursor > motion.frames.len()
                 })
@@ -84,7 +88,11 @@ pub struct GameHost {
     discard_next_frame: bool,
     last_real_ms: Option<u128>,
     next_request: u32,
-    restore_request: Option<u32>,
+    storage_request: Option<(u32, usize)>,
+    pending_write: Option<saves::PendingWrite>,
+    pending_roll: Option<(u32, Value)>,
+    ready_roll: Option<Value>,
+    autosave_warning: bool,
     init_sent: bool,
     video_request: Option<(String, u64)>,
     video_resource: Option<String>,
@@ -111,7 +119,11 @@ impl Default for GameHost {
             discard_next_frame: false,
             last_real_ms: None,
             next_request: 1,
-            restore_request: None,
+            storage_request: None,
+            pending_write: None,
+            pending_roll: None,
+            ready_roll: None,
+            autosave_warning: false,
             init_sent: false,
             video_request: None,
             video_resource: None,
@@ -123,9 +135,6 @@ impl GameHost {
     pub fn request(&mut self, requests: &mut PlatformRequests, op: &str, payload: Value) -> u32 {
         let id = self.next_request;
         self.next_request = self.next_request.wrapping_add(1).max(1);
-        if matches!(op, "load" | "import") {
-            self.restore_request = Some(id);
-        }
         requests.0.push_back(PlatformRequest {
             id,
             operation: op.into(),
@@ -137,7 +146,10 @@ impl GameHost {
         self.hidden
             || self.loading
             || self.error.is_some()
+            || self.pending_roll.is_some()
+            || self.ready_roll.is_some()
             || self.ui.screen != Screen::Game
+                && !(self.ui.screen == Screen::Menu && presentation::sequence_active(&self.ui))
             || self.test_clock && self.frame_ms == 0
     }
     fn response(&mut self, response: GameResponse) {
@@ -182,16 +194,6 @@ impl GameHost {
             Err(error) => self.error = Some(format!("游戏输入无效：{error}")),
         }
     }
-    pub(crate) fn save(&mut self, requests: &mut PlatformRequests) {
-        if let Some(session) = &self.session {
-            if self.snapshot["player"].is_null() {
-                self.notice = "尚未开始新的人生。".into();
-                return;
-            }
-            let payload = json!({"payload":encode_save(session,&self.ui),"contentId":session.content_identity()});
-            self.request(requests, "save", payload);
-        }
-    }
     fn set_screen(&mut self, screen: Screen) {
         if self.ui.screen != screen {
             self.ui.screen = screen;
@@ -200,7 +202,12 @@ impl GameHost {
             self.ui.pressed = None;
             self.generation = self.generation.wrapping_add(1);
             self.video_request = None;
-            self.restore_request = None;
+            self.storage_request = None;
+            self.pending_write = None;
+            self.pending_roll = None;
+            self.ready_roll = None;
+            self.ui.saves.busy = false;
+            self.ui.saves.confirm = false;
         }
     }
 }
@@ -250,14 +257,8 @@ pub fn receive_platform(
         bytes,
     }) = events.0.pop_front()
     {
-        if matches!(operation.as_str(), "load" | "import") {
-            // A file chooser or storage read can finish after the player has
-            // left Saves or requested another slot. Only the current request
-            // may replace the Bevy-owned session.
-            if host.restore_request != Some(id) {
-                continue;
-            }
-            host.restore_request = None;
+        if host.receive_storage(id, &operation, &value, error.as_deref(), &mut requests) {
+            continue;
         }
         if let Some(error) = error {
             if ["asset", "videoFrame"].contains(&operation.as_str())
@@ -314,6 +315,12 @@ pub fn receive_platform(
                         host.error = None;
                         host.notice.clear();
                         host.catalogs = value;
+                        if host.catalogs["manifest"]["resources"]
+                            .get("derived/video/n2open.webm")
+                            .is_some()
+                        {
+                            presentation::start_movie(&mut host.ui, "opening", Value::Null);
+                        }
                     }
                     Err(error) => host.error = Some(error),
                 }
@@ -345,52 +352,6 @@ pub fn receive_platform(
                     }
                 }
             }
-            "load" | "import" => {
-                if value.is_null() {
-                    host.notice = "尚无本版本存档，请开始新游戏。".into();
-                    continue;
-                }
-                if let Some(payload) = value["payload"].as_str() {
-                    let (domain, presentation) = match decode_save(payload) {
-                        Ok(save) => save,
-                        Err(error) => {
-                            host.notice = error;
-                            continue;
-                        }
-                    };
-                    if let Some(session) = host.session.as_mut() {
-                        let response = session.restore(&domain);
-                        let success = response.ok;
-                        host.response(response);
-                        if success {
-                            let volume = host.ui.volume;
-                            let mut presentation = presentation.unwrap_or_default();
-                            presentation.volume = volume;
-                            host.ui = presentation;
-                            let completed = host.snapshot["phase"] == "completed";
-                            host.set_screen(if completed {
-                                Screen::Menu
-                            } else {
-                                Screen::Game
-                            });
-                            host.notice = if completed {
-                                "这段人生已经结束，请开始新游戏。".into()
-                            } else {
-                                "已恢复进度。".into()
-                            };
-                            if operation == "import" {
-                                host.save(&mut requests);
-                            }
-                        }
-                    }
-                }
-            }
-            "save" => {
-                if host.ui.screen == Screen::Saves {
-                    host.notice = "进度已保存。".into();
-                }
-            }
-            "export" => host.notice = "存档已导出。".into(),
             "visibility" => {
                 let hidden = value["hidden"].as_bool().unwrap_or(false);
                 if host.hidden != hidden {
@@ -415,7 +376,6 @@ pub fn receive_platform(
                             host.send(json!({"type":"minigameAction","action":if rest==1{"releaseLeft"}else{"releaseRight"}}));
                         }
                     }
-                    host.save(&mut requests);
                 }
             }
             "ime" => {
@@ -480,26 +440,40 @@ pub fn apply_actions(
     mut requests: ResMut<PlatformRequests>,
     mut bank: ResMut<ImageBank>,
 ) {
+    host.resume_roll();
     while let Some(action) = actions.0.pop_front() {
         match action {
             Action::Game(value) => {
-                if !host.loading && !host.hidden && host.error.is_none() {
-                    host.ui.profile["_diceChoices"] = json!(false);
-                    host.send(value);
-                    host.save(&mut requests);
+                if !host.loading
+                    && !host.hidden
+                    && host.error.is_none()
+                    && !presentation::sequence_active(&host.ui)
+                    && host.pending_roll.is_none()
+                    && host.ready_roll.is_none()
+                    && host.ui.screen == Screen::Game
+                {
+                    if value["type"] == "rollDice" {
+                        host.begin_roll(&mut requests, value);
+                    } else {
+                        host.ui.profile["_diceChoices"] = json!(false);
+                        host.send(value);
+                    }
                 }
             }
             Action::Ui(action) => {
                 match action {
                     UiAction::MainMenu => {
-                        host.save(&mut requests);
-                        host.restore_request = None;
+                        host.storage_request = None;
                         host.ui.runtime.motion = None;
+                        host.ui.runtime.sequence = None;
                         host.set_screen(Screen::Menu);
                         host.ui.profile["_imeActive"] = json!(false);
                         host.request(&mut requests, "ime", json!({"active":false}));
                     }
                     UiAction::NewProfile => {
+                        host.pending_roll = None;
+                        host.ready_roll = None;
+                        host.storage_request = None;
                         host.notice.clear();
                         let volume = host.ui.volume;
                         host.ui = PresentationState::default();
@@ -523,55 +497,31 @@ pub fn apply_actions(
                             && !host.snapshot["player"].is_null()
                         {
                             host.set_screen(Screen::Game);
-                            host.save(&mut requests);
+                            if host.catalogs["manifest"]["resources"]
+                                .get("derived/proepi/aopen01.webm")
+                                .is_some()
+                            {
+                                let snapshot = host.snapshot.clone();
+                                presentation::start_movie(&mut host.ui, "prologue", snapshot);
+                            }
                         }
                         host.ui.profile["_imeActive"] = json!(false);
                         host.request(&mut requests, "ime", json!({"active":false}));
                     }
-                    UiAction::OpenSaves => {
-                        host.return_screen = host.ui.screen;
-                        host.set_screen(Screen::Saves);
+                    UiAction::OpenSaves => host.open_saves(&mut requests),
+                    UiAction::Save => host.save_selected(&mut requests),
+                    UiAction::Load => host.load_selected(&mut requests),
+                    UiAction::SelectSave(slot) => {
+                        if slot <= 8 && !host.ui.saves.busy && !host.ui.saves.confirm {
+                            host.ui.saves.selected = slot;
+                        }
                     }
-                    UiAction::Save => host.save(&mut requests),
-                    UiAction::Load => {
-                        let identity = host
-                            .session
-                            .as_ref()
-                            .map(|s| s.content_identity().to_owned());
-                        host.request(
-                            &mut requests,
-                            "load",
-                            json!({"slot":"current","contentId":identity}),
-                        );
-                    }
-                    UiAction::LoadPrevious => {
-                        let identity = host
-                            .session
-                            .as_ref()
-                            .map(|s| s.content_identity().to_owned());
-                        host.request(
-                            &mut requests,
-                            "load",
-                            json!({"slot":"previous","contentId":identity}),
-                        );
-                    }
-                    UiAction::Import => {
-                        let identity = host
-                            .session
-                            .as_ref()
-                            .map(|s| s.content_identity().to_owned());
-                        host.request(&mut requests, "import", json!({"contentId":identity}));
-                    }
-                    UiAction::Export => {
-                        let identity = host
-                            .session
-                            .as_ref()
-                            .map(|s| s.content_identity().to_owned());
-                        host.request(
-                            &mut requests,
-                            "export",
-                            json!({"slot":"current","contentId":identity}),
-                        );
+                    UiAction::Import(slot) => host.transfer_slot(&mut requests, slot, "import"),
+                    UiAction::Export(slot) => host.transfer_slot(&mut requests, slot, "export"),
+                    UiAction::ConfirmSave => host.commit_slot(&mut requests),
+                    UiAction::CancelSave => {
+                        host.pending_write = None;
+                        host.ui.saves.confirm = false;
                     }
                     UiAction::Options => {
                         host.return_screen = host.ui.screen;
@@ -583,6 +533,11 @@ pub fn apply_actions(
                         host.set_screen(Screen::MapOverview);
                     }
                     UiAction::Back => {
+                        if host.ui.saves.confirm {
+                            host.ui.saves.confirm = false;
+                            host.pending_write = None;
+                            continue;
+                        }
                         if host.error.take().is_some() {
                             host.generation = host.generation.wrapping_add(1);
                             bank.failures.clear();
@@ -592,8 +547,13 @@ pub fn apply_actions(
                                 host.init_sent = false;
                             }
                         } else {
+                            let saves_parent = (host.ui.screen == Screen::Saves)
+                                .then_some(host.ui.saves.parent_return);
                             let screen = host.return_screen;
                             host.set_screen(screen);
+                            if let Some(parent) = saves_parent {
+                                host.return_screen = parent;
+                            }
                         }
                     }
                     UiAction::SetField { field, value } => {
@@ -627,7 +587,6 @@ pub fn apply_actions(
                     UiAction::ConfirmAllocation => {
                         let allocations = host.ui.allocations.clone();
                         host.send(json!({"type":"allocateStats","allocations":allocations}));
-                        host.save(&mut requests);
                     }
                     UiAction::AutoAllocate => {
                         host.ui.allocations = host.snapshot["pending"]["defaults"].clone();
@@ -637,6 +596,27 @@ pub fn apply_actions(
                         let name = host.ui.profile["name"].clone();
                         let generation = host.generation;
                         host.request(&mut requests,"ime",json!({"active":true,"text":name,"maxLength":64,"generation":generation}));
+                    }
+                    UiAction::AdvancePresentation => {
+                        let movie = host
+                            .ui
+                            .runtime
+                            .sequence
+                            .as_ref()
+                            .and_then(|q| q.cues.front())
+                            .is_some_and(|cue| {
+                                ["opening", "prologue"].contains(&cue.kind.as_str())
+                            });
+                        presentation::advance_sequence(&mut host.ui);
+                        if movie {
+                            // Escape also leaves an uncached/offline movie. Its
+                            // obsolete network completions cannot block the map.
+                            host.generation = host.generation.wrapping_add(1);
+                            host.error = None;
+                            bank.failures.clear();
+                            bank.requested.clear();
+                            host.video_request = None;
+                        }
                     }
                 }
             }
@@ -659,7 +639,12 @@ pub fn advance_game(time: Res<Time<bevy::time::Real>>, mut host: ResMut<GameHost
         now_ms.saturating_sub(previous_ms).min(u32::MAX as u128) as u32
     };
     let discard = std::mem::take(&mut host.discard_next_frame);
-    let frozen = discard || host.hidden || host.loading || host.error.is_some();
+    let frozen = discard
+        || host.hidden
+        || host.loading
+        || host.error.is_some()
+        || host.pending_roll.is_some()
+        || host.ready_roll.is_some();
     host.frame_ms = if frozen { 0 } else { elapsed };
     // A real visible frame still performs the original frame-based work when
     // the millisecond endpoint has not changed. Test clock 0 explicitly freezes.
@@ -668,7 +653,10 @@ pub fn advance_game(time: Res<Time<bevy::time::Real>>, mut host: ResMut<GameHost
     }
     host.ui.time_ms += u64::from(host.frame_ms);
     host.ui.scene_ms += u64::from(host.frame_ms);
-    if host.ui.screen == Screen::Game && host.ui.runtime.motion.is_none() {
+    if host.ui.screen == Screen::Game
+        && host.ui.runtime.motion.is_none()
+        && !presentation::sequence_active(&host.ui)
+    {
         let content = SceneContent {
             manifest: &host.catalogs["manifest"],
             maps: &host.catalogs["maps"],
@@ -707,6 +695,13 @@ pub fn prepare_scene(
         rules: &host.catalogs["rules"],
     };
     let mut frame = presentation::compose(&content, &host.snapshot, &host.ui);
+    if host.pending_roll.is_some() || host.ready_roll.is_some() {
+        for control in &mut frame.controls {
+            if matches!(control.action, Action::Game(_)) {
+                control.enabled = false;
+            }
+        }
+    }
     let mut resources: HashSet<String> = frame
         .required_resources
         .iter()
@@ -849,15 +844,20 @@ pub fn prepare_scene(
         frame.description = "正在读取原版资源…".into();
     }
     if !host.notice.is_empty()
-        && matches!(
-            host.ui.screen,
-            Screen::Profile | Screen::Saves | Screen::Options
-        )
+        && (host.autosave_warning
+            || matches!(
+                host.ui.screen,
+                Screen::Profile | Screen::Saves | Screen::Options
+            ))
     {
         frame.texts.push(SceneText {
             id: "notice".into(),
             text: host.notice.clone(),
-            bounds: Rect::new(72, 408, 480, 24),
+            bounds: if host.autosave_warning && host.ui.screen == Screen::Game {
+                Rect::new(48, 8, 540, 40)
+            } else {
+                Rect::new(104, 438, 500, 36)
+            },
             color: [255, 230, 180, 255],
             z: 9500,
             line_height: 20,

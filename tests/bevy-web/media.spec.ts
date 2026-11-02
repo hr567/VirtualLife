@@ -4,7 +4,7 @@
 import { test, expect, type Page, type JSHandle, type TestInfo } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { bmp, png, blit, differingPixels, type Pixels } from './images';
-import { control, diagnostic, freeze, importScenario, open, ready, scenario } from './helpers';
+import { control, diagnostic, freeze, importScenario, open, ready, scenario, saveSelected } from './helpers';
 
 interface MediaObject {
   sha256: string; path: string; bytes: number;
@@ -76,10 +76,10 @@ async function clock(page: Page, frameMs: number): Promise<void> {
 }
 async function currentSave(page: Page): Promise<SaveRecord | null> {
   return page.evaluate(() => new Promise((resolve, reject) => {
-    const opening = indexedDB.open('virtual-life-bevy', 1);
+    const opening = indexedDB.open('virtual-life-bevy', 2);
     opening.onerror = () => reject(opening.error);
     opening.onsuccess = () => {
-      const db = opening.result, tx = db.transaction('saves'), request = tx.objectStore('saves').get('current');
+      const db = opening.result, tx = db.transaction('saves'), request = tx.objectStore('saves').get('slot-1');
       request.onsuccess = () => resolve(request.result ?? null);
       request.onerror = () => reject(request.error);
       tx.oncomplete = () => db.close();
@@ -248,12 +248,12 @@ test('ending WebM frames, nearest scaling, black scanlines and fixed subtitles f
   const previousSave = (await currentSave(page))?.savedAt;
   await page.keyboard.press('F6'); await expect.poll(async () => (await diagnostic(page)).screen).toBe('Saves'); await ready(page);
   await clock(page, 10000); expect(await ending(page)).toEqual(before);
-  await control(page, '保存当前进度');
+  await saveSelected(page);
   await expect.poll(async () => (await currentSave(page))?.savedAt).not.toBe(previousSave);
   const saved = JSON.parse((await currentSave(page))!.payload) as SavedPayload;
   expect(saved.state.pending).toEqual(before); expect(saved.presentation).toBeDefined();
   await dispose(reference);
-  await page.reload(); await ready(page); await freeze(page); await control(page, '继续游戏'); await ready(page);
+  await page.reload(); await ready(page); await freeze(page); await control(page, '继续游戏'); await control(page, '读取选中槽位'); await ready(page);
   expect(await ending(page)).toEqual(before);
   reference = await referenceVideo(page);
   const restoredPixels = await assertMoviePixels(page, reference, info, 'movie-restored-caption');
@@ -319,8 +319,10 @@ test('a delayed real ending decode cannot replace the menu after the actual F10 
     // importScenario's final ready() intentionally cannot finish while this
     // object's response is held, so perform the same real F6/file-picker steps.
     await page.keyboard.press('F6'); await expect.poll(async () => (await diagnostic(page)).screen).toBe('Saves');
-    const picking = page.waitForEvent('filechooser'); await control(page, '导入存档');
+    const picking = page.waitForEvent('filechooser'); await control(page, '导入槽位 1');
     await (await picking).setFiles(scenario('activity-ending-movie'));
+    await expect.poll(async () => (await diagnostic(page)).notice).toContain('存档已导入');
+    await control(page, '读取选中槽位');
     await expect.poll(async () => (await diagnostic(page)).screen).toBe('Game');
     await expect.poll(() => requests).toBeGreaterThan(0);
     expect((await diagnostic(page)).loading).toBe(true);

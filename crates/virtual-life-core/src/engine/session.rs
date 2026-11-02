@@ -122,7 +122,7 @@ impl GameSession {
             message: self.state.message.clone(),
             pending: self.state.pending.clone(),
             native_view: self.native_view(),
-            scene: self.state.scene.clone(),
+            scene: self.event_scene_snapshot(),
             active_condition: self.state.active_condition.clone(),
             shop_visits: self.state.shop_visits.clone(),
             career_levels: self.state.career_levels.clone(),
@@ -556,7 +556,14 @@ impl GameSession {
             Some(json!({"kind":"blocked","code":code,"text":message,"details":details}));
     }
 
-    pub(super) fn roll(&mut self, forced: Option<u8>) -> Result<Vec<Value>, String> {
+    /// Check a roll on a cloned random stream, before committing an autosave.
+    pub fn validate_roll(&self, forced: Option<u8>) -> Result<(), String> {
+        self.planned_roll(forced).map(|_| ())
+    }
+    fn planned_roll(
+        &self,
+        forced: Option<u8>,
+    ) -> Result<(ReplayRng, u8, crate::original_rules::Movement), String> {
         if self.state.phase != "playing" || self.state.turn_in_progress {
             return Err("请先完成当前事件。".into());
         }
@@ -571,6 +578,11 @@ impl GameSession {
         let mut rng = self.state.rng.clone();
         let rolled = roll_dice(&mut rng, forced)?;
         let movement = plan_movement(map, start, rolled, self.state.entry_step_pending, &mut rng)?;
+        Ok((rng, rolled, movement))
+    }
+    pub(super) fn roll(&mut self, forced: Option<u8>) -> Result<Vec<Value>, String> {
+        let (rng, rolled, movement) = self.planned_roll(forced)?;
+        let map = self.current_map().ok_or("没有正在进行的地图。")?;
         let mut queue = Vec::new();
         let mut segment = Vec::new();
         for (index, tile_id) in movement.path.iter().copied().enumerate() {

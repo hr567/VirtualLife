@@ -105,6 +105,7 @@ fn a_save_restores_native_ui_time_camera_and_motion_without_replaying_held_input
             ..Default::default()
         });
     }
+    open_saves_ready(&mut app);
     app.world_mut().resource_mut::<PlatformRequests>().0.clear();
     app.world_mut()
         .resource_mut::<Actions>()
@@ -231,12 +232,40 @@ fn event(app: &mut App, operation: &str, value: Value) {
         });
 }
 
+fn open_saves_ready(app: &mut App) {
+    app.world_mut()
+        .resource_mut::<Actions>()
+        .0
+        .push_back(Action::Ui(UiAction::OpenSaves));
+    frame(app, 0);
+    let id = app
+        .world()
+        .resource::<PlatformRequests>()
+        .0
+        .iter()
+        .rev()
+        .find(|request| request.operation == "listSaves")
+        .unwrap()
+        .id;
+    let slots=json!((0..9).map(|slot|json!({"occupied":false,"valid":true,"slot":format!("slot-{slot}"),"token":null})).collect::<Vec<_>>());
+    app.world_mut()
+        .resource_mut::<PlatformEvents>()
+        .0
+        .push_back(PlatformEvent {
+            id,
+            operation: "listSaves".into(),
+            value: slots,
+            ..Default::default()
+        });
+    frame(app, 0);
+}
 fn restore_request(app: &mut App, operation: &str) -> u32 {
+    open_saves_ready(app);
     app.world_mut()
         .resource_mut::<Actions>()
         .0
         .push_back(Action::Ui(if operation == "import" {
-            UiAction::Import
+            UiAction::Import(1)
         } else {
             UiAction::Load
         }));
@@ -372,7 +401,7 @@ fn the_original_month_switch_keeps_day_31_and_can_start_and_restore_that_profile
 }
 
 #[test]
-fn leaving_a_walk_saves_its_pose_but_a_new_creator_starts_with_clean_original_defaults() {
+fn leaving_a_walk_does_not_save_and_a_new_creator_starts_with_clean_original_defaults() {
     use virtual_life_app::scene::{MotionPose, MotionSequence};
     let mut app = app();
     {
@@ -391,24 +420,12 @@ fn leaving_a_walk_saves_its_pose_but_a_new_creator_starts_with_clean_original_de
         .0
         .push_back(Action::Ui(UiAction::MainMenu));
     frame(&mut app, 0);
-    let saved: Value = serde_json::from_str(
-        app.world()
+    assert!(
+        !app.world()
             .resource::<PlatformRequests>()
             .0
             .iter()
-            .find(|request| request.operation == "save")
-            .unwrap()
-            .payload["payload"]
-            .as_str()
-            .unwrap(),
-    )
-    .unwrap();
-    assert_eq!(
-        saved["presentation"]["runtime"]["motion"]["frames"]
-            .as_array()
-            .unwrap()
-            .len(),
-        1
+            .any(|request| request.operation == "save")
     );
     assert!(
         app.world()
@@ -450,7 +467,30 @@ fn late_autosave_success_does_not_overlay_the_original_creator_but_explicit_save
         .0
         .push_back(Action::Ui(UiAction::OpenSaves));
     frame(&mut app, 0);
-    event(&mut app, "save", Value::Null);
+    let mut app = crate::app();
+    open_saves_ready(&mut app);
+    app.world_mut()
+        .resource_mut::<Actions>()
+        .0
+        .push_back(Action::Ui(UiAction::Save));
+    frame(&mut app, 0);
+    let id = app
+        .world()
+        .resource::<PlatformRequests>()
+        .0
+        .iter()
+        .rev()
+        .find(|request| request.operation == "save")
+        .unwrap()
+        .id;
+    app.world_mut()
+        .resource_mut::<PlatformEvents>()
+        .0
+        .push_back(PlatformEvent {
+            id,
+            operation: "save".into(),
+            ..Default::default()
+        });
     frame(&mut app, 0);
     assert_eq!(app.world().resource::<GameHost>().notice, "进度已保存。");
 }
@@ -582,14 +622,9 @@ fn received_catalog_actions_then_original_tick_share_one_ordered_bevy_update() {
         .iter()
         .filter(|request| request.operation == "save")
         .collect::<Vec<_>>();
-    assert!(saves.len() >= 2);
-    let envelope: Value =
-        serde_json::from_str(saves.last().unwrap().payload["payload"].as_str().unwrap()).unwrap();
-    assert_eq!(envelope["format"], "virtual-life-bevy-save");
-    assert_eq!(envelope["version"], 1);
-    assert_eq!(
-        envelope["contentHash"],
-        saves.last().unwrap().payload["contentId"]
+    assert!(
+        saves.is_empty(),
+        "Ordinary actions and ticks must not autosave"
     );
 }
 #[test]
@@ -640,6 +675,24 @@ fn options_visibility_and_loading_freeze_domain_state_without_catching_up() {
     app.world_mut().resource_mut::<GameHost>().loading = true;
     frame(&mut app, 50_000);
     assert_eq!(saved_state(&app), before);
+}
+
+#[test]
+fn a_save_overlay_preserves_the_options_return_path_to_the_game() {
+    let mut app = app();
+    for action in [
+        UiAction::Options,
+        UiAction::Save,
+        UiAction::Back,
+        UiAction::Back,
+    ] {
+        app.world_mut()
+            .resource_mut::<Actions>()
+            .0
+            .push_back(Action::Ui(action));
+        frame(&mut app, 0);
+    }
+    assert_eq!(app.world().resource::<GameHost>().ui.screen, Screen::Game);
 }
 #[test]
 fn a_legacy_load_event_cannot_replace_current_bevy_domain_state() {

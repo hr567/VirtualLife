@@ -116,7 +116,7 @@ fn setup_canvas(
         .set_device_lost_callback(move |reason, message| {
             if let Ok(mut failed) = failed.lock() {
                 *failed = Some(format!(
-                    "显示设备已中断（{reason:?}）：{message}。进度已保留，请刷新页面继续。"
+                    "显示设备已中断（{reason:?}）：{message}。请刷新页面后读取最近成功保存的存档。"
                 ));
             }
         });
@@ -143,7 +143,7 @@ fn device_failure(
 ) {
     let error = failure.0.lock().ok().and_then(|mut error| error.take());
     if let Some(error) = error {
-        host.save(&mut requests);
+
         host.request(&mut requests, "fatal", serde_json::json!({"message":error}));
         host.error = Some(error);
         host.hidden = true;

@@ -22,12 +22,12 @@
     }
   },
   "statistics": {
-    "resourceCount": 6676,
-    "uniqueObjectCount": 5082,
-    "sourceBytes": 885589741,
-    "storedBytes": 644907708,
+    "resourceCount": 6679,
+    "uniqueObjectCount": 5085,
+    "sourceBytes": 1013970879,
+    "storedBytes": 773288846,
     "deduplicatedBytes": 240682033,
-    "derivedResourceCount": 7
+    "derivedResourceCount": 9
   },
   "catalogs": {
     "maps": "assets/catalog/maps.json",
@@ -4321,6 +4321,24 @@
         "speedRaw": 71,
         "transparency": "not-established"
       }
+    },
+    {
+      "sha256": "0c77220f10befa2cce0ee367aba5d3a17bdb0e6fbd78b769bffa63983f5ba7b8",
+      "path": "assets/game/objects/0c/0c77220f10befa2cce0ee367aba5d3a17bdb0e6fbd78b769bffa63983f5ba7b8.webm",
+      "bytes": 5408628,
+      "media": {
+        "kind": "webm",
+        "videoCodec": "vp9",
+        "losslessEncoding": true,
+        "decodedFramesVerified": true,
+        "pixelFormat": "yuv444p",
+        "width": 640,
+        "height": 180,
+        "frameRate": "24/1",
+        "frames": 129,
+        "durationMs": 5375
+      },
+      "derivedFrom": "c3bf61f109c6124a8126eea1ea24c8ddf675616ad7f1bdbd63030bc47706f8e3"
     },
     {
       "sha256": "0c81baf787fbc1fe60197b45f4bba436d6578cd44e49579bb99cd44b4fadcde6",
@@ -22965,6 +22983,20 @@
         "speedRaw": 285,
         "transparency": "not-established"
       }
+    },
+    {
+      "sha256": "473b15bdd7efcea0d12c015315804a45e097eea56e887c16331ac14a0d5cdbea",
+      "path": "assets/game/objects/47/473b15bdd7efcea0d12c015315804a45e097eea56e887c16331ac14a0d5cdbea.wav",
+      "bytes": 10866284,
+      "media": {
+        "kind": "wav",
+        "formatTag": 1,
+        "channels": 2,
+        "sampleRate": 22050,
+        "bitsPerSample": 16,
+        "decodedSamplesVerified": true
+      },
+      "derivedFrom": "dcbcbe2ab394d20e782c80370604fe1ccacbc1890b130c166218bf44b1474d9d"
     },
     {
       "sha256": "473f1fade7aea38a4fe32f620b9c98c555d7f5b5678f7725ac914dbc761cb812",
@@ -52548,6 +52580,24 @@
         "speedRaw": 71,
         "transparency": "not-established"
       }
+    },
+    {
+      "sha256": "a7d6d994cf0b4f83a4b1db012d832ef54c41ac67796ee4bf8fef657a803324e7",
+      "path": "assets/game/objects/a7/a7d6d994cf0b4f83a4b1db012d832ef54c41ac67796ee4bf8fef657a803324e7.webm",
+      "bytes": 112106226,
+      "media": {
+        "kind": "webm",
+        "videoCodec": "vp9",
+        "losslessEncoding": true,
+        "decodedFramesVerified": true,
+        "pixelFormat": "yuv444p",
+        "width": 640,
+        "height": 180,
+        "frameRate": "15/1",
+        "frames": 1848,
+        "durationMs": 123200
+      },
+      "derivedFrom": "dcbcbe2ab394d20e782c80370604fe1ccacbc1890b130c166218bf44b1474d9d"
     },
     {
       "sha256": "a8054d840688eda419ab9bc762f01d58e311aca68a9a2cb9da138cf664e1cbca",
@@ -140459,6 +140509,82 @@
         "font": "WenQuanYi Bitmap Song",
         "version": "0.9.9",
         "license": "GPL v2.0 with the upstream font embedding exception"
+      }
+    },
+    "derived/video/n2open.webm": {
+      "sha256": "a7d6d994cf0b4f83a4b1db012d832ef54c41ac67796ee4bf8fef657a803324e7",
+      "derivedFrom": "cd/data/video/n2open.avi",
+      "conversion": {
+        "tool": "ffmpeg version N-128121-g86444dd368-20261027 Copyright (c) 2000-2026 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "libvpx-vp9",
+          "-lossless",
+          "1",
+          "-pix_fmt",
+          "yuv444p",
+          "-g",
+          "1",
+          "-threads",
+          "1",
+          "-fflags",
+          "+bitexact",
+          "-flags:v",
+          "+bitexact",
+          "-map_metadata",
+          "-1"
+        ]
+      }
+    },
+    "derived/video/n2open.wav": {
+      "sha256": "473b15bdd7efcea0d12c015315804a45e097eea56e887c16331ac14a0d5cdbea",
+      "derivedFrom": "cd/data/video/n2open.avi",
+      "conversion": {
+        "tool": "ffmpeg version N-128121-g86444dd368-20261027 Copyright (c) 2000-2026 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:a:0",
+          "-vn",
+          "-c:a",
+          "pcm_s16le",
+          "-fflags",
+          "+bitexact",
+          "-flags:a",
+          "+bitexact",
+          "-map_metadata",
+          "-1"
+        ]
+      }
+    },
+    "derived/proepi/aopen01.webm": {
+      "sha256": "0c77220f10befa2cce0ee367aba5d3a17bdb0e6fbd78b769bffa63983f5ba7b8",
+      "derivedFrom": "cd/data/proepi/aopen01.avi",
+      "conversion": {
+        "tool": "ffmpeg version N-128121-g86444dd368-20261027 Copyright (c) 2000-2026 the FFmpeg developers",
+        "arguments": [
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "libvpx-vp9",
+          "-lossless",
+          "1",
+          "-pix_fmt",
+          "yuv444p",
+          "-g",
+          "1",
+          "-threads",
+          "1",
+          "-fflags",
+          "+bitexact",
+          "-flags:v",
+          "+bitexact",
+          "-map_metadata",
+          "-1"
+        ]
       }
     }
   }

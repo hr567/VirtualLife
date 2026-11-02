@@ -51,41 +51,46 @@ test('restored N1 portraits use player expressions and dialogue clicks cover the
   expect(logs).toEqual([]);
 });
 
-test('restored birthday, life notices and payroll wait for their visible sequence and resume from save',async({page},info)=>{
+for(const id of ['birthday-before','life-notice-10','life-notice-3'])test(`restored ${id} waits for its visible sequence and resumes from save`,async({page},info)=>{
+  const logs=consoleErrors(page);
+  const errors=await open(page);await freeze(page);
+  await importScenario(page,id);await control(page,'继续对话');await ready(page);
+  await expect.poll(async()=>(await diagnostic(page)).controls.some(c=>c.label==='继续人生')).toBe(true);
+  const seq=(await diagnostic(page)).snapshot.lastSeq;
+  await page.screenshot({path:info.outputPath(`restored-${id}.png`)});
+  await page.keyboard.press('F6');await ready(page);await saveSelected(page);
+  await expect.poll(async()=>(await diagnostic(page)).notice).toContain('进度已保存');
+  await control(page,'读取选中槽位');await ready(page);
+  expect((await diagnostic(page)).controls.some(c=>c.label==='继续人生')).toBe(true);
+  expect((await diagnostic(page)).snapshot.lastSeq).toBe(seq);
+  await control(page,'继续人生');await ready(page);
+  expect((await diagnostic(page)).snapshot.lastSeq).toBe(seq);
+  expect(errors).toEqual([]);
+  expect(logs).toEqual([]);
+});
+
+// Each original payroll animation advances one visible frame per tick. Give
+// each independent save/restore scenario its own budget on CI's software GPU.
+for(const id of ['payday-promotion','payday-demotion','payday-mastery'])test(`restored ${id} completes its visible sequence and resumes from save`,async({page},info)=>{
   const logs=consoleErrors(page);
   test.setTimeout(300_000);
   const errors=await open(page);await freeze(page);
-  for(const id of ['birthday-before','life-notice-10','life-notice-3']){
-    await importScenario(page,id);await control(page,'继续对话');await ready(page);
-    await expect.poll(async()=>(await diagnostic(page)).controls.some(c=>c.label==='继续人生')).toBe(true);
-    const seq=(await diagnostic(page)).snapshot.lastSeq;
-    await page.screenshot({path:info.outputPath(`restored-${id}.png`)});
-    await page.keyboard.press('F6');await ready(page);await saveSelected(page);
-    await expect.poll(async()=>(await diagnostic(page)).notice).toContain('进度已保存');
-    await control(page,'读取选中槽位');await ready(page);
-    expect((await diagnostic(page)).controls.some(c=>c.label==='继续人生')).toBe(true);
-    expect((await diagnostic(page)).snapshot.lastSeq).toBe(seq);
-    await control(page,'继续人生');await ready(page);
-    expect((await diagnostic(page)).snapshot.lastSeq).toBe(seq);
+  await importScenario(page,id);await control(page,'继续对话');await ready(page);
+  const seq=(await diagnostic(page)).snapshot.lastSeq;
+  expect((await diagnostic(page)).controls.some(c=>c.label==='掷骰子')).toBe(false);
+  await tick(page,16);
+  for(let i=0;i<10;i++)await tick(page,25);
+  await page.screenshot({path:info.outputPath(`restored-${id}.png`)});
+  await page.keyboard.press('F6');await ready(page);await saveSelected(page);
+  await expect.poll(async()=>(await diagnostic(page)).notice).toContain('进度已保存');
+  await control(page,'读取选中槽位');await ready(page);
+  expect((await diagnostic(page)).snapshot.lastSeq).toBe(seq);
+  for(let i=0;i<500;i++){
+    if((await diagnostic(page)).controls.some(c=>c.label==='掷骰子'))break;
+    await tick(page,1000);
   }
-  for(const id of ['payday-promotion','payday-demotion','payday-mastery']){
-    await importScenario(page,id);await control(page,'继续对话');await ready(page);
-    const seq=(await diagnostic(page)).snapshot.lastSeq;
-    expect((await diagnostic(page)).controls.some(c=>c.label==='掷骰子')).toBe(false);
-    await tick(page,16);
-    for(let i=0;i<10;i++)await tick(page,25);
-    await page.screenshot({path:info.outputPath(`restored-${id}.png`)});
-    await page.keyboard.press('F6');await ready(page);await saveSelected(page);
-    await expect.poll(async()=>(await diagnostic(page)).notice).toContain('进度已保存');
-    await control(page,'读取选中槽位');await ready(page);
-    expect((await diagnostic(page)).snapshot.lastSeq).toBe(seq);
-    for(let i=0;i<500;i++){
-      if((await diagnostic(page)).controls.some(c=>c.label==='掷骰子'))break;
-      await tick(page,1000);
-    }
-    expect((await diagnostic(page)).controls.some(c=>c.label==='掷骰子')).toBe(true);
-    expect((await diagnostic(page)).snapshot.lastSeq).toBe(seq);
-  }
+  expect((await diagnostic(page)).controls.some(c=>c.label==='掷骰子')).toBe(true);
+  expect((await diagnostic(page)).snapshot.lastSeq).toBe(seq);
   expect(errors).toEqual([]);
   expect(logs).toEqual([]);
 });

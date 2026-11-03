@@ -372,7 +372,22 @@ fn main() {
     for name in ["events", "rules", "questionnaires"] {
         catalog[name] = read(name);
     }
-    let args: Vec<String> = env::args().collect();
+    // Consume the output path separately so a directory named after a route or
+    // flag cannot change the requested probe behavior.
+    let mut args = Vec::new();
+    let mut output_directory = None;
+    let mut input = env::args();
+    while let Some(arg) = input.next() {
+        if arg == "--output-dir" {
+            let Some(directory) = input.next().filter(|value| !value.is_empty()) else {
+                eprintln!("--output-dir requires a directory");
+                std::process::exit(2);
+            };
+            output_directory = Some(PathBuf::from(directory));
+        } else {
+            args.push(arg);
+        }
+    }
     let count = args
         .get(1)
         .and_then(|s| s.parse::<usize>().ok())
@@ -394,11 +409,13 @@ fn main() {
     } else {
         Route::Standard
     };
-    let directory = if route == Route::Standard {
-        root.join("output/life-probes")
-    } else {
-        root.join("output/life-probes").join(route.name())
-    };
+    let directory = output_directory.unwrap_or_else(|| {
+        if route == Route::Standard {
+            root.join("output/life-probes")
+        } else {
+            root.join("output/life-probes").join(route.name())
+        }
+    });
     fs::create_dir_all(&directory).unwrap();
     let mut reports = Vec::new();
     let mut all_completed = true;

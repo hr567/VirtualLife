@@ -49,6 +49,7 @@ pnpm preview
 
 ```sh
 pnpm test:formats
+pnpm test:ci
 python tools/test_bitmap_font.py
 pnpm test:platform
 cargo test --locked --workspace
@@ -61,8 +62,12 @@ pnpm test:web
 
 `test:fixtures` 先执行 `test:lives`：通过公开命令跑男性、女性、大学和迷失路线，保存自然到达的地图状态。随后使用 `test-support` 特性严格恢复并生成当前格式的场景，输出到忽略的 `output/bevy-scenarios/`。历史 `tests/fixtures/browser-*.json` 仍保留为还原与测试证据，不是生产客户端的兼容导入格式。
 
+路线生成最多并行两个进程，分别写入独立目录，全部成功后按 seed 1、seed 4 的顺序合并，保留共享快照的覆盖顺序。`complete_life` 可用 `--output-dir <dir>` 指定本次运行的完整输出目录；省略时沿用默认布局。路线探针和场景导出器均使用 release 构建。
+
 `build:test` 单独启用 `test-api` 并输出到 `output/test-site/`。测试接口只在相应编译特性及 localhost 条件同时满足时接受控件、按键或帧时间输入，不提供任意修改游戏状态的接口。Playwright 默认启动该测试站点；如自行提供服务器，可设置 `PLAYWRIGHT_EXTERNAL_SERVER`。
 
 完成测试后重新运行 `pnpm build` 生成 `dist/`，避免把测试 WASM 当作生产绑定使用。测试产物目录、生成绑定、研究资料和输出证据均不作为源码提交；测试源码与固定 fixtures 应正常保存。各层验收解释见 [验证说明](validation.md)。
+
+GitHub Actions 的 `prepare` 缓存 Rust/WASM 依赖与工具，但每次仍完整执行原生检查、生成四条路线和场景，并分别构建测试及生产站点。四个浏览器分片复用本次生成的素材和测试站点，每台机器只运行一个软件 GPU worker。最终 `build` 门禁合并 blob 报告，核对完整测试清单中的每个 ID 恰好通过一次；缺少分片、测试遗漏、重复或执行失败都会阻止 Pages 部署。`pnpm test:ci` 覆盖这些门禁的失败条件。
 
 CPU 合成基准及逐字节等价性验证见 [Bevy 性能优化记录](performance-2026-10-30.md)。
